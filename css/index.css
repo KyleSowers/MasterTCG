@@ -10,8 +10,8 @@
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    /*align-items: center;*/
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -25,15 +25,19 @@
     padding: 0;
     border-radius: 30px;
     width: 100vw;
+    gap: 50px;
 }
 
 img {
     margin: 0;
     padding: 0;
     border-radius: 50px;
-    max-height: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 236px;
+    width: 100%;
 }
 
 .pokelogo {
     border: 1px solid grey;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
