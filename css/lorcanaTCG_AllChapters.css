@@ -1,4 +1,5 @@
 img {
     width: 100vw;
     max-height: 500px;
+    border-radius: 0 0 60px 60px;
 }
