@@ -1,4 +1,6 @@
 .top-logo {
+    display: flex;
+    justify-self: center;
     margin: 10px;
     width: 99vw;
     max-height: 400px;
