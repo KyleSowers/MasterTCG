@@ -10,3 +10,17 @@
 img {
     border-radius: 25px;
 }
+
+
+
+.cardRadio, .card{
+    display: none;
+}
+
+.cardRadio, .card {
+    opacity: 0.4;
+}
+
+.cardRadio:checked, .card {
+    opacity: 1.0;
+}
