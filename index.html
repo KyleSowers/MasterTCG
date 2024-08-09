@@ -10,8 +10,8 @@
 <body>
     <div class="page-wrapper flex flex-column min-vh-100 shadow-2 vw-100">
 <!--BEGIN NAV BAR-->
-        <nav class="navbar navbar-expand-lg" style="background-color: #19bdd3;">
-            <div class="container-fluid" style="background-color: #19bdd3;">
+        <nav class="navbar navbar-expand-lg" style="background-color: #fff;">
+            <div class="container-fluid d-flex flex-column justify-content-center" style="background-color: #fff;">
                 <a class="navbar-brand" href="index.html">MasterTCG</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -55,22 +55,19 @@
 <!--                        </li>-->
                     </ul>
                     <form class="d-flex gap-3" role="search">
-                        <li class="nav-item form-control d-flex align-items-center justify-content-center">
-                            <a class="nav-link active" aria-current="page" href="#">Login</a>
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="border: 1px solid #000; box-shadow: none;">
+                        <button class="btn" type="button" style="color: #333; background-color: #fff">Search</button>
+                        <li class="nav-item form-control d-flex align-items-center justify-content-center" style="border: none">
+                            <a class="nav-link" href="#">Account</a>
                         </li>
-                        <li class="nav-item form-control d-flex align-items-center justify-content-center">
-                            <a class="nav-link" href="#">Sign Up!</a>
-                        </li>
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit">Search</button>
                     </form>
                 </div>
             </div>
         </nav>
 <!--END NAV BAR-->
         <hr style="margin-top: 0; margin-bottom: 1px;">
-        <div class="sticky" style="background-color: #19bdd3;">
-            <p>YOUR LOCATION HERE</p>
+        <div class="sticky" style="background-color: #fff;">
+            <p style="text-align: center;">YOUR LOCATION HERE</p>
         </div>
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-5">
