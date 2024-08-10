@@ -9,7 +9,6 @@
     padding: 0;
 }
 
-/* Navbar container */
 .navbar {
     overflow: hidden;
     background-color: ghostwhite;
@@ -44,19 +43,16 @@
     margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: ghostwhite;
-}
-
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-    display: none;
+    display: block; /* Display the content block */
     position: absolute;
     background-color: ghostwhite;
     width: 100%;
     left: 0;
-    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide overflowing content */
+    transition: max-height .5s ease-out; /* Smooth scroll effect */
     z-index: 1;
 }
 
@@ -67,12 +63,12 @@
     color: #333336;
 }
 
-/* Show the dropdown menu on hover */
+/* Show the dropdown menu on hover with a scroll-in effect */
 .dropdown:hover .dropdown-content {
-    display: block;
+    max-height: 300px; /* Adjust to the content's full height */
 }
 
-/* Create three equal columns that floats next to each other */
+/* Create three equal columns that float next to each other */
 .column {
     float: left;
     width: 33.33%;
