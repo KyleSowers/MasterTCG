@@ -8,19 +8,22 @@
 }
 
 img {
-    border-radius: 25px;
+    border-radius: 15px;
+}
+
+.singleCard {
+    width: 10%;
 }
 
 
+/*.cardRadio, .card{*/
+/*    display: none;*/
+/*}*/
 
-.cardRadio, .card{
-    display: none;
-}
+/*.cardRadio, .card {*/
+/*    opacity: 0.4;*/
+/*}*/
 
-.cardRadio, .card {
-    opacity: 0.4;
-}
-
-.cardRadio:checked, .card {
-    opacity: 1.0;
-}
+/*.cardRadio:checked, .card {*/
+/*    opacity: 1.0;*/
+/*}*/
