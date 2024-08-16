@@ -7,7 +7,7 @@
 /* Create three equal columns that float next to each other */
 .column {
     float: left;
-    width: 33.33%;
+    width: 100%;
     padding: 10px;
     background-color: ghostwhite;
     height: 250px;
@@ -68,7 +68,13 @@
 
 /* Show the dropdown menu on hover with a scroll-in effect */
 .dropdown:hover .dropdown-content {
-    max-height: 300px; /* Adjust to the content's full height */
+    max-height: fit-content; /* Adjust to the content's full height */
+}
+
+.dropdownlistOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 img {
@@ -123,8 +129,8 @@ img {
 
 .row {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;*/
+    align-items: left;
     margin: 0;
     padding: 0;
     border-radius: 30px;
