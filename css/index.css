@@ -25,7 +25,9 @@
 
 /* Add a background color on hover */
 .column a:hover {
-    background-color: ghostwhite;
+    background-color: #343434;
+    color: ghostwhite;
+    border-radius: 15px;
 }
 
 /* The dropdown container */
@@ -57,6 +59,8 @@
     overflow: hidden; /* Hide overflowing content */
     transition: max-height .36s ease-out; /* Smooth scroll effect */
     z-index: 1;
+    overflow-y: scroll;
+    scrollbar-color: black black;
 }
 
 /* Mega Menu header, if needed */
@@ -130,7 +134,7 @@ img {
 .row {
     display: flex;
     /*justify-content: center;*/
-    align-items: left;
+    /*align-items: left;*/
     margin: 0;
     padding: 0;
     border-radius: 30px;
