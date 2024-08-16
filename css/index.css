@@ -4,25 +4,28 @@
     background-color: ghostwhite;
 }
 
-.page-wrapper {
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    overflow: hidden;
-    background-color: ghostwhite;
-    font-family: Arial;
-}
-
-/* Links inside the navbar */
-.navbar a {
+/* Create three equal columns that float next to each other */
+.column {
     float: left;
-    font-size: 16px;
+    width: 33.33%;
+    padding: 10px;
+    background-color: ghostwhite;
+    height: 250px;
+}
+
+/* Style links inside the columns */
+.column a {
+    float: none;
     color: #333336;
-    text-align: center;
-    padding: 14px 16px;
+    padding: 16px;
     text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a background color on hover */
+.column a:hover {
+    background-color: ghostwhite;
 }
 
 /* The dropdown container */
@@ -68,57 +71,6 @@
     max-height: 300px; /* Adjust to the content's full height */
 }
 
-/* Create three equal columns that float next to each other */
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-    background-color: ghostwhite;
-    height: 250px;
-}
-
-/* Style links inside the columns */
-.column a {
-    float: none;
-    color: #333336;
-    padding: 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-/* Add a background color on hover */
-.column a:hover {
-    background-color: ghostwhite;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/*.container {*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*    !*align-items: center;*!*/
-/*    margin: 30px auto;*/
-/*    padding: 0;*/
-/*    width: 100vw;*/
-/*}*/
-
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    border-radius: 30px;
-    width: 100vw;
-    gap: 50px;
-}
-
 img {
     margin: 0;
     padding: 0;
@@ -129,7 +81,53 @@ img {
     cursor: pointer;
 }
 
+.locationBar {
+    margin: 30px 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: ghostwhite;
+    font-family: Arial;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: #333336;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.page-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
 .pokelogo {
     border: 1px solid grey;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 30px;
+    width: 100vw;
+    gap: 50px;
 }
