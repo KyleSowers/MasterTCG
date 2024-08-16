@@ -5,8 +5,10 @@
 }
 
 /* Create three equal columns that float next to each other */
-.column {
-    float: left;
+.dropdownColumns {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    align-content: center;
     width: 100%;
     padding: 10px;
     background-color: ghostwhite;
@@ -27,7 +29,7 @@
 .column a:hover {
     background-color: #343434;
     color: ghostwhite;
-    border-radius: 15px;
+    border-radius: 4px;
 }
 
 /* The dropdown container */
@@ -61,6 +63,7 @@
     z-index: 1;
     overflow-y: scroll;
     scrollbar-color: black black;
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Mega Menu header, if needed */
@@ -72,7 +75,8 @@
 
 /* Show the dropdown menu on hover with a scroll-in effect */
 .dropdown:hover .dropdown-content {
-    max-height: fit-content; /* Adjust to the content's full height */
+    max-height: 60%; /* Adjust to the content's full height */
+    height: fit-content;
 }
 
 .dropdownlistOptions {
@@ -84,7 +88,7 @@
 img {
     margin: 0;
     padding: 0;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     max-height: 200px;
     width: 100%;
