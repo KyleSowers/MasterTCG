@@ -11,8 +11,14 @@ img {
     border-radius: 15px;
 }
 
-.singleCard {
-    width: 10%;
+.cardContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+}
+
+.cardSingle {
+    width: 100%;
 }
 
 
