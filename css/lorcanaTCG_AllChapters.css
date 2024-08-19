@@ -7,20 +7,34 @@
 /*    border-radius: 0 0 60px 60px;*/
 /*}*/
 
+
 img {
     border-radius: 15px;
+    width: 75%;
 }
 
 .cardContainer {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     justify-content: space-evenly;
-    margin-bottom: 40px;
-    background-color: ghostwhite;
+    margin-bottom: 60px;
 }
 
 .cardSingle {
-    width: 100%;
+    width: 120%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.29);
+    border-radius: 58px;
+}
+
+.cardTitleGold {
+    text-align: center;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.cardIDGold {
+    text-align: center;
+    color: black;
 }
 
 
