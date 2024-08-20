@@ -11,6 +11,7 @@
 img {
     border-radius: 15px;
     width: 75%;
+    /*opacity: .4;*/
 }
 
 .cardContainer {
@@ -21,10 +22,17 @@ img {
 }
 
 .cardSingle {
-    width: 120%;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.29);
+    width: 130%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.29);
     border-radius: 58px;
 }
+
+/*.cardSingle {*/
+/*    width: 120%;*/
+/*    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.29);*/
+/*    border-radius: 58px;*/
+/*}*/
+
 
 .cardTitleGold {
     text-align: center;
