@@ -23,7 +23,7 @@ img {
 
 .cardSingle {
     width: 130%;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.29);
+    box-shadow: -55px 0 20px 0 rgba(0, 0, 0, 0.29);
     border-radius: 58px;
 }
 
@@ -35,13 +35,31 @@ img {
 
 
 .cardTitleGold {
-    text-align: center;
+    text-align: left;
+    margin-left: 45px;
     color: black;
     padding-bottom: 10px;
 }
 
+.cardCenter {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin-left: 5%;
+}
+
+.cardSelectors {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin-left: 5%;
+    writing-mode: vertical-lr;
+}
+
 .cardIDGold {
-    text-align: center;
+    text-align: left;
+    margin-left: 45px;
+    margin-top: 10px;
     color: black;
 }
 
