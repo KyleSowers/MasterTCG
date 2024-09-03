@@ -7,6 +7,17 @@
 /*    border-radius: 0 0 60px 60px;*/
 /*}*/
 
+.ink_amber_logo {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #e5b337;
+}
+
+.ink_logo_img {
+    max-width: 100px;
+    max-height: 100px;
+}
 
 img {
     border-radius: 15px;
@@ -23,8 +34,8 @@ img {
 
 .cardSingle {
     width: 130%;
-    box-shadow: -25px 0 20px 0 rgba(0, 0, 0, 0.29);
-    border-radius: 50px;
+    /*box-shadow: -25px 0 20px 0 rgba(0, 0, 0, 0.29);*/
+    /*border-radius: 50px;*/
 }
 
 /*.cardSingle {*/
