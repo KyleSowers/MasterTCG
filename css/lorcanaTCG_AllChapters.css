@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    background-color: #03082f;
+    background-color: #d3082f;
 }
 
 .ink_sapphire_logo {
@@ -46,7 +46,15 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    background-color: #9fa884;
+    background-color: #9fa8b4;
+}
+
+.enchanted_logo {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-image: linear-gradient(to bottom right, #d3082f 5%, #f5b202 45%, #2a8934 52%, #0189c4 75%, #81377b 99%);
+    opacity: .4;
 }
 
 .ink_logo_img {
