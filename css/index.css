@@ -77,6 +77,7 @@
 .dropdown:hover .dropdown-content {
     max-height: 60%; /* Adjust to the content's full height */
     height: fit-content;
+    opacity: .925;
 }
 
 .dropdownlistOptions {
