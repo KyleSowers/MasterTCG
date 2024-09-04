@@ -111,9 +111,9 @@ img {
     writing-mode: vertical-lr;
 }
 
-.cardIDGold {
+.cardID {
     text-align: left;
-    margin-left: 45px;
+    margin-left: 15px;
     margin-top: 10px;
     color: black;
 }
