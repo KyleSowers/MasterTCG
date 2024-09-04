@@ -11,7 +11,42 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    background-color: #e5b337;
+    background-color: #f5b202;
+}
+
+.ink_amethyst_logo {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #81377b;
+}
+
+.ink_emerald_logo {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #2a8934;
+}
+
+.ink_ruby_logo {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #03082f;
+}
+
+.ink_sapphire_logo {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #0189c4;
+}
+
+.ink_steel_logo {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #9fa884;
 }
 
 .ink_logo_img {
