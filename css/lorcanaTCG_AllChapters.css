@@ -99,16 +99,29 @@ img {
 .cardCenter {
     display: flex;
     flex-direction: row;
-    width: 95%;
+    width: 220px;
     margin-left: 5%;
 }
 
 .cardSelectors {
     display: flex;
     flex-direction: column;
-    width: 15%;
-    margin-left: 5%;
+    width: 60px;
+    margin-left: 5px;
     writing-mode: vertical-lr;
+}
+
+.cardForm {
+    width: 100%;
+    accent-color: #2a8934;
+}
+
+.cardFormInput {
+    transform: scaleX(1.35) scaleY(1.35);
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
 }
 
 .cardID {
