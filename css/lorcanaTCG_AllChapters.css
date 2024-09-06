@@ -60,6 +60,7 @@
 .ink_logo_img {
     max-width: 100px;
     max-height: 100px;
+    margin-right: 100px;
 }
 
 img {
@@ -72,7 +73,8 @@ img {
 .cardContainer {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 50px;
     margin-bottom: 60px;
 }
 
