@@ -112,13 +112,14 @@ img {
 }
 
 .cardForm {
-    width: 100%;
+    width: 70px;
     accent-color: #2a8934;
 }
 
 .cardFormInput {
     transform: scaleX(1.35) scaleY(1.35);
-    margin-left: 15px;
+    /*margin-left: 15px;*/
+    width: 70px;
     margin-top: 10px;
     margin-bottom: 10px;
     align-self: center;
@@ -130,6 +131,7 @@ img {
     margin-top: 10px;
     color: black;
 }
+
 
 
 /*.cardRadio, .card{*/
