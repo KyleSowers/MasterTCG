@@ -118,6 +118,10 @@ img {
     accent-color: #2a8934;
 }
 
+.cardLabelText {
+    margin-left: 18px;
+}
+
 .cardFormInput {
     transform: scaleX(1.35) scaleY(1.35);
     /*margin-left: 15px;*/
