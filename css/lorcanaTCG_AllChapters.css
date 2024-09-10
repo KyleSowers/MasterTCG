@@ -118,8 +118,12 @@ img {
     accent-color: #2a8934;
 }
 
-.cardLabelText {
+.cardLabelText1 {
     margin-left: 18px;
+}
+
+.cardLabelText2 {
+    margin-left: 20px;
 }
 
 .cardLabelTextEnchanted {
