@@ -122,6 +122,10 @@ img {
     margin-left: 18px;
 }
 
+.cardLabelTextEnchanted {
+    margin-left: 5px;
+}
+
 .cardFormInput {
     transform: scaleX(1.35) scaleY(1.35);
     /*margin-left: 15px;*/
