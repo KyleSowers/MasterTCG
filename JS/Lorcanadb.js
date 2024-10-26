@@ -1,17 +1,12 @@
 //Lorcana Card JSON Database
 
-var LorcanaDB = {
+var Lorcanadb = {
     "firstChapter": [
         {
             "number": "001",
             "name": "Ariel",
             "subname": "On Human Legs",
-            "classification":
-                {
-                    "storyborn",
-                    "hero",
-                    "princess"
-                },
+            "classification": "storyborn hero princess",
             "cost": "4",
             "strength": "3",
             "willpower": "4",
@@ -23,12 +18,7 @@ var LorcanaDB = {
             "number": "002",
             "name": "Ariel",
             "subname": "Spectacular Singer",
-            "classification":
-                {
-                    "storyborn",
-                    "hero",
-                    "princess"
-                },
+            "classification": "storyborn hero princess",
             "cost": "3",
             "strength": "2",
             "willpower": "3",
@@ -40,12 +30,7 @@ var LorcanaDB = {
             "number": "003",
             "name": "Cinderella",
             "subname": "Gentle and Kind",
-            "classification":
-                {
-                    "storyborn",
-                    "hero",
-                    "princess"
-                },
+            "classification": "storyborn hero princess",
             "cost": "4",
             "strength": "2",
             "willpower": "5",
