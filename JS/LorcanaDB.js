@@ -37,7 +37,21 @@ var LorcanaDB = {
             "description": "MUSICAL DEBUT: When you play this character, look at the top 4 cards of your deck. You may reveal a song card and put it into your hand. Put the rest on the bottom of your deck in any order."
         },
         {
-
+            "number": "003",
+            "name": "Cinderella",
+            "subname": "Gentle and Kind",
+            "classification":
+                {
+                    "storyborn",
+                    "hero",
+                    "princess"
+                },
+            "cost": "4",
+            "strength": "2",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Javier Salas",
+            "description": "A WONDERFUL DREAM: Remove up to 3 damage from chosen Princess character"
         }
     ]
 }
