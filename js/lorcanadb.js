@@ -1,12 +1,14 @@
 //Lorcana Card JSON Database
 
-var Lorcanadb = {
+var lorcanadb = {
     "firstChapter": [
         {
             "number": "001",
             "name": "Ariel",
             "subname": "On Human Legs",
+            "ink": "Amber",
             "classification": "storyborn hero princess",
+            "rarity": "Uncommon",
             "cost": "4",
             "strength": "3",
             "willpower": "4",
@@ -18,7 +20,9 @@ var Lorcanadb = {
             "number": "002",
             "name": "Ariel",
             "subname": "Spectacular Singer",
+            "ink": "Amber",
             "classification": "storyborn hero princess",
+            "rarity": "Super Rare",
             "cost": "3",
             "strength": "2",
             "willpower": "3",
@@ -30,7 +34,9 @@ var Lorcanadb = {
             "number": "003",
             "name": "Cinderella",
             "subname": "Gentle and Kind",
+            "ink": "Amber",
             "classification": "storyborn hero princess",
+            "rarity": "Uncommon",
             "cost": "4",
             "strength": "2",
             "willpower": "5",
@@ -40,3 +46,27 @@ var Lorcanadb = {
         }
     ]
 }
+
+function lorcanaCardData() {
+    // console.log(lorcanadb.firstChapter)
+    var firstChapterList = lorcanadb.firstChapter;
+        $.forEach(firstChapterList, function(i, val) {
+            var number = val.number;
+            var name = val.name;
+            var subname = val.subname;
+            var ink = val.ink;
+            var classification = val.classification;
+            var rarity = val.rarity;
+            var cost = val.cost;
+            var strength = val.strength;
+            var willpower = val.willpower;
+            var loervalue = val.loreValue;
+            var artist = val.artist;
+            var description = val.description;
+
+
+
+        });
+}
+
+lorcanaCardData();
