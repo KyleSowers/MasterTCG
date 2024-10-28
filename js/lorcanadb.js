@@ -49,6 +49,38 @@ var lorcanadb = {
             "loreValue": "2",
             "artist": "Javier Salas",
             "description": "A WONDERFUL DREAM: Remove up to 3 damage from chosen Princess character"
+        },
+        {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_003-204_Cinderella-GentleAndKind.webp",
+            "number": "003",
+            "setId": "003/204\u2022EN\u20221",
+            "name": "Cinderella",
+            "subname": "Gentle and Kind",
+            "ink": "Amber",
+            "classification": "storyborn hero princess",
+            "rarity": "Uncommon",
+            "cost": "4",
+            "strength": "2",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Javier Salas",
+            "description": "A WONDERFUL DREAM: Remove up to 3 damage from chosen Princess character"
+        },
+        {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_003-204_Cinderella-GentleAndKind.webp",
+            "number": "003",
+            "setId": "003/204\u2022EN\u20221",
+            "name": "Cinderella",
+            "subname": "Gentle and Kind",
+            "ink": "Amber",
+            "classification": "storyborn hero princess",
+            "rarity": "Uncommon",
+            "cost": "4",
+            "strength": "2",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Javier Salas",
+            "description": "A WONDERFUL DREAM: Remove up to 3 damage from chosen Princess character"
         }
     ]
 }
