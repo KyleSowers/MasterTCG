@@ -146,3 +146,11 @@ img {
     width: 100vw;
     gap: 50px;
 }
+
+.cardSingleJSON {
+    flex: 1 1 20%;        /* Ensures each card takes up 20% of the row */
+    max-width: 19%;       /* Restricts each card to a max of 20% width */
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    margin-right: 5px;
+}

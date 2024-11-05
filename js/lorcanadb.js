@@ -6,7 +6,7 @@ var lorcanadb = {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_001-204_Ariel-OnHumanLegs.webp",
             "number": "001",
             "setId": "001/204\u2022EN\u20221",
-            "name": "Ariel",
+            "name": "ARIEL",
             "subname": "On Human Legs",
             "ink": "Amber",
             "classification": "Storyborn Hero Princess",
@@ -17,12 +17,11 @@ var lorcanadb = {
             "loreValue": "2",
             "artist": "Matthew Robert Davies",
             "description": "VOICELESS: This character can't '' to sing songs."
-        },
-        {
+        }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_002-204_Ariel-SpectacularSinger.webp",
             "number": "002",
             "setId": "002/204\u2022EN\u20221",
-            "name": "Ariel",
+            "name": "ARIEL",
             "subname": "Spectacular Singer",
             "ink": "Amber",
             "classification": "Storyborn Hero Princess",
@@ -33,12 +32,11 @@ var lorcanadb = {
             "loreValue": "1",
             "artist": "Alice Pisoni",
             "description": "MUSICAL DEBUT: When you play this character, look at the top 4 cards of your deck. You may reveal a song card and put it into your hand. Put the rest on the bottom of your deck in any order."
-        },
-        {
+        }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_003-204_Cinderella-GentleAndKind.webp",
             "number": "003",
             "setId": "003/204\u2022EN\u20221",
-            "name": "Cinderella",
+            "name": "CINDERELLA",
             "subname": "Gentle and Kind",
             "ink": "Amber",
             "classification": "Storyborn Hero Princess",
@@ -49,12 +47,11 @@ var lorcanadb = {
             "loreValue": "2",
             "artist": "Javier Salas",
             "description": "A WONDERFUL DREAM: Remove up to 3 damage from chosen Princess character."
-        },
-        {
+        }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_004-204_Goofy-Musketeer.webp",
             "number": "004",
             "setId": "004/204\u2022EN\u20221",
-            "name": "Goofy",
+            "name": "GOOFY",
             "subname": "Musketeer",
             "ink": "Amber",
             "classification": "Dreamborn, Hero, Musketeer",
@@ -65,12 +62,11 @@ var lorcanadb = {
             "loreValue": "1",
             "artist": "Jochem Van Gool",
             "description": "AND TWO FOR TEA!: When you play this character, you may remove up to 2 damage from each of your Musketeer characters."
-        },
-        {
+        }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_005-204_Hades-KingOfOlympus.webp",
             "number": "005",
             "setId": "005/204\u2022EN\u20221",
-            "name": "Hades",
+            "name": "HADES",
             "subname": "King of Olympus",
             "ink": "Amber",
             "classification": "Floodborn Villain King Deity",
@@ -81,6 +77,81 @@ var lorcanadb = {
             "loreValue": "1",
             "artist": "Alex Accorsi",
             "description": "SINISTER PLOT: This character gets +1 lore for each other Villain character you have in play."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_006-204_Hades-LordOfTheUnderworld.webp",
+            "number": "006",
+            "setId": "006/204\u2022EN\u20221",
+            "name": "HADES",
+            "subname": "Lord of the Underworld",
+            "ink": "Amber",
+            "classification": "Storyborn Villain Deity",
+            "rarity": "Rare",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Randy Bishop",
+            "description": "WELL OF SOULS: When you play this character, return a character card from your discard to your hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_007-204_HeiHei-BoatSnack.webp",
+            "number": "007",
+            "setId": "007/204\u2022EN\u20221",
+            "name": "HEIHEI",
+            "subname": "Boat Snack",
+            "ink": "Amber",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "1",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Jenna Gray",
+            "description": "Support: Whenever this character quests, you may add their strength to another chosen character's strength this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_008-204_Lefou-Bumbler.webp",
+            "number": "008",
+            "setId": "008/204\u2022EN\u20221",
+            "name": "LEFOU",
+            "subname": "Bumbler",
+            "ink": "Amber",
+            "classification": "Storyborn Ally",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "1",
+            "willpower": "2",
+            "loreValue": "2",
+            "artist": "Andrey Chumak",
+            "description": "LOYAL: If you have a character named Gaston in play, you pay 1 cost less to play this character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_009-204_Lilo-MakingAWish.webp",
+            "number": "009",
+            "setId": "009/204\u2022EN\u20221",
+            "name": "LILO",
+            "subname": "Making a Wish",
+            "ink": "Amber",
+            "classification": "Storyborn Hero",
+            "rarity": "Rare",
+            "cost": "1",
+            "strength": "1",
+            "willpower": "1",
+            "loreValue": "2",
+            "artist": "Dave Beauchene",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_010-204_Maximus-PalaceHorse.webp",
+            "number": "010",
+            "setId": "010/204\u2022EN\u20221",
+            "name": "MAXIMUS",
+            "subname": "Palace Horse",
+            "ink": "Amber",
+            "classification": "Storyborn Ally",
+            "rarity": "Super Rare",
+            "cost": "5",
+            "strength": "4",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Brian Welsz",
+            "description": "Bodyguard: This character may enter play exerted. An opposing character who challenges one of your characters must choose one with Bodyguard if able. Support: Whenever this character quests, you may add their strength to another chosen character's strength this turn."
         }
     ]
 }
