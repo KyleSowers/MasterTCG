@@ -452,14 +452,152 @@ var lorcanadb = {
             "loreValue": "",
             "artist": "Samanta Erdini",
             "description": "Return a character card from your discard to your hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_031-204_YouHaveForgottenMe.webp",
+            "number": "031",
+            "setId": "031/204\u2022EN\u20221",
+            "name": "YOU HAVE FORGOTTEN ME",
+            "subname": "",
+            "ink": "Amber",
+            "classification": "Action",
+            "rarity": "Uncommon",
+            "cost": "4",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Alice Pisoni",
+            "description": "Each opponent chooses and discards 2 cards."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_032-204_Dinglehopper.webp",
+            "number": "032",
+            "setId": "032/204\u2022EN\u20221",
+            "name": "DINGLEHOPPER",
+            "subname": "",
+            "ink": "Amber",
+            "classification": "Item",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Eri Welli",
+            "description": "STRAIGHTEN HAIR: Remove up to 1 damage from chosen character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_033-204_Lantern.webp",
+            "number": "033",
+            "setId": "033/204\u2022EN\u20221",
+            "name": "LANTERN",
+            "subname": "",
+            "ink": "Amber",
+            "classification": "Item",
+            "rarity": "Rare",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Eri Welli",
+            "description": "BIRTHDAY LIGHTS: You pay 1 cost less for the next character you play this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_034-204_UrsulasShellNecklace.webp",
+            "number": "030",
+            "setId": "030/204\u2022EN\u20221",
+            "name": "URSULAS SHELL NECKLACE",
+            "subname": "",
+            "ink": "Amber",
+            "classification": "Item",
+            "rarity": "Rare",
+            "cost": "3",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Jenna Gray",
+            "description": "NOW, SING: Whenever you play a song, you may pay 1 power to draw a card."
         }
+    ],
+    "firstChapterAmethyst": [
+        {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_035-204_Anna-HeirToArendelle.webp",
+            "number": "014",
+            "setId": "014/204\u2022EN\u20221",
+            "name": "MOANA",
+            "subname": "Of Motunui",
+            "ink": "Amber",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Rare",
+            "cost": "5",
+            "strength": "1",
+            "willpower": "6",
+            "loreValue": "3",
+            "artist": "Nicolas Kole",
+            "description": "WE CAN FIX IT: Whenever this character quests, you may ready your other Princess characters. They can't quest for the rest of this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_036-204_Archimedes-HighlyEducatedOwl.webp",
+            "number": "015",
+            "setId": "015/204\u2022EN\u20221",
+            "name": "MR. SMEE",
+            "subname": "Loyal First Mate",
+            "ink": "Amber",
+            "classification": "Dreamborn Ally Pirate",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "2",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Kamil Murzyn / Eri Welli",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_037-204_Dr.Facilier-AgentProvocateur.webp",
+            "number": "016",
+            "setId": "016/204\u2022EN\u20221",
+            "name": "PRINCE PHILLIP",
+            "subname": "Dragonslayer",
+            "ink": "Amber",
+            "classification": "Storyborn Hero Prince",
+            "rarity": "Uncommon",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Philipp Kruse",
+            "description": "HEROISM: When this character challenges and is banished, you may banish the challenged character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_038-204_Dr.Facilier-Charlatan.webp",
+            "number": "017",
+            "setId": "017/204\u2022EN\u20221",
+            "name": "PUMBAA",
+            "subname": "Friendly Warthog",
+            "ink": "Amber",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Jenna Gray",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_039-204_Dr.Facilier-RemarkableGentleman.webp",
+            "number": "018",
+            "setId": "018/204\u2022EN\u20221",
+            "name": "RAPUNZEL",
+            "subname": "Gifted With Healing",
+            "ink": "Amber",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Legendary",
+            "cost": "4",
+            "strength": "1",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Jochem Van Gool",
+            "description": "GLEAM AND GLOW: When you play this character, remove up to 3 damage from one of your characters. Draw a card for each 1 damage removed this way."
+        },
     ]
 }
 
 function lorcanaCardData() {
     // console.log(lorcanadb.firstChapter)
-    var firstChapterList = lorcanadb.firstChapterAmber;
-        $.each(firstChapterList, function(i, val) {
+    var firstChapterAmber = lorcanadb.firstChapterAmber;
+        $.each(firstChapterAmber, function(i, val) {
             var cardImg = val.cardImg
             var number = val.number;
             var setId = val.setId;
@@ -495,6 +633,44 @@ function lorcanaCardData() {
                 '           </div>')
 
         });
+
+    var firstChapterAmethyst = lorcanadb.firstChapterAmethyst;
+    $.each(firstChapterAmethyst, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
+
+        $('.cardContainer2').append('    <div class="cardSingleJSON">' +
+            '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold">'+subname+'</p>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID">'+setId+'</h3>\n' +
+            '           </div>')
+
+    });
 }
 
 lorcanaCardData();
