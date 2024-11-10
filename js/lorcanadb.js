@@ -1,7 +1,7 @@
 //Lorcana Card JSON Database
 
 var lorcanadb = {
-    "firstChapter": [
+    "firstChapterAmber": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_001-204_Ariel-OnHumanLegs.webp",
             "number": "001",
@@ -227,13 +227,163 @@ var lorcanadb = {
             "loreValue": "1",
             "artist": "Kamil Murzyn / Eri Welli",
             "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_016-204_PrincePhillip-Dragonslayer.webp",
+            "number": "016",
+            "setId": "016/204\u2022EN\u20221",
+            "name": "PRINCE PHILLIP",
+            "subname": "Dragonslayer",
+            "ink": "Amber",
+            "classification": "Storyborn Hero Prince",
+            "rarity": "Uncommon",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Philipp Kruse",
+            "description": "HEROISM: When this character challenges and is banished, you may banish the challenged character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_017-204_Pumbaa-FriendlyWarthog.webp",
+            "number": "017",
+            "setId": "017/204\u2022EN\u20221",
+            "name": "PUMBAA",
+            "subname": "Friendly Warthog",
+            "ink": "Amber",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Jenna Gray",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_018-204_Rapunzel-GiftedWithHealing.webp",
+            "number": "018",
+            "setId": "018/204\u2022EN\u20221",
+            "name": "RAPUNZEL",
+            "subname": "Gifted With Healing",
+            "ink": "Amber",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Legendary",
+            "cost": "4",
+            "strength": "1",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Jochem Van Gool",
+            "description": "GLEAM AND GLOW: When you play this character, remove up to 3 damage from one of your characters. Draw a card for each 1 damage removed this way."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_019-204_Sebastian-CourtComposer.webp",
+            "number": "019",
+            "setId": "019/204\u2022EN\u20221",
+            "name": "SEBASTIAN",
+            "subname": "Court Composer",
+            "ink": "Amber",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Isaiah Mesq",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_020-204_Simba-ProtectiveCub.webp",
+            "number": "020",
+            "setId": "020/204\u2022EN\u20221",
+            "name": "SIMBA",
+            "subname": "Protective Cub",
+            "ink": "Amber",
+            "classification": "Storyborn Hero Prince",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Filipe Laurentino",
+            "description": "Bodyguard: This character may enter play exerted. An opposing character who challenges one of your characters must choose one with Bodyguard if able."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_021-204_Stitch-CarefreeSurfer.webp",
+            "number": "021",
+            "setId": "021/204\u2022EN\u20221",
+            "name": "STITCH",
+            "subname": "Carefree Surfer",
+            "ink": "Amber",
+            "classification": "Dreamborn, Hero, Alien",
+            "rarity": "Legendary",
+            "cost": "7",
+            "strength": "4",
+            "willpower": "8",
+            "loreValue": "2",
+            "artist": "Marcel Berg",
+            "description": "OHANA: When you play this character, if you have 2 or more other characters in play, you may draw 2 cards."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_022-204_Stitch-NewDog.webp",
+            "number": "022",
+            "setId": "022/204\u2022EN\u20221",
+            "name": "STITCH",
+            "subname": "New Dog",
+            "ink": "Amber",
+            "classification": "Storyborn Hero Alien",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Alex Accorsi",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_023-204_Stitch-RockStar.webp",
+            "number": "023",
+            "setId": "023/204\u2022EN\u20221",
+            "name": "STITCH",
+            "subname": "Rockstar",
+            "ink": "Amber",
+            "classification": "Floodborn Hero Alien",
+            "rarity": "Super Rare",
+            "cost": "6",
+            "strength": "3",
+            "willpower": "5",
+            "loreValue": "3",
+            "artist": "Simangaliso Sibaya",
+            "description": "ADORING FANS: Whenever you play this character with cost 2 or less, you may exert them to draw a card."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_024-204_Timon-GrubRustler.webp",
+            "number": "024",
+            "setId": "024/204\u2022EN\u20221",
+            "name": "TIMON",
+            "subname": "Grub Rustler",
+            "ink": "Amber",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "1",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Juan Diego Leon",
+            "description": "TASTES LIKE CHICKEN: When you play this character, you may remove up to 1 damage from chosen character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_025-204_BeOurGuest.webp",
+            "number": "025",
+            "setId": "025/204\u2022EN\u20221",
+            "name": "BE OUR GUEST",
+            "subname": "",
+            "ink": "Amber",
+            "classification": "Action Song",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "R. La Barbara / L. Giammichele",
+            "description": "Look at the top four cards of your deck. You may reveal a character card and put it into your hand. Put the rest on the bottom of your deck in any order."
         }
     ]
 }
 
 function lorcanaCardData() {
     // console.log(lorcanadb.firstChapter)
-    var firstChapterList = lorcanadb.firstChapter;
+    var firstChapterList = lorcanadb.firstChapterAmber;
         $.each(firstChapterList, function(i, val) {
             var cardImg = val.cardImg
             var number = val.number;
