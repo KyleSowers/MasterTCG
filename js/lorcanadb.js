@@ -1540,6 +1540,7 @@ var lorcanadb = {
             "description": "SLASH: Chosen character gets +1 strength this turn. If a character named Aladdin is chosen, he gets +2 strength instead.)"
         },
     ],
+
     "firstChapterRuby": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_103-204_Abu-MischievousMonkey.webp\" alt=\"Abu: Mischievous Monkey",
@@ -2045,13 +2046,527 @@ var lorcanadb = {
             "ink": "Ruby",
             "classification": "Item",
             "rarity": "Rare",
-            "cost": "24",
+            "cost": "4",
             "strength": "",
             "willpower": "",
             "loreValue": "",
             "artist": "Kendall Hale",
             "description": "FINAL ENCHANTMENT: Banish this item - Banish chosen Villain character."
         },
+    ],
+
+    "firstChapterSapphire": [
+        {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_137-204_Ariel-WhoseitCollector.webp\" alt=\"Ariel: Whoseit Collector",
+            "number": "137",
+            "setId": "137/204\u2022EN\u20221",
+            "name": "ARIEL",
+            "subname": "Whoseit Collector",
+            "ink": "Sapphire",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Rare",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Hedvig Haggman-Sund",
+            "description": "LOOK AT THIS STUFF: Whenever you play an item, you may ready this character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_138-204_Aurora-BriarRose.webp\" alt=\"Aurora: Briar Rose",
+            "number": "138",
+            "setId": "138/204\u2022EN\u20221",
+            "name": "AURORA",
+            "subname": "Briar Rose",
+            "ink": "Sapphire",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "2",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Rosalia Radosti",
+            "description": "DISARMING BEAUTY: When you play this character, chosen character gets -2 strength this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_139-204_Aurora-DreamingGuardian.webp\" alt=\"Aurora: Dreaming Guardian",
+            "number": "139",
+            "setId": "139/204\u2022EN\u20221",
+            "name": "AURORA",
+            "subname": "Dreaming Guardian",
+            "ink": "Sapphire",
+            "classification": "Floodborn Hero Princess",
+            "rarity": "Super Rare",
+            "cost": "5",
+            "strength": "3",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Nicholas Kole",
+            "description": "PROTECTIVE EMBRACE: Your other characters gain Ward. (Opponents can't chose them except to challenge.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_140-204_Aurora-RegalPrincess.webp\" alt=\"Aurora: Regal Princess",
+            "number": "140",
+            "setId": "140/204\u2022EN\u20221",
+            "name": "AURORA",
+            "subname": "Regal Princess",
+            "ink": "Sapphire",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "2",
+            "artist": "Samanta Erdini",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_141-204_Belle-InventiveEngineer.webp\" alt=\"Belle: Inventive Engineer",
+            "number": "141",
+            "setId": "141/204\u2022EN\u20221",
+            "name": "BELLE",
+            "subname": "Inventive Engineer",
+            "ink": "Sapphire",
+            "classification": "Floodborn Hero Princess Inventor",
+            "rarity": "Uncommon",
+            "cost": "3",
+            "strength": "2",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Gabriel Romero / Pix Smith",
+            "description": "TINKER: Whenever this character quests, yuo pay 1 ink less for the next item you play this turn."
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_142-204_Belle-StrangeButSpecial.webp\" alt=\"Belle: Strange But Special",
+            "number": "142",
+            "setId": "142/204\u2022EN\u20221",
+            "name": "BELLE",
+            "subname": "Strange But Special",
+            "ink": "Sapphire",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Legendary",
+            "cost": "4",
+            "strength": "2",
+            "willpower": "4",
+            "loreValue": "1",
+            "artist": "Alice Pisoni",
+            "description": "READ A BOOK: During your turn, you may put an additional card from your hand into your inkwell face down. MY FAVORITE PART!: While you have 10 or more cards in your inkwell, this character gets +4 lore."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_143-204_ChiefTui-RespectedLeader.webp\" alt=\"Chief Tui: Respected Leader",
+            "number": "143",
+            "setId": "143/204\u2022EN\u20221",
+            "name": "CHIEF TUI",
+            "subname": "Respected Leader",
+            "ink": "Sapphire",
+            "classification": "Storyborn Mentor King",
+            "rarity": "Uncommon",
+            "cost": "7",
+            "strength": "3",
+            "willpower": "6",
+            "loreValue": "3",
+            "artist": "Pirel",
+            "description": "Support (Whenever this character quests, you may add their strength to another chosen character's strength in this turn.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_144-204_DonaldDuck-StruttingHisStuff.webp\" alt=\"Donald Duck: Strutting His Stuff",
+            "number": "144",
+            "setId": "144/204\u2022EN\u20221",
+            "name": "DONALD DUCK",
+            "subname": "Strutting His Stuff",
+            "ink": "Sapphire",
+            "classification": "Dreamborn Hero Inventor",
+            "rarity": "Common",
+            "cost": "5",
+            "strength": "4",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Cam Kendell",
+            "description": "Ward (Opponents can't choose this character except to challenge.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_145-204_Flounder-VoiceOfReason.webp\" alt=\"Flounder: Voice Of Reason",
+            "number": "145",
+            "setId": "145/204\u2022EN\u20221",
+            "name": "FLOUNDER",
+            "subname": "Voice Of Reason",
+            "ink": "Sapphire",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Brian Weisz",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_146-204_GrammaTala-Storyteller.webp\" alt=\"Gramma Tala: Storyteller",
+            "number": "146",
+            "setId": "146/204\u2022EN\u20221",
+            "name": "GRAMMA TALA",
+            "subname": "Storyteller",
+            "ink": "Sapphire",
+            "classification": "Storyborn Mentor",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "1",
+            "willpower": "1",
+            "loreValue": "1",
+            "artist": "Filipe Laurentino",
+            "description": "I WILL BE WITH YOU: When this character is banished, you may put this card into your inkwell facedown and exerted."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_147-204_Hades-InfernalSchemer.webp\" alt=\"Hades: Infernal Schemer",
+            "number": "147",
+            "setId": "147/204\u2022EN\u20221",
+            "name": "HADES",
+            "subname": "Infernal Schemer",
+            "ink": "Sapphire",
+            "classification": "Dreamborn Villain Deity",
+            "rarity": "Legendary",
+            "cost": "7",
+            "strength": "3",
+            "willpower": "6",
+            "loreValue": "2",
+            "artist": "Matthew Robert Davies",
+            "description": "IS THERE A DOWNSIDE TO THIS?: When you play this character, you may put chosen opposing character into their player's inkwell facedown."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_148-204_Jasmine-Disguised.webp\" alt=\"Jasmine: Disguised\"",
+            "number": "148",
+            "setId": "148204\u2022EN\u20221",
+            "name": "JASMINE",
+            "subname": "Disguised",
+            "ink": "Sapphire",
+            "classification": "Storyborn Princess",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "3",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "R. La Barbera / L. Giammichele",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_149-204_Jasmine-QueenofAgrabah.webp\" alt=\"Jasmine: Queen Of Agrabah",
+            "number": "149",
+            "setId": "149/204\u2022EN\u20221",
+            "name": "JASMINE",
+            "subname": "Queen Of Agrabah",
+            "ink": "Sapphire",
+            "classification": "Floodborn Hero Princess Queen",
+            "rarity": "Rare",
+            "cost": "5",
+            "strength": "2",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Filipe Laurentino",
+            "description": "CARETAKER: When you play this character and whenever she quests, you may remove up to 2 damage from each of your characters."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_150-204_Maleficent-SinisterVisitor.webp\" alt=\"Maleficent: Sinister Visitor",
+            "number": "150",
+            "setId": "150/204\u2022EN\u20221",
+            "name": "MALEFICENT",
+            "subname": "Sinister Visitor",
+            "ink": "Sapphire",
+            "classification": "Storyborn Villain Sorcerer",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Nicholas Kole",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_151-204_Maleficent-Uninvited.webp\" alt=\"Maleficent: Uninvited",
+            "number": "151",
+            "setId": "151/204\u2022EN\u20221",
+            "name": "MALEFICENT",
+            "subname": "Uninvited",
+            "ink": "Sapphire",
+            "classification": "Dreamborn Villain Sorcerer",
+            "rarity": "Rare",
+            "cost": "5",
+            "strength": "3",
+            "willpower": "6",
+            "loreValue": "3",
+            "artist": "Gaku Kumatori",
+            "description": ""
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_152-204_Maurice-WorldFamousInventor.webp\" alt=\"Maurice: World Famous Inventor",
+            "number": "152",
+            "setId": "152/204\u2022EN\u20221",
+            "name": "MAURICE",
+            "subname": "World Famous Inventor",
+            "ink": "Sapphire",
+            "classification": "Dreamborn Mentor inventor",
+            "rarity": "Rare",
+            "cost": "6",
+            "strength": "2",
+            "willpower": "7",
+            "loreValue": "2",
+            "artist": "Alex Accorsi",
+            "description": "GIVE IT A TRY: Whenever this character quests, you pay 2 ink less for the next item you play this turn. IT WORKS!: Whenever you play an item, you may draw a card."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_153-204_Merlin-SelfAppointedMentor.webp\" alt=\"Merlin: Self Appointed Mentor",
+            "number": "153",
+            "setId": "153/204\u2022EN\u20221",
+            "name": "MERLIN",
+            "subname": "Self Appointed Mentor",
+            "ink": "Sapphire",
+            "classification": "Dreamborn Mentor Sorcerer",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "1",
+            "artist": "Dave Beauchene",
+            "description": "Support (Whenever this character quests, you may add their strength to another chosen character's strength this turn.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_154-204_MickeyMouse-Detective.webp\" alt=\"Mickey Mouse: Detective",
+            "number": "154",
+            "setId": "154/204\u2022EN\u20221",
+            "name": "MICKEY MOUSE",
+            "subname": "Detective",
+            "ink": "Sapphire",
+            "classification": "Dreamborn Hero Detective",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "1",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Jared Nickeri",
+            "description": "GET A CLUE: When you play this character, you may put the top card of your deck into your inkwell facedown and exerted."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_155-204_Mufasa-KingOfThePrideLands.webp\" alt=\"Mufasa: King of the Pride Lands",
+            "number": "155",
+            "setId": "155/204\u2022EN\u20221",
+            "name": "MUFASA",
+            "subname": "King of the Pride Lands",
+            "ink": "Sapphire",
+            "classification": "Storyborn Mentor King",
+            "rarity": "Common",
+            "cost": "6",
+            "strength": "4",
+            "willpower": "6",
+            "loreValue": "3",
+            "artist": "Luis Huerta",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_156-204_Philoctetes-TrainerOfHeroes.webp\" alt=\"Philoctetes: Trainer of Heros",
+            "number": "156",
+            "setId": "156/204\u2022EN\u20221",
+            "name": "PHILOCTETES",
+            "subname": "Trainer of Heros",
+            "ink": "Sapphire",
+            "classification": "Storyborn Mentor",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "3",
+            "willpower": "1",
+            "loreValue": "1",
+            "artist": "Leonardo Giammichele",
+            "description": "Support (Whenever this character quests, you may add their strength to another chosen character's strength this turn.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_157-204_RobinHood-UnrivaledArcher.webp\" alt=\"Robin Hood: Unrivaled Archer",
+            "number": "157",
+            "setId": "157/204\u2022EN\u20221",
+            "name": "ROBIN HOOD",
+            "subname": "Unrivaled Archer",
+            "ink": "Sapphire",
+            "classification": "Storyborn Hero",
+            "rarity": "Super Rare",
+            "cost": "6",
+            "strength": "4",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "John Loren",
+            "description": "FEED THE POOR: When you play this character, if an opponent has more cards in their hand than you, draw a card. GOOD SHOT: During your turn, this character gains Evasive. (They can challenge with Evasive.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_158-204_Scar-Mastermind.webp\" alt=\"Scar: Mastermind",
+            "number": "158",
+            "setId": "158/204\u2022EN\u20221",
+            "name": "SCAR",
+            "subname": "Mastermind",
+            "ink": "Sapphire",
+            "classification": "Storyborn Villain",
+            "rarity": "Rare",
+            "cost": "6",
+            "strength": "5",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Bill Robinson",
+            "description": "INSIDIOUS PLOT: When you play this character, chosen opposing character gets -5 strength this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_159-204_Tamatoa-SoShiny.webp\" alt=\"Tamatoa: So Shiny",
+            "number": "159",
+            "setId": "159/204\u2022EN\u20221",
+            "name": "TAMATOA",
+            "subname": "So Shiny",
+            "ink": "Sapphire",
+            "classification": "Storyborn Villain",
+            "rarity": "Super Rare",
+            "cost": "8",
+            "strength": "5",
+            "willpower": "8",
+            "loreValue": "1",
+            "artist": "Leonardo Giammichele",
+            "description": "WHAT HAVE WE HERE?: When you play this character and wheneveer he quests, you may return an item card from your discard to your hand. GLAM: This character gets +1 lore for each item you have in play."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_160-204_Triton-TheSeaKing.webp\" alt=\"Triton: The Sea King",
+            "number": "160",
+            "setId": "160/204\u2022EN\u20221",
+            "name": "TRITON",
+            "subname": "The Sea King",
+            "ink": "Sapphire",
+            "classification": "Storyborn King",
+            "rarity": "Uncommon",
+            "cost": "7",
+            "strength": "5",
+            "willpower": "9",
+            "loreValue": "2",
+            "artist": "Cristian Romero",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_161-204_DevelopYourBrain.webp\" alt=\"Develop Your Brain",
+            "number": "161",
+            "setId": "161/204\u2022EN\u20221",
+            "name": "DEVELOP YOUR BRAIN",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Action",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": '"',
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Pao Young",
+            "description": "Look at the top 2 cards of your deck. Put one into your hand and the other on the bottom of the deck."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_162-204_IfItsNotBaroque.webp\" alt=\"If It's Not Baroque",
+            "number": "162",
+            "setId": "162/204\u2022EN\u20221",
+            "name": "IF IT'S NOT BAROQUE",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Action",
+            "rarity": "Rare",
+            "cost": "3",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Kenneth Anderson",
+            "description": "Return an item card from your discard to your hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_163-204_LetItGo.webp\" alt=\"Let It Go",
+            "number": "163",
+            "setId": "163/204\u2022EN\u20221",
+            "name": "LET IT GO",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Action Song",
+            "rarity": "Rare",
+            "cost": "5",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Milica Cellkovic",
+            "description": "Put chosen character into their player's inkwell facedown and exerted."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_164-204_One-Jump-Ahead.webp\" alt=\"One Jump Ahead",
+            "number": "164",
+            "setId": "164/204\u2022EN\u20221",
+            "name": "ONE JUMP AHEAD",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Action Song",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Bill Robinson",
+            "description": "Put the top card of your deck into your inkwell facedown and exerted."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_165-204_WorkTogether.webp\" alt=\"Work Together",
+            "number": "165",
+            "setId": "165/204\u2022EN\u20221",
+            "name": "WORK TOGETHER",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Action",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Bill Robinson",
+            "description": "Chosen character gets Suppoert this turn (Whenever they quest, you may add their strength to another chosen character's strength this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_166-204_CoconutBasket.webp\" alt=\"Coconut Basket",
+            "number": "166",
+            "setId": "166/204\u2022EN\u20221",
+            "name": "COCONUT BASKET",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Item",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Milica Cellkovic",
+            "description": "CONSIDER THE COCONUT: Whenever you play a character, you may remove up to 2 damage from chosen character."
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_167-204_EyeOfTheFates.webp\" alt=\"Eye Of The Fates",
+            "number": "167",
+            "setId": "167/204\u2022EN\u20221",
+            "name": "EYE OF THE FATES",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Item",
+            "rarity": "Uncommon",
+            "cost": "4",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Ron Baird",
+            "description": "SEE THE FUTURE: Chosen character gets +1 lore this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_168-204_FishboneQuill.webp\" alt=\"Fishbone Quill",
+            "number": "168",
+            "setId": "168/204\u2022EN\u20221",
+            "name": "FISHBONE QUILL",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Item",
+            "rarity": "Rare",
+            "cost": "3",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Tanisha Cherislin",
+            "description": "GO AHEAD AND SIGN: Put any card from your hand into your inkwell facedown."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_169-204_MagicGoldenFlower.webp\" alt=\"Magic Golden Flower",
+            "number": "169",
+            "setId": "169/204\u2022EN\u20221",
+            "name": "MAGIC GOLDEN FLOWER",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Item",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Cory Godbey",
+            "description": "HEALING POLLEN: Banish this item: Remove up to 3 damage from chosen character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_170-204_ScepterOfArendelle.webp\" alt=\"Scepter Of Arendelle",
+            "number": "170",
+            "setId": "170/204\u2022EN\u20221",
+            "name": "SCEPTER OF ARENDELLE",
+            "subname": "",
+            "ink": "Sapphire",
+            "classification": "Item",
+            "rarity": "Uncommon",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Grace Tran",
+            "description": "COMMAND: Chosen character gains Support this turn. (Whenever they quest, you may add their strength to another chosen character's strength this turn."
+        }
     ],
 
 }
@@ -2207,6 +2722,44 @@ function lorcanaCardData() {
                 '                </div>\n' +
                 '                <h3 class="cardID">'+setId+'</h3>\n' +
                 '           </div>')
+
+        });
+
+    var firstChapterSapphire = lorcanadb.firstChapterSapphire;
+    $.each(firstChapterSapphire, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
+
+        $('.cardContainer5').append('    <div class="cardSingleJSON">' +
+            '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold">'+subname+'</p>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID">'+setId+'</h3>\n' +
+            '           </div>')
 
         });
 }
