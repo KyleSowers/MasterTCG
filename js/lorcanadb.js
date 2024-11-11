@@ -1539,7 +1539,521 @@ var lorcanadb = {
             "artist": "Kendall Hale",
             "description": "SLASH: Chosen character gets +1 strength this turn. If a character named Aladdin is chosen, he gets +2 strength instead.)"
         },
-    ]
+    ],
+    "firstChapterRuby": [
+        {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_103-204_Abu-MischievousMonkey.webp\" alt=\"Abu: Mischievous Monkey",
+            "number": "103",
+            "setId": "103/204\u2022EN\u20221",
+            "name": "ABU",
+            "subname": "Mischievous Monkey",
+            "ink": "Ruby",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "3",
+            "willpower": "2",
+            "loreValue": "2",
+            "artist": "Oleg Yurkov",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_104-204_Aladdin-HeroicOutlaw.webp\" alt=\"Aladdin: Hero Outlaw",
+            "number": "104",
+            "setId": "104/204\u2022EN\u20221",
+            "name": "ALADDIN",
+            "subname": "Heroic Outlaw",
+            "ink": "Ruby",
+            "classification": "Floodborn Hero",
+            "rarity": "Super Rare",
+            "cost": "7",
+            "strength": "5",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Nicholas Kole",
+            "description": "DARING EXPLOIT: During your turn, whenever this character banishes another character in a challenge, you gain 2 lore and each opponent loses 2 lore."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_105-204_Aladdin-StreetRat.webp\" alt=\"Aladdin: Street Rat",
+            "number": "105",
+            "setId": "105/204\u2022EN\u20221",
+            "name": "ALADDIN",
+            "subname": "Street Rat",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Peter Brockhammer",
+            "description": "IMPROVISE: When you play this character, each opponent loses 1 lore."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_106-204_Captain-ColonelsLieutenant.webp\" alt=\"Captain: Colonels Lieutenant",
+            "number": "106",
+            "setId": "106/204\u2022EN\u20221",
+            "name": "CAPTAIN",
+            "subname": "Colonels Lieutenant",
+            "ink": "Ruby",
+            "classification": "Storyborn Ally Captain",
+            "rarity": "Uncommon",
+            "cost": "5",
+            "strength": "6",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Brian Weisz",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_107-204_CaptainHook-RuthlessPirate.webp\" alt=\"Captain Hook: Ruthless Pirate",
+            "number": "107",
+            "setId": "107/204\u2022EN\u20221",
+            "name": "CAPTAIN HOOK",
+            "subname": "Ruthless Pirate",
+            "ink": "Ruby",
+            "classification": "Storyborn Villain Pirate Captain",
+            "rarity": "Rare",
+            "cost": "7",
+            "strength": "5",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Cam Kendell",
+            "description": "YOU COWARD!: When this character is exerted, opposing characters with Evasive gain Reckless. (They can't quest and must challenge if able.)"
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_108-204_DonaldDuck-BoisterousFowl.webp\" alt=\"Donald Duck: Boisterous Fowl",
+            "number": "108",
+            "setId": "108/204\u2022EN\u20221",
+            "name": "DONALD DUCK",
+            "subname": "Boisterous Fowl",
+            "ink": "Ruby",
+            "classification": "Storyborn",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Kenneth Anderson",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_109-204_Elsa-IceSurfer.webp\" alt=\"Els: Ice Surfer",
+            "number": "109",
+            "setId": "109/204\u2022EN\u20221",
+            "name": "ELSA",
+            "subname": "On the Job",
+            "ink": "Ruby",
+            "classification": "Dreamborn Hero Queen Sorcerer",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "1",
+            "artist": "Alice Pisoni / Whitney Pollett",
+            "description": "THAT'S NO BLIZZARD: Whenever you play a character named Anna, ready this character. This character can't quest for the rest of this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_110-204_Gaston-ArrogantHunter.webp\" alt=\"Gaston: Arrogant Hunter",
+            "number": "110",
+            "setId": "110/204\u2022EN\u20221",
+            "name": "GASTON",
+            "subname": "Arrogant Hunter",
+            "ink": "Ruby",
+            "classification": "Storyborn Villain",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "4",
+            "willpower": "2",
+            "loreValue": "",
+            "artist": "Matthew Robert Davies",
+            "description": "RECKLESS (This character can't quest and must challenge each turn if able.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_111-204_Goofy-Daredevil.webp\" alt=\"Goofy: Daredevil",
+            "number": "111",
+            "setId": "111/204\u2022EN\u20221",
+            "name": "GOOFY",
+            "subname": "Daredevil",
+            "ink": "Ruby",
+            "classification": "Dreamborn Hero",
+            "rarity": "Common",
+            "cost": "5",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Kenneth Anderson",
+            "description": "EVASIVE (Only characters with Evasive can challenge this character.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_112-204_Lefou-Instigator.webp\" alt=\"Lefou: Instigator",
+            "number": "112",
+            "setId": "112/204\u2022EN\u20221",
+            "name": "LEFOU",
+            "subname": "Instigator",
+            "ink": "Ruby",
+            "classification": "Dreamborn Ally",
+            "rarity": "Rare",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Gaku Kumatori",
+            "description": "FAN THE FLAMES: When you play this characer, ready chosen character. They can't quest for the rest of this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_113-204_Maleficent-MonstrousDragon.webp\" alt=\"Maleficent: Monstrous Dragon",
+            "number": "113",
+            "setId": "113/204\u2022EN\u20221",
+            "name": "MALEFICENT",
+            "subname": "Monstrous Dragon",
+            "ink": "Ruby",
+            "classification": "Storyborn Villain Dragon",
+            "rarity": "Legendary",
+            "cost": "9",
+            "strength": "7",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Luis Huerta",
+            "description": "DRAGON FIRE: When you play this character, you may banish chosen character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_114-204_Maui-HeroToAll.webp\" alt=\"Maui: Hero to All",
+            "number": "114",
+            "setId": "114/204\u2022EN\u20221",
+            "name": "MAUI",
+            "subname": "Hero to All",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero Deity",
+            "rarity": "Rare",
+            "cost": "5",
+            "strength": "6",
+            "willpower": "5",
+            "loreValue": "",
+            "artist": "Pirel / Marco Giogianni",
+            "description": "Rush (This character can challenge the turn they're played.) Reckless (This character can't quest and must challenge each turn if able.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_115-204_MickeyMouse-BraveLittleTailor.webp\" alt=\"Mickey Mouse: Brave Little Tailor",
+            "number": "115",
+            "setId": "115/204\u2022EN\u20221",
+            "name": "MICKEY MOUSE",
+            "subname": "Brave Little Tailor",
+            "ink": "Ruby",
+            "classification": "Dreamborn Hero",
+            "rarity": "Legendary",
+            "cost": "8",
+            "strength": "5",
+            "willpower": "5",
+            "loreValue": "4",
+            "artist": "Nicholas Kole",
+            "description": "Evasive (Only characters with Evasive can challenge this character.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_116-204_MinnieMouse-AlwaysClassy.webp\" alt=\"Minnie Mouse: Always Classy",
+            "number": "116",
+            "setId": "116/204\u2022EN\u20221",
+            "name": "MINNIE MOUSE",
+            "subname": "Always Classy",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "1",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Kenneth Anderson",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_117-204_Moana-ChosenByTheOcean.webp\" alt=\"Moana: Chosen By The Ocean",
+            "number": "117",
+            "setId": "117/204\u2022EN\u20221",
+            "name": "MOANA",
+            "subname": "Chosen By The Ocean",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Uncommon",
+            "cost": "5",
+            "strength": "2",
+            "willpower": "6",
+            "loreValue": "2",
+            "artist": "Tanisha Cherislin",
+            "description": "THIS IS NOT WHO YOU ARE: When you play this character, you may banish chosen character named Te Ka."
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_118-204_Mulan-ImperialSoldier.webp\" alt=\"Mulan: Imperial Soldier",
+            "number": "118",
+            "setId": "118/204\u2022EN\u20221",
+            "name": "MULAN",
+            "subname": "Imperial Soldier",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero Princess",
+            "rarity": "Super Rare",
+            "cost": "5",
+            "strength": "4",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Mel Milton",
+            "description": "LEAD BY EXAMPLE: During your turn, whenever this character banishes another character in a challenge, your other characters get +1 lore this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_119-204_PeterPan-FearlessFighter.webp\" alt=\"Peter Pan: Fearless Fighter",
+            "number": "119",
+            "setId": "119/204\u2022EN\u20221",
+            "name": "PETER PAN",
+            "subname": "Fearless Fighter",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "3",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Anh Dang",
+            "description": "Rush (This character can challenge the turn they're played.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_120-204_Pongo-OlRascal.webp\" alt=\"Pongo: Ol Rascal",
+            "number": "120",
+            "setId": "120/204\u2022EN\u20221",
+            "name": "PONGO",
+            "subname": "Ol Rascal",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "2",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Brian Weisz",
+            "description": "Evasive (Only characters with Evasive can challenge this character.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_121-204_Rapunzel-LettingDownHerHair.webp\" alt=\"Rapunzel: Letting Down Her Hair",
+            "number": "121",
+            "setId": "121/204\u2022EN\u20221",
+            "name": "RAPUNZEL",
+            "subname": "Letting Down Her Hair",
+            "ink": "Ruby",
+            "classification": "Dreamborn Hero Princess",
+            "rarity": "Uncommon",
+            "cost": "6",
+            "strength": "5",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Clio Wolfensberger",
+            "description": "TANGLE: When you play this character, each opponent loses 1 lore."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_122-204_Scar-FieryUsurper.webp\" alt=\"Scar: Fiery Usurper",
+            "number": "122",
+            "setId": "122/204\u2022EN\u20221",
+            "name": "SCAR",
+            "subname": "Fiery Usurper",
+            "ink": "Ruby",
+            "classification": "Dreamborn Villain",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": "5",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Amber Kommavongsa",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_123-204_Scar-ShamelessFirebrand.webp\" alt=\"Scar: Shameless Firebrand",
+            "number": "123",
+            "setId": "123/204\u2022EN\u20221",
+            "name": "SCAR",
+            "subname": "Shameless Firebrand",
+            "ink": "Ruby",
+            "classification": "Floodborn Villain King",
+            "rarity": "Rare",
+            "cost": "8",
+            "strength": "6",
+            "willpower": "6",
+            "loreValue": "1",
+            "artist": "Jenna Gray",
+            "description": "ROUSING SPEECH: When you play this character, ready your characters with cost 3 or less. They can't quest for the rest of this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_124-204_SergeantTibbs-CourageousCat.webp\" alt=\"Sergeant Tibbs: Courageous Cat",
+            "number": "124",
+            "setId": "124/204\u2022EN\u20221",
+            "name": "SERGEANT TIBBS",
+            "subname": "Courageous Cat",
+            "ink": "Ruby",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Cory Godbey",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_125-204_Stitch-Abomination.webp\" alt=\"Stitch: Abomination",
+            "number": "125",
+            "setId": "125/204\u2022EN\u20221",
+            "name": "STITCH",
+            "subname": "Abomination",
+            "ink": "Ruby",
+            "classification": "Storyborn Hero Alien",
+            "rarity": "Rare",
+            "cost": "6",
+            "strength": "4",
+            "willpower": "6",
+            "loreValue": "3",
+            "artist": "Bill Robinson",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_126-204_TeKa-TheBurningOne.webp\" alt=\"TeKa: The Burning One",
+            "number": "126",
+            "setId": "092/204\u2022EN\u20221",
+            "name": "TE KA",
+            "subname": "The Burning One",
+            "ink": "Ruby",
+            "classification": "Storyborn Villain Deity",
+            "rarity": "Super Rare",
+            "cost": "6",
+            "strength": "8",
+            "willpower": "6",
+            "loreValue": "",
+            "artist": "Kamil Murzyn",
+            "description": "Reckless (This character can't quest and must challenge each turn if able.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_127-204_Tigger-WonderfulThing.webp\" alt=\"Tigger: Wonderful Thing",
+            "number": "127",
+            "setId": "127/204\u2022EN\u20221",
+            "name": "TIGGER",
+            "subname": "Wonderful Thing",
+            "ink": "Ruby",
+            "classification": "Storyborn Tigger",
+            "rarity": "Uncommon",
+            "cost": "6",
+            "strength": '"4',
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Kenneth Anderson",
+            "description": "Evasive (Only characters with Evasive can challenge this character.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_128-204_BePrepared.webp\" alt=\"Be Prepared",
+            "number": "128",
+            "setId": "128/204\u2022EN\u20221",
+            "name": "BE PREPARED",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Action Song",
+            "rarity": "Rare",
+            "cost": "7",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Jared Nickeri",
+            "description": "Banish all characters."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_129-204_CutToTheChase.webp\" alt=\"Cut To The Chase",
+            "number": "129",
+            "setId": "129/204\u2022EN\u20221",
+            "name": "CUT TO THE CHASE",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Action",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Ellie Horie",
+            "description": "Chosen character gets Rush this turn. (They can challenge the turn they're played.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_130-204_DragonFire.webp\" alt=\"Dragon Fire",
+            "number": "130",
+            "setId": "130/204\u2022EN\u20221",
+            "name": "DRAGON FIRE",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Action",
+            "rarity": "Uncommon",
+            "cost": "5",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Luis Huerta",
+            "description": "Banish chosen character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_131-204_FanTheFlames.webp\" alt=\"Fan The Flames",
+            "number": "131",
+            "setId": "131/204\u2022EN\u20221",
+            "name": "FAN THE FLAMES",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Action",
+            "rarity": "Uncommon",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Jenna Gray",
+            "description": "Ready chosen character. They can't quest for the rest of this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_132-204_HesGotASword.webp\" alt=\"He's Got A Sword",
+            "number": "132",
+            "setId": "132/204\u2022EN\u20221",
+            "name": "HE'S GOT A SWORD",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Action",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Koni",
+            "description": "Chosen character gets +2 strength this turn."
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_133-204_Tangle.webp\" alt=\"Tangle",
+            "number": "133",
+            "setId": "133/204\u2022EN\u20221",
+            "name": "TANGLE",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Action",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Eri Welli",
+            "description": "Each opponent loses 1 lore."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_134-204_PoisonedApple.webp\" alt=\"Poisoned Apple",
+            "number": "134",
+            "setId": "134/204\u2022EN\u20221",
+            "name": "POISONED APPLE",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Item",
+            "rarity": "Rare",
+            "cost": "3",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Andrew Trabbold",
+            "description": "TAKE A BITE...: 1 ink, Banish this item - Exert chosen character. If a Princess character is chosen, banish her instead."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_135-204_ShieldOfVirtue.webp\" alt=\"Shield Of Virtue",
+            "number": "135",
+            "setId": "135/204\u2022EN\u20221",
+            "name": "SHEILD OF VIRTUE",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Item",
+            "rarity": "Uncommon",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Eri Welli",
+            "description": "FIREPROOF: 3 ink - Ready chosen character. They can't quest for the rest of this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_136-204_SwordOfTruth.webp\" alt=\"Sword Of Truth",
+            "number": "136",
+            "setId": "136/204\u2022EN\u20221",
+            "name": "SWORD OF TRUTH",
+            "subname": "",
+            "ink": "Ruby",
+            "classification": "Item",
+            "rarity": "Rare",
+            "cost": "24",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Kendall Hale",
+            "description": "FINAL ENCHANTMENT: Banish this item - Banish chosen Villain character."
+        },
+    ],
+
 }
 
 function lorcanaCardData() {
@@ -1619,6 +2133,7 @@ function lorcanaCardData() {
                 '           </div>')
 
         });
+
     var firstChapterEmerald = lorcanadb.firstChapterEmerald;
         $.each(firstChapterEmerald, function(i, val) {
             var cardImg = val.cardImg
@@ -1637,6 +2152,44 @@ function lorcanaCardData() {
             var description = val.description;
 
             $('.cardContainer3').append('    <div class="cardSingleJSON">' +
+                '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
+                '                <p class="cardTitleGold">'+subname+'</p>\n' +
+                '                <div class="cardCenter">\n' +
+                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <div class="cardSelectors">\n' +
+                '                        <form action="#" method="POST" class="cardForm">\n' +
+                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                        </form>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '                <h3 class="cardID">'+setId+'</h3>\n' +
+                '           </div>')
+
+        });
+
+    var firstChapterRuby = lorcanadb.firstChapterRuby;
+        $.each(firstChapterRuby, function(i, val) {
+            var cardImg = val.cardImg
+            var number = val.number;
+            var setId = val.setId;
+            var name = val.name;
+            var subname = val.subname;
+            var ink = val.ink;
+            var classification = val.classification;
+            var rarity = val.rarity;
+            var cost = val.cost;
+            var strength = val.strength;
+            var willpower = val.willpower;
+            var loreValue = val.loreValue;
+            var artist = val.artist;
+            var description = val.description;
+
+            $('.cardContainer4').append('    <div class="cardSingleJSON">' +
                 '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
