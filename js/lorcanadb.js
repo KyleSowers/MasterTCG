@@ -521,7 +521,7 @@ var lorcanadb = {
             "setId": "035/204\u2022EN\u20221",
             "name": "ANNA",
             "subname": "Heir to Arendelle",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Hero Queen",
             "rarity": "Uncommon",
             "cost": "4",
@@ -536,7 +536,7 @@ var lorcanadb = {
             "setId": "036/204\u2022EN\u20221",
             "name": "ARCHIMEDES",
             "subname": "Highly Educated Owl",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Ally",
             "rarity": "Common",
             "cost": "1",
@@ -551,7 +551,7 @@ var lorcanadb = {
             "setId": "037/204\u2022EN\u20221",
             "name": "DR. FACILIER",
             "subname": "Agent Provocateur",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Floodborn Villain Sorcerer",
             "rarity": "Rare",
             "cost": "7",
@@ -566,7 +566,7 @@ var lorcanadb = {
             "setId": "038/204\u2022EN\u20221",
             "name": "DR. FACILIER",
             "subname": "Charlatan",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Villain Sorcerer",
             "rarity": "Common",
             "cost": "2",
@@ -581,7 +581,7 @@ var lorcanadb = {
             "setId": "039/204\u2022EN\u20221",
             "name": "DR. FACILIER",
             "subname": "Remarkable Gentleman",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Villain Sorcerer",
             "rarity": "Rare",
             "cost": "3",
@@ -596,7 +596,7 @@ var lorcanadb = {
             "setId": "040/204\u2022EN\u20221",
             "name": "ELSA",
             "subname": "Queen Regent",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Hero Queen Sorcerer",
             "rarity": "Common",
             "cost": "4",
@@ -611,7 +611,7 @@ var lorcanadb = {
             "setId": "041/204\u2022EN\u20221",
             "name": "ELSA",
             "subname": "Snow Queen",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Hero Queen Sorcerer",
             "rarity": "Uncommon",
             "cost": "3",
@@ -626,7 +626,7 @@ var lorcanadb = {
             "setId": "042/204\u2022EN\u20221",
             "name": "ELSA",
             "subname": "Spirit of Winter",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Floodborn Hero Queen Sorcerer",
             "rarity": "Legendary",
             "cost": "8",
@@ -641,7 +641,7 @@ var lorcanadb = {
             "setId": "043/204\u2022EN\u20221",
             "name": "FLOTSAM",
             "subname": "Ursula's Spy",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Ally",
             "rarity": "Rare",
             "cost": "5",
@@ -656,7 +656,7 @@ var lorcanadb = {
             "setId": "044/204\u2022EN\u20221",
             "name": "JAFAR",
             "subname": "Keeper of Secrets",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Villain Sorcerer",
             "rarity": "Rare",
             "cost": "4",
@@ -671,7 +671,7 @@ var lorcanadb = {
             "setId": "045/204\u2022EN\u20221",
             "name": "JAFAR",
             "subname": "Wicked Sorcerer",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Villain Sorcerer",
             "rarity": "Common",
             "cost": "4",
@@ -686,7 +686,7 @@ var lorcanadb = {
             "setId": "046/204\u2022EN\u20221",
             "name": "JETSAM",
             "subname": "Ursula's Spy",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Ally",
             "rarity": "Common",
             "cost": "4",
@@ -701,7 +701,7 @@ var lorcanadb = {
             "setId": "047/204\u2022EN\u20221",
             "name": "MAGIC BROOM",
             "subname": "Bucket Brigade",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Boom",
             "rarity": "Common",
             "cost": "2",
@@ -716,7 +716,7 @@ var lorcanadb = {
             "setId": "048/204\u2022EN\u20221",
             "name": "MALEFICENT",
             "subname": "Biding Her Time",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Villain Sorcerer",
             "rarity": "Rare",
             "cost": "1",
@@ -731,7 +731,7 @@ var lorcanadb = {
             "setId": "049/204\u2022EN\u20221",
             "name": "MALEFICENT",
             "subname": "Sorceress",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Villain Sorcerer",
             "rarity": "Common",
             "cost": "3",
@@ -746,7 +746,7 @@ var lorcanadb = {
             "setId": "050/204\u2022EN\u20221",
             "name": "MARSHMELLOW",
             "subname": "Persistent Guardian",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Ally",
             "rarity": "Super Rare",
             "cost": "6",
@@ -761,7 +761,7 @@ var lorcanadb = {
             "setId": "051/204\u2022EN\u20221",
             "name": "MICKEY MOUSE",
             "subname": "Wayward Sorcerer",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Sorcerer",
             "rarity": "Super Rare",
             "cost": "4",
@@ -776,7 +776,7 @@ var lorcanadb = {
             "setId": "052/204\u2022EN\u20221",
             "name": "OLAF",
             "subname": "Friendly Snowman",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Ally",
             "rarity": "Uncommon",
             "cost": "1",
@@ -791,7 +791,7 @@ var lorcanadb = {
             "setId": "053/204\u2022EN\u20221",
             "name": "PASCAL",
             "subname": "Rapunzels Companion",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Ally",
             "rarity": "Uncommon",
             "cost": "1",
@@ -806,7 +806,7 @@ var lorcanadb = {
             "setId": "054/204\u2022EN\u20221",
             "name": "RAFIKI",
             "subname": "Mysterious Sage",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Mentor Sorcerer",
             "rarity": "Uncommon",
             "cost": "3",
@@ -821,7 +821,7 @@ var lorcanadb = {
             "setId": "055/204\u2022EN\u20221",
             "name": "SVEN",
             "subname": "Official Ice Deliverer",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Ally",
             "rarity": "Uncommon",
             "cost": "6",
@@ -834,9 +834,9 @@ var lorcanadb = {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_056-204_TheQueen-WickedandVain.webp",
             "number": "056",
             "setId": "056/204\u2022EN\u20221",
-            "name": "ETHE QUEEN",
+            "name": "THE QUEEN",
             "subname": "Wicked and Vain",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Villain Queen",
             "rarity": "Super Rare",
             "cost": "5",
@@ -851,7 +851,7 @@ var lorcanadb = {
             "setId": "057/204\u2022EN\u20221",
             "name": "THE WARDROBE",
             "subname": "Belle's Confidant",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Ally",
             "rarity": "Common",
             "cost": "3",
@@ -866,7 +866,7 @@ var lorcanadb = {
             "setId": "058/204\u2022EN\u20221",
             "name": "TINKER BELL",
             "subname": "Peter Pan's Ally",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Ally Fairy",
             "rarity": "Common",
             "cost": "5",
@@ -881,11 +881,11 @@ var lorcanadb = {
             "setId": "059/204\u2022EN\u20221",
             "name": "URSULA",
             "subname": "Power Hungry",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Villain Sorcerer",
             "rarity": "Legendary",
             "cost": "7",
-            "strength": 2,
+            "strength": "2",
             "willpower": "8",
             "loreValue": "3",
             "artist": "Simangaliso Sibaya",
@@ -896,7 +896,7 @@ var lorcanadb = {
             "setId": "060/204\u2022EN\u20221",
             "name": "YZMA",
             "subname": "Alchemist",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Dreamborn Villain Sorcerer",
             "rarity": "Common",
             "cost": "2",
@@ -911,7 +911,7 @@ var lorcanadb = {
             "setId": "061/204\u2022EN\u20221",
             "name": "ZEUS",
             "subname": "God of Lightning",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Storyborn Deity",
             "rarity": "Rare",
             "cost": "4",
@@ -926,7 +926,7 @@ var lorcanadb = {
             "setId": "062/204\u2022EN\u20221",
             "name": "BEFUDDLE",
             "subname": "",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Action",
             "rarity": "Uncommon",
             "cost": "1",
@@ -941,7 +941,7 @@ var lorcanadb = {
             "setId": "063/204\u2022EN\u20221",
             "name": "FREEZE",
             "subname": "",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Action",
             "rarity": "Common",
             "cost": "2",
@@ -956,7 +956,7 @@ var lorcanadb = {
             "setId": "064/204\u2022EN\u20221",
             "name": "FRIENDS ON THE OTHER SIDE",
             "subname": "",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Action Song",
             "rarity": "Common",
             "cost": "3",
@@ -971,7 +971,7 @@ var lorcanadb = {
             "setId": "050/204\u2022EN\u20221",
             "name": "REFLECTION",
             "subname": "",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Action Song",
             "rarity": "Uncommon",
             "cost": "1",
@@ -986,7 +986,7 @@ var lorcanadb = {
             "setId": "066/204\u2022EN\u20221",
             "name": "MAGIC MIRROR",
             "subname": "",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Item",
             "rarity": "Rare",
             "cost": "2",
@@ -1001,7 +1001,7 @@ var lorcanadb = {
             "setId": "067/204\u2022EN\u20221",
             "name": "URSULA'S CAULDRON",
             "subname": "",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Item",
             "rarity": "Uncommon",
             "cost": "2",
@@ -1016,7 +1016,7 @@ var lorcanadb = {
             "setId": "068/204\u2022EN\u20221",
             "name": "WHITE RABBIT'S POCKET WATCH",
             "subname": "",
-            "ink": "Ameethyst",
+            "ink": "Amethyst",
             "classification": "Item",
             "rarity": "Rare",
             "cost": "3",
@@ -1025,6 +1025,519 @@ var lorcanadb = {
             "loreValue": "",
             "artist": "Kamil Murzyn",
             "description": "I'M LATE!: Pay, 1 ink - Chosen character gains Rush this turn. (They can challenge the turn they're played.)"
+        },
+    ],
+    "firstChapterEmerald": [
+        {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_069-204_Aladdin-PrinceAli.webp",
+            "number": "069",
+            "setId": "069/204\u2022EN\u20221",
+            "name": "ALADDIN",
+            "subname": "Prince Ali",
+            "ink": "Emerald",
+            "classification": "Storyborn Hero Prince",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Lauren Walsh",
+            "description": "WARD (Opponents can't choose this character execpt to challenge.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_070-204_Beast-Wolfsbane.webp",
+            "number": "070",
+            "setId": "070/204\u2022EN\u20221",
+            "name": "BEAST",
+            "subname": "Wolfsbane",
+            "ink": "Emerald",
+            "classification": "Dreamborn Hero Prince",
+            "rarity": "Legendary",
+            "cost": "5",
+            "strength": "4",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Jeff Murchie",
+            "description": "ROAR: When you play this character, exert all opposing damaged characters. RUSH (This character can challenge the turn they're played)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_071-204_CheshireCat-NotAllThere.webp",
+            "number": "071",
+            "setId": "071/204\u2022EN\u20221",
+            "name": "CHESHIRE CAT",
+            "subname": "Not All There",
+            "ink": "Emerald",
+            "classification": "Storyborn",
+            "rarity": "Uncommon",
+            "cost": "3",
+            "strength": "0",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Caner Soylu",
+            "description": "LOOSE SOMETHING?: When this character is challenged and banished, banish the challenging character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_072-204_CruellaDeVil-MiserableAsUsual.webp",
+            "number": "072",
+            "setId": "072/204\u2022EN\u20221",
+            "name": "CRUELLA DE VIL",
+            "subname": "Miserable as Usual",
+            "ink": "Emerald",
+            "classification": "Storyborn Villain",
+            "rarity": "Rare",
+            "cost": "2",
+            "strength": "1",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Nicholas Kole",
+            "description": "YOU'LL BE SORRY!: When this character is challenged and banished, you may return chosen character to their player's hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_073-204_DukeOfWeselton-OpportunisticOfficial.webp",
+            "number": "073",
+            "setId": "073/204\u2022EN\u20221",
+            "name": "DUKE OF WESELTON",
+            "subname": "Opportunistic Official",
+            "ink": "Emerald",
+            "classification": "Storyborn Villain",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "R. La Barbera / L. Giammichele",
+            "description": ""
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_074-204_FlynnRider-CharmingRogue.webp\" alt=\"Flynn Rider: Charming Rogue",
+            "number": "074",
+            "setId": "074/204\u2022EN\u20221",
+            "name": "FLYNN RIDER",
+            "subname": "Charming Rogue",
+            "ink": "Emerald",
+            "classification": "Storyborn Hero Prince",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "1",
+            "willpower": "2",
+            "loreValue": "2",
+            "artist": "Leonardo Giammichele",
+            "description": "HERE COMES THE SMOLDER: Whanever this character is challenged, the  challenging player chooses and discards a card."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_075-204_Genie-OntheJob.webp\" alt=\"Genie: On the Job",
+            "number": "075",
+            "setId": "075/204\u2022EN\u20221",
+            "name": "GENIE",
+            "subname": "On the Job",
+            "ink": "Emerald",
+            "classification": "Storyborn Ally",
+            "rarity": "Super Rare",
+            "cost": "6",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Giulia Riva",
+            "description": "DISAPPEAR: When you play this character, you may return chosen character to their player's hand. EVASIVE (Only characters with Evasive can challenge this character.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_076-204_Genie-PowersUnleashed.webp\" alt=\"Genie: Powers Unleashed",
+            "number": "076",
+            "setId": "076/204\u2022EN\u20221",
+            "name": "GENIE",
+            "subname": "Powers Unleashed",
+            "ink": "Emerald",
+            "classification": "Floodborn Hero",
+            "rarity": "Rare",
+            "cost": "8",
+            "strength": "3",
+            "willpower": "5",
+            "loreValue": "3",
+            "artist": "Javier Salas",
+            "description": "PHENOMENAL COSMIC POWER!: Whenever this character quests, you play an action with cost 5 or less for free. EVASIVE (Only characters with Evasive can challenge this character.) SHIFT 6 (You may pay 6 ink to play this on top of one of your characters named Genie.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_077-204_Genie-TheEverImpressive.webp\" alt=\"Genie: The Ever Impressive",
+            "number": "077",
+            "setId": "077/204\u2022EN\u20221",
+            "name": "GENIE",
+            "subname": "The Ever Impressive",
+            "ink": "Emerald",
+            "classification": "Dreamborn Ally",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Matt Chapman",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/Lorcanach1_078-204_Hans-SchemingPrince.webp\" alt=\"Hans: Scheming Prince",
+            "number": "078",
+            "setId": "078/204\u2022EN\u20221",
+            "name": "HANS",
+            "subname": "Scheming Prince",
+            "ink": "Emerald",
+            "classification": "Storyborn Villain Prince",
+            "rarity": "Rare",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "3",
+            "loreValue": "3",
+            "artist": "Massimiliano Narciso",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_079-204_Horace-NoGoodScoundrel.webp\" alt=\"Horace: No Good Scoundrel",
+            "number": "079",
+            "setId": "079/204\u2022EN\u20221",
+            "name": "HORACE",
+            "subname": "No-Good Scoundrel",
+            "ink": "Emerald",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "4",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Isaiah Masq",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_080-204_Iago-LoudMouthedParrot.webp\" alt=\"Iago: Loud Mouthed Parrot",
+            "number": "080",
+            "setId": "080/204\u2022EN\u20221",
+            "name": "IAGO",
+            "subname": "Load-Mouthed Parrot",
+            "ink": "Emerald",
+            "classification": "Storyborn Ally",
+            "rarity": "Rare",
+            "cost": "3",
+            "strength": "1",
+            "willpower": "4",
+            "loreValue": "1",
+            "artist": "Brian Weisz",
+            "description": "YOU GOT A PROBLEM?: Chosen character gains Reckless during their next turn. (They can't quest and must challenge if able.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_081-204_Jasper-CommonCrook.webp\" alt=\"Jasper: Common Crook",
+            "number": "081",
+            "setId": "081/204\u2022EN\u20221",
+            "name": "JASPER",
+            "subname": "Common Crook",
+            "ink": "Emerald",
+            "classification": "Storyborn Ally",
+            "rarity": "Uncommon",
+            "cost": "3",
+            "strength": "2",
+            "willpower": "4",
+            "loreValue": "1",
+            "artist": "Jochem Van Gool",
+            "description": "PUPPYNAPPING: Whenever this character quests, chosen opposing character can't quest during their next turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_082-204_JohnSilver-AlienPirate.webp\" alt=\"John Silver: Alien Pirate",
+            "number": "082",
+            "setId": "082/204\u2022EN\u20221",
+            "name": "JOHN SILVER",
+            "subname": "Alien Pirate",
+            "ink": "Emerald",
+            "classification": "Storyborn Villain Alien Pirate Captain",
+            "rarity": "Legendary",
+            "cost": "6",
+            "strength": "5",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Duyen Nguyen / Jared Nickeri",
+            "description": "PICK YOUR FIGHTS: When you play this character and whenever he quests, chosen opposing character gains Reckless during their next turn. (They can't quest and must challenge if able.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_083-204_JumbaJookiba-RenegadeScientist.webp\" alt=\"Jumba Jookiba: Renegade Scientist",
+            "number": "083",
+            "setId": "083/204\u2022EN\u20221",
+            "name": "JUMBA JOOKIBA",
+            "subname": "Renegade Scientist",
+            "ink": "Emerald",
+            "classification": "Dreamborn Alien Inventor",
+            "rarity": "Uncommon",
+            "cost": "5",
+            "strength": "4",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Milica Celikovic",
+            "description": ""
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_084-204_Kuzco-TemperamentalEmperor.webp\" alt=\"Kuzco: Temperamental Emperor",
+            "number": "084",
+            "setId": "084/204\u2022EN\u20221",
+            "name": "KUZCO",
+            "subname": "Temperamental Emperor",
+            "ink": "Emerald",
+            "classification": "Storyborn King",
+            "rarity": "Rare",
+            "cost": "5",
+            "strength": "2",
+            "willpower": "4",
+            "loreValue": "3",
+            "artist": "Grace Tran",
+            "description": "NO TOUCHY!: When this character is challenged and banished, you may banish the challenging character. WARD (Opponents can't choose this character except to challenge.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_085-204_LadyTremaine-WickedStepmother.webp\" alt=\"Lady Tremaine: Wicked Stepmother",
+            "number": "085",
+            "setId": "085/204\u2022EN\u20221",
+            "name": "LADY TERMAINE",
+            "subname": "Wicked Stepmother",
+            "ink": "Emerald",
+            "classification": "Dreamborn Villain",
+            "rarity": "Rare",
+            "cost": "6",
+            "strength": "1",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Leonardo Giammichele",
+            "description": "DO IT AGAIN!: When you play this character, you may return an action card from your discard to your hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_086-204_MadHatter-GraciousHost.webp\" alt=\"Mad Hatter: Gracious Host",
+            "number": "086",
+            "setId": "086/204\u2022EN\u20221",
+            "name": "MAD HATTER",
+            "subname": "Gracious Host",
+            "ink": "Emerald",
+            "classification": "Storyborn",
+            "rarity": "Uncommon",
+            "cost": "5",
+            "strength": "2",
+            "willpower": "4",
+            "loreValue": "3",
+            "artist": "Rosa la Barbera",
+            "description": "TEA PARTY: Whenever this character is challenged, you may draw a card."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_087-204_Megara-PullingTheStrings.webp\" alt=\"Megara: Pulling The Strings",
+            "number": "087",
+            "setId": "087/204\u2022EN\u20221",
+            "name": "MEGARA",
+            "subname": "Pulling the Strings",
+            "ink": "Emerald",
+            "classification": "Dreamborn Ally",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "2",
+            "willpower": "1",
+            "loreValue": "1",
+            "artist": "Aubrey Archer",
+            "description": "WONDER BOY: When you play this character, chosen character gets +2 strength this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_088-204_MickeyMouse-ArtfulRogue.webp\" alt=\"Mickey Mouse: Artful Rogue",
+            "number": "088",
+            "setId": "088/204\u2022EN\u20221",
+            "name": "MICKEY MOUSE",
+            "subname": "Artful Rogue",
+            "ink": "Emerald",
+            "classification": "Floodborn Hero",
+            "rarity": "Super Rare",
+            "cost": "7",
+            "strength": "6",
+            "willpower": "5",
+            "loreValue": "2",
+            "artist": "Alex Accorsi / Kendall Hale",
+            "description": "MISDIRECTION: When you play an action, chosen opposing character can't quest during their next turn. SHIFT 5 (You may pay 5 ink to play this on top of one of your characters named Mickey Mouse.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_089-204_MickeyMouse-SteamboatPilot.webp\" alt=\"Mickey Mouse: Steamboat Pilot",
+            "number": "089",
+            "setId": "089/204\u2022EN\u20221",
+            "name": "MICKEY MOUSE",
+            "subname": "Steamboat Pilot",
+            "ink": "Emerald",
+            "classification": "Storyborn Hero Captain",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "1",
+            "artist": "Juan Diego Leon",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_090-204_MotherGothel-SelfishManipulator.webp\" alt=\"Mother Gothel: Selfish Manipulator",
+            "number": "090",
+            "setId": "090/204\u2022EN\u20221",
+            "name": "MOTHER GOTHEL",
+            "subname": "Shelfish Manipulator",
+            "ink": "Emerald",
+            "classification": "Storyborn Villain",
+            "rarity": "Super Rare",
+            "cost": "6",
+            "strength": "3",
+            "willpower": "6",
+            "loreValue": "2",
+            "artist": "Javier Salas",
+            "description": "SKIP THE DRAMA, STAY WITH MAMMA: While this character is exerted, opposing characters can't quest."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_091-204_PeterPan-NeverLanding.webp\" alt=\"Peter Pan: Never Landing",
+            "number": "091",
+            "setId": "091/204\u2022EN\u20221",
+            "name": "PETER PAN",
+            "subname": "Never Landing",
+            "ink": "Emerald",
+            "classification": "Dreamborn Hero",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "3",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Koni",
+            "description": "EVASIVE (Only characters with Evasive can challenge this character.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_092-204_Tamatoa-DrabLittleCrab.webp\" alt=\"Tamatoa: Drab Little Crab",
+            "number": "092",
+            "setId": "092/204\u2022EN\u20221",
+            "name": "TAMATOA",
+            "subname": "Drab Little Crab",
+            "ink": "Emerald",
+            "classification": "Dreamborn",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "1",
+            "willpower": "4",
+            "loreValue": "1",
+            "artist": "Jeff Murchie",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_093-204_TinkerBell-MostHelpful.webp\" alt=\"Tinkerbell: Most Helpful",
+            "number": "093",
+            "setId": "093/204\u2022EN\u20221",
+            "name": "TINKER BELL",
+            "subname": "Most Helpful",
+            "ink": "Emerald",
+            "classification": "Storyborn Ally Fairy",
+            "rarity": "Common",
+            "cost": "4",
+            "strength": '"2',
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Caner Soylu",
+            "description": "PIXIE DUST: When you play this character, chosen character gains Evasive this turn. EVASIVE (Only characters with Evasive can challenge this character.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_094-204_DoItAgain.webp\" alt=\"Do It Again",
+            "number": "094",
+            "setId": "094/204\u2022EN\u20221",
+            "name": "DO IT AGAIN!",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Action",
+            "rarity": "Rare",
+            "cost": "3",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Ellie Horie",
+            "description": "Return an action card from your discard to your hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_095-204_MotherKnowsBest.webp\" alt=\"Mother Knows Best",
+            "number": "095",
+            "setId": "095/204\u2022EN\u20221",
+            "name": "MOTHER KNOWS BEST",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Action Song",
+            "rarity": "Uncommon",
+            "cost": "",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "R. La Barbera / L. Giammichele",
+            "description": "Return chosen character to their player's hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_096-204_Stampede.webp\" alt=\"Stampede",
+            "number": "096",
+            "setId": "096/204\u2022EN\u20221",
+            "name": "STAMPEDE",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Action",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Matt Chapman",
+            "description": "Deal 2 damage to chosen damaged character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_097-204_StealFromTheRich.webp\" alt=\"Steal From The Rich",
+            "number": "097",
+            "setId": "097/204\u2022EN\u20221",
+            "name": "STEAL FROM THE RICH",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Action",
+            "rarity": "Rare",
+            "cost": "5",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Hedvig Haggman-Sund",
+            "description": "Whenever one of your characters quests this turn, each opponent loses 1 lore."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_098-204_SuddenChill.webp\" alt=\"Sudden Chill",
+            "number": "098",
+            "setId": "098/204\u2022EN\u20221",
+            "name": "SUDDEN CHILL",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Action Song",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Giulia Riva",
+            "description": "Each opponent chooses and discards a card."
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_099-204_TheBeastIsMine.webp\" alt=\"The Beast Is Mine",
+            "number": "099",
+            "setId": "099/204\u2022EN\u20221",
+            "name": "THE BEAST IS MINE",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Action",
+            "rarity": "Uncommon",
+            "cost": "3",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Matthew Robert Davies",
+            "description": "Chosen character gains Reckless during their next turn. (They can't quest and must challange if able.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_100-204_ViciousBetrayal.webp\" alt=\"Vicious Betrayal",
+            "number": "100",
+            "setId": "100/204\u2022EN\u20221",
+            "name": "VICIOUS BETRAYAL",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Action",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Michaela Martin",
+            "description": "Chosen character gets +2 strength this turm. If a Villain character is chosen, they get +3 strength instead."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_101-204_Dr.FaciliersCards.webp\" alt=\"Dr. Facilier's Cards",
+            "number": "101",
+            "setId": "101/204\u2022EN\u20221",
+            "name": "DR. FACILIER'S CARDS",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Item",
+            "rarity": "Uncommon",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Koni",
+            "description": "THE CARDS WILL TELL: You pay 1 ink less for the next action you play this turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_102-204_StolenScimitar.webp\" alt=\"Stolen Scimitar",
+            "number": "102",
+            "setId": "102/204\u2022EN\u20221",
+            "name": "STOLEN SCIMITAR",
+            "subname": "",
+            "ink": "Emerald",
+            "classification": "Item",
+            "rarity": "Common",
+            "cost": "2",
+            "strength": "",
+            "willpower": "",
+            "loreValue": "",
+            "artist": "Kendall Hale",
+            "description": "SLASH: Chosen character gets +1 strength this turn. If a character named Aladdin is chosen, he gets +2 strength instead.)"
         },
     ]
 }
@@ -1070,42 +1583,79 @@ function lorcanaCardData() {
         });
 
     var firstChapterAmethyst = lorcanadb.firstChapterAmethyst;
-    $.each(firstChapterAmethyst, function(i, val) {
-        var cardImg = val.cardImg
-        var number = val.number;
-        var setId = val.setId;
-        var name = val.name;
-        var subname = val.subname;
-        var ink = val.ink;
-        var classification = val.classification;
-        var rarity = val.rarity;
-        var cost = val.cost;
-        var strength = val.strength;
-        var willpower = val.willpower;
-        var loreValue = val.loreValue;
-        var artist = val.artist;
-        var description = val.description;
+        $.each(firstChapterAmethyst, function(i, val) {
+            var cardImg = val.cardImg
+            var number = val.number;
+            var setId = val.setId;
+            var name = val.name;
+            var subname = val.subname;
+            var ink = val.ink;
+            var classification = val.classification;
+            var rarity = val.rarity;
+            var cost = val.cost;
+            var strength = val.strength;
+            var willpower = val.willpower;
+            var loreValue = val.loreValue;
+            var artist = val.artist;
+            var description = val.description;
 
-        $('.cardContainer2').append('    <div class="cardSingleJSON">' +
-            '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
-            '                <p class="cardTitleGold">'+subname+'</p>\n' +
-            '                <div class="cardCenter">\n' +
-            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
-            '                    <div class="cardSelectors">\n' +
-            '                        <form action="#" method="POST" class="cardForm">\n' +
-            '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-            '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
-            '                            </label>\n' +
-            '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-            '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
-            '                            </label>\n' +
-            '                        </form>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <h3 class="cardID">'+setId+'</h3>\n' +
-            '           </div>')
+            $('.cardContainer2').append('    <div class="cardSingleJSON">' +
+                '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
+                '                <p class="cardTitleGold">'+subname+'</p>\n' +
+                '                <div class="cardCenter">\n' +
+                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <div class="cardSelectors">\n' +
+                '                        <form action="#" method="POST" class="cardForm">\n' +
+                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                        </form>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '                <h3 class="cardID">'+setId+'</h3>\n' +
+                '           </div>')
 
-    });
+        });
+    var firstChapterEmerald = lorcanadb.firstChapterEmerald;
+        $.each(firstChapterEmerald, function(i, val) {
+            var cardImg = val.cardImg
+            var number = val.number;
+            var setId = val.setId;
+            var name = val.name;
+            var subname = val.subname;
+            var ink = val.ink;
+            var classification = val.classification;
+            var rarity = val.rarity;
+            var cost = val.cost;
+            var strength = val.strength;
+            var willpower = val.willpower;
+            var loreValue = val.loreValue;
+            var artist = val.artist;
+            var description = val.description;
+
+            $('.cardContainer3').append('    <div class="cardSingleJSON">' +
+                '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
+                '                <p class="cardTitleGold">'+subname+'</p>\n' +
+                '                <div class="cardCenter">\n' +
+                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <div class="cardSelectors">\n' +
+                '                        <form action="#" method="POST" class="cardForm">\n' +
+                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                        </form>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '                <h3 class="cardID">'+setId+'</h3>\n' +
+                '           </div>')
+
+        });
 }
 
 lorcanaCardData();
