@@ -2601,7 +2601,7 @@ var lorcanadb = {
             "artist": "Cookie",
             "description": "BREAK: When you play this character, you may banish chosen item."
         }, {
-            "cardImg": "../media/LorcanaCh1/LLorcanaCh1_173-204_CaptainHook-CaptainOfTheJollyRoger.webp\" alt=\"Captain Hook: Captain Of The Jolly Roger",
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_173-204_CaptainHook-CaptainOfTheJollyRoger.webp\" alt=\"Captain Hook: Captain Of The Jolly Roger",
             "number": "173",
             "setId": "173/204\u2022EN\u20221",
             "name": "CAPTAIN HOOK",
@@ -2646,7 +2646,7 @@ var lorcanadb = {
             "artist": "Elliot Bocxtaele",
             "description": "STOLEN DUST: Characters with cost 3 or less can't challenge this character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LLorcanaCh1_176-204_Cerberus-ThreeHeadedDog.webp\" alt=\"Cerberus: Three Headed Dog",
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_176-204_Cerberus-ThreeHeadedDog.webp\" alt=\"Cerberus: Three Headed Dog",
             "number": "176",
             "setId": "176/204\u2022EN\u20221",
             "name": "CERBERUS",
@@ -2721,7 +2721,7 @@ var lorcanadb = {
             "artist": "Kendall Hale",
             "description": "STAGE A LITTLE ACCIDENT: Whenever this character quests, you may deal 1 damage to chosen character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LLorcanaCh1_181-204_Hercules-TrueHero.webp\"  alt=\"Hercules: True Hero",
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_181-204_Hercules-TrueHero.webp\"  alt=\"Hercules: True Hero",
             "number": "181",
             "setId": "181/204\u2022EN\u20221",
             "name": "HERCULES",
@@ -3083,6 +3083,189 @@ var lorcanadb = {
         }
     ],
 
+    "firstChapterEnchanted": [
+        {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_205-204_Hades-KingOfOlympus-Enchanted.webp\" alt=\"Hades: King Of Olympus",
+            "number": "205",
+            "setId": "205/204\u2022EN\u20221",
+            "name": "HADES",
+            "subname": "King Of Olympus",
+            "ink": "Enchanted",
+            "classification": "Floodborn Villain King Deity",
+            "rarity": "Enchanted",
+            "cost": "8",
+            "strength": "6",
+            "willpower": "7",
+            "loreValue": "1",
+            "artist": "Juan Diego Leon",
+            "description": "SINISTER PLOT: This character gets +1 lore for each other Villian character you have in play."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_206-204_Stitch-CarefreeSurfer-Enchanted.webp\" alt=\"Stitch: Carefree Surfer",
+            "number": "1206",
+            "setId": "206/204\u2022EN\u20221",
+            "name": "STITCH",
+            "subname": "Carefree Surfer",
+            "ink": "Enchanted",
+            "classification": "Dreamborn Hero Alien",
+            "rarity": "Enchanted",
+            "cost": "7",
+            "strength": "4",
+            "willpower": "8",
+            "loreValue": "2",
+            "artist": "Milica Celikovic",
+            "description": "OHANA: When you play this character, if you have 2 or more other characters in play, you may draw 2 cards."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_207-204_Elsa-SpiritOfWinter-Enchanted.webp\" alt=\"Elsa: Spirit Of Winter",
+            "number": "207",
+            "setId": "207/204\u2022EN\u20221",
+            "name": "ELSA",
+            "subname": "Spirit Of Winter",
+            "ink": "Enchanted",
+            "classification": "Floodborn Hero Queen Sorcerer",
+            "rarity": "Enchanted",
+            "cost": "8",
+            "strength": "4",
+            "willpower": "6",
+            "loreValue": "3",
+            "artist": "Matthew Robert Davies",
+            "description": "DEEP FREEZE: When you play this character, exert up to 2 chosen characters. They can't ready at the start of their next turn."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_208-204_MickeyMouse-WaywardSorcerer-Enchanted.webp\" alt=\"Mickey Mouse: Wayward Sorcerer",
+            "number": "208",
+            "setId": "208/204\u2022EN\u20221",
+            "name": "MICKEY MOUSE",
+            "subname": "Wayward Sorcerert",
+            "ink": "Enchanted",
+            "classification": "Dreamborn Sorcerer",
+            "rarity": "Enchanted",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Cam Kendell",
+            "description": "ANIMATE BROOM: You pay 1 ink less to play Broom. CEASLESS WORKER: Whenever one of your Broom characters is banished in a challenge, you may return the card to your hand."
+        },{
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_209-204_Genie-OntheJob-Enchanted.webp\" alt=\"Genie: On The Job",
+            "number": "209",
+            "setId": "209/204\u2022EN\u20221",
+            "name": "GENIE",
+            "subname": "On The Job",
+            "ink": "Enchanted",
+            "classification": "Storyborn Ally",
+            "rarity": "Enchanted",
+            "cost": "6",
+            "strength": "3",
+            "willpower": "4",
+            "loreValue": "2",
+            "artist": "Cristian Romero",
+            "description": "Evasive (Only characters with Evasive can challenge this character.) DISAPPEAR: When you play this character, you may return chosen character to their player's hand."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_176-204_Cerberus-ThreeHeadedDog.webp\" alt=\"Cerberus: Three Headed Dog",
+            "number": "176",
+            "setId": "176/204\u2022EN\u20221",
+            "name": "CERBERUS",
+            "subname": "Three Headed Dog",
+            "ink": "Steel",
+            "classification": "Storyborn",
+            "rarity": "Common",
+            "cost": "5",
+            "strength": "5",
+            "willpower": "6",
+            "loreValue": "1",
+            "artist": "Oleg Yurkov",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_177-204_DonaldDuck-Musketeer.webp\" alt=\"Donald Duck: Musketeer",
+            "number": "177",
+            "setId": "177/204\u2022EN\u20221",
+            "name": "DONALD DUCK",
+            "subname": "Musketeer",
+            "ink": "Steel",
+            "classification": "Dreamborn Hero Musketeer",
+            "rarity": "Uncommon",
+            "cost": "4",
+            "strength": "2",
+            "willpower": "5",
+            "loreValue": "1",
+            "artist": "Dav Augereau",
+            "description": "STAY ALERT!: During your turn, your Musketeer characters gain Evasive. (They can challenge characters with Evasive."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_178-204_Gantu-GalacticFederationCaptain.webp\" alt=\"Gantu: Galactic Federation Captain",
+            "number": "178",
+            "setId": "178/204\u2022EN\u20221",
+            "name": "GANTU",
+            "subname": "Galactic Federation Captain",
+            "ink": "Steel",
+            "classification": "Storyborn Alien Captain",
+            "rarity": "Legendary",
+            "cost": "8",
+            "strength": "6",
+            "willpower": "6",
+            "loreValue": "2",
+            "artist": "Luis Huerta",
+            "description": "UNDER ARREST: Characters with cost 2 or less can't challenge your characters."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_179-204_Goons-MaleficentsUnderlings.webp\" alt=\"Goons: Maleficent's Underlings",
+            "number": "179",
+            "setId": "179/204\u2022EN\u20221",
+            "name": "GOONS",
+            "subname": "Maleficent's Underlings",
+            "ink": "Steel",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "1",
+            "strength": "2",
+            "willpower": "2",
+            "loreValue": "1",
+            "artist": "Cam Kendell",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_180-204_Hans-ThirteenthInLine.webp\" alt=\"Hans: Thirteenth In Line",
+            "number": "180",
+            "setId": "180/204\u2022EN\u20221",
+            "name": "HANS",
+            "subname": "Thirteenth In Line",
+            "ink": "Steel",
+            "classification": "Storyborn Villain Prince",
+            "rarity": "Super Rare",
+            "cost": "4",
+            "strength": "3",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Kendall Hale",
+            "description": "STAGE A LITTLE ACCIDENT: Whenever this character quests, you may deal 1 damage to chosen character."
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_181-204_Hercules-TrueHero.webp\"  alt=\"Hercules: True Hero",
+            "number": "181",
+            "setId": "181/204\u2022EN\u20221",
+            "name": "HERCULES",
+            "subname": "True Hero",
+            "ink": "Steel",
+            "classification": "Dreamborn Hero Prince",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "3",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Marcel Berg",
+            "description": "Bodyguard (This character may enter play exerted. An opposing character who challenges one of your characters must choose one with Bodyguard if able.)"
+        }, {
+            "cardImg": "../media/LorcanaCh1/LorcanaCh1_182-204_Kristoff-OfficialIceMaster.webp\" alt=\"Kristoff: Official Ice Master",
+            "number": "182",
+            "setId": "182/204\u2022EN\u20221",
+            "name": "KRISTOFF",
+            "subname": "Official Ice Master",
+            "ink": "Steel",
+            "classification": "Storyborn Ally",
+            "rarity": "Common",
+            "cost": "3",
+            "strength": "23",
+            "willpower": "3",
+            "loreValue": "2",
+            "artist": "Ron Baird",
+            "description": ""
+        },
+    ]
 }
 
 function lorcanaCardData() {
@@ -3295,6 +3478,44 @@ function lorcanaCardData() {
             var description = val.description;
 
             $('.cardContainer6').append('    <div class="cardSingleJSON">' +
+                '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
+                '                <p class="cardTitleGold">'+subname+'</p>\n' +
+                '                <div class="cardCenter">\n' +
+                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <div class="cardSelectors">\n' +
+                '                        <form action="#" method="POST" class="cardForm">\n' +
+                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            </label>\n' +
+                '                        </form>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '                <h3 class="cardID">'+setId+'</h3>\n' +
+                '           </div>')
+
+        });
+
+    var firstChapterEnchanted = lorcanadb.firstChapterEnchanted;
+        $.each(firstChapterEnchanted, function(i, val) {
+            var cardImg = val.cardImg
+            var number = val.number;
+            var setId = val.setId;
+            var name = val.name;
+            var subname = val.subname;
+            var ink = val.ink;
+            var classification = val.classification;
+            var rarity = val.rarity;
+            var cost = val.cost;
+            var strength = val.strength;
+            var willpower = val.willpower;
+            var loreValue = val.loreValue;
+            var artist = val.artist;
+            var description = val.description;
+
+            $('.cardContainer7').append('    <div class="cardSingleJSON">' +
                 '                <h3 class="cardTitleGold">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
