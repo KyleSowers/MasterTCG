@@ -3294,11 +3294,11 @@ function lorcanaCardData() {
                 '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
-                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
                 '                        </form>\n' +
                 '                    </div>\n' +
@@ -3332,11 +3332,11 @@ function lorcanaCardData() {
                 '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
-                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
                 '                        </form>\n' +
                 '                    </div>\n' +
@@ -3370,11 +3370,11 @@ function lorcanaCardData() {
                 '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
-                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
                 '                        </form>\n' +
                 '                    </div>\n' +
@@ -3408,11 +3408,11 @@ function lorcanaCardData() {
                 '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
-                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
                 '                        </form>\n' +
                 '                    </div>\n' +
@@ -3446,11 +3446,11 @@ function lorcanaCardData() {
             '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
             '                    <div class="cardSelectors">\n' +
             '                        <form action="#" method="POST" class="cardForm">\n' +
-            '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-            '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
             '                            </label>\n' +
-            '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-            '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
             '                            </label>\n' +
             '                        </form>\n' +
             '                    </div>\n' +
@@ -3484,11 +3484,11 @@ function lorcanaCardData() {
                 '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
-                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
                 '                        </form>\n' +
                 '                    </div>\n' +
@@ -3522,11 +3522,11 @@ function lorcanaCardData() {
                 '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="en_1_base_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_base_001/204" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
-                '                            <label for="en_1_foil_001/204" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="en_1_foil_001/204" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
                 '                            </label>\n' +
                 '                        </form>\n' +
                 '                    </div>\n' +
