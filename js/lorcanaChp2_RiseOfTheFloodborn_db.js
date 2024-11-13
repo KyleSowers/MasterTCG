@@ -1,7 +1,7 @@
-//Lorcana Card JSON Database
+//Lorcana Rise Of THe Floodborn Card JSON Database
 
-var lorcanadb = {
-    "firstChapterAmber": [
+var lorcanaChp2_RiseOfTheFloodborn_db = {
+    "RiseOfTheFloodborn_Amber": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_001-204_Ariel-OnHumanLegs.webp",
             "number": "001",
@@ -514,7 +514,7 @@ var lorcanadb = {
             "description": "NOW, SING: Whenever you play a song, you may pay 1 power to draw a card."
         }
     ],
-    "firstChapterAmethyst": [
+    "RiseOfTheFloodborn_Amethyst": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_035-204_Anna-HeirToArendelle.webp",
             "number": "035",
@@ -1027,7 +1027,7 @@ var lorcanadb = {
             "description": "I'M LATE!: Pay, 1 ink - Chosen character gains Rush this turn. (They can challenge the turn they're played.)"
         },
     ],
-    "firstChapterEmerald": [
+    "RiseOfTheFloodborn_Emerald": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_069-204_Aladdin-PrinceAli.webp",
             "number": "069",
@@ -1541,7 +1541,7 @@ var lorcanadb = {
         },
     ],
 
-    "firstChapterRuby": [
+    "RiseOfTheFloodborn_Ruby": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_103-204_Abu-MischievousMonkey.webp\" alt=\"Abu: Mischievous Monkey",
             "number": "103",
@@ -2055,7 +2055,7 @@ var lorcanadb = {
         },
     ],
 
-    "firstChapterSapphire": [
+    "RiseOfTheFloodborn_Sapphire": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_137-204_Ariel-WhoseitCollector.webp\" alt=\"Ariel: Whoseit Collector",
             "number": "137",
@@ -2569,7 +2569,7 @@ var lorcanadb = {
         }
     ],
 
-    "firstChapterSteel": [
+    "RiseOfTheFloodborn_Steel": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_171-204_Aladdin-CorneredSwordsman.webp\" alt=\"Aladdin: Cornered Swordsman",
             "number": "171",
@@ -3083,7 +3083,7 @@ var lorcanadb = {
         }
     ],
 
-    "firstChapterEnchanted": [
+    "RiseOfTheFloodborn_Enchanted": [
         {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_205-204_Hades-KingOfOlympus-Enchanted.webp\" alt=\"Hades: King Of Olympus",
             "number": "205",
@@ -3269,161 +3269,161 @@ var lorcanadb = {
 }
 
 function lorcanaCardData() {
-    // console.log(lorcanadb.firstChapter)
-    var firstChapterAmber = lorcanadb.firstChapterAmber;
-        $.each(firstChapterAmber, function(i, val) {
-            var cardImg = val.cardImg
-            var number = val.number;
-            var setId = val.setId;
-            var name = val.name;
-            var subname = val.subname;
-            var ink = val.ink;
-            var classification = val.classification;
-            var rarity = val.rarity;
-            var cost = val.cost;
-            var strength = val.strength;
-            var willpower = val.willpower;
-            var loreValue = val.loreValue;
-            var artist = val.artist;
-            var description = val.description;
+    // console.log(lorcanaChp1_FirstChapter_db.firstChapter)
+    var RiseOfTheFloodborn_Amber = lorcanaChp2_RiseOfTheFloodborn_db.RiseOfTheFloodborn_Amber;
+    $.each(RiseOfTheFloodborn_Amber, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
 
-            $('.cardContainer1').append('    <div class="cardSingleJSON" style="background-color: rgba(245, 178, 2,0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
-                '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
-                '                <p class="cardTitleGold"  style="color: ghostwhite;">'+subname+'</p>\n' +
-                '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
-                '                    <div class="cardSelectors">\n' +
-                '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                        </form>\n' +
-                '                    </div>\n' +
-                '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
-                '           </div>')
+        $('.cardContainer1').append('    <div class="cardSingleJSON" style="background-color: rgba(245, 178, 2,0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.39)">' +
+            '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold"  style="color: ghostwhite;">'+subname+'</p>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '           </div>')
 
-        });
+    });
 
-    var firstChapterAmethyst = lorcanadb.firstChapterAmethyst;
-        $.each(firstChapterAmethyst, function(i, val) {
-            var cardImg = val.cardImg
-            var number = val.number;
-            var setId = val.setId;
-            var name = val.name;
-            var subname = val.subname;
-            var ink = val.ink;
-            var classification = val.classification;
-            var rarity = val.rarity;
-            var cost = val.cost;
-            var strength = val.strength;
-            var willpower = val.willpower;
-            var loreValue = val.loreValue;
-            var artist = val.artist;
-            var description = val.description;
+    var RiseOfTheFloodborn_Amethyst = lorcanaChp2_RiseOfTheFloodborn_db.RiseOfTheFloodborn_Amethyst;
+    $.each(RiseOfTheFloodborn_Amethyst, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
 
-            $('.cardContainer2').append('    <div class="cardSingleJSON" style="background-color: rgba(129, 55, 123, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
-                '                <h1 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h1>\n' +
-                '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+subname+'</h3>\n' +
-                '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
-                '                    <div class="cardSelectors">\n' +
-                '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                        </form>\n' +
-                '                    </div>\n' +
-                '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
-                '           </div>')
+        $('.cardContainer2').append('    <div class="cardSingleJSON" style="background-color: rgba(129, 55, 123, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            '                <h1 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h1>\n' +
+            '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+subname+'</h3>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '           </div>')
 
-        });
+    });
 
-    var firstChapterEmerald = lorcanadb.firstChapterEmerald;
-        $.each(firstChapterEmerald, function(i, val) {
-            var cardImg = val.cardImg
-            var number = val.number;
-            var setId = val.setId;
-            var name = val.name;
-            var subname = val.subname;
-            var ink = val.ink;
-            var classification = val.classification;
-            var rarity = val.rarity;
-            var cost = val.cost;
-            var strength = val.strength;
-            var willpower = val.willpower;
-            var loreValue = val.loreValue;
-            var artist = val.artist;
-            var description = val.description;
+    var RiseOfTheFloodborn_Emerald = lorcanaChp2_RiseOfTheFloodborn_db.RiseOfTheFloodborn_Emerald;
+    $.each(RiseOfTheFloodborn_Emerald, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
 
-            $('.cardContainer3').append('    <div class="cardSingleJSON" style="background-color: rgba(42, 137, 52, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
-                '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
-                '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
-                '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
-                '                    <div class="cardSelectors">\n' +
-                '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                        </form>\n' +
-                '                    </div>\n' +
-                '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
-                '           </div>')
+        $('.cardContainer3').append('    <div class="cardSingleJSON" style="background-color: rgba(42, 137, 52, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '           </div>')
 
-        });
+    });
 
-    var firstChapterRuby = lorcanadb.firstChapterRuby;
-        $.each(firstChapterRuby, function(i, val) {
-            var cardImg = val.cardImg
-            var number = val.number;
-            var setId = val.setId;
-            var name = val.name;
-            var subname = val.subname;
-            var ink = val.ink;
-            var classification = val.classification;
-            var rarity = val.rarity;
-            var cost = val.cost;
-            var strength = val.strength;
-            var willpower = val.willpower;
-            var loreValue = val.loreValue;
-            var artist = val.artist;
-            var description = val.description;
+    var RiseOfTheFloodborn_Ruby = lorcanaChp2_RiseOfTheFloodborn_db.RiseOfTheFloodborn_Ruby;
+    $.each(RiseOfTheFloodborn_Ruby, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
 
-            $('.cardContainer4').append('    <div class="cardSingleJSON" style="background-color: rgba(211, 8, 47,0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
-                '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
-                '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
-                '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
-                '                    <div class="cardSelectors">\n' +
-                '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                        </form>\n' +
-                '                    </div>\n' +
-                '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
-                '           </div>')
+        $('.cardContainer4').append('    <div class="cardSingleJSON" style="background-color: rgba(211, 8, 47,0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '           </div>')
 
-        });
+    });
 
-    var firstChapterSapphire = lorcanadb.firstChapterSapphire;
-    $.each(firstChapterSapphire, function(i, val) {
+    var RiseOfTheFloodborn_Sapphire = lorcanaChp2_RiseOfTheFloodborn_db.RiseOfTheFloodborn_Sapphire;
+    $.each(RiseOfTheFloodborn_Sapphire, function(i, val) {
         var cardImg = val.cardImg
         var number = val.number;
         var setId = val.setId;
@@ -3458,86 +3458,86 @@ function lorcanaCardData() {
             '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
             '           </div>')
 
-        });
+    });
 
-    var firstChapterSteel = lorcanadb.firstChapterSteel;
-        $.each(firstChapterSteel, function(i, val) {
-            var cardImg = val.cardImg
-            var number = val.number;
-            var setId = val.setId;
-            var name = val.name;
-            var subname = val.subname;
-            var ink = val.ink;
-            var classification = val.classification;
-            var rarity = val.rarity;
-            var cost = val.cost;
-            var strength = val.strength;
-            var willpower = val.willpower;
-            var loreValue = val.loreValue;
-            var artist = val.artist;
-            var description = val.description;
+    var RiseOfTheFloodborn_Steel = lorcanaChp2_RiseOfTheFloodborn_db.RiseOfTheFloodborn_Steel;
+    $.each(RiseOfTheFloodborn_Steel, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
 
-            $('.cardContainer6').append('    <div class="cardSingleJSON" style="background-color: rgba(159, 168, 180, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
-                '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
-                '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
-                '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
-                '                    <div class="cardSelectors">\n' +
-                '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                        </form>\n' +
-                '                    </div>\n' +
-                '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
-                '           </div>')
+        $('.cardContainer6').append('    <div class="cardSingleJSON" style="background-color: rgba(159, 168, 180, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '           </div>')
 
-        });
+    });
 
-    var firstChapterEnchanted = lorcanadb.firstChapterEnchanted;
-        $.each(firstChapterEnchanted, function(i, val) {
-            var cardImg = val.cardImg
-            var number = val.number;
-            var setId = val.setId;
-            var name = val.name;
-            var subname = val.subname;
-            var ink = val.ink;
-            var classification = val.classification;
-            var rarity = val.rarity;
-            var cost = val.cost;
-            var strength = val.strength;
-            var willpower = val.willpower;
-            var loreValue = val.loreValue;
-            var artist = val.artist;
-            var description = val.description;
+    var RiseOfTheFloodborn_Enchanted = lorcanaChp2_RiseOfTheFloodborn_db.RiseOfTheFloodborn_Enchanted;
+    $.each(RiseOfTheFloodborn_Enchanted, function(i, val) {
+        var cardImg = val.cardImg
+        var number = val.number;
+        var setId = val.setId;
+        var name = val.name;
+        var subname = val.subname;
+        var ink = val.ink;
+        var classification = val.classification;
+        var rarity = val.rarity;
+        var cost = val.cost;
+        var strength = val.strength;
+        var willpower = val.willpower;
+        var loreValue = val.loreValue;
+        var artist = val.artist;
+        var description = val.description;
 
-            $('.cardContainer7').append('    <div class="cardSingleJSON" style="position: relative; z-index: 1; color: ghostwhite;border: 2px #333 solid; border-radius: 10px; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
-                '    <div style="content: \'\'; position: absolute; top: 0; left: 0; width: 100%; height: 100%;' +
-                '    background-image: linear-gradient(to bottom right, #d3082f 5%, #f5b202 45%, #2a8934 52%, #0189c4 75%, #81377b 99%);' +
-                '    opacity: 0.49; z-index: -1; pointer-events: none;"></div>' +
-                '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
-                '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
-                '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
-                '                    <div class="cardSelectors">\n' +
-                '                        <form action="#" method="POST" class="cardForm">\n' +
-                '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
-                '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
-                '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
-                '                            </label>\n' +
-                '                        </form>\n' +
-                '                    </div>\n' +
-                '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
-                '           </div>')
+        $('.cardContainer7').append('    <div class="cardSingleJSON" style="position: relative; z-index: 1; color: ghostwhite;border: 2px #333 solid; border-radius: 10px; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            '    <div style="content: \'\'; position: absolute; top: 0; left: 0; width: 100%; height: 100%;' +
+            '    background-image: linear-gradient(to bottom right, #d3082f 5%, #f5b202 45%, #2a8934 52%, #0189c4 75%, #81377b 99%);' +
+            '    opacity: 0.49; z-index: -1; pointer-events: none;"></div>' +
+            '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
+            '                <div class="cardCenter">\n' +
+            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <div class="cardSelectors">\n' +
+            '                        <form action="#" method="POST" class="cardForm">\n' +
+            '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
+            '                                <input type="checkbox" name="card" id="base-' + setId + '" value="Base-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                            <label for="foil-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText2" style="margin-left: 20px;">Foil</span>\n' +
+            '                                <input type="checkbox" name="card" id="foil-' + setId + '" value="Foil-EN-1-1/204" class="cardFormInput">\n' +
+            '                            </label>\n' +
+            '                        </form>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '           </div>')
 
-        });
+    });
 }
 
 lorcanaCardData();

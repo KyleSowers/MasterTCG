@@ -148,25 +148,26 @@ img {
 }
 
 .cardSingleJSON {
-    flex: 1 1 20%;        /* Ensures each card takes up 20% of the row */
-    max-width: 19%;       /* Restricts each card to a max of 20% width */
+    flex: 1 1 18%;        /* Ensures each card takes up 20% of the row */
+    max-width: 18%;       /* Restricts each card to a max of 20% width */
+    height: 400px;
     box-sizing: border-box;
     margin-bottom: 40px;
-    margin-right: 5px;
+    margin-right: 7px;
 }
 
-.divWithBackground {
-    position: relative; /* To allow content positioning inside the div */
-    width: 100%; /* Or any width you need */
-    height: 100%; /* Or any height you need */
-    background-image: url('../media/logo/lorcanaLogos/loracna_evergreen_background.webp');
-    background-size: cover; /* Ensures the image covers the entire div */
-    background-position: center; /* Centers the image within the div */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-}
+/*.divWithBackground {*/
+/*    position: relative; !* To allow content positioning inside the div *!*/
+/*    width: 100%; !* Or any width you need *!*/
+/*    height: 100%; !* Or any height you need *!*/
+/*    background-image: url('../media/logo/lorcanaLogos/loracna_evergreen_background.webp');*/
+/*    background-size: cover; !* Ensures the image covers the entire div *!*/
+/*    background-position: center; !* Centers the image within the div *!*/
+/*    background-repeat: no-repeat; !* Prevents the image from repeating *!*/
+/*}*/
 
-.divContent {
-    position: relative; /* Ensures content stays on top of the background */
-    z-index: 1; /* Makes sure the content is above the background */
-    padding: 20px; /* Optional: add padding to give space for content */
-}
+/*.divContent {*/
+/*    position: relative; !* Ensures content stays on top of the background *!*/
+/*    z-index: 1; !* Makes sure the content is above the background *!*/
+/*    padding: 20px; !* Optional: add padding to give space for content *!*/
+/*}*/
