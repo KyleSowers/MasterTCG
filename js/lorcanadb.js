@@ -3518,7 +3518,7 @@ function lorcanaCardData() {
             $('.cardContainer7').append('    <div class="cardSingleJSON" style="position: relative; z-index: 1; color: ghostwhite;border: 2px #333 solid; border-radius: 10px; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
                 '    <div style="content: \'\'; position: absolute; top: 0; left: 0; width: 100%; height: 100%;' +
                 '    background-image: linear-gradient(to bottom right, #d3082f 5%, #f5b202 45%, #2a8934 52%, #0189c4 75%, #81377b 99%);' +
-                '    opacity: 0.28; z-index: -1; pointer-events: none;"></div>' +
+                '    opacity: 0.49; z-index: -1; pointer-events: none;"></div>' +
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
@@ -3541,3 +3541,5 @@ function lorcanaCardData() {
 }
 
 lorcanaCardData();
+
+// LorcanaCh2_RiseofTheFloodborn_137-204_A-b.webp
