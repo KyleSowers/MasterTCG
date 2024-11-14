@@ -468,7 +468,7 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Giulia Riva",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_032-204_ZeroToHero.webpp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_032-204_ZeroToHero.webp",
             "number": "032",
             "setId": "032/204\u2022EN\u20222",
             "name": "ZERO TO HERO",
@@ -756,39 +756,39 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Valentina Graziuso",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_051-204_MickeyMouse-WaywardSorcerer.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_051-204_Merlin-Goat.webp",
             "number": "051",
-            "setId": "051/204\u2022EN\u20221",
-            "name": "MICKEY MOUSE",
-            "subname": "Wayward Sorcerer",
+            "setId": "051/204\u2022EN\u20222",
+            "name": "MERLIN",
+            "subname": "Goat",
             "ink": "Amethyst",
-            "classification": "Dreamborn Sorcerer",
-            "rarity": "Super Rare",
-            "cost": "4",
-            "strength": "3",
-            "willpower": "4",
-            "loreValue": "2",
-            "artist": "Nicholas Kole",
-            "description": "ANIMATE BROOM: You pay 1 cost less to play Brrom characters. CEASLESS WORKER: Whenever oone of your Broom characters is banished in a challenge, you may return that card to your hand."
-        }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_052-204_Olaf-FriendlySnowman.webp",
-            "number": "052",
-            "setId": "052/204\u2022EN\u20221",
-            "name": "OLAF",
-            "subname": "Friendly Snowman",
-            "ink": "Amethyst",
-            "classification": "Storyborn Ally",
+            "classification": "Storyborn Mentor Sorcerer",
             "rarity": "Uncommon",
-            "cost": "1",
-            "strength": "1",
+            "cost": "4",
+            "strength": "4",
             "willpower": "3",
             "loreValue": "1",
-            "artist": "Giulia Riva",
+            "artist": "S. Shaw / L. Giammichele",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_053-204_Pascal-RapunzelsCompanion.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_052-204_Merlin-Rabbit.webp",
+            "number": "052",
+            "setId": "052/204\u2022EN\u20222",
+            "name": "MERLIN",
+            "subname": "Rabbit",
+            "ink": "Amethyst",
+            "classification": "Storyborn Mentor Sorcerer",
+            "rarity": "Rare",
+            "cost": "4",
+            "strength": "2",
+            "willpower": "3",
+            "loreValue": "1",
+            "artist": "Michaela Martin",
+            "description": ""
+        }, {
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_053-204_Pascal-RapunzelsCompanion.webp",
             "number": "053",
-            "setId": "053/204\u2022EN\u20221",
+            "setId": "053/204\u2022EN\u20222",
             "name": "PASCAL",
             "subname": "Rapunzels Companion",
             "ink": "Amethyst",
@@ -801,9 +801,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Brian Weisz",
             "description": "CAMOUFLAGE: While you have another character in play, this character gains Evasive. (Only characters with Evasive can challenge them.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_054-204_Rafiki-MysteriousSage.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_054-204_Rafiki-MysteriousSage.webp",
             "number": "054",
-            "setId": "054/204\u2022EN\u20221",
+            "setId": "054/204\u2022EN\u20222",
             "name": "RAFIKI",
             "subname": "Mysterious Sage",
             "ink": "Amethyst",
@@ -816,9 +816,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Giulia Riva",
             "description": "RUSH (This character can challenge the turn they're played.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_055-204_Sven-OfficialIceDeliverer.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_055-204_Sven-OfficialIceDeliverer.webp",
             "number": "055",
-            "setId": "055/204\u2022EN\u20221",
+            "setId": "055/204\u2022EN\u20222",
             "name": "SVEN",
             "subname": "Official Ice Deliverer",
             "ink": "Amethyst",
@@ -831,9 +831,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jared Nickerl",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_056-204_TheQueen-WickedandVain.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_056-204_TheQueen-WickedandVain.webp",
             "number": "056",
-            "setId": "056/204\u2022EN\u20221",
+            "setId": "056/204\u2022EN\u20222",
             "name": "THE QUEEN",
             "subname": "Wicked and Vain",
             "ink": "Amethyst",
@@ -846,9 +846,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matthew Robert Davies",
             "description": "I SUMMON THEE: Draw a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_057-204_TheWardrobe-BellesConfidant.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_057-204_TheWardrobe-BellesConfidant.webp",
             "number": "057",
-            "setId": "057/204\u2022EN\u20221",
+            "setId": "057/204\u2022EN\u20222",
             "name": "THE WARDROBE",
             "subname": "Belle's Confidant",
             "ink": "Amethyst",
@@ -861,9 +861,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Giulia Riva",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_058-204_TinkerBell-PeterPansAlly.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_058-204_TinkerBell-PeterPansAlly.webp",
             "number": "058",
-            "setId": "058/204\u2022EN\u20221",
+            "setId": "058/204\u2022EN\u20222",
             "name": "TINKER BELL",
             "subname": "Peter Pan's Ally",
             "ink": "Amethyst",
@@ -876,9 +876,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Adrianne Gumaya",
             "description": "LOVE AND DEVOTED: Your characters named Peter Pan gain Challenger +1. (They get +1 strength while challenging.) EVASIVE (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_059-204_Ursula-PowerHungry.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_059-204_Ursula-PowerHungry.webp",
             "number": "059",
-            "setId": "059/204\u2022EN\u20221",
+            "setId": "059/204\u2022EN\u20222",
             "name": "URSULA",
             "subname": "Power Hungry",
             "ink": "Amethyst",
@@ -891,9 +891,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Simangaliso Sibaya",
             "description": "IT'S TOO EASY!: When you play this character, each opponent loses 1 lore. You may draw a card for each 1 lore lost this way."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_060-204_Yzma-Alchemist.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_060-204_Yzma-Alchemist.webp",
             "number": "060",
-            "setId": "060/204\u2022EN\u20221",
+            "setId": "060/204\u2022EN\u20222",
             "name": "YZMA",
             "subname": "Alchemist",
             "ink": "Amethyst",
@@ -906,9 +906,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Hadjie Joos",
             "description": "YOU'RE EXCUSED: Whenever this character quests, look at the top card of your deck. Put it on either the top card of your deck. Put it on either the top or the bottom of your deck."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_061-204_Zeus-GodOfLightning.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_061-204_Zeus-GodOfLightning.webp",
             "number": "061",
-            "setId": "061/204\u2022EN\u20221",
+            "setId": "061/204\u2022EN\u20222",
             "name": "ZEUS",
             "subname": "God of Lightning",
             "ink": "Amethyst",
@@ -921,9 +921,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Koni",
             "description": "RUSH (This character can challenge the turn they're played.) Challenger +4 (While challenging, this character gets +4 strength.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_062-204_Befuddle.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_062-204_Befuddle.webp",
             "number": "062",
-            "setId": "062/204\u2022EN\u20221",
+            "setId": "062/204\u2022EN\u20222",
             "name": "BEFUDDLE",
             "subname": "",
             "ink": "Amethyst",
@@ -936,9 +936,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kendall Hale",
             "description": "Return a character or item with cost 2 or less to their player's hand."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_063-204_Freeze.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_063-204_Freeze.webp",
             "number": "063",
-            "setId": "063/204\u2022EN\u20221",
+            "setId": "063/204\u2022EN\u20222",
             "name": "FREEZE",
             "subname": "",
             "ink": "Amethyst",
@@ -951,9 +951,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Christian Romero",
             "description": "Exert chosen opposing character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_064-204_FriendsOnTheOtherSide.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_064-204_FriendsOnTheOtherSide.webp",
             "number": "064",
-            "setId": "064/204\u2022EN\u20221",
+            "setId": "064/204\u2022EN\u20222",
             "name": "FRIENDS ON THE OTHER SIDE",
             "subname": "",
             "ink": "Amethyst",
@@ -966,9 +966,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Amber Kommavongsa",
             "description": "Draw 2 cards."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_065-204_Reflection.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_065-204_Reflection.webp",
             "number": "050",
-            "setId": "050/204\u2022EN\u20221",
+            "setId": "050/204\u2022EN\u20222",
             "name": "REFLECTION",
             "subname": "",
             "ink": "Amethyst",
@@ -981,9 +981,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kevin Hong",
             "description": "Look at the top 3 cards of your deck. Put them back on the top of your deck in any order."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_066-204_MagicMirror.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_066-204_MagicMirror.webp",
             "number": "066",
-            "setId": "066/204\u2022EN\u20221",
+            "setId": "066/204\u2022EN\u20222",
             "name": "MAGIC MIRROR",
             "subname": "",
             "ink": "Amethyst",
@@ -996,9 +996,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Andrew Trabbold",
             "description": "SPEAK!: Pay, 4 ink - Draw a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_067-204_UrsulasCauldron.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_067-204_UrsulasCauldron.webp",
             "number": "067",
-            "setId": "067/204\u2022EN\u20221",
+            "setId": "067/204\u2022EN\u20222",
             "name": "URSULA'S CAULDRON",
             "subname": "",
             "ink": "Amethyst",
@@ -1011,9 +1011,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Oleg Yurkov",
             "description": "PEER INTO THE DEPTHS: Look at the top 2 cards of your deck. Put one on the top of your deck and the other on the bottom."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_068-204_WhiteRabbitsPocketWatch.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_068-204_WhiteRabbitsPocketWatch.webp",
             "number": "068",
-            "setId": "068/204\u2022EN\u20221",
+            "setId": "068/204\u2022EN\u20222",
             "name": "WHITE RABBIT'S POCKET WATCH",
             "subname": "",
             "ink": "Amethyst",
@@ -1029,9 +1029,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
     ],
     "RiseOfTheFloodborn_Emerald": [
         {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_069-204_Aladdin-PrinceAli.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_069-204_Aladdin-PrinceAli.webp",
             "number": "069",
-            "setId": "069/204\u2022EN\u20221",
+            "setId": "069/204\u2022EN\u20222",
             "name": "ALADDIN",
             "subname": "Prince Ali",
             "ink": "Emerald",
@@ -1044,9 +1044,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Lauren Walsh",
             "description": "WARD (Opponents can't choose this character execpt to challenge.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_070-204_Beast-Wolfsbane.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_070-204_Beast-Wolfsbane.webp",
             "number": "070",
-            "setId": "070/204\u2022EN\u20221",
+            "setId": "070/204\u2022EN\u20222",
             "name": "BEAST",
             "subname": "Wolfsbane",
             "ink": "Emerald",
@@ -1059,9 +1059,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jeff Murchie",
             "description": "ROAR: When you play this character, exert all opposing damaged characters. RUSH (This character can challenge the turn they're played)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_071-204_CheshireCat-NotAllThere.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_071-204_CheshireCat-NotAllThere.webp",
             "number": "071",
-            "setId": "071/204\u2022EN\u20221",
+            "setId": "071/204\u2022EN\u20222",
             "name": "CHESHIRE CAT",
             "subname": "Not All There",
             "ink": "Emerald",
@@ -1074,9 +1074,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Caner Soylu",
             "description": "LOOSE SOMETHING?: When this character is challenged and banished, banish the challenging character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_072-204_CruellaDeVil-MiserableAsUsual.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_072-204_CruellaDeVil-MiserableAsUsual.webp",
             "number": "072",
-            "setId": "072/204\u2022EN\u20221",
+            "setId": "072/204\u2022EN\u20222",
             "name": "CRUELLA DE VIL",
             "subname": "Miserable as Usual",
             "ink": "Emerald",
@@ -1089,9 +1089,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Nicholas Kole",
             "description": "YOU'LL BE SORRY!: When this character is challenged and banished, you may return chosen character to their player's hand."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_073-204_DukeOfWeselton-OpportunisticOfficial.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_073-204_DukeOfWeselton-OpportunisticOfficial.webp",
             "number": "073",
-            "setId": "073/204\u2022EN\u20221",
+            "setId": "073/204\u2022EN\u20222",
             "name": "DUKE OF WESELTON",
             "subname": "Opportunistic Official",
             "ink": "Emerald",
@@ -1104,9 +1104,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "R. La Barbera / L. Giammichele",
             "description": ""
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_074-204_FlynnRider-CharmingRogue.webp\" alt=\"Flynn Rider: Charming Rogue",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_074-204_FlynnRider-CharmingRogue.webp\" alt=\"Flynn Rider: Charming Rogue",
             "number": "074",
-            "setId": "074/204\u2022EN\u20221",
+            "setId": "074/204\u2022EN\u20222",
             "name": "FLYNN RIDER",
             "subname": "Charming Rogue",
             "ink": "Emerald",
@@ -1119,9 +1119,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Leonardo Giammichele",
             "description": "HERE COMES THE SMOLDER: Whanever this character is challenged, the  challenging player chooses and discards a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_075-204_Genie-OntheJob.webp\" alt=\"Genie: On the Job",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_075-204_Genie-OntheJob.webp\" alt=\"Genie: On the Job",
             "number": "075",
-            "setId": "075/204\u2022EN\u20221",
+            "setId": "075/204\u2022EN\u20222",
             "name": "GENIE",
             "subname": "On the Job",
             "ink": "Emerald",
@@ -1134,9 +1134,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Giulia Riva",
             "description": "DISAPPEAR: When you play this character, you may return chosen character to their player's hand. EVASIVE (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_076-204_Genie-PowersUnleashed.webp\" alt=\"Genie: Powers Unleashed",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_076-204_Genie-PowersUnleashed.webp\" alt=\"Genie: Powers Unleashed",
             "number": "076",
-            "setId": "076/204\u2022EN\u20221",
+            "setId": "076/204\u2022EN\u20222",
             "name": "GENIE",
             "subname": "Powers Unleashed",
             "ink": "Emerald",
@@ -1149,9 +1149,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Javier Salas",
             "description": "PHENOMENAL COSMIC POWER!: Whenever this character quests, you play an action with cost 5 or less for free. EVASIVE (Only characters with Evasive can challenge this character.) SHIFT 6 (You may pay 6 ink to play this on top of one of your characters named Genie.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_077-204_Genie-TheEverImpressive.webp\" alt=\"Genie: The Ever Impressive",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_077-204_Genie-TheEverImpressive.webp\" alt=\"Genie: The Ever Impressive",
             "number": "077",
-            "setId": "077/204\u2022EN\u20221",
+            "setId": "077/204\u2022EN\u20222",
             "name": "GENIE",
             "subname": "The Ever Impressive",
             "ink": "Emerald",
@@ -1164,9 +1164,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matt Chapman",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/Lorcanach1_078-204_Hans-SchemingPrince.webp\" alt=\"Hans: Scheming Prince",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/Lorcanach1_078-204_Hans-SchemingPrince.webp\" alt=\"Hans: Scheming Prince",
             "number": "078",
-            "setId": "078/204\u2022EN\u20221",
+            "setId": "078/204\u2022EN\u20222",
             "name": "HANS",
             "subname": "Scheming Prince",
             "ink": "Emerald",
@@ -1179,9 +1179,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Massimiliano Narciso",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_079-204_Horace-NoGoodScoundrel.webp\" alt=\"Horace: No Good Scoundrel",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_079-204_Horace-NoGoodScoundrel.webp\" alt=\"Horace: No Good Scoundrel",
             "number": "079",
-            "setId": "079/204\u2022EN\u20221",
+            "setId": "079/204\u2022EN\u20222",
             "name": "HORACE",
             "subname": "No-Good Scoundrel",
             "ink": "Emerald",
@@ -1194,9 +1194,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Isaiah Masq",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_080-204_Iago-LoudMouthedParrot.webp\" alt=\"Iago: Loud Mouthed Parrot",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_080-204_Iago-LoudMouthedParrot.webp\" alt=\"Iago: Loud Mouthed Parrot",
             "number": "080",
-            "setId": "080/204\u2022EN\u20221",
+            "setId": "080/204\u2022EN\u20222",
             "name": "IAGO",
             "subname": "Load-Mouthed Parrot",
             "ink": "Emerald",
@@ -1209,9 +1209,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Brian Weisz",
             "description": "YOU GOT A PROBLEM?: Chosen character gains Reckless during their next turn. (They can't quest and must challenge if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_081-204_Jasper-CommonCrook.webp\" alt=\"Jasper: Common Crook",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_081-204_Jasper-CommonCrook.webp\" alt=\"Jasper: Common Crook",
             "number": "081",
-            "setId": "081/204\u2022EN\u20221",
+            "setId": "081/204\u2022EN\u20222",
             "name": "JASPER",
             "subname": "Common Crook",
             "ink": "Emerald",
@@ -1224,9 +1224,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jochem Van Gool",
             "description": "PUPPYNAPPING: Whenever this character quests, chosen opposing character can't quest during their next turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_082-204_JohnSilver-AlienPirate.webp\" alt=\"John Silver: Alien Pirate",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_082-204_JohnSilver-AlienPirate.webp\" alt=\"John Silver: Alien Pirate",
             "number": "082",
-            "setId": "082/204\u2022EN\u20221",
+            "setId": "082/204\u2022EN\u20222",
             "name": "JOHN SILVER",
             "subname": "Alien Pirate",
             "ink": "Emerald",
@@ -1239,9 +1239,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Duyen Nguyen / Jared Nickeri",
             "description": "PICK YOUR FIGHTS: When you play this character and whenever he quests, chosen opposing character gains Reckless during their next turn. (They can't quest and must challenge if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_083-204_JumbaJookiba-RenegadeScientist.webp\" alt=\"Jumba Jookiba: Renegade Scientist",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_083-204_JumbaJookiba-RenegadeScientist.webp\" alt=\"Jumba Jookiba: Renegade Scientist",
             "number": "083",
-            "setId": "083/204\u2022EN\u20221",
+            "setId": "083/204\u2022EN\u20222",
             "name": "JUMBA JOOKIBA",
             "subname": "Renegade Scientist",
             "ink": "Emerald",
@@ -1254,9 +1254,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Milica Celikovic",
             "description": ""
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_084-204_Kuzco-TemperamentalEmperor.webp\" alt=\"Kuzco: Temperamental Emperor",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_084-204_Kuzco-TemperamentalEmperor.webp\" alt=\"Kuzco: Temperamental Emperor",
             "number": "084",
-            "setId": "084/204\u2022EN\u20221",
+            "setId": "084/204\u2022EN\u20222",
             "name": "KUZCO",
             "subname": "Temperamental Emperor",
             "ink": "Emerald",
@@ -1269,9 +1269,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Grace Tran",
             "description": "NO TOUCHY!: When this character is challenged and banished, you may banish the challenging character. WARD (Opponents can't choose this character except to challenge.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_085-204_LadyTremaine-WickedStepmother.webp\" alt=\"Lady Tremaine: Wicked Stepmother",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_085-204_LadyTremaine-WickedStepmother.webp\" alt=\"Lady Tremaine: Wicked Stepmother",
             "number": "085",
-            "setId": "085/204\u2022EN\u20221",
+            "setId": "085/204\u2022EN\u20222",
             "name": "LADY TERMAINE",
             "subname": "Wicked Stepmother",
             "ink": "Emerald",
@@ -1284,9 +1284,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Leonardo Giammichele",
             "description": "DO IT AGAIN!: When you play this character, you may return an action card from your discard to your hand."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_086-204_MadHatter-GraciousHost.webp\" alt=\"Mad Hatter: Gracious Host",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_086-204_MadHatter-GraciousHost.webp\" alt=\"Mad Hatter: Gracious Host",
             "number": "086",
-            "setId": "086/204\u2022EN\u20221",
+            "setId": "086/204\u2022EN\u20222",
             "name": "MAD HATTER",
             "subname": "Gracious Host",
             "ink": "Emerald",
@@ -1299,9 +1299,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Rosa la Barbera",
             "description": "TEA PARTY: Whenever this character is challenged, you may draw a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_087-204_Megara-PullingTheStrings.webp\" alt=\"Megara: Pulling The Strings",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_087-204_Megara-PullingTheStrings.webp\" alt=\"Megara: Pulling The Strings",
             "number": "087",
-            "setId": "087/204\u2022EN\u20221",
+            "setId": "087/204\u2022EN\u20222",
             "name": "MEGARA",
             "subname": "Pulling the Strings",
             "ink": "Emerald",
@@ -1314,9 +1314,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Aubrey Archer",
             "description": "WONDER BOY: When you play this character, chosen character gets +2 strength this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_088-204_MickeyMouse-ArtfulRogue.webp\" alt=\"Mickey Mouse: Artful Rogue",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_088-204_MickeyMouse-ArtfulRogue.webp\" alt=\"Mickey Mouse: Artful Rogue",
             "number": "088",
-            "setId": "088/204\u2022EN\u20221",
+            "setId": "088/204\u2022EN\u20222",
             "name": "MICKEY MOUSE",
             "subname": "Artful Rogue",
             "ink": "Emerald",
@@ -1329,9 +1329,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Alex Accorsi / Kendall Hale",
             "description": "MISDIRECTION: When you play an action, chosen opposing character can't quest during their next turn. SHIFT 5 (You may pay 5 ink to play this on top of one of your characters named Mickey Mouse.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_089-204_MickeyMouse-SteamboatPilot.webp\" alt=\"Mickey Mouse: Steamboat Pilot",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_089-204_MickeyMouse-SteamboatPilot.webp\" alt=\"Mickey Mouse: Steamboat Pilot",
             "number": "089",
-            "setId": "089/204\u2022EN\u20221",
+            "setId": "089/204\u2022EN\u20222",
             "name": "MICKEY MOUSE",
             "subname": "Steamboat Pilot",
             "ink": "Emerald",
@@ -1344,9 +1344,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Juan Diego Leon",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_090-204_MotherGothel-SelfishManipulator.webp\" alt=\"Mother Gothel: Selfish Manipulator",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_090-204_MotherGothel-SelfishManipulator.webp\" alt=\"Mother Gothel: Selfish Manipulator",
             "number": "090",
-            "setId": "090/204\u2022EN\u20221",
+            "setId": "090/204\u2022EN\u20222",
             "name": "MOTHER GOTHEL",
             "subname": "Shelfish Manipulator",
             "ink": "Emerald",
@@ -1359,9 +1359,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Javier Salas",
             "description": "SKIP THE DRAMA, STAY WITH MAMMA: While this character is exerted, opposing characters can't quest."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_091-204_PeterPan-NeverLanding.webp\" alt=\"Peter Pan: Never Landing",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_091-204_PeterPan-NeverLanding.webp\" alt=\"Peter Pan: Never Landing",
             "number": "091",
-            "setId": "091/204\u2022EN\u20221",
+            "setId": "091/204\u2022EN\u20222",
             "name": "PETER PAN",
             "subname": "Never Landing",
             "ink": "Emerald",
@@ -1374,9 +1374,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Koni",
             "description": "EVASIVE (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_092-204_Tamatoa-DrabLittleCrab.webp\" alt=\"Tamatoa: Drab Little Crab",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodbornLorcanaCh1_092-204_Tamatoa-DrabLittleCrab.webp\" alt=\"Tamatoa: Drab Little Crab",
             "number": "092",
-            "setId": "092/204\u2022EN\u20221",
+            "setId": "092/204\u2022EN\u20222",
             "name": "TAMATOA",
             "subname": "Drab Little Crab",
             "ink": "Emerald",
@@ -1389,9 +1389,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jeff Murchie",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_093-204_TinkerBell-MostHelpful.webp\" alt=\"Tinkerbell: Most Helpful",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_093-204_TinkerBell-MostHelpful.webp\" alt=\"Tinkerbell: Most Helpful",
             "number": "093",
-            "setId": "093/204\u2022EN\u20221",
+            "setId": "093/204\u2022EN\u20222",
             "name": "TINKER BELL",
             "subname": "Most Helpful",
             "ink": "Emerald",
@@ -1404,9 +1404,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Caner Soylu",
             "description": "PIXIE DUST: When you play this character, chosen character gains Evasive this turn. EVASIVE (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_094-204_DoItAgain.webp\" alt=\"Do It Again",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_094-204_DoItAgain.webp\" alt=\"Do It Again",
             "number": "094",
-            "setId": "094/204\u2022EN\u20221",
+            "setId": "094/204\u2022EN\u20222",
             "name": "DO IT AGAIN!",
             "subname": "",
             "ink": "Emerald",
@@ -1419,9 +1419,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Ellie Horie",
             "description": "Return an action card from your discard to your hand."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_095-204_MotherKnowsBest.webp\" alt=\"Mother Knows Best",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_095-204_MotherKnowsBest.webp\" alt=\"Mother Knows Best",
             "number": "095",
-            "setId": "095/204\u2022EN\u20221",
+            "setId": "095/204\u2022EN\u20222",
             "name": "MOTHER KNOWS BEST",
             "subname": "",
             "ink": "Emerald",
@@ -1434,9 +1434,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "R. La Barbera / L. Giammichele",
             "description": "Return chosen character to their player's hand."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_096-204_Stampede.webp\" alt=\"Stampede",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_096-204_Stampede.webp\" alt=\"Stampede",
             "number": "096",
-            "setId": "096/204\u2022EN\u20221",
+            "setId": "096/204\u2022EN\u20222",
             "name": "STAMPEDE",
             "subname": "",
             "ink": "Emerald",
@@ -1449,9 +1449,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matt Chapman",
             "description": "Deal 2 damage to chosen damaged character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_097-204_StealFromTheRich.webp\" alt=\"Steal From The Rich",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_097-204_StealFromTheRich.webp\" alt=\"Steal From The Rich",
             "number": "097",
-            "setId": "097/204\u2022EN\u20221",
+            "setId": "097/204\u2022EN\u20222",
             "name": "STEAL FROM THE RICH",
             "subname": "",
             "ink": "Emerald",
@@ -1464,9 +1464,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Hedvig Haggman-Sund",
             "description": "Whenever one of your characters quests this turn, each opponent loses 1 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_098-204_SuddenChill.webp\" alt=\"Sudden Chill",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_098-204_SuddenChill.webp\" alt=\"Sudden Chill",
             "number": "098",
-            "setId": "098/204\u2022EN\u20221",
+            "setId": "098/204\u2022EN\u20222",
             "name": "SUDDEN CHILL",
             "subname": "",
             "ink": "Emerald",
@@ -1479,9 +1479,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Giulia Riva",
             "description": "Each opponent chooses and discards a card."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_099-204_TheBeastIsMine.webp\" alt=\"The Beast Is Mine",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_099-204_TheBeastIsMine.webp\" alt=\"The Beast Is Mine",
             "number": "099",
-            "setId": "099/204\u2022EN\u20221",
+            "setId": "099/204\u2022EN\u20222",
             "name": "THE BEAST IS MINE",
             "subname": "",
             "ink": "Emerald",
@@ -1494,9 +1494,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matthew Robert Davies",
             "description": "Chosen character gains Reckless during their next turn. (They can't quest and must challange if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_100-204_ViciousBetrayal.webp\" alt=\"Vicious Betrayal",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_100-204_ViciousBetrayal.webp\" alt=\"Vicious Betrayal",
             "number": "100",
-            "setId": "100/204\u2022EN\u20221",
+            "setId": "100/204\u2022EN\u20222",
             "name": "VICIOUS BETRAYAL",
             "subname": "",
             "ink": "Emerald",
@@ -1509,9 +1509,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Michaela Martin",
             "description": "Chosen character gets +2 strength this turm. If a Villain character is chosen, they get +3 strength instead."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_101-204_Dr.FaciliersCards.webp\" alt=\"Dr. Facilier's Cards",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_101-204_Dr.FaciliersCards.webp\" alt=\"Dr. Facilier's Cards",
             "number": "101",
-            "setId": "101/204\u2022EN\u20221",
+            "setId": "101/204\u2022EN\u20222",
             "name": "DR. FACILIER'S CARDS",
             "subname": "",
             "ink": "Emerald",
@@ -1524,9 +1524,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Koni",
             "description": "THE CARDS WILL TELL: You pay 1 ink less for the next action you play this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_102-204_StolenScimitar.webp\" alt=\"Stolen Scimitar",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_102-204_StolenScimitar.webp\" alt=\"Stolen Scimitar",
             "number": "102",
-            "setId": "102/204\u2022EN\u20221",
+            "setId": "102/204\u2022EN\u20222",
             "name": "STOLEN SCIMITAR",
             "subname": "",
             "ink": "Emerald",
@@ -1543,9 +1543,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
 
     "RiseOfTheFloodborn_Ruby": [
         {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_103-204_Abu-MischievousMonkey.webp\" alt=\"Abu: Mischievous Monkey",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_103-204_Abu-MischievousMonkey.webp\" alt=\"Abu: Mischievous Monkey",
             "number": "103",
-            "setId": "103/204\u2022EN\u20221",
+            "setId": "103/204\u2022EN\u20222",
             "name": "ABU",
             "subname": "Mischievous Monkey",
             "ink": "Ruby",
@@ -1558,9 +1558,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Oleg Yurkov",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_104-204_Aladdin-HeroicOutlaw.webp\" alt=\"Aladdin: Hero Outlaw",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_104-204_Aladdin-HeroicOutlaw.webp\" alt=\"Aladdin: Hero Outlaw",
             "number": "104",
-            "setId": "104/204\u2022EN\u20221",
+            "setId": "104/204\u2022EN\u20222",
             "name": "ALADDIN",
             "subname": "Heroic Outlaw",
             "ink": "Ruby",
@@ -1573,9 +1573,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Nicholas Kole",
             "description": "DARING EXPLOIT: During your turn, whenever this character banishes another character in a challenge, you gain 2 lore and each opponent loses 2 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_105-204_Aladdin-StreetRat.webp\" alt=\"Aladdin: Street Rat",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_105-204_Aladdin-StreetRat.webp\" alt=\"Aladdin: Street Rat",
             "number": "105",
-            "setId": "105/204\u2022EN\u20221",
+            "setId": "105/204\u2022EN\u20222",
             "name": "ALADDIN",
             "subname": "Street Rat",
             "ink": "Ruby",
@@ -1590,7 +1590,7 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
         }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_106-204_Captain-ColonelsLieutenant.webp\" alt=\"Captain: Colonels Lieutenant",
             "number": "106",
-            "setId": "106/204\u2022EN\u20221",
+            "setId": "106/204\u2022EN\u20222",
             "name": "CAPTAIN",
             "subname": "Colonels Lieutenant",
             "ink": "Ruby",
@@ -1603,9 +1603,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Brian Weisz",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_107-204_CaptainHook-RuthlessPirate.webp\" alt=\"Captain Hook: Ruthless Pirate",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_107-204_CaptainHook-RuthlessPirate.webp\" alt=\"Captain Hook: Ruthless Pirate",
             "number": "107",
-            "setId": "107/204\u2022EN\u20221",
+            "setId": "107/204\u2022EN\u20222",
             "name": "CAPTAIN HOOK",
             "subname": "Ruthless Pirate",
             "ink": "Ruby",
@@ -1620,7 +1620,7 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
         },{
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_108-204_DonaldDuck-BoisterousFowl.webp\" alt=\"Donald Duck: Boisterous Fowl",
             "number": "108",
-            "setId": "108/204\u2022EN\u20221",
+            "setId": "108/204\u2022EN\u20222",
             "name": "DONALD DUCK",
             "subname": "Boisterous Fowl",
             "ink": "Ruby",
@@ -1633,9 +1633,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kenneth Anderson",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_109-204_Elsa-IceSurfer.webp\" alt=\"Els: Ice Surfer",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_109-204_Elsa-IceSurfer.webp\" alt=\"Els: Ice Surfer",
             "number": "109",
-            "setId": "109/204\u2022EN\u20221",
+            "setId": "109/204\u2022EN\u20222",
             "name": "ELSA",
             "subname": "On the Job",
             "ink": "Ruby",
@@ -1648,9 +1648,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Alice Pisoni / Whitney Pollett",
             "description": "THAT'S NO BLIZZARD: Whenever you play a character named Anna, ready this character. This character can't quest for the rest of this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_110-204_Gaston-ArrogantHunter.webp\" alt=\"Gaston: Arrogant Hunter",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_110-204_Gaston-ArrogantHunter.webp\" alt=\"Gaston: Arrogant Hunter",
             "number": "110",
-            "setId": "110/204\u2022EN\u20221",
+            "setId": "110/204\u2022EN\u20222",
             "name": "GASTON",
             "subname": "Arrogant Hunter",
             "ink": "Ruby",
@@ -1663,9 +1663,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matthew Robert Davies",
             "description": "RECKLESS (This character can't quest and must challenge each turn if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_111-204_Goofy-Daredevil.webp\" alt=\"Goofy: Daredevil",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_111-204_Goofy-Daredevil.webp\" alt=\"Goofy: Daredevil",
             "number": "111",
-            "setId": "111/204\u2022EN\u20221",
+            "setId": "111/204\u2022EN\u20222",
             "name": "GOOFY",
             "subname": "Daredevil",
             "ink": "Ruby",
@@ -1678,9 +1678,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kenneth Anderson",
             "description": "EVASIVE (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_112-204_Lefou-Instigator.webp\" alt=\"Lefou: Instigator",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_112-204_Lefou-Instigator.webp\" alt=\"Lefou: Instigator",
             "number": "112",
-            "setId": "112/204\u2022EN\u20221",
+            "setId": "112/204\u2022EN\u20222",
             "name": "LEFOU",
             "subname": "Instigator",
             "ink": "Ruby",
@@ -1693,9 +1693,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Gaku Kumatori",
             "description": "FAN THE FLAMES: When you play this characer, ready chosen character. They can't quest for the rest of this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_113-204_Maleficent-MonstrousDragon.webp\" alt=\"Maleficent: Monstrous Dragon",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_113-204_Maleficent-MonstrousDragon.webp\" alt=\"Maleficent: Monstrous Dragon",
             "number": "113",
-            "setId": "113/204\u2022EN\u20221",
+            "setId": "113/204\u2022EN\u20222",
             "name": "MALEFICENT",
             "subname": "Monstrous Dragon",
             "ink": "Ruby",
@@ -1708,9 +1708,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Luis Huerta",
             "description": "DRAGON FIRE: When you play this character, you may banish chosen character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_114-204_Maui-HeroToAll.webp\" alt=\"Maui: Hero to All",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_114-204_Maui-HeroToAll.webp\" alt=\"Maui: Hero to All",
             "number": "114",
-            "setId": "114/204\u2022EN\u20221",
+            "setId": "114/204\u2022EN\u20222",
             "name": "MAUI",
             "subname": "Hero to All",
             "ink": "Ruby",
@@ -1723,9 +1723,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Pirel / Marco Giogianni",
             "description": "Rush (This character can challenge the turn they're played.) Reckless (This character can't quest and must challenge each turn if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_115-204_MickeyMouse-BraveLittleTailor.webp\" alt=\"Mickey Mouse: Brave Little Tailor",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_115-204_MickeyMouse-BraveLittleTailor.webp\" alt=\"Mickey Mouse: Brave Little Tailor",
             "number": "115",
-            "setId": "115/204\u2022EN\u20221",
+            "setId": "115/204\u2022EN\u20222",
             "name": "MICKEY MOUSE",
             "subname": "Brave Little Tailor",
             "ink": "Ruby",
@@ -1738,9 +1738,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Nicholas Kole",
             "description": "Evasive (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_116-204_MinnieMouse-AlwaysClassy.webp\" alt=\"Minnie Mouse: Always Classy",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_116-204_MinnieMouse-AlwaysClassy.webp\" alt=\"Minnie Mouse: Always Classy",
             "number": "116",
-            "setId": "116/204\u2022EN\u20221",
+            "setId": "116/204\u2022EN\u20222",
             "name": "MINNIE MOUSE",
             "subname": "Always Classy",
             "ink": "Ruby",
@@ -1753,9 +1753,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kenneth Anderson",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_117-204_Moana-ChosenByTheOcean.webp\" alt=\"Moana: Chosen By The Ocean",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_117-204_Moana-ChosenByTheOcean.webp\" alt=\"Moana: Chosen By The Ocean",
             "number": "117",
-            "setId": "117/204\u2022EN\u20221",
+            "setId": "117/204\u2022EN\u20222",
             "name": "MOANA",
             "subname": "Chosen By The Ocean",
             "ink": "Ruby",
@@ -1768,9 +1768,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Tanisha Cherislin",
             "description": "THIS IS NOT WHO YOU ARE: When you play this character, you may banish chosen character named Te Ka."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_118-204_Mulan-ImperialSoldier.webp\" alt=\"Mulan: Imperial Soldier",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_118-204_Mulan-ImperialSoldier.webp\" alt=\"Mulan: Imperial Soldier",
             "number": "118",
-            "setId": "118/204\u2022EN\u20221",
+            "setId": "118/204\u2022EN\u20222",
             "name": "MULAN",
             "subname": "Imperial Soldier",
             "ink": "Ruby",
@@ -1783,9 +1783,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Mel Milton",
             "description": "LEAD BY EXAMPLE: During your turn, whenever this character banishes another character in a challenge, your other characters get +1 lore this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_119-204_PeterPan-FearlessFighter.webp\" alt=\"Peter Pan: Fearless Fighter",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_119-204_PeterPan-FearlessFighter.webp\" alt=\"Peter Pan: Fearless Fighter",
             "number": "119",
-            "setId": "119/204\u2022EN\u20221",
+            "setId": "119/204\u2022EN\u20222",
             "name": "PETER PAN",
             "subname": "Fearless Fighter",
             "ink": "Ruby",
@@ -1798,9 +1798,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Anh Dang",
             "description": "Rush (This character can challenge the turn they're played.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_120-204_Pongo-OlRascal.webp\" alt=\"Pongo: Ol Rascal",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_120-204_Pongo-OlRascal.webp\" alt=\"Pongo: Ol Rascal",
             "number": "120",
-            "setId": "120/204\u2022EN\u20221",
+            "setId": "120/204\u2022EN\u20222",
             "name": "PONGO",
             "subname": "Ol Rascal",
             "ink": "Ruby",
@@ -1813,9 +1813,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Brian Weisz",
             "description": "Evasive (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_121-204_Rapunzel-LettingDownHerHair.webp\" alt=\"Rapunzel: Letting Down Her Hair",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_121-204_Rapunzel-LettingDownHerHair.webp\" alt=\"Rapunzel: Letting Down Her Hair",
             "number": "121",
-            "setId": "121/204\u2022EN\u20221",
+            "setId": "121/204\u2022EN\u20222",
             "name": "RAPUNZEL",
             "subname": "Letting Down Her Hair",
             "ink": "Ruby",
@@ -1828,9 +1828,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Clio Wolfensberger",
             "description": "TANGLE: When you play this character, each opponent loses 1 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_122-204_Scar-FieryUsurper.webp\" alt=\"Scar: Fiery Usurper",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_122-204_Scar-FieryUsurper.webp\" alt=\"Scar: Fiery Usurper",
             "number": "122",
-            "setId": "122/204\u2022EN\u20221",
+            "setId": "122/204\u2022EN\u20222",
             "name": "SCAR",
             "subname": "Fiery Usurper",
             "ink": "Ruby",
@@ -1843,9 +1843,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Amber Kommavongsa",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_123-204_Scar-ShamelessFirebrand.webp\" alt=\"Scar: Shameless Firebrand",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_123-204_Scar-ShamelessFirebrand.webp\" alt=\"Scar: Shameless Firebrand",
             "number": "123",
-            "setId": "123/204\u2022EN\u20221",
+            "setId": "123/204\u2022EN\u20222",
             "name": "SCAR",
             "subname": "Shameless Firebrand",
             "ink": "Ruby",
@@ -1858,9 +1858,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jenna Gray",
             "description": "ROUSING SPEECH: When you play this character, ready your characters with cost 3 or less. They can't quest for the rest of this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_124-204_SergeantTibbs-CourageousCat.webp\" alt=\"Sergeant Tibbs: Courageous Cat",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_124-204_SergeantTibbs-CourageousCat.webp\" alt=\"Sergeant Tibbs: Courageous Cat",
             "number": "124",
-            "setId": "124/204\u2022EN\u20221",
+            "setId": "124/204\u2022EN\u20222",
             "name": "SERGEANT TIBBS",
             "subname": "Courageous Cat",
             "ink": "Ruby",
@@ -1873,9 +1873,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cory Godbey",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_125-204_Stitch-Abomination.webp\" alt=\"Stitch: Abomination",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_125-204_Stitch-Abomination.webp\" alt=\"Stitch: Abomination",
             "number": "125",
-            "setId": "125/204\u2022EN\u20221",
+            "setId": "125/204\u2022EN\u20222",
             "name": "STITCH",
             "subname": "Abomination",
             "ink": "Ruby",
@@ -1888,9 +1888,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Bill Robinson",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_126-204_TeKa-TheBurningOne.webp\" alt=\"TeKa: The Burning One",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_126-204_TeKa-TheBurningOne.webp\" alt=\"TeKa: The Burning One",
             "number": "126",
-            "setId": "092/204\u2022EN\u20221",
+            "setId": "092/204\u2022EN\u20222",
             "name": "TE KA",
             "subname": "The Burning One",
             "ink": "Ruby",
@@ -1903,9 +1903,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kamil Murzyn",
             "description": "Reckless (This character can't quest and must challenge each turn if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_127-204_Tigger-WonderfulThing.webp\" alt=\"Tigger: Wonderful Thing",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_127-204_Tigger-WonderfulThing.webp\" alt=\"Tigger: Wonderful Thing",
             "number": "127",
-            "setId": "127/204\u2022EN\u20221",
+            "setId": "127/204\u2022EN\u20222",
             "name": "TIGGER",
             "subname": "Wonderful Thing",
             "ink": "Ruby",
@@ -1918,9 +1918,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kenneth Anderson",
             "description": "Evasive (Only characters with Evasive can challenge this character.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_128-204_BePrepared.webp\" alt=\"Be Prepared",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_128-204_BePrepared.webp\" alt=\"Be Prepared",
             "number": "128",
-            "setId": "128/204\u2022EN\u20221",
+            "setId": "128/204\u2022EN\u20222",
             "name": "BE PREPARED",
             "subname": "",
             "ink": "Ruby",
@@ -1933,9 +1933,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jared Nickeri",
             "description": "Banish all characters."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_129-204_CutToTheChase.webp\" alt=\"Cut To The Chase",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_129-204_CutToTheChase.webp\" alt=\"Cut To The Chase",
             "number": "129",
-            "setId": "129/204\u2022EN\u20221",
+            "setId": "129/204\u2022EN\u20222",
             "name": "CUT TO THE CHASE",
             "subname": "",
             "ink": "Ruby",
@@ -1948,9 +1948,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Ellie Horie",
             "description": "Chosen character gets Rush this turn. (They can challenge the turn they're played.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_130-204_DragonFire.webp\" alt=\"Dragon Fire",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_130-204_DragonFire.webp\" alt=\"Dragon Fire",
             "number": "130",
-            "setId": "130/204\u2022EN\u20221",
+            "setId": "130/204\u2022EN\u20222",
             "name": "DRAGON FIRE",
             "subname": "",
             "ink": "Ruby",
@@ -1963,9 +1963,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Luis Huerta",
             "description": "Banish chosen character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_131-204_FanTheFlames.webp\" alt=\"Fan The Flames",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_131-204_FanTheFlames.webp\" alt=\"Fan The Flames",
             "number": "131",
-            "setId": "131/204\u2022EN\u20221",
+            "setId": "131/204\u2022EN\u20222",
             "name": "FAN THE FLAMES",
             "subname": "",
             "ink": "Ruby",
@@ -1978,9 +1978,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jenna Gray",
             "description": "Ready chosen character. They can't quest for the rest of this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_132-204_HesGotASword.webp\" alt=\"He's Got A Sword",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_132-204_HesGotASword.webp\" alt=\"He's Got A Sword",
             "number": "132",
-            "setId": "132/204\u2022EN\u20221",
+            "setId": "132/204\u2022EN\u20222",
             "name": "HE'S GOT A SWORD",
             "subname": "",
             "ink": "Ruby",
@@ -1993,9 +1993,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Koni",
             "description": "Chosen character gets +2 strength this turn."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_133-204_Tangle.webp\" alt=\"Tangle",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_133-204_Tangle.webp\" alt=\"Tangle",
             "number": "133",
-            "setId": "133/204\u2022EN\u20221",
+            "setId": "133/204\u2022EN\u20222",
             "name": "TANGLE",
             "subname": "",
             "ink": "Ruby",
@@ -2008,9 +2008,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Eri Welli",
             "description": "Each opponent loses 1 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_134-204_PoisonedApple.webp\" alt=\"Poisoned Apple",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_134-204_PoisonedApple.webp\" alt=\"Poisoned Apple",
             "number": "134",
-            "setId": "134/204\u2022EN\u20221",
+            "setId": "134/204\u2022EN\u20222",
             "name": "POISONED APPLE",
             "subname": "",
             "ink": "Ruby",
@@ -2023,9 +2023,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Andrew Trabbold",
             "description": "TAKE A BITE...: 1 ink, Banish this item - Exert chosen character. If a Princess character is chosen, banish her instead."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_135-204_ShieldOfVirtue.webp\" alt=\"Shield Of Virtue",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_135-204_ShieldOfVirtue.webp\" alt=\"Shield Of Virtue",
             "number": "135",
-            "setId": "135/204\u2022EN\u20221",
+            "setId": "135/204\u2022EN\u20222",
             "name": "SHEILD OF VIRTUE",
             "subname": "",
             "ink": "Ruby",
@@ -2038,9 +2038,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Eri Welli",
             "description": "FIREPROOF: 3 ink - Ready chosen character. They can't quest for the rest of this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_136-204_SwordOfTruth.webp\" alt=\"Sword Of Truth",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_136-204_SwordOfTruth.webp\" alt=\"Sword Of Truth",
             "number": "136",
-            "setId": "136/204\u2022EN\u20221",
+            "setId": "136/204\u2022EN\u20222",
             "name": "SWORD OF TRUTH",
             "subname": "",
             "ink": "Ruby",
@@ -2057,9 +2057,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
 
     "RiseOfTheFloodborn_Sapphire": [
         {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_137-204_Ariel-WhoseitCollector.webp\" alt=\"Ariel: Whoseit Collector",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_137-204_Ariel-WhoseitCollector.webp\" alt=\"Ariel: Whoseit Collector",
             "number": "137",
-            "setId": "137/204\u2022EN\u20221",
+            "setId": "137/204\u2022EN\u20222",
             "name": "ARIEL",
             "subname": "Whoseit Collector",
             "ink": "Sapphire",
@@ -2072,9 +2072,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Hedvig Haggman-Sund",
             "description": "LOOK AT THIS STUFF: Whenever you play an item, you may ready this character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_138-204_Aurora-BriarRose.webp\" alt=\"Aurora: Briar Rose",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_138-204_Aurora-BriarRose.webp\" alt=\"Aurora: Briar Rose",
             "number": "138",
-            "setId": "138/204\u2022EN\u20221",
+            "setId": "138/204\u2022EN\u20222",
             "name": "AURORA",
             "subname": "Briar Rose",
             "ink": "Sapphire",
@@ -2087,9 +2087,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Rosalia Radosti",
             "description": "DISARMING BEAUTY: When you play this character, chosen character gets -2 strength this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_139-204_Aurora-DreamingGuardian.webp\" alt=\"Aurora: Dreaming Guardian",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_139-204_Aurora-DreamingGuardian.webp\" alt=\"Aurora: Dreaming Guardian",
             "number": "139",
-            "setId": "139/204\u2022EN\u20221",
+            "setId": "139/204\u2022EN\u20222",
             "name": "AURORA",
             "subname": "Dreaming Guardian",
             "ink": "Sapphire",
@@ -2102,9 +2102,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Nicholas Kole",
             "description": "PROTECTIVE EMBRACE: Your other characters gain Ward. (Opponents can't chose them except to challenge.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_140-204_Aurora-RegalPrincess.webp\" alt=\"Aurora: Regal Princess",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_140-204_Aurora-RegalPrincess.webp\" alt=\"Aurora: Regal Princess",
             "number": "140",
-            "setId": "140/204\u2022EN\u20221",
+            "setId": "140/204\u2022EN\u20222",
             "name": "AURORA",
             "subname": "Regal Princess",
             "ink": "Sapphire",
@@ -2117,9 +2117,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Samanta Erdini",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_141-204_Belle-InventiveEngineer.webp\" alt=\"Belle: Inventive Engineer",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_141-204_Belle-InventiveEngineer.webp\" alt=\"Belle: Inventive Engineer",
             "number": "141",
-            "setId": "141/204\u2022EN\u20221",
+            "setId": "141/204\u2022EN\u20222",
             "name": "BELLE",
             "subname": "Inventive Engineer",
             "ink": "Sapphire",
@@ -2132,9 +2132,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Gabriel Romero / Pix Smith",
             "description": "TINKER: Whenever this character quests, yuo pay 1 ink less for the next item you play this turn."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_142-204_Belle-StrangeButSpecial.webp\" alt=\"Belle: Strange But Special",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_142-204_Belle-StrangeButSpecial.webp\" alt=\"Belle: Strange But Special",
             "number": "142",
-            "setId": "142/204\u2022EN\u20221",
+            "setId": "142/204\u2022EN\u20222",
             "name": "BELLE",
             "subname": "Strange But Special",
             "ink": "Sapphire",
@@ -2147,9 +2147,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Alice Pisoni",
             "description": "READ A BOOK: During your turn, you may put an additional card from your hand into your inkwell face down. MY FAVORITE PART!: While you have 10 or more cards in your inkwell, this character gets +4 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_143-204_ChiefTui-RespectedLeader.webp\" alt=\"Chief Tui: Respected Leader",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_143-204_ChiefTui-RespectedLeader.webp\" alt=\"Chief Tui: Respected Leader",
             "number": "143",
-            "setId": "143/204\u2022EN\u20221",
+            "setId": "143/204\u2022EN\u20222",
             "name": "CHIEF TUI",
             "subname": "Respected Leader",
             "ink": "Sapphire",
@@ -2162,9 +2162,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Pirel",
             "description": "Support (Whenever this character quests, you may add their strength to another chosen character's strength in this turn.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_144-204_DonaldDuck-StruttingHisStuff.webp\" alt=\"Donald Duck: Strutting His Stuff",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_144-204_DonaldDuck-StruttingHisStuff.webp\" alt=\"Donald Duck: Strutting His Stuff",
             "number": "144",
-            "setId": "144/204\u2022EN\u20221",
+            "setId": "144/204\u2022EN\u20222",
             "name": "DONALD DUCK",
             "subname": "Strutting His Stuff",
             "ink": "Sapphire",
@@ -2177,9 +2177,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cam Kendell",
             "description": "Ward (Opponents can't choose this character except to challenge.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_145-204_Flounder-VoiceOfReason.webp\" alt=\"Flounder: Voice Of Reason",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_145-204_Flounder-VoiceOfReason.webp\" alt=\"Flounder: Voice Of Reason",
             "number": "145",
-            "setId": "145/204\u2022EN\u20221",
+            "setId": "145/204\u2022EN\u20222",
             "name": "FLOUNDER",
             "subname": "Voice Of Reason",
             "ink": "Sapphire",
@@ -2192,9 +2192,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Brian Weisz",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_146-204_GrammaTala-Storyteller.webp\" alt=\"Gramma Tala: Storyteller",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_146-204_GrammaTala-Storyteller.webp\" alt=\"Gramma Tala: Storyteller",
             "number": "146",
-            "setId": "146/204\u2022EN\u20221",
+            "setId": "146/204\u2022EN\u20222",
             "name": "GRAMMA TALA",
             "subname": "Storyteller",
             "ink": "Sapphire",
@@ -2207,9 +2207,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Filipe Laurentino",
             "description": "I WILL BE WITH YOU: When this character is banished, you may put this card into your inkwell facedown and exerted."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_147-204_Hades-InfernalSchemer.webp\" alt=\"Hades: Infernal Schemer",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_147-204_Hades-InfernalSchemer.webp\" alt=\"Hades: Infernal Schemer",
             "number": "147",
-            "setId": "147/204\u2022EN\u20221",
+            "setId": "147/204\u2022EN\u20222",
             "name": "HADES",
             "subname": "Infernal Schemer",
             "ink": "Sapphire",
@@ -2222,9 +2222,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matthew Robert Davies",
             "description": "IS THERE A DOWNSIDE TO THIS?: When you play this character, you may put chosen opposing character into their player's inkwell facedown."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_148-204_Jasmine-Disguised.webp\" alt=\"Jasmine: Disguised\"",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_148-204_Jasmine-Disguised.webp\" alt=\"Jasmine: Disguised\"",
             "number": "148",
-            "setId": "148204\u2022EN\u20221",
+            "setId": "148204\u2022EN\u20222",
             "name": "JASMINE",
             "subname": "Disguised",
             "ink": "Sapphire",
@@ -2237,9 +2237,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "R. La Barbera / L. Giammichele",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_149-204_Jasmine-QueenofAgrabah.webp\" alt=\"Jasmine: Queen Of Agrabah",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_149-204_Jasmine-QueenofAgrabah.webp\" alt=\"Jasmine: Queen Of Agrabah",
             "number": "149",
-            "setId": "149/204\u2022EN\u20221",
+            "setId": "149/204\u2022EN\u20222",
             "name": "JASMINE",
             "subname": "Queen Of Agrabah",
             "ink": "Sapphire",
@@ -2252,9 +2252,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Filipe Laurentino",
             "description": "CARETAKER: When you play this character and whenever she quests, you may remove up to 2 damage from each of your characters."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_150-204_Maleficent-SinisterVisitor.webp\" alt=\"Maleficent: Sinister Visitor",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_150-204_Maleficent-SinisterVisitor.webp\" alt=\"Maleficent: Sinister Visitor",
             "number": "150",
-            "setId": "150/204\u2022EN\u20221",
+            "setId": "150/204\u2022EN\u20222",
             "name": "MALEFICENT",
             "subname": "Sinister Visitor",
             "ink": "Sapphire",
@@ -2267,9 +2267,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Nicholas Kole",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_151-204_Maleficent-Uninvited.webp\" alt=\"Maleficent: Uninvited",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_151-204_Maleficent-Uninvited.webp\" alt=\"Maleficent: Uninvited",
             "number": "151",
-            "setId": "151/204\u2022EN\u20221",
+            "setId": "151/204\u2022EN\u20222",
             "name": "MALEFICENT",
             "subname": "Uninvited",
             "ink": "Sapphire",
@@ -2282,9 +2282,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Gaku Kumatori",
             "description": ""
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_152-204_Maurice-WorldFamousInventor.webp\" alt=\"Maurice: World Famous Inventor",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_152-204_Maurice-WorldFamousInventor.webp\" alt=\"Maurice: World Famous Inventor",
             "number": "152",
-            "setId": "152/204\u2022EN\u20221",
+            "setId": "152/204\u2022EN\u20222",
             "name": "MAURICE",
             "subname": "World Famous Inventor",
             "ink": "Sapphire",
@@ -2297,9 +2297,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Alex Accorsi",
             "description": "GIVE IT A TRY: Whenever this character quests, you pay 2 ink less for the next item you play this turn. IT WORKS!: Whenever you play an item, you may draw a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_153-204_Merlin-SelfAppointedMentor.webp\" alt=\"Merlin: Self Appointed Mentor",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_153-204_Merlin-SelfAppointedMentor.webp\" alt=\"Merlin: Self Appointed Mentor",
             "number": "153",
-            "setId": "153/204\u2022EN\u20221",
+            "setId": "153/204\u2022EN\u20222",
             "name": "MERLIN",
             "subname": "Self Appointed Mentor",
             "ink": "Sapphire",
@@ -2312,9 +2312,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Dave Beauchene",
             "description": "Support (Whenever this character quests, you may add their strength to another chosen character's strength this turn.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_154-204_MickeyMouse-Detective.webp\" alt=\"Mickey Mouse: Detective",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_154-204_MickeyMouse-Detective.webp\" alt=\"Mickey Mouse: Detective",
             "number": "154",
-            "setId": "154/204\u2022EN\u20221",
+            "setId": "154/204\u2022EN\u20222",
             "name": "MICKEY MOUSE",
             "subname": "Detective",
             "ink": "Sapphire",
@@ -2327,9 +2327,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jared Nickeri",
             "description": "GET A CLUE: When you play this character, you may put the top card of your deck into your inkwell facedown and exerted."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_155-204_Mufasa-KingOfThePrideLands.webp\" alt=\"Mufasa: King of the Pride Lands",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_155-204_Mufasa-KingOfThePrideLands.webp\" alt=\"Mufasa: King of the Pride Lands",
             "number": "155",
-            "setId": "155/204\u2022EN\u20221",
+            "setId": "155/204\u2022EN\u20222",
             "name": "MUFASA",
             "subname": "King of the Pride Lands",
             "ink": "Sapphire",
@@ -2342,9 +2342,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Luis Huerta",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_156-204_Philoctetes-TrainerOfHeroes.webp\" alt=\"Philoctetes: Trainer of Heros",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_156-204_Philoctetes-TrainerOfHeroes.webp\" alt=\"Philoctetes: Trainer of Heros",
             "number": "156",
-            "setId": "156/204\u2022EN\u20221",
+            "setId": "156/204\u2022EN\u20222",
             "name": "PHILOCTETES",
             "subname": "Trainer of Heros",
             "ink": "Sapphire",
@@ -2357,9 +2357,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Leonardo Giammichele",
             "description": "Support (Whenever this character quests, you may add their strength to another chosen character's strength this turn.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_157-204_RobinHood-UnrivaledArcher.webp\" alt=\"Robin Hood: Unrivaled Archer",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_157-204_RobinHood-UnrivaledArcher.webp\" alt=\"Robin Hood: Unrivaled Archer",
             "number": "157",
-            "setId": "157/204\u2022EN\u20221",
+            "setId": "157/204\u2022EN\u20222",
             "name": "ROBIN HOOD",
             "subname": "Unrivaled Archer",
             "ink": "Sapphire",
@@ -2372,9 +2372,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "John Loren",
             "description": "FEED THE POOR: When you play this character, if an opponent has more cards in their hand than you, draw a card. GOOD SHOT: During your turn, this character gains Evasive. (They can challenge with Evasive.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_158-204_Scar-Mastermind.webp\" alt=\"Scar: Mastermind",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_158-204_Scar-Mastermind.webp\" alt=\"Scar: Mastermind",
             "number": "158",
-            "setId": "158/204\u2022EN\u20221",
+            "setId": "158/204\u2022EN\u20222",
             "name": "SCAR",
             "subname": "Mastermind",
             "ink": "Sapphire",
@@ -2387,9 +2387,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Bill Robinson",
             "description": "INSIDIOUS PLOT: When you play this character, chosen opposing character gets -5 strength this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_159-204_Tamatoa-SoShiny.webp\" alt=\"Tamatoa: So Shiny",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_159-204_Tamatoa-SoShiny.webp\" alt=\"Tamatoa: So Shiny",
             "number": "159",
-            "setId": "159/204\u2022EN\u20221",
+            "setId": "159/204\u2022EN\u20222",
             "name": "TAMATOA",
             "subname": "So Shiny",
             "ink": "Sapphire",
@@ -2402,9 +2402,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Leonardo Giammichele",
             "description": "WHAT HAVE WE HERE?: When you play this character and wheneveer he quests, you may return an item card from your discard to your hand. GLAM: This character gets +1 lore for each item you have in play."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_160-204_Triton-TheSeaKing.webp\" alt=\"Triton: The Sea King",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_160-204_Triton-TheSeaKing.webp\" alt=\"Triton: The Sea King",
             "number": "160",
-            "setId": "160/204\u2022EN\u20221",
+            "setId": "160/204\u2022EN\u20222",
             "name": "TRITON",
             "subname": "The Sea King",
             "ink": "Sapphire",
@@ -2417,9 +2417,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cristian Romero",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_161-204_DevelopYourBrain.webp\" alt=\"Develop Your Brain",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_161-204_DevelopYourBrain.webp\" alt=\"Develop Your Brain",
             "number": "161",
-            "setId": "161/204\u2022EN\u20221",
+            "setId": "161/204\u2022EN\u20222",
             "name": "DEVELOP YOUR BRAIN",
             "subname": "",
             "ink": "Sapphire",
@@ -2432,9 +2432,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Pao Young",
             "description": "Look at the top 2 cards of your deck. Put one into your hand and the other on the bottom of the deck."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_162-204_IfItsNotBaroque.webp\" alt=\"If It's Not Baroque",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_162-204_IfItsNotBaroque.webp\" alt=\"If It's Not Baroque",
             "number": "162",
-            "setId": "162/204\u2022EN\u20221",
+            "setId": "162/204\u2022EN\u20222",
             "name": "IF IT'S NOT BAROQUE",
             "subname": "",
             "ink": "Sapphire",
@@ -2447,9 +2447,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kenneth Anderson",
             "description": "Return an item card from your discard to your hand."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_163-204_LetItGo.webp\" alt=\"Let It Go",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_163-204_LetItGo.webp\" alt=\"Let It Go",
             "number": "163",
-            "setId": "163/204\u2022EN\u20221",
+            "setId": "163/204\u2022EN\u20222",
             "name": "LET IT GO",
             "subname": "",
             "ink": "Sapphire",
@@ -2462,9 +2462,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Milica Cellkovic",
             "description": "Put chosen character into their player's inkwell facedown and exerted."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_164-204_One-Jump-Ahead.webp\" alt=\"One Jump Ahead",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_164-204_One-Jump-Ahead.webp\" alt=\"One Jump Ahead",
             "number": "164",
-            "setId": "164/204\u2022EN\u20221",
+            "setId": "164/204\u2022EN\u20222",
             "name": "ONE JUMP AHEAD",
             "subname": "",
             "ink": "Sapphire",
@@ -2477,9 +2477,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Bill Robinson",
             "description": "Put the top card of your deck into your inkwell facedown and exerted."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_165-204_WorkTogether.webp\" alt=\"Work Together",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_165-204_WorkTogether.webp\" alt=\"Work Together",
             "number": "165",
-            "setId": "165/204\u2022EN\u20221",
+            "setId": "165/204\u2022EN\u20222",
             "name": "WORK TOGETHER",
             "subname": "",
             "ink": "Sapphire",
@@ -2492,9 +2492,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Bill Robinson",
             "description": "Chosen character gets Suppoert this turn (Whenever they quest, you may add their strength to another chosen character's strength this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_166-204_CoconutBasket.webp\" alt=\"Coconut Basket",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_166-204_CoconutBasket.webp\" alt=\"Coconut Basket",
             "number": "166",
-            "setId": "166/204\u2022EN\u20221",
+            "setId": "166/204\u2022EN\u20222",
             "name": "COCONUT BASKET",
             "subname": "",
             "ink": "Sapphire",
@@ -2507,9 +2507,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Milica Cellkovic",
             "description": "CONSIDER THE COCONUT: Whenever you play a character, you may remove up to 2 damage from chosen character."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_167-204_EyeOfTheFates.webp\" alt=\"Eye Of The Fates",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_167-204_EyeOfTheFates.webp\" alt=\"Eye Of The Fates",
             "number": "167",
-            "setId": "167/204\u2022EN\u20221",
+            "setId": "167/204\u2022EN\u20222",
             "name": "EYE OF THE FATES",
             "subname": "",
             "ink": "Sapphire",
@@ -2522,9 +2522,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Ron Baird",
             "description": "SEE THE FUTURE: Chosen character gets +1 lore this turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_168-204_FishboneQuill.webp\" alt=\"Fishbone Quill",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_168-204_FishboneQuill.webp\" alt=\"Fishbone Quill",
             "number": "168",
-            "setId": "168/204\u2022EN\u20221",
+            "setId": "168/204\u2022EN\u20222",
             "name": "FISHBONE QUILL",
             "subname": "",
             "ink": "Sapphire",
@@ -2537,9 +2537,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Tanisha Cherislin",
             "description": "GO AHEAD AND SIGN: Put any card from your hand into your inkwell facedown."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_169-204_MagicGoldenFlower.webp\" alt=\"Magic Golden Flower",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_169-204_MagicGoldenFlower.webp\" alt=\"Magic Golden Flower",
             "number": "169",
-            "setId": "169/204\u2022EN\u20221",
+            "setId": "169/204\u2022EN\u20222",
             "name": "MAGIC GOLDEN FLOWER",
             "subname": "",
             "ink": "Sapphire",
@@ -2552,9 +2552,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cory Godbey",
             "description": "HEALING POLLEN: Banish this item: Remove up to 3 damage from chosen character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_170-204_ScepterOfArendelle.webp\" alt=\"Scepter Of Arendelle",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_170-204_ScepterOfArendelle.webp\" alt=\"Scepter Of Arendelle",
             "number": "170",
-            "setId": "170/204\u2022EN\u20221",
+            "setId": "170/204\u2022EN\u20222",
             "name": "SCEPTER OF ARENDELLE",
             "subname": "",
             "ink": "Sapphire",
@@ -2571,9 +2571,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
 
     "RiseOfTheFloodborn_Steel": [
         {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_171-204_Aladdin-CorneredSwordsman.webp\" alt=\"Aladdin: Cornered Swordsman",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodbornLorcanaCh1_171-204_Aladdin-CorneredSwordsman.webp\" alt=\"Aladdin: Cornered Swordsman",
             "number": "171",
-            "setId": "171/204\u2022EN\u20221",
+            "setId": "171/204\u2022EN\u20222",
             "name": "ALADDIN",
             "subname": "Cornered Swordsman",
             "ink": "Steel",
@@ -2586,9 +2586,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Randy Bishop",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_172-204_Beast-Hardheaded.webp\" alt=\"Beast: Hardheaded",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_172-204_Beast-Hardheaded.webp\" alt=\"Beast: Hardheaded",
             "number": "172",
-            "setId": "172/204\u2022EN\u20221",
+            "setId": "172/204\u2022EN\u20222",
             "name": "BEAST",
             "subname": "Hardheaded",
             "ink": "Steel",
@@ -2601,9 +2601,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cookie",
             "description": "BREAK: When you play this character, you may banish chosen item."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_173-204_CaptainHook-CaptainOfTheJollyRoger.webp\" alt=\"Captain Hook: Captain Of The Jolly Roger",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_173-204_CaptainHook-CaptainOfTheJollyRoger.webp\" alt=\"Captain Hook: Captain Of The Jolly Roger",
             "number": "173",
-            "setId": "173/204\u2022EN\u20221",
+            "setId": "173/204\u2022EN\u20222",
             "name": "CAPTAIN HOOK",
             "subname": "Captain Of The Jolly Roger",
             "ink": "Steel",
@@ -2616,9 +2616,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Adrianne Gumaya",
             "description": "DOUBLE THE POWDER!: When you play this character, you may return an action card named Fire the Cannons! from your discard to your hand.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_174-204_CaptainHook-ForcefulDuelist.webp\" alt=\"Captain Hook: Forceful Duelist",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_174-204_CaptainHook-ForcefulDuelist.webp\" alt=\"Captain Hook: Forceful Duelist",
             "number": "174",
-            "setId": "174/204\u2022EN\u20221",
+            "setId": "174/204\u2022EN\u20222",
             "name": "CAPTAIN HOOK",
             "subname": "Forceful Duelist",
             "ink": "Steel",
@@ -2631,9 +2631,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Marcel Berg",
             "description": "Challenger +2 (While challenging, this character gets +2 strength.)"
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_175-204_CaptainHook-ThinkingAHappyThought.webp\" alt=\"Captain Hook: Thinking A Happy Thought",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_175-204_CaptainHook-ThinkingAHappyThought.webp\" alt=\"Captain Hook: Thinking A Happy Thought",
             "number": "175",
-            "setId": "157/204\u2022EN\u20221",
+            "setId": "157/204\u2022EN\u20222",
             "name": "CAPTAIN HOOK",
             "subname": "Thinking A Happy Thought",
             "ink": "Steel",
@@ -2646,9 +2646,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Elliot Bocxtaele",
             "description": "STOLEN DUST: Characters with cost 3 or less can't challenge this character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_176-204_Cerberus-ThreeHeadedDog.webp\" alt=\"Cerberus: Three Headed Dog",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_176-204_Cerberus-ThreeHeadedDog.webp\" alt=\"Cerberus: Three Headed Dog",
             "number": "176",
-            "setId": "176/204\u2022EN\u20221",
+            "setId": "176/204\u2022EN\u20222",
             "name": "CERBERUS",
             "subname": "Three Headed Dog",
             "ink": "Steel",
@@ -2661,9 +2661,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Oleg Yurkov",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_177-204_DonaldDuck-Musketeer.webp\" alt=\"Donald Duck: Musketeer",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_177-204_DonaldDuck-Musketeer.webp\" alt=\"Donald Duck: Musketeer",
             "number": "177",
-            "setId": "177/204\u2022EN\u20221",
+            "setId": "177/204\u2022EN\u20222",
             "name": "DONALD DUCK",
             "subname": "Musketeer",
             "ink": "Steel",
@@ -2676,9 +2676,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Dav Augereau",
             "description": "STAY ALERT!: During your turn, your Musketeer characters gain Evasive. (They can challenge characters with Evasive."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_178-204_Gantu-GalacticFederationCaptain.webp\" alt=\"Gantu: Galactic Federation Captain",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_178-204_Gantu-GalacticFederationCaptain.webp\" alt=\"Gantu: Galactic Federation Captain",
             "number": "178",
-            "setId": "178/204\u2022EN\u20221",
+            "setId": "178/204\u2022EN\u20222",
             "name": "GANTU",
             "subname": "Galactic Federation Captain",
             "ink": "Steel",
@@ -2691,9 +2691,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Luis Huerta",
             "description": "UNDER ARREST: Characters with cost 2 or less can't challenge your characters."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_179-204_Goons-MaleficentsUnderlings.webp\" alt=\"Goons: Maleficent's Underlings",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_179-204_Goons-MaleficentsUnderlings.webp\" alt=\"Goons: Maleficent's Underlings",
             "number": "179",
-            "setId": "179/204\u2022EN\u20221",
+            "setId": "179/204\u2022EN\u20222",
             "name": "GOONS",
             "subname": "Maleficent's Underlings",
             "ink": "Steel",
@@ -2706,9 +2706,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cam Kendell",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_180-204_Hans-ThirteenthInLine.webp\" alt=\"Hans: Thirteenth In Line",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_180-204_Hans-ThirteenthInLine.webp\" alt=\"Hans: Thirteenth In Line",
             "number": "180",
-            "setId": "180/204\u2022EN\u20221",
+            "setId": "180/204\u2022EN\u20222",
             "name": "HANS",
             "subname": "Thirteenth In Line",
             "ink": "Steel",
@@ -2721,9 +2721,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kendall Hale",
             "description": "STAGE A LITTLE ACCIDENT: Whenever this character quests, you may deal 1 damage to chosen character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_181-204_Hercules-TrueHero.webp\"  alt=\"Hercules: True Hero",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_181-204_Hercules-TrueHero.webp\"  alt=\"Hercules: True Hero",
             "number": "181",
-            "setId": "181/204\u2022EN\u20221",
+            "setId": "181/204\u2022EN\u20222",
             "name": "HERCULES",
             "subname": "True Hero",
             "ink": "Steel",
@@ -2736,9 +2736,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Marcel Berg",
             "description": "Bodyguard (This character may enter play exerted. An opposing character who challenges one of your characters must choose one with Bodyguard if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_182-204_Kristoff-OfficialIceMaster.webp\" alt=\"Kristoff: Official Ice Master",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_182-204_Kristoff-OfficialIceMaster.webp\" alt=\"Kristoff: Official Ice Master",
             "number": "182",
-            "setId": "182/204\u2022EN\u20221",
+            "setId": "182/204\u2022EN\u20222",
             "name": "KRISTOFF",
             "subname": "Official Ice Master",
             "ink": "Steel",
@@ -2751,9 +2751,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Ron Baird",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_183-204_Kronk-RightHandMan.webp\" alt=\"Kronk: Right Hand Man",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_183-204_Kronk-RightHandMan.webp\" alt=\"Kronk: Right Hand Man",
             "number": "183",
-            "setId": "183/204\u2022EN\u20221",
+            "setId": "183/204\u2022EN\u20222",
             "name": "KRONK",
             "subname": "Right Hand Man",
             "ink": "Steel",
@@ -2766,9 +2766,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jake Parker",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_184-204_Lilo-GalacticHero.webp\" alt=\"Lilo: Galactic Hero",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_184-204_Lilo-GalacticHero.webp\" alt=\"Lilo: Galactic Hero",
             "number": "184",
-            "setId": "184/204\u2022EN\u20221",
+            "setId": "184/204\u2022EN\u20222",
             "name": "LILO",
             "subname": "Galactic Hero",
             "ink": "Steel",
@@ -2781,9 +2781,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jared Nickerl",
             "description": ""
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_185-204_Maui-Demigod.webp\" alt=\"Maui: Demigod",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_185-204_Maui-Demigod.webp\" alt=\"Maui: Demigod",
             "number": "185",
-            "setId": "185/204\u2022EN\u20221",
+            "setId": "185/204\u2022EN\u20222",
             "name": "MAUI",
             "subname": "Demigod",
             "ink": "Steel",
@@ -2796,9 +2796,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Isaiah Mesq",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_186-204_MickeyMouse-Musketeer.webp\" alt=\"Mickey Mouse: Musketeer\"",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_186-204_MickeyMouse-Musketeer.webp\" alt=\"Mickey Mouse: Musketeer\"",
             "number": "186",
-            "setId": "186/204\u2022EN\u20221",
+            "setId": "186/204\u2022EN\u20222",
             "name": "MICKEY MOUSE",
             "subname": "Musketeer",
             "ink": "Steel",
@@ -2811,9 +2811,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Jachem Van Gool",
             "description": "Bodyguard (This character may enter play exerted. An opposing character who challenges one of your characters must choose one with Bodyguard if able.) ALL FOR ONE: Your other Musketeer characters get +1 strength."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_187-204_PrinceEric-DashingAndBrave.webp\" alt=\"Prince Eric: Dashing And Brave",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_187-204_PrinceEric-DashingAndBrave.webp\" alt=\"Prince Eric: Dashing And Brave",
             "number": "187",
-            "setId": "187/204\u2022EN\u20221",
+            "setId": "187/204\u2022EN\u20222",
             "name": "PRINCE ERIC",
             "subname": "Dashing And Brave",
             "ink": "Steel",
@@ -2826,9 +2826,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cristian Romero",
             "description": "Challenger +2 (While challenging, this character gets +2 strength.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_188-204_Simba-FutureKing.webp\" alt=\"Simba: Future King",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_188-204_Simba-FutureKing.webp\" alt=\"Simba: Future King",
             "number": "188",
-            "setId": "188/204\u2022EN\u20221",
+            "setId": "188/204\u2022EN\u20222",
             "name": "SIMBA",
             "subname": "Future King",
             "ink": "Steel",
@@ -2841,9 +2841,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Nicholas Kale",
             "description": "GUESS WHAT?: When you play this character, you may draw a card, then choose and discard a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_189-204_Simba-ReturnedKing.webp\" alt=\"Simba: Returned King",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_189-204_Simba-ReturnedKing.webp\" alt=\"Simba: Returned King",
             "number": "189",
-            "setId": "189/204\u2022EN\u20221",
+            "setId": "189/204\u2022EN\u20222",
             "name": "SIMBA",
             "subname": "Returned King",
             "ink": "Steel",
@@ -2856,9 +2856,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Nicholas Kale",
             "description": "Challenger +4 (While challenging, this character gets +4 strength.) POUNCE: During your turn, this character gains Evasive. (They can challenge characters with Evasive.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_190-204_Simba-RightfulHeir.webp\" alt=\"Simba: Rightful Heir",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_190-204_Simba-RightfulHeir.webp\" alt=\"Simba: Rightful Heir",
             "number": "190",
-            "setId": "190/204\u2022EN\u20221",
+            "setId": "190/204\u2022EN\u20222",
             "name": "SIMBA",
             "subname": "Rightful Heir",
             "ink": "Steel",
@@ -2871,9 +2871,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cookie",
             "description": "I KNOW WHAT I HAVE TO DO: During your turn, whenever this character banishes another character in a challenge, you gain 1 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_191-204_Starkey-HooksHenchman.webp\" alt=\"Starkey: Hooks Henchman",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_191-204_Starkey-HooksHenchman.webp\" alt=\"Starkey: Hooks Henchman",
             "number": "181",
-            "setId": "181/204\u2022EN\u20221",
+            "setId": "181/204\u2022EN\u20222",
             "name": "STARKEY",
             "subname": "Hooks Henchman",
             "ink": "Steel",
@@ -2886,9 +2886,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Leonardo Giammichele",
             "description": "AYE AYE, CAPTAIN: While you have a Captain character in play, this character gets +1 lore"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_192-204_TeKa-Heartless.webp\" alt=\"TeKa: Heartless",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_192-204_TeKa-Heartless.webp\" alt=\"TeKa: Heartless",
             "number": "182",
-            "setId": "182/204\u2022EN\u20221",
+            "setId": "182/204\u2022EN\u20222",
             "name": "TE KA",
             "subname": "Heartless",
             "ink": "Steel",
@@ -2901,9 +2901,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Andrew Trabbold",
             "description": "SEEK THE HEART: During your turn, whenever this character banishes another character in a challenge, you gain 2 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_193-204_TinkerBell-GiantFairy.webp\" alt=\"Tinker Bell: Giant Fairy",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_193-204_TinkerBell-GiantFairy.webp\" alt=\"Tinker Bell: Giant Fairy",
             "number": "193",
-            "setId": "193/204\u2022EN\u20221",
+            "setId": "193/204\u2022EN\u20222",
             "name": "TINKER BELL",
             "subname": "Giant Fairy",
             "ink": "Steel",
@@ -2916,9 +2916,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cookie",
             "description": "ROCK THE BOAT: When you play this character, deal 1 damage to each opposing character. PUNY PIRATE!: During your turn, whenever this character banishes another character in a challenge, you may deal 2 damage to chosen opposing character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_194-204_TinkerBell-TinyTactician.webp\" alt=\"Tinker Bell: Tiny Tactician",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_194-204_TinkerBell-TinyTactician.webp\" alt=\"Tinker Bell: Tiny Tactician",
             "number": "194",
-            "setId": "194/204\u2022EN\u20221",
+            "setId": "194/204\u2022EN\u20222",
             "name": "TINKER BELL",
             "subname": "Tiny Tactician",
             "ink": "Steel",
@@ -2931,9 +2931,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Grace Tran",
             "description": "BATTLE PLANS: Draw a card, then choose and discard a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_195-204_AWholeNewWorld.webp\" alt=\"A Whole New World",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_195-204_AWholeNewWorld.webp\" alt=\"A Whole New World",
             "number": "195",
-            "setId": "195/204\u2022EN\u20221",
+            "setId": "195/204\u2022EN\u20222",
             "name": "A WHOLE NEW WORLD",
             "subname": "",
             "ink": "Steel",
@@ -2946,9 +2946,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Koni",
             "description": "Each player discards their hand and draws 7 cards."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_196-204_Break.webp\" alt=\"Break",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_196-204_Break.webp\" alt=\"Break",
             "number": "196",
-            "setId": "196/204\u2022EN\u20221",
+            "setId": "196/204\u2022EN\u20222",
             "name": "BREAK",
             "subname": "",
             "ink": "Steel",
@@ -2961,9 +2961,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Grace Tran",
             "description": "Banish chosen item."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_197-204_FireTheCannons.webp\" alt=\"Fire The Cannons",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_197-204_FireTheCannons.webp\" alt=\"Fire The Cannons",
             "number": "197",
-            "setId": "197/204\u2022EN\u20221",
+            "setId": "197/204\u2022EN\u20222",
             "name": "FIRE THE CANNONS!",
             "subname": "",
             "ink": "Steel",
@@ -2976,9 +2976,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matt Chapman",
             "description": "Deal 2 damage to chosen character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_198-204_GrabYourSword.webp\" alt=\"Grab Your Sword",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_198-204_GrabYourSword.webp\" alt=\"Grab Your Sword",
             "number": "198",
-            "setId": "198/204\u2022EN\u20221",
+            "setId": "198/204\u2022EN\u20222",
             "name": "GRAB YOUR SWORD",
             "subname": "",
             "ink": "Steel",
@@ -2991,9 +2991,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Peter Brockhammer",
             "description": "Deal 2 damage to each opposing character."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_199-204_Ransack.webp\" alt=\"Ransack",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_199-204_Ransack.webp\" alt=\"Ransack",
             "number": "199",
-            "setId": "199/204\u2022EN\u20221",
+            "setId": "199/204\u2022EN\u20222",
             "name": "RANSACK",
             "subname": "",
             "ink": "Steel",
@@ -3006,9 +3006,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Amber Kammavongsa",
             "description": "Draw 2 cards, then chose and discard 2 cards."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_200-204_Smash.webp\" alt=\"Smash",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_200-204_Smash.webp\" alt=\"Smash",
             "number": "200",
-            "setId": "200/204\u2022EN\u20221",
+            "setId": "200/204\u2022EN\u20222",
             "name": "SMASH",
             "subname": "",
             "ink": "Steel",
@@ -3021,9 +3021,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Simangaliso Sibaya",
             "description": "Deal 3 damage to chosen player."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_201-204_BeastsMirror.webp\" alt=\"Beast's Mirror",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_201-204_BeastsMirror.webp\" alt=\"Beast's Mirror",
             "number": "201",
-            "setId": "201/204\u2022EN\u20221",
+            "setId": "201/204\u2022EN\u20222",
             "name": "BEAST'S MIRROR",
             "subname": "",
             "ink": "Steel",
@@ -3036,9 +3036,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Samanta Erdini",
             "description": "SHOW ME: 3 ink - If you have no cards in your hand, draw a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_202-204_FryingPan.webp\" alt=\"Frying Pan",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_202-204_FryingPan.webp\" alt=\"Frying Pan",
             "number": "202",
-            "setId": "202/204\u2022EN\u20221",
+            "setId": "202/204\u2022EN\u20222",
             "name": "FRYING PAN",
             "subname": "",
             "ink": "Steel",
@@ -3051,9 +3051,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kamil Muzyn",
             "description": "CLANG!: Banish this item - Chosen character can't challenge during the next turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_203-204_MusketeerTabard.webp\" alt=\"Musketeer Tabard\"",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_203-204_MusketeerTabard.webp\" alt=\"Musketeer Tabard\"",
             "number": "203",
-            "setId": "203/204\u2022EN\u20221",
+            "setId": "203/204\u2022EN\u20222",
             "name": "MUSKETEER TABARD",
             "subname": "",
             "ink": "Steel",
@@ -3066,9 +3066,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Dav Augereau",
             "description": "ALL FOR ONE AND ONE FOR ALL: Whenever one of your characters with Bodyguard is banished, you may draw a card."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_204-204_PlasmaBlaster.webp\" alt=\"Plasma Blaster",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_204-204_PlasmaBlaster.webp\" alt=\"Plasma Blaster",
             "number": "204",
-            "setId": "204/204\u2022EN\u20221",
+            "setId": "204/204\u2022EN\u20222",
             "name": "PLASMA BLASTER",
             "subname": "",
             "ink": "Steel",
@@ -3085,9 +3085,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
 
     "RiseOfTheFloodborn_Enchanted": [
         {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_205-204_Hades-KingOfOlympus-Enchanted.webp\" alt=\"Hades: King Of Olympus",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_205-204_Hades-KingOfOlympus-Enchanted.webp\" alt=\"Hades: King Of Olympus",
             "number": "205",
-            "setId": "205/204\u2022EN\u20221",
+            "setId": "205/204\u2022EN\u20222",
             "name": "HADES",
             "subname": "King Of Olympus",
             "ink": "Enchanted",
@@ -3100,9 +3100,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Juan Diego Leon",
             "description": "SINISTER PLOT: This character gets +1 lore for each other Villian character you have in play."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_206-204_Stitch-CarefreeSurfer-Enchanted.webp\" alt=\"Stitch: Carefree Surfer",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_206-204_Stitch-CarefreeSurfer-Enchanted.webp\" alt=\"Stitch: Carefree Surfer",
             "number": "1206",
-            "setId": "206/204\u2022EN\u20221",
+            "setId": "206/204\u2022EN\u20222",
             "name": "STITCH",
             "subname": "Carefree Surfer",
             "ink": "Enchanted",
@@ -3115,9 +3115,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Milica Celikovic",
             "description": "OHANA: When you play this character, if you have 2 or more other characters in play, you may draw 2 cards."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_207-204_Elsa-SpiritOfWinter-Enchanted.webp\" alt=\"Elsa: Spirit Of Winter",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_207-204_Elsa-SpiritOfWinter-Enchanted.webp\" alt=\"Elsa: Spirit Of Winter",
             "number": "207",
-            "setId": "207/204\u2022EN\u20221",
+            "setId": "207/204\u2022EN\u20222",
             "name": "ELSA",
             "subname": "Spirit Of Winter",
             "ink": "Enchanted",
@@ -3130,9 +3130,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Matthew Robert Davies",
             "description": "DEEP FREEZE: When you play this character, exert up to 2 chosen characters. They can't ready at the start of their next turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_208-204_MickeyMouse-WaywardSorcerer-Enchanted.webp\" alt=\"Mickey Mouse: Wayward Sorcerer",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_208-204_MickeyMouse-WaywardSorcerer-Enchanted.webp\" alt=\"Mickey Mouse: Wayward Sorcerer",
             "number": "208",
-            "setId": "208/204\u2022EN\u20221",
+            "setId": "208/204\u2022EN\u20222",
             "name": "MICKEY MOUSE",
             "subname": "Wayward Sorcerert",
             "ink": "Enchanted",
@@ -3145,9 +3145,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cam Kendell",
             "description": "ANIMATE BROOM: You pay 1 ink less to play Broom. CEASLESS WORKER: Whenever one of your Broom characters is banished in a challenge, you may return the card to your hand."
         },{
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_209-204_Genie-OntheJob-Enchanted.webp\" alt=\"Genie: On The Job",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_209-204_Genie-OntheJob-Enchanted.webp\" alt=\"Genie: On The Job",
             "number": "209",
-            "setId": "209/204\u2022EN\u20221",
+            "setId": "209/204\u2022EN\u20222",
             "name": "GENIE",
             "subname": "On The Job",
             "ink": "Enchanted",
@@ -3160,9 +3160,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Cristian Romero",
             "description": "Evasive (Only characters with Evasive can challenge this character.) DISAPPEAR: When you play this character, you may return chosen character to their player's hand."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_210-204_MickeyMouse-ArtfulRogue-Enchanted.webp\" alt=\"Mickey Mouse: Artful Rogue",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_210-204_MickeyMouse-ArtfulRogue-Enchanted.webp\" alt=\"Mickey Mouse: Artful Rogue",
             "number": "210",
-            "setId": "210/204\u2022EN\u20221",
+            "setId": "210/204\u2022EN\u20222",
             "name": "MICKEY MOUSE",
             "subname": "Artful Rogue",
             "ink": "Enchanted",
@@ -3175,9 +3175,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Kendall Hale",
             "description": "MISDIRECTION: Whenever you play an action, chosen opposing character can't quest during their next turn."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_211_204_Aladdin-HeroicOutlaw-Enchanted.webp\" alt=\"Aladdin: Heroic Outlaw",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_211_204_Aladdin-HeroicOutlaw-Enchanted.webp\" alt=\"Aladdin: Heroic Outlaw",
             "number": "211",
-            "setId": "211/204\u2022EN\u20221",
+            "setId": "211/204\u2022EN\u20222",
             "name": "ALADDIN",
             "subname": "Heroic Outlaw",
             "ink": "Enchanted",
@@ -3190,9 +3190,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Massimiliano Narciso",
             "description": "DARING EXPLOIT: During your turn, whenever this character banishes another character in a challenge, you gain 2 lore and each opponent loses 2 lore."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_212-204_Maui-HeroToAll-Enchanted.webp\" alt=\"Maui: Hero To All",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_212-204_Maui-HeroToAll-Enchanted.webp\" alt=\"Maui: Hero To All",
             "number": "212",
-            "setId": "212/204\u2022EN\u20221",
+            "setId": "212/204\u2022EN\u20222",
             "name": "MAUI",
             "subname": "Hero To All",
             "ink": "Enchanted",
@@ -3205,9 +3205,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Pirel / Stefano Zanchi",
             "description": "Rush (This character can challenge the turn they're played.) Reckless (This character can't quest and must challenge each turn if able.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_213-204_Aurora-DreamingGuardian-Enchanted.webp\" alt=\"Aurora: Dreaming Guardian",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_213-204_Aurora-DreamingGuardian-Enchanted.webp\" alt=\"Aurora: Dreaming Guardian",
             "number": "213",
-            "setId": "213/204\u2022EN\u20221",
+            "setId": "213/204\u2022EN\u20222",
             "name": "AURORA",
             "subname": "Dreaming Guardian",
             "ink": "Enchanted",
@@ -3220,9 +3220,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Clio Wolfensberger",
             "description": "PROTECTIVE EMBRACE: Your other characters gain Ward. (Opponents can't choose them except to challenge.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_214-204_Belle-StrangeButSpecial-Enchanted.webp\" alt=\"Belle: Strange But Special",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_214-204_Belle-StrangeButSpecial-Enchanted.webp\" alt=\"Belle: Strange But Special",
             "number": "214",
-            "setId": "214/204\u2022EN\u20221",
+            "setId": "214/204\u2022EN\u20222",
             "name": "BELLE",
             "subname": "Strange But Special",
             "ink": "Enchanted",
@@ -3235,9 +3235,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Valerio Buonfantino",
             "description": "READ A BOOK: During you turn, you may put an additional card from your inkwell facedown. MY FAVORITE PART!: While you have 10 or more cards in your inkwell, this character gets +4 lore.."
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_215-204_Simba-ReturnedKing-Enchanted.webp\" alt=\"Simba: Returned King",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_215-204_Simba-ReturnedKing-Enchanted.webp\" alt=\"Simba: Returned King",
             "number": "215",
-            "setId": "215/204\u2022EN\u20221",
+            "setId": "215/204\u2022EN\u20222",
             "name": "SIMBA",
             "subname": "Returned King",
             "ink": "Enchanted",
@@ -3250,9 +3250,9 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Hedvig Haggman-Sund",
             "description": "Challenger +4 (When challenging, this character gets +4 strength.) POUNCE: During your turn, this character gains Evasive. (They can challenge characters with Evasive.)"
         }, {
-            "cardImg": "../media/LorcanaCh1/LorcanaCh1_216-204_TinkerBell-GiantFairy-Enchanted.webp\" alt=\"Tinker Bell: Giant Fairy",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh1_216-204_TinkerBell-GiantFairy-Enchanted.webp\" alt=\"Tinker Bell: Giant Fairy",
             "number": "216",
-            "setId": "216/204\u2022EN\u20221",
+            "setId": "216/204\u2022EN\u20222",
             "name": "TINKER BELL",
             "subname": "Giant Fairy",
             "ink": "Enchanted",
