@@ -1119,7 +1119,7 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Alex Accorsi",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_075-204_CheshireCat-FromTheShadows.webp,
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_075-204_CheshireCat-FromTheShadows.webp",
             "number": "075",
             "setId": "075/204\u2022EN\u20222",
             "name": "CHESHIRE CAT",
