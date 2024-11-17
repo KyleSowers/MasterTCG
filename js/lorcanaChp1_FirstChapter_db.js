@@ -3291,7 +3291,7 @@ function lorcanaCardData() {
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold"  style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <img class="cardImg" src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
                 '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
@@ -3303,7 +3303,7 @@ function lorcanaCardData() {
                 '                        </form>\n' +
                 '                    </div>\n' +
                 '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+                '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
                 '           </div>')
 
         });
@@ -3329,7 +3329,7 @@ function lorcanaCardData() {
                 '                <h1 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h1>\n' +
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+subname+'</h3>\n' +
                 '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <img class="cardImg" src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
                 '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
@@ -3341,7 +3341,7 @@ function lorcanaCardData() {
                 '                        </form>\n' +
                 '                    </div>\n' +
                 '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+                '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
                 '           </div>')
 
         });
@@ -3367,7 +3367,7 @@ function lorcanaCardData() {
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <img class="cardImg" src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
                 '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
@@ -3379,7 +3379,7 @@ function lorcanaCardData() {
                 '                        </form>\n' +
                 '                    </div>\n' +
                 '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+                '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
                 '           </div>')
 
         });
@@ -3405,7 +3405,7 @@ function lorcanaCardData() {
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <img class="cardImg" src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
                 '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
@@ -3417,7 +3417,7 @@ function lorcanaCardData() {
                 '                        </form>\n' +
                 '                    </div>\n' +
                 '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+                '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
                 '           </div>')
 
         });
@@ -3443,7 +3443,7 @@ function lorcanaCardData() {
             '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
             '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
             '                <div class="cardCenter">\n' +
-            '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+            '                    <img class="cardImg" src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
             '                    <div class="cardSelectors">\n' +
             '                        <form action="#" method="POST" class="cardForm">\n' +
             '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
@@ -3455,7 +3455,7 @@ function lorcanaCardData() {
             '                        </form>\n' +
             '                    </div>\n' +
             '                </div>\n' +
-            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
             '           </div>')
 
         });
@@ -3481,7 +3481,7 @@ function lorcanaCardData() {
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <img class="cardImg" src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
                 '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
@@ -3493,7 +3493,7 @@ function lorcanaCardData() {
                 '                        </form>\n' +
                 '                    </div>\n' +
                 '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+                '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
                 '           </div>')
 
         });
@@ -3522,7 +3522,7 @@ function lorcanaCardData() {
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
-                '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
+                '                    <img class="cardImg" src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
                 '                    <div class="cardSelectors">\n' +
                 '                        <form action="#" method="POST" class="cardForm">\n' +
                 '                            <label for="base-' + setId + '" style="writing-mode: horizontal-tb;"><span class="cardLabelText1">Base</span>\n' +
@@ -3534,7 +3534,7 @@ function lorcanaCardData() {
                 '                        </form>\n' +
                 '                    </div>\n' +
                 '                </div>\n' +
-                '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+                '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
                 '           </div>')
 
         });

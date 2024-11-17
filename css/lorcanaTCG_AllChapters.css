@@ -81,10 +81,11 @@
     margin-right: 100px;
 }
 
-img {
+.cardImg {
     border-radius: 15px;
-    width: 70%;
-    max-width: 150px;
+    width: 350px;
+    height: 275px;
+    /*max-width: 250px;*/
     cursor: initial;
 }
 
