@@ -3287,7 +3287,7 @@ function lorcanaCardData() {
             var artist = val.artist;
             var description = val.description;
 
-            $('.cardContainer1').append('    <div class="cardSingleJSON" style="background-color: rgba(245, 178, 2,0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.39)">' +
+            $('.cardContainer1').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(245, 178, 2, .65) 0%, rgba(245, 178, 2, .65) 60%, rgba(220, 220, 220, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.39)">' +
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold"  style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
@@ -3325,7 +3325,7 @@ function lorcanaCardData() {
             var artist = val.artist;
             var description = val.description;
 
-            $('.cardContainer2').append('    <div class="cardSingleJSON" style="background-color: rgba(129, 55, 123, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            $('.cardContainer2').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(129, 55, 123, .95) 0%, rgba(129, 55, 123, .95) 60%, rgba(220, 220, 220, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
                 '                <h1 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h1>\n' +
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+subname+'</h3>\n' +
                 '                <div class="cardCenter">\n' +
@@ -3363,7 +3363,7 @@ function lorcanaCardData() {
             var artist = val.artist;
             var description = val.description;
 
-            $('.cardContainer3').append('    <div class="cardSingleJSON" style="background-color: rgba(42, 137, 52, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            $('.cardContainer3').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(42, 137, 52, .65) 0%, rgba(42, 137, 52, .65) 60%, rgba(220, 220, 220, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
@@ -3401,7 +3401,7 @@ function lorcanaCardData() {
             var artist = val.artist;
             var description = val.description;
 
-            $('.cardContainer4').append('    <div class="cardSingleJSON" style="background-color: rgba(211, 8, 47,0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            $('.cardContainer4').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(211, 8, 47, .65) 0%, rgba(211, 8, 47, .65) 60%, rgba(220, 220, 220, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
@@ -3439,7 +3439,7 @@ function lorcanaCardData() {
         var artist = val.artist;
         var description = val.description;
 
-        $('.cardContainer5').append('    <div class="cardSingleJSON" style="background-color: rgba(1, 137, 196, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+        $('.cardContainer5').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(1, 137, 196, .65) 0%, rgba(1, 137, 196, .65) 60%, rgba(220, 220, 220, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
             '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
             '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
             '                <div class="cardCenter">\n' +
@@ -3477,7 +3477,7 @@ function lorcanaCardData() {
             var artist = val.artist;
             var description = val.description;
 
-            $('.cardContainer6').append('    <div class="cardSingleJSON" style="background-color: rgba(159, 168, 180, 0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
+            $('.cardContainer6').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(159, 168, 180, .65) 0%, rgba(159, 168, 180, .65) 60%, rgba(220, 220, 220, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.19)">' +
                 '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
                 '                <p class="cardTitleGold" style="color: ghostwhite;">'+subname+'</p>\n' +
                 '                <div class="cardCenter">\n' +
