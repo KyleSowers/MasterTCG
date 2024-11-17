@@ -78,6 +78,8 @@
     max-height: 60%; /* Adjust to the content's full height */
     height: fit-content;
     opacity: .925;
+    z-index: 3;
+    cursor: pointer;
 }
 
 .dropdownlistOptions {
@@ -100,6 +102,10 @@ img {
     margin: 30px 0;
 }
 
+.navImg {
+    cursor: pointer;
+}
+
 .navbar {
     overflow: hidden;
     background-color: ghostwhite;
@@ -111,6 +117,8 @@ img {
 
 /* Links inside the navbar */
 .navbar a {
+    display: flex;
+    justify-content: center;
     float: left;
     font-size: 16px;
     color: #333336;

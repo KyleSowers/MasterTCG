@@ -3287,8 +3287,8 @@ function lorcanaCardData() {
         var description = val.description;
         // background-color: rgba(245, 178, 2,0.28)
         $('.cardContainer1').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(245, 178, 2, .65) 0%, rgba(245, 178, 2, .65) 60%, rgba(240, 240, 240, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: black; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.39)">' +
-            '                <h3 class="cardTitleGold" style="color: black;">'+name+'</h3>\n' +
-            '                <p class="cardTitleGold"  style="color: black;">'+subname+'</p>\n' +
+            '                <h1 class="cardTitleGold" style="color: black;">'+name+'</h1>\n' +
+            '                <h3 class="cardTitleGold"  style="color: black;">'+subname+'</h3>\n' +
             '                <div class="cardCenter">\n' +
             '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
             '                    <div class="cardSelectors">\n' +
