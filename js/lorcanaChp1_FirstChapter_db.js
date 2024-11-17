@@ -2872,8 +2872,8 @@ var lorcanaChp1_FirstChapter_db = {
             "description": "I KNOW WHAT I HAVE TO DO: During your turn, whenever this character banishes another character in a challenge, you gain 1 lore."
         }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_191-204_Starkey-HooksHenchman.webp\" alt=\"Starkey: Hooks Henchman",
-            "number": "181",
-            "setId": "181/204\u2022EN\u20221",
+            "number": "191",
+            "setId": "191/204\u2022EN\u20221",
             "name": "STARKEY",
             "subname": "Hooks Henchman",
             "ink": "Steel",
@@ -2887,8 +2887,8 @@ var lorcanaChp1_FirstChapter_db = {
             "description": "AYE AYE, CAPTAIN: While you have a Captain character in play, this character gets +1 lore"
         }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_192-204_TeKa-Heartless.webp\" alt=\"TeKa: Heartless",
-            "number": "182",
-            "setId": "182/204\u2022EN\u20221",
+            "number": "192",
+            "setId": "192/204\u2022EN\u20221",
             "name": "TE KA",
             "subname": "Heartless",
             "ink": "Steel",
