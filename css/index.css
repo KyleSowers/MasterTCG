@@ -60,7 +60,7 @@
     max-height: 0; /* Initially hidden */
     overflow: hidden; /* Hide overflowing content */
     transition: max-height .36s ease-out; /* Smooth scroll effect */
-    z-index: 1;
+    z-index: 3;
     overflow-y: scroll;
     scrollbar-color: black black;
     box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.19);
@@ -79,13 +79,16 @@
     height: fit-content;
     opacity: .925;
     z-index: 3;
-    cursor: pointer;
 }
 
 .dropdownlistOptions {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.linkImg {
+    cursor: pointer;
 }
 
 img {
@@ -102,9 +105,7 @@ img {
     margin: 30px 0;
 }
 
-.navImg {
-    cursor: pointer;
-}
+
 
 .navbar {
     overflow: hidden;
