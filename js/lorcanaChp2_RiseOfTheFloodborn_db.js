@@ -3285,10 +3285,10 @@ function lorcanaCardData() {
         var loreValue = val.loreValue;
         var artist = val.artist;
         var description = val.description;
-
-        $('.cardContainer1').append('    <div class="cardSingleJSON" style="background-color: rgba(245, 178, 2,0.28); border: 2px #333 solid; border-radius: 10px; color: ghostwhite; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.39)">' +
-            '                <h3 class="cardTitleGold" style="color: ghostwhite;">'+name+'</h3>\n' +
-            '                <p class="cardTitleGold"  style="color: ghostwhite;">'+subname+'</p>\n' +
+        // background-color: rgba(245, 178, 2,0.28)
+        $('.cardContainer1').append('    <div class="cardSingleJSON" style="background: linear-gradient(to bottom, rgba(245, 178, 2, .65) 0%, rgba(245, 178, 2, .65) 60%, rgba(240, 240, 240, .65) 80%, white 100%); border: 2px #333 solid; border-radius: 10px; color: black; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.39)">' +
+            '                <h3 class="cardTitleGold" style="color: black;">'+name+'</h3>\n' +
+            '                <p class="cardTitleGold"  style="color: black;">'+subname+'</p>\n' +
             '                <div class="cardCenter">\n' +
             '                    <img src="' + cardImg + '" alt="' + name + ' ' + subname + '">' +
             '                    <div class="cardSelectors">\n' +
@@ -3302,7 +3302,7 @@ function lorcanaCardData() {
             '                        </form>\n' +
             '                    </div>\n' +
             '                </div>\n' +
-            '                <h3 class="cardID" style="color: ghostwhite;">'+setId+'</h3>\n' +
+            '                <h3 class="cardID" style="color: black;">'+setId+'</h3>\n' +
             '           </div>')
 
     });
