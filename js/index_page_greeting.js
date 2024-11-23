@@ -2,18 +2,18 @@
 
 var today = new Date();                 //Create new date object
 var hourNow = today.getHours();       //Find current hour
-var greeting = document.getElementById('indexPageGreeting');
+var greetingElement = document.getElementById('indexPageGreeting');
 
 // Function to display the appropriate greeting based on the current time
 function indexPageGreeting() {
     if (hourNow > 18) {
-        greeting.textContent = 'Good Evening Collector!';
+        greetingElement.textContent = 'Good Evening Collector!';
     } else if (hourNow > 12) {
-        greeting.textContent = 'Good Afternoon Collector!';
+        greetingElement.textContent = 'Good Afternoon Collector!';
     } else if (hourNow > 0) {
-        greeting.textContent = 'Good Morning Collector!';
+        greetingElement.textContent = 'Good Morning Collector!';
     } else {
-        greeting.textContent = 'Welcome Collector!';
+        greetingElement.textContent = 'Welcome Collector!';
     }
 };
 
