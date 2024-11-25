@@ -499,7 +499,7 @@ var lorcanaChp1_FirstChapter_db = {
             "description": "BIRTHDAY LIGHTS: You pay 1 cost less for the next character you play this turn."
         }, {
             "cardImg": "../media/LorcanaCh1/LorcanaCh1_034-204_UrsulasShellNecklace.webp",
-            "number": "030",
+            "number": "034",
             "setId": "030/204\u2022EN\u20221",
             "name": "URSULAS SHELL NECKLACE",
             "subname": "",
@@ -3542,4 +3542,75 @@ function lorcanaCardData() {
 
 lorcanaCardData();
 
-// LorcanaCh2_RiseofTheFloodborn_137-204_A-b.webp
+// Function to export data to Excel
+// function exportToExcel() {
+//     const allData = []; // To collect data from all categories
+//
+//     // Iterate over all categories in the database
+//     for (const category in lorcanaChp1_FirstChapter_db) {
+//         // Extract data for each card in the category
+//         const categoryData = lorcanaChp1_FirstChapter_db[category].map(card => ({
+//             Name: card.name,
+//             Subname: card.subname,
+//             Rarity: card.rarity,
+//             SetID: card.setId,
+//             Category: category // Add category as a column
+//         }));
+//
+//         // Add the extracted data to the master list
+//         allData.push(...categoryData);
+//     }
+//
+//     // Convert all collected data to a worksheet
+//     const ws = XLSX.utils.json_to_sheet(allData);
+//
+//     // Create a new workbook and append the worksheet
+//     const wb = XLSX.utils.book_new();
+//     XLSX.utils.book_append_sheet(wb, ws, "Cards");
+//
+//     // Write the Excel file and trigger download
+//     XLSX.writeFile(wb, "LorcanaCards.xlsx");
+// }
+//
+// // Bind the function to the button click event
+// document.addEventListener("DOMContentLoaded", () => {
+//     const exportBtn = document.getElementById("exportBtn");
+//     exportBtn.addEventListener("click", exportToExcel);
+// });
+
+function exportToCSV() {
+    const allData = [];
+
+    // Collect data from all categories
+    for (const category in lorcanaChp1_FirstChapter_db) {
+        const categoryData = lorcanaChp1_FirstChapter_db[category].map(card => ({
+            Name: card.name,
+            Subname: card.subname,
+            Rarity: card.rarity,
+            SetID: card.setId
+        }));
+        allData.push(...categoryData);
+    }
+
+    // Convert JSON data to CSV string
+    const csvContent = [
+        ["Name", "Subname", "Rarity", "SetID", "", "", "", ""], // Headers
+        ...allData.map(row => [row.Name, row.Subname, row.Rarity, row.SetID, row.Category])
+    ].map(e => e.join(",")).join("\n");
+
+    // Create and trigger CSV download
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "LorcanaCards.csv";
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const exportBtn = document.getElementById("exportBtn");
+    exportBtn.addEventListener("click", exportToCSV);
+});
+
