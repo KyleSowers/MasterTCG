@@ -3,75 +3,283 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-  <title>Lorcana: Into the Inklands</title>
+  <title>Lorcana: The First Chapter</title>
+  <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/lorcanaTCG_AllChapters.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+  <!--    <script src="../js/lorcanaChp1_FirstChapter_db.js"></script>-->
 </head>
-<body style="background-color: #ffdca1">
-<div class="page-wrapper flex flex-column min-vh-100 shadow-2 vw-100">
-  <nav class="navbar navbar-expand-lg" style="background-color: #19bdd3;">
-    <div class="container-fluid" style="background-color: #19bdd3;">
-      <a class="navbar-brand" href="../index.html">MasterTCG</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Collection
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Magic</a></li>
-              <li><a class="dropdown-item" href="#">Pokemon</a></li>
-              <li><a class="dropdown-item" href="#">Marvel Champions</a></li>
-              <li><a class="dropdown-item" href="#">Yu-Gi-Oh!</a></li>
-              <li><a class="dropdown-item" href="lorcanaTCG.html">Lorcana</a></li>
-            </ul>
-          </li>
-
-          <!--                        <li class="nav-item">-->
-          <!--                            <a class="nav-link active" aria-current="page" href="#">Pokemon</a>-->
-          <!--                        </li>-->
-          <!--                        <li class="nav-item">-->
-          <!--                            <a class="nav-link" href="#">Lorcana</a>-->
-          <!--                        </li>-->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">My Profile</a></li>
-              <li><a class="dropdown-item" href="#">My Collections</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Login</a></li>
-              <li><a class="dropdown-item" href="#">Signup</a></li>
-            </ul>
-          </li>
-          <!--                        <li class="nav-item">-->
-          <!--                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>-->
-          <!--                        </li>-->
-        </ul>
-        <form class="d-flex gap-3" role="search">
-          <li class="nav-item form-control d-flex align-items-center justify-content-center">
-            <a class="nav-link active" aria-current="page" href="#">Login</a>
-          </li>
-          <li class="nav-item form-control d-flex align-items-center justify-content-center">
-            <a class="nav-link" href="#">Sign Up!</a>
-          </li>
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
+<body style="background-color: #5a4b6c">
+<!--#5f3986-->
+<div class="navbar">
+  <a href="../index.html" style="justify-self: left">MasterTCG</a>
+  <div class="dropdown">
+    <button class="dropbtn">Lorcana</button>
+    <div class="dropdown-content">
+      <div class="dropdownColumns">
+        <div style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <a href="#" style="padding-bottom: 0;">
+            <img class="linkImg" src="../media/logo/lorcanaLogos/Logo_Lorcana_ShimmeringSkies.jpeg" alt="Shimmering Skies Logo" style="width: 50%;"></a>
+          <p>AUG 2024</p>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <a href="#" style="padding-bottom: 0;">
+            <img class="linkImg" src="../media/logo/lorcanaLogos/Logo_Lorcana_UrsulasReturn.jpeg" alt="Ursulas Return Logo" style="width: 50%;"></a>
+          <p>MAY 2024</p>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <a href="../html/lorcanaTCG_IntoTheInklands.html" style="padding-bottom: 0;">
+            <img class="linkImg" src="../media/logo/lorcanaLogos/Logo_Lorcana_IntoTheInklands.jpeg" alt="Into The Inklands Logo" style="width: 50%;"></a>
+          <p>MAR 2024</p>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <a href="../html/lorcanaTCG_RiseofTheFloodborn.html" style="padding-bottom: 0;">
+            <img class="linkImg" src="../media/logo/lorcanaLogos/Logo_Lorcana_RiseOfTheFloodborn.jpeg" alt="Rise Of The Floodborn Logo" style="width: 50%; cursor: pointer;"></a>
+          <p>DEC 2023</p>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <a href="../html/lorcanaTCG_TheFirstChapter.html" style="padding-bottom: 0;">
+            <img class="linkImg" src="../media/logo/lorcanaLogos/Logo_Lorcana_TheFirstChapter.jpeg" alt="The First Chapter Logo" style="width: 50%;"></a>
+          <p>AUG 2023</p>
+        </div>
       </div>
     </div>
-  </nav>
-  <!--END NAV BAR-->
-  <div class="container-fluid m-0 p-0">
-    <img class="top-logo" style="border: 2px solid black;" src="#" alt="Disney Lorcana: Into The Inklands Logo">
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Magic</button>
+    <div class="dropdown-content">
+      <div class="row" style="display: flex; justify-content: center;">
+        <div class="column dropdownlistOptions">
+          <h3>example</h3>
+          <a href="#">example</a>
+          <a href="#">example</a>
+          <a href="#">example</a>
+          <a href="#">example</a>
+          <a href="#">example</a>
+          <a href="#">example</a>
+        </div>
+        <div class="column dropdownlistOptions">
+          <h3>example</h3>
+          <a href="#">example</a>
+          <a href="#">example</a>
+          <a href="#">example</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Pokemon</button>
+    <div class="dropdown-content">
+      <div class="header">
+        <h2>Series Menu</h2>
+      </div>
+      <div class="row" style="display: flex; justify-content: start;">
+        <div class="column dropdownlistOptions">
+          <h3>Scarlet & Violet</h3>
+          <a href="#">Stellar Crown</a>
+          <a href="#">Shrouded Fable</a>
+          <a href="#">Twilight Masquerade</a>
+          <a href="#">Temperal Forces</a>
+          <a href="#">Paldean Fates</a>
+          <a href="#">Scalet & Violet</a>
+        </div>
+        <div class="column dropdownlistOptions">
+          <h3>Sword & Shield</h3>
+          <a href="#">Crown Zeneth</a>
+          <a href="#">Silver Tempest</a>
+          <a href="#">Lost Origin</a>
+        </div>
+        <div class="column dropdownlistOptions">
+          <h3>Chapter 3: Into the Inklands</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column dropdownlistOptions">
+          <h3>Chapter 4: Ursula's Revenge</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column dropdownlistOptions">
+          <h3>Chapter 5: Shimmering Skies</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Yugiyo
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <div class="header">
+        <h2>Set Menu</h2>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h3>Chapters</h3>
+          <a href="#">Chapter 1</a>
+          <a href="#">Chapter 2: Rise of the Floodborne</a>
+          <a href="#">Chapter 3: Into the Inklands</a>
+          <a href="#">Chapter 4: Ursula's Revenge</a>
+          <a href="#">Chapter 5: Shimmering Skies</a>
+        </div>
+        <div class="column">
+          <h3>Chapter 2: Rise of the Floodborne</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column">
+          <h3>Chapter 3: Into the Inklands</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column">
+          <h3>Chapter 4: Ursula's Revenge</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column">
+          <h3>Chapter 5: Shimmering Skies</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">News</button>
+    <div class="dropdown-content">
+      <div class="header">
+        <h2>Series Menu</h2>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h3>Scarlet & Violet</h3>
+          <a href="#">Stellar Crown</a>
+          <a href="#">Shrouded Fable</a>
+          <a href="#">Twilight Masquerade</a>
+          <a href="#">Temperal Forces</a>
+          <a href="#">Paldean Fates</a>
+          <a href="#">Scalet & Violet</a>
+        </div>
+        <div class="column">
+          <h3>Sword & Shield</h3>
+          <a href="#">Crown Zeneth</a>
+          <a href="#">Silver Tempest</a>
+          <a href="#">Lost Origin</a>
+        </div>
+        <div class="column">
+          <h3>Chapter 3: Into the Inklands</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column">
+          <h3>Chapter 4: Ursula's Revenge</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column">
+          <h3>Chapter 5: Shimmering Skies</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!--End of NAVBAR-->
+<section>
+  <!-- amber ink logo -->
+  <div class="ink_amber_logo" style="margin-top: 40px;">
+    <img class="ink_logo_img" src="../media/logo/lorcanaLogos/ink_amber_logo.png" alt="Amber Card Ink Logo">
+  </div>
+  <!-- cards amber ink -->
+  <div class="div_RiseOfTheFloodborn_Background">
+    <div class="cardContainer1 divContent" style="margin-top: 40px; margin-bottom: 40px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    </div>
+  </div>
+</section>
+<section>
+  <!-- amethyst ink logo -->
+  <div class="ink_amethyst_logo" style="margin-top: 40px;">
+    <img class="ink_logo_img" src="../media/logo/lorcanaLogos/ink_amethyst_logo.png" alt="Amethyst Card Ink Logo">
+  </div>
+  <!-- cards amethyst ink -->
+  <div class="div_RiseOfTheFloodborn_Background">
+    <div class="cardContainer2 divContent" style="margin-top: 40px; margin-bottom: 40px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    </div>
+  </div>
+</section>
+<section>
+  <!-- emerald ink logo -->
+  <div class="ink_emerald_logo" style="margin-top: 40px;">
+    <img class="ink_logo_img" src="../media/logo/lorcanaLogos/ink_emerald_logo.png" alt="Emerald Card Ink Logo">
+  </div>
+  <!-- cards emerald ink -->
+  <div class="div_RiseOfTheFloodborn_Background">
+    <div class="cardContainer3 divContent" style="margin-top: 40px; margin-bottom: 40px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    </div>
+  </div>
+</section>
+<section>
+  <!-- ruby ink logo -->
+  <div class="ink_ruby_logo" style="margin-top: 40px;">
+    <img class="ink_logo_img" src="../media/logo/lorcanaLogos/ink_ruby_logo.png" alt="Ruby Card Ink Logo">
+  </div>
+  <!-- cards ruby ink -->
+  <div class="div_RiseOfTheFloodborn_Background">
+    <div class="cardContainer4 divContent" style="margin-top: 40px; margin-bottom: 40px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    </div>
+  </div>
+</section>
+<section>
+  <!-- ruby ink logo -->
+  <div class="ink_sapphire_logo" style="margin-top: 40px;">
+    <img class="ink_logo_img" src="../media/logo/lorcanaLogos/ink_sapphire_logo.png" alt="Sapphire Card Ink Logo">
+  </div>
+  <!-- cards sapphire ink -->
+  <div class="div_RiseOfTheFloodborn_Background">
+    <div class="cardContainer5 divContent" style="margin-top: 40px; margin-bottom: 40px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    </div>
+  </div>
+</section>
+<section>
+  <!-- Steel ink logo -->
+  <div class="ink_steel_logo" style="margin-top: 40px;">
+    <img class="ink_logo_img" src="../media/logo/lorcanaLogos/ink_steel_logo.png" alt="Steel Card Ink Logo">
+  </div>
+  <!-- cards steel ink -->
+  <div class="div_RiseOfTheFloodborn_Background">
+    <div class="cardContainer6 divContent" style="margin-top: 40px; margin-bottom: 40px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    </div>
+  </div>
+</section>
+<section>
+  <!-- Enchanted ink logo -->
+  <div class="enchanted_logo" style="margin-top: 40px;">
+    <img class="ink_logo_img" src="../media/logo/lorcanaLogos/enchanted_logo.png" alt="Steel Card Ink Logo">
+  </div>
+  <div class="div_RiseOfTheFloodborn_Background">
+    <div class="cardContainer7 divContent" style="margin-top: 40px; margin-bottom: 40px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    </div>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/lorcanaChp2_RiseOfTheFloodborn_db.js"></script>
+
+
 </body>
 </html>
