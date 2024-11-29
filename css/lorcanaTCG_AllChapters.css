@@ -19,6 +19,16 @@
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
+.div_IntoTheInklands_Background {
+    position: relative; /* To allow content positioning inside the div */
+    width: 100%; /* Or any width you need */
+    height: 100%; /* Or any height you need */
+    background-image: url('../media/logo/lorcanaLogos/backgroundImage_IntoTheInklands.png');
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image within the div */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
 .divContent {
     position: relative; /* Ensures content stays on top of the background */
     z-index: 1; /* Makes sure the content is above the background */

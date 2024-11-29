@@ -1978,7 +1978,7 @@ var lorcanaChp2_RiseOfTheFloodborn_db = {
             "artist": "Carios Ruiz",
             "description": ""
         }, {
-            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_132-204_WhatDidYouCallMe?.webp",
+            "cardImg": "../media/LorcanaCh2_RiseOfTheFloodborn/LorcanaCh2_RiseofTheFloodborn_132-204_WhatDidYouCallMe.webp",
             "number": "132",
             "setId": "132/204\u2022EN\u20222",
             "name": "WHAT DID YOU CALL ME?",
