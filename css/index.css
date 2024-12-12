@@ -131,6 +131,17 @@
     padding: 0;
 }
 
+.indexHero {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    width: 98vw;
+    height: 75vh;
+    border: 5px solid black;
+    border-radius: 11px;
+    margin: 0 5px;
+}
+
 .pokelogo {
     border: 1px solid grey;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
