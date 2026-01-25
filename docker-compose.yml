@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: mastertcg-postgres
+    environment:
+      POSTGRES_DB: mastertcg
+      POSTGRES_USER: mastertcg
+      POSTGRES_PASSWORD: mastertcg
+    ports:
+      - "5432:5432"
+    volumes:
+      - mastertcg_pgdata:/var/lib/postgresql/data
+
+
+volumes:
+  mastertcg_pgdata:

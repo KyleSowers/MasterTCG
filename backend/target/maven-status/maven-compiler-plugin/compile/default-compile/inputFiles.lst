@@ -1,0 +1,8 @@
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/BackendApplication.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/controller/SetController.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/dto/CardDto.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/dto/SetDto.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/model/CardEntity.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/model/SetEntity.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/repository/CardRepository.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/repository/SetRepository.java
