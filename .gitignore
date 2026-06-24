@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# IntelliJ
+.idea/
+*.iml
+
+# Maven / Spring Boot
+target/
+backend/target/
+
+# Angular / Node
+node_modules/
+.angular/
+dist/
+frontend/mastertcg-web/node_modules/
+frontend/mastertcg-web/.angular/
+frontend/mastertcg-web/dist/
+
+# Logs
+*.log
