@@ -20,6 +20,12 @@ export class App implements OnInit {
   ngOnInit() {
     this.api.getSets().subscribe({
       next: (data) => {
+        this.sets = data;
+        this.error = null;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error(err);
         this.error = 'Failed to load sets';
         this.loading = false;
       }

@@ -7,12 +7,12 @@ import com.mastertcg.repository.CardRepository;
 import com.mastertcg.repository.SetRepository;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/sets")
-@CrossOrigin(origins = "http://localhost:4200")
 public class SetController {
 
     private final SetRepository setRepository;

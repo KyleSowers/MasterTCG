@@ -1,4 +1,5 @@
 /Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/BackendApplication.java
+/Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/config/CorsConfig.java
 /Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/controller/SetController.java
 /Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/dto/CardDto.java
 /Users/kylesowers/IdeaProjects/MasterTCG/backend/src/main/java/com/mastertcg/dto/SetDto.java
