@@ -45,7 +45,7 @@ public class SetController {
                         c.getCardNumber(),
                         c.getName(),
                         c.getRarity(),
-                        c.isReverseHolo()
+                        c.getFinish()
                 ))
                 .toList();
     }

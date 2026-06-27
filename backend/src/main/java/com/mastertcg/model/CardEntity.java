@@ -23,8 +23,9 @@ public class CardEntity {
     @Column(nullable = false)
     private String rarity;
 
-    @Column(name = "is_reverse_holo", nullable = false)
-    private boolean reverseHolo;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private CardFinish finish;
 
     @Column(name = "variant_group")
     private String variantGroup;
@@ -44,8 +45,8 @@ public class CardEntity {
     public String getRarity() { return rarity; }
     public void setRarity(String rarity) { this.rarity = rarity; }
 
-    public boolean isReverseHolo() { return reverseHolo; }
-    public void setReverseHolo(boolean reverseHolo) { this.reverseHolo = reverseHolo; }
+    public CardFinish getFinish() { return finish; }
+    public void setFinish(CardFinish finish) { this.finish = finish;}
 
     public String getVariantGroup() { return variantGroup; }
     public void setVariantGroup(String variantGroup) { this.variantGroup = variantGroup; }

@@ -16,7 +16,7 @@ export interface CardDto {
   cardNumber: string;
   name: string;
   rarity: string;
-  reverseHolo: boolean;
+  finish: string;
 }
 
 @Injectable({ providedIn: 'root'})

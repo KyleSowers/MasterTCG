@@ -5,8 +5,34 @@
 
 <ul *ngIf="!loading && !error">
   <li *ngFor="let s of sets">
-    <strong>{{ s.name }}</strong> — {{ s.era }}
+    <strong
+    (click)="loadCards(s)"
+    style="cursor: pointer; color: blue; text-decoration: underline;">
+      {{ s.name }}
+    </strong> — {{ s.era }}
     <div>Main: {{ s.totalCardsMain }} | Master: {{ s.totalCardsMaster }}</div>
     <!-- <div style="font-size: 12px; opacity: 0.7;">{{ s.id }}</div> -->
   </li>
 </ul>
+
+<hr>
+
+<section *ngIf="selectedSet">
+  <h2>{{ selectedSet.name }} Cards</h2>
+
+  <ul>
+    <li *ngFor="let c of cards">
+      <strong>{{ c.cardNumber }}</strong>
+      {{ c.name }}
+
+      <div style="font-size: 0.9em; color: grey;">
+        {{ c.rarity }}
+      <span *ngIf="displayFinish(c.finish)">
+        • {{ displayFinish(c.finish) }}
+      </span>
+      </div>
+    </li>
+  </ul>
+
+
+</section>

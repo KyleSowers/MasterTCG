@@ -13,9 +13,9 @@ CREATE TABLE cards (
     card_number TEXT NOT NULL,
     name TEXT NOT NULL,
     rarity TEXT NOT NULL,
-    is_reverse_holo BOOLEAN NOT NULL DEFAULT FALSE,
+    finish TEXT NOT NULL DEFAULT 'NORMAL',
     variant_group TEXT,
-    CONSTRAINT uq_cards_set_number_variant UNIQUE (set_id, card_number, is_reverse_holo)
+    CONSTRAINT uq_cards_set_number_finish UNIQUE (set_id, card_number, finish)
 );
 
 CREATE TABLE users (

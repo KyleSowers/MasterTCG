@@ -1,5 +1,6 @@
 package com.mastertcg.dto;
 
+import com.mastertcg.model.CardFinish;
 import java.util.UUID;
 
 public record CardDto (
@@ -7,5 +8,5 @@ public record CardDto (
     String cardNumber,
     String name,
     String rarity,
-    boolean reverseHolo
+    CardFinish finish
 ) {}
