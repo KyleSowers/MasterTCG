@@ -19,3 +19,6 @@ frontend/mastertcg-web/dist/
 
 # Logs
 *.log
+
+# VS Code
+.vscode/
