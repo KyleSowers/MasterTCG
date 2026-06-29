@@ -20,6 +20,11 @@
 <section *ngIf="selectedSet">
   <h2>{{ selectedSet.name }} Cards</h2>
 
+  <p>
+    Owned: {{ getOwnedCount() }} / {{ cards.length }}
+    ({{ getCompletionPercentage() }}%)
+  </p>
+
   <ul>
     <li *ngFor="let c of cards">
      <input

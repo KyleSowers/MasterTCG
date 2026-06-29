@@ -73,25 +73,37 @@ export class App implements OnInit {
       console.error(err);
     }
   });
-}
+  }
 
-isOwned(cardId: string): boolean {
-  return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
-}
+  isOwned(cardId: string): boolean {
+    return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
+  }
 
-toggleOwned(cardId: string) {
-  this.api.toggleOwned(cardId).subscribe({
-    next: (updated) => {
-      this.ownedCards = this.ownedCards.filter(oc => oc.cardId !== updated.cardId);
+  toggleOwned(cardId: string) {
+    this.api.toggleOwned(cardId).subscribe({
+      next: (updated) => {
+        this.ownedCards = this.ownedCards.filter(oc => oc.cardId !== updated.cardId);
 
-      if (updated.ownedCount > 0) {
-        this.ownedCards.push(updated);
+        if (updated.ownedCount > 0) {
+          this.ownedCards.push(updated);
+        }
+      },
+      error: (err) => {
+        console.error(err);
       }
-    },
-    error: (err) => {
-      console.error(err);
+    });
+  }
+
+  getOwnedCount(): number {
+    return this.cards.filter(c => this.isOwned(c.id)).length;
+  }
+
+  getCompletionPercentage(): number {
+    if (this.cards.length === 0) {
+      return 0;
     }
-  });
-}
+
+    return Math.round((this.getOwnedCount() / this.cards.length) * 100);
+  }
 
 }
