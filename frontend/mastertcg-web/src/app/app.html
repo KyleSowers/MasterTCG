@@ -22,6 +22,12 @@
 
   <ul>
     <li *ngFor="let c of cards">
+     <input
+      type="checkbox"
+      [checked]="isOwned(c.id)"
+      (change)="toggleOwned(c.id)"
+      />
+
       <strong>{{ c.cardNumber }}</strong>
       {{ c.name }}
 

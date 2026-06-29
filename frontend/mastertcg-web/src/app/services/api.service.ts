@@ -19,6 +19,11 @@ export interface CardDto {
   finish: string;
 }
 
+export interface OwnedCardDto {
+  cardId: string;
+  ownedCount: number;
+}
+
 @Injectable({ providedIn: 'root'})
 export class ApiService {
   private baseUrl = "http://localhost:8080";
@@ -31,5 +36,16 @@ export class ApiService {
 
   getCards(setId: string): Observable<CardDto[]> {
     return this.http.get<CardDto[]>(`${this.baseUrl}/sets/${setId}/cards`);
+  }
+
+  getOwnedCards(): Observable<OwnedCardDto[]> {
+    return this.http.get<OwnedCardDto[]>(`${this.baseUrl}/user-cards`);
+  }
+
+  toggleOwned(cardId: string): Observable<OwnedCardDto> {
+  return this.http.post<OwnedCardDto>(
+    `${this.baseUrl}/user-cards/${cardId}/toggle`,
+    {}
+  );
   }
 }

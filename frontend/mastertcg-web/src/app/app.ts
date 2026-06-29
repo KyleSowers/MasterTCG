@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, SetDto, CardDto } from './services/api.service';
+import { ApiService, SetDto, CardDto, OwnedCardDto } from './services/api.service';
 import {CommonModule} from '@angular/common';
 
 @Component({
@@ -14,6 +14,7 @@ export class App implements OnInit {
   sets: SetDto[] = [];
   cards: CardDto[] = [];
   selectedSet: SetDto | null = null;
+  ownedCards: OwnedCardDto[] = [];
   
   loading = true;
   error: string | null = null;
@@ -26,6 +27,8 @@ export class App implements OnInit {
         this.sets = data;
         this.error = null;
         this.loading = false;
+
+        this.loadOwnedCards();
       },
       error: (err) => {
         console.error(err);
@@ -60,4 +63,35 @@ export class App implements OnInit {
         return finish.replace('_', ' ');
     }
   }
+
+  loadOwnedCards() {
+  this.api.getOwnedCards().subscribe({
+    next: (data) => {
+      this.ownedCards = data;
+    },
+    error: (err) => {
+      console.error(err);
+    }
+  });
+}
+
+isOwned(cardId: string): boolean {
+  return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
+}
+
+toggleOwned(cardId: string) {
+  this.api.toggleOwned(cardId).subscribe({
+    next: (updated) => {
+      this.ownedCards = this.ownedCards.filter(oc => oc.cardId !== updated.cardId);
+
+      if (updated.ownedCount > 0) {
+        this.ownedCards.push(updated);
+      }
+    },
+    error: (err) => {
+      console.error(err);
+    }
+  });
+}
+
 }
