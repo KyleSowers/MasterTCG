@@ -15,8 +15,8 @@ public class UserCardEntity {
     private UUID userId;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "card_id", nullable = false)
-    private CardEntity card;
+    @JoinColumn(name = "card_variant_id", nullable = false)
+    private CardVariantEntity cardVariant;
 
     @Column(name = "owned_count", nullable = false)
     private int ownedCount;
@@ -32,8 +32,8 @@ public class UserCardEntity {
     public UUID getUserId() { return userId; }
     public void setUserId(UUID userId) { this.userId = userId; }
 
-    public CardEntity getCard() { return card; }
-    public void setCard(CardEntity card) { this.card = card; }
+    public CardVariantEntity getCardVariant() { return cardVariant; }
+    public void setCardVariant(CardVariantEntity cardVariant) { this.cardVariant = cardVariant; }
 
     public int getOwnedCount() { return ownedCount; }
     public void setOwnedCount(int ownedCount) { this.ownedCount = ownedCount; }
@@ -43,6 +43,4 @@ public class UserCardEntity {
 
     public OffsetDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(OffsetDateTime updatedAt) { this.updatedAt = updatedAt; }
-
-
 }

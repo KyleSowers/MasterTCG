@@ -11,6 +11,6 @@ public interface UserCardRepository extends JpaRepository<UserCardEntity, UUID> 
 
     List<UserCardEntity> findByUserId(UUID userId);
 
-    Optional<UserCardEntity> findByUserIdAndCard_Id(UUID userId, UUID cardId);
+    Optional<UserCardEntity> findByUserIdAndCardVariant_Id(UUID userId, UUID cardVariantId);
     
 }

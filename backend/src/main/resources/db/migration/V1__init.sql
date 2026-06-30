@@ -13,9 +13,16 @@ CREATE TABLE cards (
     card_number TEXT NOT NULL,
     name TEXT NOT NULL,
     rarity TEXT NOT NULL,
-    finish TEXT NOT NULL DEFAULT 'NORMAL',
-    variant_group TEXT,
-    CONSTRAINT uq_cards_set_number_finish UNIQUE (set_id, card_number, finish)
+    -- finish TEXT NOT NULL DEFAULT 'NORMAL',
+    -- variant_group TEXT,
+    CONSTRAINT uq_cards_set_number UNIQUE (set_id, card_number)
+);
+
+CREATE TABLE card_variants (
+    id UUID PRIMARY KEY,
+    card_id UUID NOT NULL REFERENCES cards(id) ON DELETE CASCADE,
+    finish TEXT NOT NULL,
+    CONSTRAINT uq_card_variants_card_finish UNIQUE (card_id, finish)
 );
 
 CREATE TABLE users (
@@ -28,9 +35,9 @@ CREATE TABLE users (
 CREATE TABLE user_cards (
     id UUID PRIMARY KEY,
     user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    card_id UUID NOT NULL REFERENCES cards(id) ON DELETE CASCADE,
+    card_variant_id UUID NOT NULL REFERENCES card_variants(id) ON DELETE CASCADE,
     owned_count INT NOT NULL DEFAULT 0,
     condition TEXT,
     updated_at TIMESTAMPTZ NOT NULL,
-    CONSTRAINT uq_user_card UNIQUE (user_id, card_id)
+    CONSTRAINT uq_user_card_variant UNIQUE (user_id, card_variant_id)
 );

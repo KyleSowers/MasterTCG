@@ -1,9 +1,9 @@
 package com.mastertcg.controller;
 
 import com.mastertcg.dto.OwnedCardDto;
-import com.mastertcg.model.CardEntity;
+import com.mastertcg.model.CardVariantEntity;
 import com.mastertcg.model.UserCardEntity;
-import com.mastertcg.repository.CardRepository;
+import com.mastertcg.repository.CardVariantRepository;
 import com.mastertcg.repository.UserCardRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,36 +19,36 @@ public class UserCardController {
             UUID.fromString("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
 
     private final UserCardRepository userCardRepository;
-    private final CardRepository cardRepository;
+    private final CardVariantRepository cardVariantRepository;
 
     public UserCardController(UserCardRepository userCardRepository,
-                              CardRepository cardRepository) {
+                              CardVariantRepository cardVariantRepository) {
         this.userCardRepository = userCardRepository;
-        this.cardRepository = cardRepository;
+        this.cardVariantRepository = cardVariantRepository;
     }
 
     @GetMapping
     public List<OwnedCardDto> getOwnedCards() {
         return userCardRepository.findByUserId(DEMO_USER_ID).stream()
                 .map(uc -> new OwnedCardDto(
-                        uc.getCard().getId(),
+                        uc.getCardVariant().getId(),
                         uc.getOwnedCount()
                 ))
                 .toList();
     }
 
-    @PostMapping("/{cardId}/toggle")
-    public OwnedCardDto toggleOwned(@PathVariable UUID cardId) {
+    @PostMapping("/{cardVariantId}/toggle")
+    public OwnedCardDto toggleOwned(@PathVariable UUID cardVariantId) {
         UserCardEntity userCard = userCardRepository
-                .findByUserIdAndCard_Id(DEMO_USER_ID, cardId)
+                .findByUserIdAndCardVariant_Id(DEMO_USER_ID, cardVariantId)
                 .orElseGet(() -> {
-                    CardEntity card = cardRepository.findById(cardId)
+                    CardVariantEntity variant = cardVariantRepository.findById(cardVariantId)
                             .orElseThrow();
 
                     UserCardEntity newUserCard = new UserCardEntity();
                     newUserCard.setId(UUID.randomUUID());
                     newUserCard.setUserId(DEMO_USER_ID);
-                    newUserCard.setCard(card);
+                    newUserCard.setCardVariant(variant);
                     newUserCard.setOwnedCount(0);
                     newUserCard.setUpdatedAt(OffsetDateTime.now());
                     return newUserCard;
@@ -60,7 +60,7 @@ public class UserCardController {
         UserCardEntity saved = userCardRepository.save(userCard);
 
         return new OwnedCardDto(
-                saved.getCard().getId(),
+                saved.getCardVariant().getId(),
                 saved.getOwnedCount()
         );
     }

@@ -3,6 +3,9 @@ package com.mastertcg.controller;
 
 import com.mastertcg.dto.CardDto;
 import com.mastertcg.dto.SetDto;
+import com.mastertcg.dto.CardVariantDto;
+import com.mastertcg.model.CardVariantEntity;
+import com.mastertcg.repository.CardVariantRepository;
 import com.mastertcg.repository.CardRepository;
 import com.mastertcg.repository.SetRepository;
 import org.springframework.web.bind.annotation.*;
@@ -17,10 +20,12 @@ public class SetController {
 
     private final SetRepository setRepository;
     private final CardRepository cardRepository;
+    private final CardVariantRepository cardVariantRepository;
 
-    public SetController(SetRepository setRepository, CardRepository cardRepository) {
+    public SetController(SetRepository setRepository, CardRepository cardRepository, CardVariantRepository cardVariantRepository) {
         this.setRepository = setRepository;
         this.cardRepository = cardRepository;
+        this.cardVariantRepository = cardVariantRepository;
     }
 
     @GetMapping
@@ -39,13 +44,23 @@ public class SetController {
 
     @GetMapping("/{setId}/cards")
     public List<CardDto> getCards(@PathVariable UUID setId) {
+        List<CardVariantEntity> variants = 
+            cardVariantRepository.findByCard_Set_Id(setId);
+
         return cardRepository.findBySet_IdOrderByCardNumberAsc(setId).stream()
-                .map(c -> new CardDto(
-                        c.getId(),
-                        c.getCardNumber(),
-                        c.getName(),
-                        c.getRarity(),
-                        c.getFinish()
+                .map(card -> new CardDto(
+                        card.getId(),
+                        card.getCardNumber(),
+                        card.getName(),
+                        card.getRarity(),
+                        variants.stream()
+                                .filter(v -> v.getCard().getId().equals(card.getId()))
+                                .map(v -> new CardVariantDto(
+                                    v.getId(),
+                                    v.getFinish()
+                                ))
+                                .toList()
+                        // c.getFinish()
                 ))
                 .toList();
     }
