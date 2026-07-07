@@ -25,66 +25,24 @@
     ({{ getCompletionPercentage() }}%)
   </p>
 
-  <div style="
-    width: 100%;
-    background: #e5e5e5;
-    border-radius: 999px;
-    height: 14px;
-    margin-bottom: 16px;
-    overflow: hidden;
-    ">
-  <div
-    style="
-      height: 100%;
-      background: #28a745;
-      border-radius: 999px;
-      "
+  <div class="progress-container">
+    <div class="progress-fill"
       [style.width.%]="getCompletionPercentage()"
-  ></div>
+      ></div>
   </div>
 
   <ul>
-    <li *ngFor="let c of cards"
-        style="
-          list-style: none;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          padding: 12px;
-          margin-bottom: 12px;
-          background: #fafafa;
-        "
-    >
-      <div style="font-size: 1.1em; font-weight: bold;">
+    <li *ngFor="let c of cards" class="card">
+      <div class="card-header">
         {{ c.cardNumber }} — {{ c.name }}
       </div>
       
-      <div style="
-            display: inline-block;
-            background: #eeeeee;
-            color: #333;
-            padding: 3px 10px;
-            border-radius: 999px;
-            font-size: 0.8em;
-            font-weight: 600;
-            margin-bottom: 8px;">
+      <div class="rarity-badge">
           {{ getRarityLabel(c.rarity) }}
       </div>
           
-      <div
-        style="
-          margin-top: 10px;
-          padding-top: 8px;
-          border-top: 1px solid #e5e5e5;
-        "
-      >
-        <div *ngFor="let v of c.variants"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              margin: 6px 0;
-            "
-        >
+      <div class="variant-list">
+        <div *ngFor="let v of c.variants" class="variant-row">
           <input
             type="checkbox"
             [checked]="isOwned(v.id)"
