@@ -54,11 +54,11 @@ export class App implements OnInit {
   displayFinish(finish: string): string {
     switch (finish) {
       case 'NORMAL':
-        return '';
-
+        return 'Normal';
       case 'REVERSE_HOLO':
-        return 'R-HOLO';
-
+        return 'Reverse Holo';
+      case 'HOLO':
+        return 'Holo';
       default:
         return finish.replace('_', ' ');
     }
@@ -96,22 +96,35 @@ export class App implements OnInit {
 
   getTotalVariantCount(): number {
   return this.cards.reduce((total, card) => total + card.variants.length, 0);
-}
-
-getOwnedCount(): number {
-  return this.cards.reduce((total, card) => {
-    return total + card.variants.filter(v => this.isOwned(v.id)).length;
-  }, 0);
-}
-
-getCompletionPercentage(): number {
-  const total = this.getTotalVariantCount();
-
-  if (total === 0) {
-    return 0;
   }
 
-  return Math.round((this.getOwnedCount() / total) * 100);
-}
+  getOwnedCount(): number {
+    return this.cards.reduce((total, card) => {
+      return total + card.variants.filter(v => this.isOwned(v.id)).length;
+    }, 0);
+  }
+
+  getCompletionPercentage(): number {
+    const total = this.getTotalVariantCount();
+
+    if (total === 0) {
+      return 0;
+    }
+
+    return Math.round((this.getOwnedCount() / total) * 100);
+  }
+
+  getRarityLabel(rarity: string): string {
+    switch (rarity) {
+      case 'COMMON':
+        return '● Common';
+      case 'UNCOMMON':
+        return '◆ Uncommon';
+      case 'RARE':
+        return '★ Rare';
+      default:
+        return rarity;
+    }
+  }
 
 }
