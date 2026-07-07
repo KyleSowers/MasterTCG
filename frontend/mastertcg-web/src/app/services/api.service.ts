@@ -16,6 +16,11 @@ export interface CardDto {
   cardNumber: string;
   name: string;
   rarity: string;
+  variants: CardVariantDto[];
+}
+
+export interface CardVariantDto {
+  id: string;
   finish: string;
 }
 

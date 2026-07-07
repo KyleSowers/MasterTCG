@@ -94,16 +94,24 @@ export class App implements OnInit {
     });
   }
 
-  getOwnedCount(): number {
-    return this.cards.filter(c => this.isOwned(c.id)).length;
+  getTotalVariantCount(): number {
+  return this.cards.reduce((total, card) => total + card.variants.length, 0);
+}
+
+getOwnedCount(): number {
+  return this.cards.reduce((total, card) => {
+    return total + card.variants.filter(v => this.isOwned(v.id)).length;
+  }, 0);
+}
+
+getCompletionPercentage(): number {
+  const total = this.getTotalVariantCount();
+
+  if (total === 0) {
+    return 0;
   }
 
-  getCompletionPercentage(): number {
-    if (this.cards.length === 0) {
-      return 0;
-    }
-
-    return Math.round((this.getOwnedCount() / this.cards.length) * 100);
-  }
+  return Math.round((this.getOwnedCount() / total) * 100);
+}
 
 }
