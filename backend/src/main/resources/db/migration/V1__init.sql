@@ -13,6 +13,10 @@ CREATE TABLE cards (
     card_number TEXT NOT NULL,
     name TEXT NOT NULL,
     rarity TEXT NOT NULL,
+    image_small_url TEXT,
+    image_large_url TEXT,
+    primary_type TEXT,
+    artist TEXT,
     -- finish TEXT NOT NULL DEFAULT 'NORMAL',
     -- variant_group TEXT,
     CONSTRAINT uq_cards_set_number UNIQUE (set_id, card_number)

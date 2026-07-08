@@ -53,6 +53,10 @@ public class SetController {
                         card.getCardNumber(),
                         card.getName(),
                         card.getRarity(),
+                        card.getImageSmallUrl(),
+                        card.getImageLargeUrl(),
+                        card.getPrimaryType(),
+                        card.getArtist(),
                         variants.stream()
                                 .filter(v -> v.getCard().getId().equals(card.getId()))
                                 .map(v -> new CardVariantDto(

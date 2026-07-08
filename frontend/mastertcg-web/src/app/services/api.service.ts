@@ -16,6 +16,10 @@ export interface CardDto {
   cardNumber: string;
   name: string;
   rarity: string;
+  imageSmallUrl: string | null;
+  imageLargeUrl: string | null;
+  primaryType: string | null;
+  artist: string | null;
   variants: CardVariantDto[];
 }
 

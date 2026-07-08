@@ -9,6 +9,10 @@ public record CardDto (
     String cardNumber,
     String name,
     String rarity,
+     String imageSmallUrl,
+    String imageLargeUrl,
+    String primaryType,
+    String artist,
     List<CardVariantDto> variants
     // CardFinish finish
 ) {}

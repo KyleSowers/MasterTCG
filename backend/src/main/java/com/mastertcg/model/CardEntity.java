@@ -23,6 +23,18 @@ public class CardEntity {
     @Column(nullable = false)
     private String rarity;
 
+    @Column(name = "image_small_url")
+    private String imageSmallUrl;
+
+    @Column(name = "image_large_url")
+    private String imageLargeUrl;
+
+    @Column(name = "primary_type")
+    private String primaryType;
+
+    @Column
+    private String artist;
+
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 
@@ -37,4 +49,16 @@ public class CardEntity {
 
     public String getRarity() { return rarity; }
     public void setRarity(String rarity) { this.rarity = rarity; }
+
+    public String getImageSmallUrl() { return imageSmallUrl; }
+    public void setImageSmallUrl(String imageSmallUrl) { this.imageSmallUrl = imageSmallUrl; }
+
+    public String getImageLargeUrl() { return imageLargeUrl; }
+    public void setImageLargeUrl(String imageLargeUrl) { this.imageLargeUrl = imageLargeUrl; }
+
+    public String getPrimaryType() { return primaryType; }
+    public void setPrimaryType(String primaryType) { this.primaryType = primaryType; }
+
+    public String getArtist() { return artist; }
+    public void setArtist(String artist) { this.artist = artist; }
 }
