@@ -1,6 +1,7 @@
 package com.mastertcg.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +28,11 @@ public class ImportController {
 
     @PostMapping("/pokemon/base1/preview")
     public String previewBaseImport() {
-        importService.importCards("data/pokemon/base1.json");
-        return "Preview import complete. Check backend console.";
+        int imported = importService.importCards(
+                "data/pokemon/base1.json",
+                UUID.fromString("11111111-1111-1111-1111-111111111111")
+        );
+
+        return "Imported " + imported + " cards.";
     }
 }
