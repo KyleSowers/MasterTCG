@@ -3,6 +3,7 @@ package com.mastertcg.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,11 @@ public class ImportController {
     @GetMapping("/test")
     public List<PokemonCardImportDto> testImport() {
         return importService.loadCardsFromJson("data/pokemon/base1.json");
+    }
+
+    @PostMapping("/pokemon/base1/preview")
+    public String previewBaseImport() {
+        importService.importCards("data/pokemon/base1.json");
+        return "Preview import complete. Check backend console.";
     }
 }
