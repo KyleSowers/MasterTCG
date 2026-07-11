@@ -54,3 +54,11 @@ body {
   background: #28a745;
   border-radius: 999px;
 }
+
+.card-image {
+  width: 140px;
+  height: auto;
+  display: auto;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}

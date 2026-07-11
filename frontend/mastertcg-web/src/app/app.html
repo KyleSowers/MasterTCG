@@ -33,6 +33,12 @@
 
   <ul>
     <li *ngFor="let c of cards" class="card">
+      <img
+        *ngIf="c.imageSmallUrl"
+        [src]="c.imageSmallUrl"
+        [alt]="c.name"
+        class="card-image"
+      >
       <div class="card-header">
         {{ c.cardNumber }} — {{ c.name }}
       </div>
