@@ -48,6 +48,11 @@ public class SetController {
             cardVariantRepository.findByCard_Set_Id(setId);
 
         return cardRepository.findBySet_IdOrderByCardNumberAsc(setId).stream()
+                .sorted((a, b) -> {
+                        int aNumber = Integer.parseInt(a.getCardNumber());
+                        int bNumber = Integer.parseInt(b.getCardNumber());
+                        return Integer.compare(aNumber, bNumber);
+                })
                 .map(card -> new CardDto(
                         card.getId(),
                         card.getCardNumber(),
