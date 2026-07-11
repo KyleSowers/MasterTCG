@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService, SetDto, CardDto, OwnedCardDto } from './services/api.service';
 import {CommonModule} from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -15,6 +16,7 @@ export class App implements OnInit {
   cards: CardDto[] = [];
   selectedSet: SetDto | null = null;
   ownedCards: OwnedCardDto[] = [];
+  searchTerm = '';
   
   loading = true;
   error: string | null = null;
@@ -125,6 +127,19 @@ export class App implements OnInit {
       default:
         return rarity;
     }
+  }
+
+  getFilteredCards(): CardDto[] {
+    const term = this.searchTerm.trim().toLowerCase();
+
+    if (!term) {
+      return this.cards;
+    }
+
+    return this.cards.filter(card => 
+      card.name.toLowerCase().includes(term) ||
+      card.cardNumber.toLowerCase().includes(term)
+    );
   }
 
 }

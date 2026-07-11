@@ -31,8 +31,15 @@
       ></div>
   </div>
 
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search by card name or number"
+    class="search-input"
+  />
+
   <ul>
-    <li *ngFor="let c of cards" class="card">
+    <li *ngFor="let c of getFilteredCards()" class="card">
       <img
         *ngIf="c.imageSmallUrl"
         [src]="c.imageSmallUrl"
