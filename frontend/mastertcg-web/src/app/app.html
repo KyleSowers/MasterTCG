@@ -38,6 +38,13 @@
     class="search-input"
   />
 
+  <select [(ngModel)]="selectedRarity" class="filter-select">
+    <option value="ALL">All rarities</option>
+    <option value="COMMON">Common</option>
+    <option value="UNCOMMON">Uncommon</option>
+    <option value="RARE">Rare</option>
+  </select>
+
   <ul>
     <li *ngFor="let c of getFilteredCards()" class="card">
       <img

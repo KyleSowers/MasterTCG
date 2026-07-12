@@ -17,6 +17,7 @@ export class App implements OnInit {
   selectedSet: SetDto | null = null;
   ownedCards: OwnedCardDto[] = [];
   searchTerm = '';
+  selectedRarity = 'ALL';
   
   loading = true;
   error: string | null = null;
@@ -153,14 +154,25 @@ export class App implements OnInit {
   getFilteredCards(): CardDto[] {
     const term = this.searchTerm.trim().toLowerCase();
 
-    if (!term) {
-      return this.cards;
-    }
+    // if (!term) {
+    //   return this.cards;
+    // }
 
-    return this.cards.filter(card => 
-      card.name.toLowerCase().includes(term) ||
-      card.cardNumber.toLowerCase().includes(term)
-    );
+    return this.cards.filter(card => {
+      const matchesSearch =
+        !term ||
+        card.name.toLowerCase().startsWith(term) ||
+        card.cardNumber.toLowerCase() === term ||
+        card.rarity.toLowerCase() === term ||
+        (card.primaryType?.toLowerCase() === term) ||
+        (card.artist?.toLowerCase() === term)
+
+      const matchesRarity = 
+        this.selectedRarity === 'ALL' ||
+        card.rarity === this.selectedRarity;
+
+      return matchesSearch && matchesRarity;
+    });
   }
 
 }

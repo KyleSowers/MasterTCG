@@ -35,6 +35,14 @@ body {
   width: 140px;
 }
 
+.filter-select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 0 0 16px 8px;
+  padding: 10px 12px;
+}
+
 .progress-container {
   background: #e5e5e5;
   border-radius: 999px;
