@@ -45,6 +45,12 @@
     <option value="RARE">Rare</option>
   </select>
 
+  <select [(ngModel)]="selectedOwnership" class="filter-select">
+    <option value="ALL">All Cards</option>
+    <option value="OWNED">Owned</option>
+    <option value="MISSING">Missing</option>
+  </select>
+
   <ul>
     <li *ngFor="let c of getFilteredCards()" class="card">
       <img

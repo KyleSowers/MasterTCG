@@ -12,47 +12,18 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class App implements OnInit {
-  sets: SetDto[] = [];
   cards: CardDto[] = [];
-  selectedSet: SetDto | null = null;
   ownedCards: OwnedCardDto[] = [];
   searchTerm = '';
+  selectedOwnership = 'ALL';
   selectedRarity = 'ALL';
+  selectedSet: SetDto | null = null;
+  sets: SetDto[] = [];
   
   loading = true;
   error: string | null = null;
 
   constructor(private api: ApiService) {}
-
-  ngOnInit() {
-    this.api.getSets().subscribe({
-      next: (data) => {
-        this.sets = data;
-        this.error = null;
-        this.loading = false;
-
-        this.loadOwnedCards();
-      },
-      error: (err) => {
-        console.error(err);
-        this.error = 'Failed to load sets';
-        this.loading = false;
-      }
-    });
-  }
-
-  loadCards(set: SetDto) {
-    this.selectedSet = set;
-  
-    this.api.getCards(set.id).subscribe({
-      next: (data) => {
-        this.cards = data;
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
-  }
 
   displayFinish(finish: string): string {
     switch (finish) {
@@ -67,46 +38,6 @@ export class App implements OnInit {
     }
   }
 
-  loadOwnedCards() {
-  this.api.getOwnedCards().subscribe({
-    next: (data) => {
-      this.ownedCards = data;
-    },
-    error: (err) => {
-      console.error(err);
-    }
-  });
-  }
-
-  isOwned(cardId: string): boolean {
-    return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
-  }
-
-  toggleOwned(cardId: string) {
-    this.api.toggleOwned(cardId).subscribe({
-      next: (updated) => {
-        this.ownedCards = this.ownedCards.filter(oc => oc.cardId !== updated.cardId);
-
-        if (updated.ownedCount > 0) {
-          this.ownedCards.push(updated);
-        }
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
-  }
-
-  getTotalVariantCount(): number {
-  return this.cards.reduce((total, card) => total + card.variants.length, 0);
-  }
-
-  getOwnedCount(): number {
-    return this.cards.reduce((total, card) => {
-      return total + card.variants.filter(v => this.isOwned(v.id)).length;
-    }, 0);
-  }
-
   getCompletionPercentage(): number {
     const total = this.getTotalVariantCount();
 
@@ -115,6 +46,41 @@ export class App implements OnInit {
     }
 
     return Math.round((this.getOwnedCount() / total) * 100);
+  }
+
+  getFilteredCards(): CardDto[] {
+    const term = this.searchTerm.trim().toLowerCase();
+
+    return this.cards.filter(card => {
+      const matchesSearch =
+        !term ||
+        card.name.toLowerCase().startsWith(term) ||
+        card.cardNumber.toLowerCase() === term ||
+        card.rarity.toLowerCase() === term ||
+        (card.primaryType?.toLowerCase() === term) ||
+        (card.artist?.toLowerCase() === term)
+
+      const matchesRarity = 
+        this.selectedRarity === 'ALL' ||
+        card.rarity === this.selectedRarity;
+
+      const isOwned = card.variants.some(variant =>
+          this.isOwned(variant.id)
+        );
+
+      const matchesOwnership = 
+      this.selectedOwnership === 'ALL' ||
+      (this.selectedOwnership === 'OWNED' && isOwned) ||
+      (this.selectedOwnership === 'MISSING' && !isOwned);
+
+      return matchesSearch && matchesRarity && matchesOwnership;
+    });
+  }
+
+  getOwnedCount(): number {
+    return this.cards.reduce((total, card) => {
+      return total + card.variants.filter(v => this.isOwned(v.id)).length;
+    }, 0);
   }
 
   getRarityClass(rarity: string): string {
@@ -151,27 +117,67 @@ export class App implements OnInit {
     return `type-${type.toLowerCase()}`;
   }
 
-  getFilteredCards(): CardDto[] {
-    const term = this.searchTerm.trim().toLowerCase();
+  getTotalVariantCount(): number {
+  return this.cards.reduce((total, card) => total + card.variants.length, 0);
+  }
 
-    // if (!term) {
-    //   return this.cards;
-    // }
+  isOwned(cardId: string): boolean {
+    return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
+  }
 
-    return this.cards.filter(card => {
-      const matchesSearch =
-        !term ||
-        card.name.toLowerCase().startsWith(term) ||
-        card.cardNumber.toLowerCase() === term ||
-        card.rarity.toLowerCase() === term ||
-        (card.primaryType?.toLowerCase() === term) ||
-        (card.artist?.toLowerCase() === term)
+  loadCards(set: SetDto) {
+    this.selectedSet = set;
+  
+    this.api.getCards(set.id).subscribe({
+      next: (data) => {
+        this.cards = data;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
 
-      const matchesRarity = 
-        this.selectedRarity === 'ALL' ||
-        card.rarity === this.selectedRarity;
+  loadOwnedCards() {
+    this.api.getOwnedCards().subscribe({
+      next: (data) => {
+        this.ownedCards = data;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
 
-      return matchesSearch && matchesRarity;
+  ngOnInit() {
+    this.api.getSets().subscribe({
+      next: (data) => {
+        this.sets = data;
+        this.error = null;
+        this.loading = false;
+
+        this.loadOwnedCards();
+      },
+      error: (err) => {
+        console.error(err);
+        this.error = 'Failed to load sets';
+        this.loading = false;
+      }
+    });
+  }
+
+  toggleOwned(cardId: string) {
+    this.api.toggleOwned(cardId).subscribe({
+      next: (updated) => {
+        this.ownedCards = this.ownedCards.filter(oc => oc.cardId !== updated.cardId);
+
+        if (updated.ownedCount > 0) {
+          this.ownedCards.push(updated);
+        }
+      },
+      error: (err) => {
+        console.error(err);
+      }
     });
   }
 
