@@ -116,6 +116,19 @@ export class App implements OnInit {
     return Math.round((this.getOwnedCount() / total) * 100);
   }
 
+  getRarityClass(rarity: string): string {
+    switch (rarity) {
+      case 'COMMON':
+        return 'rarity-common';
+      case 'UNCOMMON':
+        return 'rarity-uncommon';
+      case 'RARE':
+        return 'rarity-rare';
+      default:
+        return 'rarity-default';
+    }
+  }
+
   getRarityLabel(rarity: string): string {
     switch (rarity) {
       case 'COMMON':
@@ -127,6 +140,14 @@ export class App implements OnInit {
       default:
         return rarity;
     }
+  }
+
+  getTypeClass(type: string | null): string {
+    if (!type) {
+      return 'type-default';
+    }
+
+    return `type-${type.toLowerCase()}`;
   }
 
   getFilteredCards(): CardDto[] {

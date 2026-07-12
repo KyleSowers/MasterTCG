@@ -50,8 +50,12 @@
         {{ c.cardNumber }} — {{ c.name }}
       </div>
       
-      <div class="rarity-badge">
+      <div class="rarity-badge" [ngClass]="getRarityClass(c.rarity)">
           {{ getRarityLabel(c.rarity) }}
+      </div>
+
+      <div *ngIf="c.primaryType" class="type-chip" [ngClass]="getTypeClass(c.primaryType)">
+        {{ c.primaryType }}
       </div>
           
       <div class="variant-list">
