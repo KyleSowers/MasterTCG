@@ -30,11 +30,35 @@
       [style.width.%]="getCompletionPercentage()"
       ></div>
   </div>
-
+<!-- 
   <div class="filter-summary" *ngIf="selectedSet">
     Showing {{ getVisibleCardCount() }} cards ·
     {{ getVisibleOwnedCount() }} / {{ getVisibleVariantCount() }} visible variants owned
+  </div> -->
+
+  <!-- <div class="filter-summary" *ngIf="selectedSet">
+  <ng-container *ngIf="selectedOwnership === 'ALL'">
+    Showing {{ getVisibleCardCount() }} cards ·
+    {{ getVisibleOwnedCount() }} / {{ getVisibleVariantCount() }} visible variants owned
+  </ng-container>
+
+  <ng-container *ngIf="selectedOwnership === 'OWNED'">
+    Showing {{ getVisibleCardCount() }} cards ·
+    {{ getVisibleVariantCount() }} owned variant
+  </ng-container>
+
+  <ng-container *ngIf="selectedOwnership === 'MISSING'">
+    Showing {{ getVisibleCardCount() }} cards ·
+    {{ getVisibleVariantCount() }} missing variant
+  </ng-container>
   </div>
+
+  <div class="mini-progress-container" *ngIf="selectedSet">
+    <div
+      class="mini-progress-fill"
+      [style.width.%]="getFilterBarPercentage()">
+    </div>
+  </div> -->
 
   <input
     type="text"
@@ -63,6 +87,30 @@
     <option value="REVERSE_HOLO">Reverse Holo</option>
   </select>
 
+   <div class="filter-summary" *ngIf="selectedSet">
+  <ng-container *ngIf="selectedOwnership === 'ALL'">
+    Showing {{ getVisibleCardCount() }} cards ·
+    {{ getVisibleOwnedCount() }} / {{ getVisibleVariantCount() }} visible variants owned
+  </ng-container>
+
+  <ng-container *ngIf="selectedOwnership === 'OWNED'">
+    Showing {{ getVisibleCardCount() }} cards ·
+    {{ getVisibleVariantCount() }} owned variant
+  </ng-container>
+
+  <ng-container *ngIf="selectedOwnership === 'MISSING'">
+    Showing {{ getVisibleCardCount() }} cards ·
+    {{ getVisibleVariantCount() }} missing variant
+  </ng-container>
+  </div>
+
+  <div class="mini-progress-container" *ngIf="selectedSet">
+    <div
+      class="mini-progress-fill"
+      [style.width.%]="getFilterBarPercentage()">
+    </div>
+  </div>
+
   <ul>
     <li *ngFor="let c of getFilteredCards()" class="card">
       <img
@@ -84,7 +132,7 @@
       </div>
           
       <div class="variant-list">
-        <div *ngFor="let v of c.variants" class="variant-row">
+        <div *ngFor="let v of getVisibleVariants(c)" class="variant-row">
           <input
             type="checkbox"
             [checked]="isOwned(v.id)"

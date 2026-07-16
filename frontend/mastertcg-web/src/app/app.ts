@@ -49,6 +49,49 @@ export class App implements OnInit {
     return Math.round((this.getOwnedCount() / total) * 100);
   }
 
+  getFilterBarPercentage(): number {
+    const total = this.getFilteredBaseVariantCount();
+
+    if (total === 0) {
+      return 0;
+    }
+
+    const current = 
+      this.selectedOwnership === 'ALL'
+        ? this.getVisibleOwnedCount()
+        : this.getVisibleVariantCount();
+
+    return Math.round((current / total) * 100);
+  }
+
+  getFilteredBaseVariantCount(): number {
+    const term = this.searchTerm.trim().toLowerCase();
+
+    return this.cards
+      .filter(card => {
+        const matchesSearch = 
+          !term ||
+          card.name.toLowerCase().startsWith(term) ||
+          card.cardNumber.toLowerCase() === term ||
+          card.rarity.toLowerCase() === term ||
+          card.primaryType?.toLowerCase() === term ||
+          card.artist?.toLowerCase() === term;
+
+        const matchesRarity = 
+          this.selectedRarity === 'ALL' ||
+          card.rarity === this.selectedRarity;
+
+        return matchesSearch && matchesRarity;
+      })
+      .reduce((total, card) => {
+        const matchingVariants = card.variants.filter(variant =>
+          this.selectedFinish === 'ALL' || variant.finish === this.selectedFinish
+        );
+
+        return total + matchingVariants.length;
+      }, 0);
+  }
+
   getFilteredCards(): CardDto[] {
   const term = this.searchTerm.trim().toLowerCase();
 
