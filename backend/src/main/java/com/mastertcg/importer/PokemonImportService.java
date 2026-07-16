@@ -3,13 +3,15 @@ package com.mastertcg.importer;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mastertcg.model.CardEntity;
-import com.mastertcg.model.SetEntity;
+import com.mastertcg.model.CardFinish;
 import com.mastertcg.model.CardVariantEntity;
-import com.mastertcg.repository.SetRepository;
+import com.mastertcg.model.SetEntity;
 import com.mastertcg.repository.CardRepository;
 import com.mastertcg.repository.CardVariantRepository;
+import com.mastertcg.repository.SetRepository;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.InputStream;
 import java.util.List;
@@ -51,6 +53,7 @@ public class PokemonImportService {
         }
     }
 
+    @Transactional
     public int importCards(String path, UUID setId) {
         SetEntity set = setRepository.findById(setId)
                 .orElseThrow();
@@ -60,29 +63,34 @@ public class PokemonImportService {
         int count = 0;
 
         for (PokemonCardImportDto dto : importedCards) {
+            CardEntity mappedCard = mapper.toCardEntity(dto);
+
             CardEntity card = cardRepository
                 .findBySet_IdAndCardNumber(set.getId(), dto.number())
                 .orElseGet(() -> {
                     CardEntity newCard = mapper.toCardEntity(dto);
-                    newCard.setId(UUID.randomUUID());
-                    newCard.setSet(set);
-                    return newCard;
+                    mappedCard.setId(UUID.randomUUID());
+                    mappedCard.setSet(set);
+                    return mappedCard;
                 });
             
                 
             // Always refresh imported fields
             card.setName(dto.name());
-            card.setRarity(mapper.toCardEntity(dto).getRarity());
+            card.setRarity(mappedCard.getRarity());
             card.setArtist(dto.artist());
+            card.setPrimaryType(mappedCard.getPrimaryType());
+            card.setImageSmallUrl(mappedCard.getImageSmallUrl());
+            card.setImageLargeUrl(mappedCard.getImageLargeUrl());
 
-            if (dto.types() != null && !dto.types().isEmpty()) {
-                card.setPrimaryType(dto.types().get(0));
-            }
+            // if (dto.types() != null && !dto.types().isEmpty()) {
+            //     card.setPrimaryType(dto.types().get(0));
+            // }
 
-            if (dto.images() != null) {
-                card.setImageSmallUrl(dto.images().small());
-                card.setImageLargeUrl(dto.images().large());
-            }
+            // if (dto.images() != null) {
+            //     card.setImageSmallUrl(dto.images().small());
+            //     card.setImageLargeUrl(dto.images().large());
+            // }
 
             cardRepository.save(card);
 

@@ -26,7 +26,7 @@ public class ImportController {
         return importService.loadCardsFromJson("data/pokemon/base1.json");
     }
 
-    @PostMapping("/pokemon/base1/preview")
+    @PostMapping("/pokemon/base1")
     public String previewBaseImport() {
         int imported = importService.importCards(
                 "data/pokemon/base1.json",
