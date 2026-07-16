@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, SetDto, CardDto, OwnedCardDto } from './services/api.service';
+import { ApiService, SetDto, CardDto, OwnedCardDto, CardVariantDto } from './services/api.service';
 import {CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,7 @@ export class App implements OnInit {
   cards: CardDto[] = [];
   ownedCards: OwnedCardDto[] = [];
   searchTerm = '';
+  selectedFinish = 'ALL';
   selectedOwnership = 'ALL';
   selectedRarity = 'ALL';
   selectedSet: SetDto | null = null;
@@ -49,33 +50,26 @@ export class App implements OnInit {
   }
 
   getFilteredCards(): CardDto[] {
-    const term = this.searchTerm.trim().toLowerCase();
+  const term = this.searchTerm.trim().toLowerCase();
 
-    return this.cards.filter(card => {
-      const matchesSearch =
-        !term ||
-        card.name.toLowerCase().startsWith(term) ||
-        card.cardNumber.toLowerCase() === term ||
-        card.rarity.toLowerCase() === term ||
-        (card.primaryType?.toLowerCase() === term) ||
-        (card.artist?.toLowerCase() === term)
+  return this.cards.filter(card => {
+    const matchesSearch =
+      !term ||
+      card.name.toLowerCase().startsWith(term) ||
+      card.cardNumber.toLowerCase() === term ||
+      card.rarity.toLowerCase() === term ||
+      card.primaryType?.toLowerCase() === term ||
+      card.artist?.toLowerCase() === term;
 
-      const matchesRarity = 
-        this.selectedRarity === 'ALL' ||
-        card.rarity === this.selectedRarity;
+    const matchesRarity =
+      this.selectedRarity === 'ALL' ||
+      card.rarity === this.selectedRarity;
 
-      const isOwned = card.variants.some(variant =>
-          this.isOwned(variant.id)
-        );
+    const hasVisibleVariants = this.getVisibleVariants(card).length > 0;
 
-      const matchesOwnership = 
-      this.selectedOwnership === 'ALL' ||
-      (this.selectedOwnership === 'OWNED' && isOwned) ||
-      (this.selectedOwnership === 'MISSING' && !isOwned);
-
-      return matchesSearch && matchesRarity && matchesOwnership;
-    });
-  }
+    return matchesSearch && matchesRarity && hasVisibleVariants;
+  });
+}
 
   getOwnedCount(): number {
     return this.cards.reduce((total, card) => {
@@ -119,6 +113,20 @@ export class App implements OnInit {
 
   getTotalVariantCount(): number {
   return this.cards.reduce((total, card) => total + card.variants.length, 0);
+  }
+
+  getVisibleVariants(card: CardDto): CardVariantDto[] {
+    return card.variants.filter(variant => {
+      const matchesFinish = 
+        this.selectedFinish === 'ALL' || variant.finish === this.selectedFinish;
+
+      const matchesOwnership =
+      this.selectedOwnership === 'ALL' ||
+      (this.selectedOwnership === 'OWNED' && this.isOwned(variant.id)) ||
+      (this.selectedOwnership === 'MISSING' && !this.isOwned(variant.id));
+
+      return matchesFinish && matchesOwnership;
+    });
   }
 
   isOwned(cardId: string): boolean {

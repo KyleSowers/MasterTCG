@@ -51,6 +51,13 @@
     <option value="MISSING">Missing</option>
   </select>
 
+  <select [(ngModel)]="selectedFinish" class="filter-select">
+    <option value="ALL">All Finishes</option>
+    <option value="NORMAL">Normal</option>
+    <option value="HOLO">Holo</option>
+    <option value="REVERSE_HOLO">Reverse Holo</option>
+  </select>
+
   <ul>
     <li *ngFor="let c of getFilteredCards()" class="card">
       <img
