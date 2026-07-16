@@ -115,6 +115,22 @@ export class App implements OnInit {
   return this.cards.reduce((total, card) => total + card.variants.length, 0);
   }
 
+  getVisibleCardCount(): number {
+    return this.getFilteredCards().length;
+  }
+
+  getVisibleOwnedCount(): number {
+    return this.getFilteredCards().reduce((total, card) => {
+      return total + this.getVisibleVariants(card).filter(v => this.isOwned(v.id)).length;
+    }, 0);
+  }
+
+  getVisibleVariantCount(): number {
+    return this.getFilteredCards().reduce((total, card) => {
+      return total + this.getVisibleVariants(card).length;
+    }, 0);
+  }
+
   getVisibleVariants(card: CardDto): CardVariantDto[] {
     return card.variants.filter(variant => {
       const matchesFinish = 
