@@ -20,6 +20,9 @@ export class App implements OnInit {
   selectedRarity = 'ALL';
   selectedSet: SetDto | null = null;
   sets: SetDto[] = [];
+  setCardsBySetId: { [setId: string]: CardDto[] } = {};
+  setCardBackBackground =
+  'radial-gradient(circle at 25% 50%, rgba(255, 255, 255, 0.35) 0 8%, transparent 9%), linear-gradient(90deg, #2563eb, #facc15)';
   
   loading = true;
   error: string | null = null;
@@ -39,6 +42,10 @@ export class App implements OnInit {
     }
   }
 
+  getCardsForSet(set: SetDto): CardDto[] {
+    return this.setCardsBySetId[set.id] ?? [];
+  }
+
   getCompletionPercentage(): number {
     const total = this.getTotalVariantCount();
 
@@ -47,6 +54,16 @@ export class App implements OnInit {
     }
 
     return Math.round((this.getOwnedCount() / total) * 100);
+  }
+
+  getCompletionPercentageForSet(set: SetDto): number {
+    const total = this.getTotalVariantCountForSet(set);
+
+    if (total === 0) {
+      return 0;
+    }
+
+    return Math.round((this.getOwnedCountForSet(set) / total) * 100);
   }
 
   getFilterBarPercentage(): number {
@@ -149,6 +166,12 @@ export class App implements OnInit {
     }, 0);
   }
 
+  getOwnedCountForSet(set: SetDto): number {
+    return this.getCardsForSet(set).reduce((total, card) => {
+      return total + card.variants.filter(v => this.isOwned(v.id)).length;
+    }, 0);
+  }
+
   getOwnedVariantCountByFinish(finish: string): number {
     return this.cards.reduce((total, card) => {
       return total + card.variants.filter(v =>
@@ -191,6 +214,24 @@ export class App implements OnInit {
     }
   }
 
+  getSetBackgroundImage(set: SetDto): string {
+    const cards = this.getCardsForSet(set);
+    const imageUrl = cards[0]?.imageLargeUrl ?? cards[0]?.imageSmallUrl;
+
+    if (!imageUrl) {
+      return `
+        linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
+        ${this.setCardBackBackground}
+      `;
+    }
+
+    return `
+      linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)),
+      url("${imageUrl}"),
+      ${this.setCardBackBackground}
+    `;
+  }
+
   getTotalVariantCountByRarity(rarity: string): number {
     return this.cards
       .filter(card => card.rarity === rarity)
@@ -200,6 +241,12 @@ export class App implements OnInit {
   getTotalVariantCountByFinish(finish: string): number {
     return this.cards.reduce((total, card) => {
       return total + card.variants.filter(v => v.finish === finish).length;
+    }, 0);
+  }
+
+  getTotalVariantCountForSet(set: SetDto): number {
+    return this.getCardsForSet(set).reduce((total, card) => {
+      return total + card.variants.length;
     }, 0);
   }
 
@@ -255,14 +302,35 @@ export class App implements OnInit {
 
   loadCards(set: SetDto) {
     this.selectedSet = set;
-  
+
+    const cachedCards = this.setCardsBySetId[set.id];
+
+    if (cachedCards) {
+      this.cards = cachedCards;
+      return;
+    }
+
     this.api.getCards(set.id).subscribe({
       next: (data) => {
         this.cards = data;
+        this.setCardsBySetId[set.id] = data;
       },
       error: (err) => {
         console.error(err);
       }
+    });
+  }
+
+  loadDashboardCards() {
+    this.sets.forEach(set => {
+      this.api.getCards(set.id).subscribe({
+        next: (data) => {
+          this.setCardsBySetId[set.id] = data;
+        },
+        error: (err) => {
+          console.error(err);
+        }
+      });
     });
   }
 
@@ -285,6 +353,7 @@ export class App implements OnInit {
         this.loading = false;
 
         this.loadOwnedCards();
+        this.loadDashboardCards();
       },
       error: (err) => {
         console.error(err);

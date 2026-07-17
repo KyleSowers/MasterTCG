@@ -3,27 +3,41 @@
 <div *ngIf="loading">Loading sets...</div>
 <div *ngIf="error">{{ error }}</div>
 
-<ul *ngIf="!loading && !error">
-  <li *ngFor="let s of sets">
-    <strong
+<div class="set-dashboard" *ngIf="!loading && !error">
+  <div
+    *ngFor="let s of sets"
+    class="set-card"
+    [class.set-card-selected]="selectedSet?.id === s.id"
+    [style.background-image]="getSetBackgroundImage(s)"
     (click)="loadCards(s)"
-    style="cursor: pointer; color: blue; text-decoration: underline;">
-      {{ s.name }}
-    </strong> — {{ s.era }}
-    <div>Main: {{ s.totalCardsMain }} | Master: {{ s.totalCardsMaster }}</div>
-    <!-- <div style="font-size: 12px; opacity: 0.7;">{{ s.id }}</div> -->
-  </li>
-</ul>
+  >
+    <h3>{{ s.name }}</h3>
+
+    <div class="set-era">{{ s.era }}</div>
+
+    <div class="set-progress-text">
+      Owned: {{ getOwnedCountForSet(s) }} /
+      {{ getTotalVariantCountForSet(s) }}
+      ({{ getCompletionPercentageForSet(s) }}%)
+    </div>
+
+    <div class="set-progress-container">
+      <div
+        class="set-progress-fill"
+        [style.width.%]="getCompletionPercentageForSet(s)">
+      </div>
+    </div>
+
+    <div class="set-card-meta">
+      Main: {{ s.totalCardsMain }} | Master: {{ s.totalCardsMaster }}
+    </div>
+  </div>
+</div>
 
 <hr>
 
 <section *ngIf="selectedSet">
   <h2>{{ selectedSet.name }} Cards</h2>
-
-  <p>
-    Owned: {{ getOwnedCount() }} / {{ getTotalVariantCount() }}
-    ({{ getCompletionPercentage() }}%)
-  </p>
 
   <div class="progress-container">
     <div class="progress-fill"

@@ -171,6 +171,73 @@ body {
   width: 100%;
 }
 
+.set-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: cover, auto 90%, cover;
+  background-position: center, right 12px center, center;
+}
+
+.set-card h3 {
+  margin: 0 0 6px;
+}
+
+.set-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.set-card-meta {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.set-card-selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+}
+
+.set-dashboard {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  margin: 20px 0;
+  max-width: 1200px;
+}
+
+.set-era {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+.set-progress-container {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.set-progress-fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.set-progress-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
 .stat-card {
   padding: 12px;
   border: 1px solid #e5e7eb;
