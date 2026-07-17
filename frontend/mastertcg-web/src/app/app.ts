@@ -120,6 +120,22 @@ export class App implements OnInit {
     }, 0);
   }
 
+  getOwnedVariantCountByFinish(finish: string): number {
+    return this.cards.reduce((total, card) => {
+      return total + card.variants.filter(v =>
+        v.finish === finish && this.isOwned(v.id)
+      ).length;
+    }, 0)
+  }
+
+  getOwnedVariantCountByRarity(rarity: string): number {
+    return this.cards
+      .filter(card => card.rarity === rarity)
+      .reduce((total, card) => {
+        return total + card.variants.filter(v => this.isOwned(v.id)).length;
+      }, 0);
+  }
+
   getRarityClass(rarity: string): string {
     switch (rarity) {
       case 'COMMON':
@@ -145,6 +161,18 @@ export class App implements OnInit {
         return rarity;
     }
   }
+
+  getTotalVariantCountByRarity(rarity: string): number {
+    return this.cards
+      .filter(card => card.rarity === rarity)
+      .reduce((total, card) => total + card.variants.length, 0);
+  }
+
+  getTotalVariantCountByFinish(finish: string): number {
+  return this.cards.reduce((total, card) => {
+    return total + card.variants.filter(v => v.finish === finish).length;
+  }, 0);
+}
 
   getTypeClass(type: string | null): string {
     if (!type) {

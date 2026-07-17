@@ -130,6 +130,44 @@ body {
   width: 100%;
 }
 
+.stat-card {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+
+
+.stats-panel {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 900px;
+}
+
+.stats-panel h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 .type-chip {
   border-radius: 999px;
   display: inline-block;
