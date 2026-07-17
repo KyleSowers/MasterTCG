@@ -35,4 +35,14 @@ public class ImportController {
 
         return "Imported " + imported + " cards.";
     }
+
+    @PostMapping("/pokemon/jungle")
+    public String importJungle() {
+        int imported = importService.importCards(
+            "data/pokemon/base2.json",
+            UUID.fromString("22222222-2222-2222-2222-222222222222")
+        );
+
+    return "Imported " + imported + " Jungle cards.";
+    }
 }
