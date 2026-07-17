@@ -14,6 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.mastertcg.importer.PokemonCardImportDto;
 import com.mastertcg.importer.PokemonImportService;
+import com.mastertcg.importer.PokemonImportResult;
 
 @RestController
 @RequestMapping("/import")
@@ -49,7 +50,7 @@ public class ImportController {
     }
 
     @PostMapping("/pokemon/{setCode}")
-    public String importPokemonSet(@PathVariable String setCode) {
+    public PokemonImportResponse importPokemonSet(@PathVariable String setCode) {
         PokemonSetImportConfig config = pokemonImports.get(setCode);
 
         if (config == null) {
@@ -59,14 +60,32 @@ public class ImportController {
             );
         }
 
-        int imported = importService.importCards(config.path(), config.setId());
+        PokemonImportResult result = importService.importCards(config.path(), config.setId());
 
-        return "Imported " + imported + " " + config.displayName() + " cards.";
+        return new PokemonImportResponse(
+                config.displayName(),
+                config.displayName() + " import complete.",
+                result.cardsProcessed(),
+                result.cardsCreated(),
+                result.cardsUpdated(),
+                result.variantsCreated(),
+                result.variantsSkipped()
+        );
     }
 
     private record PokemonSetImportConfig(
             String path,
             UUID setId,
             String displayName
+    ) {}
+
+    private record PokemonImportResponse(
+        String setName,
+        String message,
+        int cardsProcessed,
+        int cardsCreated,
+        int cardsUpdated,
+        int variantsCreated,
+        int variantsSkipped
     ) {}
 }

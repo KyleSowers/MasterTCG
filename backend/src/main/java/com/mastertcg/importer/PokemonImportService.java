@@ -54,59 +54,66 @@ public class PokemonImportService {
     }
 
     @Transactional
-    public int importCards(String path, UUID setId) {
-        SetEntity set = setRepository.findById(setId)
-                .orElseThrow();
-
+    public PokemonImportResult importCards(String path, UUID setId) {
+        SetEntity set = setRepository.findById(setId).orElseThrow();
         var importedCards = loadCardsFromJson(path);
 
-        int count = 0;
+        int cardsProcessed = 0;
+        int cardsCreated = 0;
+        int cardsUpdated = 0;
+        int variantsCreated = 0;
+        int variantsSkipped = 0;
 
         for (PokemonCardImportDto dto : importedCards) {
             CardEntity mappedCard = mapper.toCardEntity(dto);
 
-            CardEntity card = cardRepository
-                .findBySet_IdAndCardNumber(set.getId(), dto.number())
-                .orElseGet(() -> {
-                    CardEntity newCard = mapper.toCardEntity(dto);
-                    mappedCard.setId(UUID.randomUUID());
-                    mappedCard.setSet(set);
-                    return mappedCard;
-                });
-            
-                
-            // Always refresh imported fields
-            card.setName(dto.name());
+            var existingCard = cardRepository
+                    .findBySet_IdAndCardNumber(set.getId(), mappedCard.getCardNumber());
+
+            CardEntity card;
+
+            if (existingCard.isPresent()) {
+                card = existingCard.get();
+                cardsUpdated++;
+            } else {
+                mappedCard.setId(UUID.randomUUID());
+                mappedCard.setSet(set);
+                card = mappedCard;
+                cardsCreated++;
+            }
+
+            card.setName(mappedCard.getName());
             card.setRarity(mappedCard.getRarity());
-            card.setArtist(dto.artist());
+            card.setArtist(mappedCard.getArtist());
             card.setPrimaryType(mappedCard.getPrimaryType());
             card.setImageSmallUrl(mappedCard.getImageSmallUrl());
             card.setImageLargeUrl(mappedCard.getImageLargeUrl());
 
-            // if (dto.types() != null && !dto.types().isEmpty()) {
-            //     card.setPrimaryType(dto.types().get(0));
-            // }
-
-            // if (dto.images() != null) {
-            //     card.setImageSmallUrl(dto.images().small());
-            //     card.setImageLargeUrl(dto.images().large());
-            // }
-
-            cardRepository.save(card);
+            card = cardRepository.save(card);
 
             CardVariantEntity mappedVariant = mapper.toVariantEntity(dto, card);
 
-            if (cardVariantRepository
+            boolean variantExists = cardVariantRepository
                     .findByCard_IdAndFinish(card.getId(), mappedVariant.getFinish())
-                    .isEmpty()) {
+                    .isPresent();
 
+            if (variantExists) {
+                variantsSkipped++;
+            } else {
                 cardVariantRepository.save(mappedVariant);
+                variantsCreated++;
             }
 
-            count++;
+            cardsProcessed++;
         }
 
-        return count;
+        return new PokemonImportResult(
+                cardsProcessed,
+                cardsCreated,
+                cardsUpdated,
+                variantsCreated,
+                variantsSkipped
+        );
     }
     
 }
