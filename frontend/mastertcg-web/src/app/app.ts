@@ -56,12 +56,7 @@ export class App implements OnInit {
       return 0;
     }
 
-    const current = 
-      this.selectedOwnership === 'ALL'
-        ? this.getVisibleOwnedCount()
-        : this.getVisibleVariantCount();
-
-    return Math.round((current / total) * 100);
+    return Math.round((this.getFilteredOwnedVariantCount() / total) * 100);
   }
 
   getFilteredBaseVariantCount(): number {
@@ -93,26 +88,60 @@ export class App implements OnInit {
   }
 
   getFilteredCards(): CardDto[] {
-  const term = this.searchTerm.trim().toLowerCase();
+    const term = this.searchTerm.trim().toLowerCase();
 
-  return this.cards.filter(card => {
-    const matchesSearch =
-      !term ||
-      card.name.toLowerCase().startsWith(term) ||
-      card.cardNumber.toLowerCase() === term ||
-      card.rarity.toLowerCase() === term ||
-      card.primaryType?.toLowerCase() === term ||
-      card.artist?.toLowerCase() === term;
+    return this.cards.filter(card => {
+      const matchesSearch =
+        !term ||
+        card.name.toLowerCase().startsWith(term) ||
+        card.cardNumber.toLowerCase() === term ||
+        card.rarity.toLowerCase() === term ||
+        card.primaryType?.toLowerCase() === term ||
+        card.artist?.toLowerCase() === term;
 
-    const matchesRarity =
-      this.selectedRarity === 'ALL' ||
-      card.rarity === this.selectedRarity;
+      const matchesRarity =
+        this.selectedRarity === 'ALL' ||
+        card.rarity === this.selectedRarity;
 
-    const hasVisibleVariants = this.getVisibleVariants(card).length > 0;
+      const hasVisibleVariants = this.getVisibleVariants(card).length > 0;
 
-    return matchesSearch && matchesRarity && hasVisibleVariants;
-  });
-}
+      return matchesSearch && matchesRarity && hasVisibleVariants;
+    });
+  }
+
+  getFilteredMissingVariantCount(): number {
+    return this.getFilteredBaseVariantCount() - this.getFilteredOwnedVariantCount();
+  }
+
+  getFilteredOwnedVariantCount(): number {
+    const term = this.searchTerm.trim().toLowerCase();
+
+    return this.cards
+      .filter(card => {
+        const matchesSearch =
+          !term ||
+          card.name.toLowerCase().startsWith(term) ||
+          card.cardNumber.toLowerCase() === term ||
+          card.rarity.toLowerCase() === term ||
+          card.primaryType?.toLowerCase() === term ||
+          card.artist?.toLowerCase() === term;
+
+        const matchesRarity =
+          this.selectedRarity === 'ALL' ||
+          card.rarity === this.selectedRarity;
+
+        return matchesSearch && matchesRarity;
+      })
+      .reduce((total, card) => {
+        return total + card.variants.filter(variant => {
+          const matchesFinish =
+            this.selectedFinish === 'ALL' ||
+            variant.finish === this.selectedFinish;
+
+          return matchesFinish && this.isOwned(variant.id);
+        }).length;
+      }, 0);
+  }
 
   getOwnedCount(): number {
     return this.cards.reduce((total, card) => {
@@ -169,10 +198,10 @@ export class App implements OnInit {
   }
 
   getTotalVariantCountByFinish(finish: string): number {
-  return this.cards.reduce((total, card) => {
-    return total + card.variants.filter(v => v.finish === finish).length;
-  }, 0);
-}
+    return this.cards.reduce((total, card) => {
+      return total + card.variants.filter(v => v.finish === finish).length;
+    }, 0);
+  }
 
   getTypeClass(type: string | null): string {
     if (!type) {

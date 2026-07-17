@@ -31,59 +31,6 @@
       ></div>
   </div>
 
-  <div class="stats-panel">
-    <h3>{{ selectedSet.name }} Stats</h3>
-
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total</div>
-        <div class="stat-value">
-          {{ getOwnedCount() }} / {{ getTotalVariantCount() }}
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-label">Common</div>
-        <div class="stat-value">
-          {{ getOwnedVariantCountByRarity('COMMON') }} /
-          {{ getTotalVariantCountByRarity('COMMON') }}
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-label">Uncommon</div>
-        <div class="stat-value">
-          {{ getOwnedVariantCountByRarity('UNCOMMON') }} /
-          {{ getTotalVariantCountByRarity('UNCOMMON') }}
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-label">Rare</div>
-        <div class="stat-value">
-          {{ getOwnedVariantCountByRarity('RARE') }} /
-          {{ getTotalVariantCountByRarity('RARE') }}
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-label">Normal</div>
-        <div class="stat-value">
-          {{ getOwnedVariantCountByFinish('NORMAL') }} /
-          {{ getTotalVariantCountByFinish('NORMAL') }}
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-label">Holo</div>
-        <div class="stat-value">
-          {{ getOwnedVariantCountByFinish('HOLO') }} /
-          {{ getTotalVariantCountByFinish('HOLO') }}
-        </div>
-      </div>
-    </div>
-  </div>
-
   <input
     type="text"
     [(ngModel)]="searchTerm"
@@ -111,21 +58,26 @@
     <option value="REVERSE_HOLO">Reverse Holo</option>
   </select>
 
-   <div class="filter-summary" *ngIf="selectedSet">
-  <ng-container *ngIf="selectedOwnership === 'ALL'">
-    Showing {{ getVisibleCardCount() }} cards ·
-    {{ getVisibleOwnedCount() }} / {{ getVisibleVariantCount() }} visible variants owned
-  </ng-container>
+  <div class="filter-summary">
+    <ng-container *ngIf="selectedOwnership === 'ALL'">
+      Showing {{ getVisibleCardCount() }} cards ·
+      Completion {{ getFilteredOwnedVariantCount() }} /
+      {{ getFilteredBaseVariantCount() }} matching variants
+    </ng-container>
 
-  <ng-container *ngIf="selectedOwnership === 'OWNED'">
-    Showing {{ getVisibleCardCount() }} cards ·
-    {{ getVisibleVariantCount() }} owned variant
-  </ng-container>
+    <ng-container *ngIf="selectedOwnership === 'OWNED'">
+      Showing {{ getVisibleCardCount() }} cards ·
+      Owned {{ getFilteredOwnedVariantCount() }} /
+      {{ getFilteredBaseVariantCount() }} matching variants
+    </ng-container>
 
-  <ng-container *ngIf="selectedOwnership === 'MISSING'">
-    Showing {{ getVisibleCardCount() }} cards ·
-    {{ getVisibleVariantCount() }} missing variant
-  </ng-container>
+    <ng-container *ngIf="selectedOwnership === 'MISSING'">
+      Showing {{ getVisibleCardCount() }} cards ·
+      Missing {{ getFilteredMissingVariantCount() }} /
+      {{ getFilteredBaseVariantCount() }} matching variants ·
+      Completion {{ getFilteredOwnedVariantCount() }} /
+      {{ getFilteredBaseVariantCount() }}
+    </ng-container>
   </div>
 
   <div class="mini-progress-container" *ngIf="selectedSet">
@@ -135,39 +87,97 @@
     </div>
   </div>
 
-  <ul>
-    <li *ngFor="let c of getFilteredCards()" class="card">
-      <img
-        *ngIf="c.imageSmallUrl"
-        [src]="c.imageSmallUrl"
-        [alt]="c.name"
-        class="card-image"
-      >
-      <div class="card-header">
-        {{ c.cardNumber }} — {{ c.name }}
-      </div>
-      
-      <div class="rarity-badge" [ngClass]="getRarityClass(c.rarity)">
-          {{ getRarityLabel(c.rarity) }}
-      </div>
+  <div class="collection-layout">
 
-      <div *ngIf="c.primaryType" class="type-chip" [ngClass]="getTypeClass(c.primaryType)">
-        {{ c.primaryType }}
-      </div>
-          
-      <div class="variant-list">
-        <div *ngFor="let v of getVisibleVariants(c)" class="variant-row">
-          <input
-            type="checkbox"
-            [checked]="isOwned(v.id)"
-            (change)="toggleOwned(v.id)"
-            />
+    <aside class="stats-sidebar">
+      <div class="stats-panel">
+        <h3>{{ selectedSet.name }} Stats</h3>
 
-          <span>{{ displayFinish(v.finish) }}</span>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total</div>
+            <div class="stat-value">
+              {{ getOwnedCount() }} / {{ getTotalVariantCount() }}
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Common</div>
+            <div class="stat-value">
+              {{ getOwnedVariantCountByRarity('COMMON') }} /
+              {{ getTotalVariantCountByRarity('COMMON') }}
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Uncommon</div>
+            <div class="stat-value">
+              {{ getOwnedVariantCountByRarity('UNCOMMON') }} /
+              {{ getTotalVariantCountByRarity('UNCOMMON') }}
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Rare</div>
+            <div class="stat-value">
+              {{ getOwnedVariantCountByRarity('RARE') }} /
+              {{ getTotalVariantCountByRarity('RARE') }}
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Normal</div>
+            <div class="stat-value">
+              {{ getOwnedVariantCountByFinish('NORMAL') }} /
+              {{ getTotalVariantCountByFinish('NORMAL') }}
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Holo</div>
+            <div class="stat-value">
+              {{ getOwnedVariantCountByFinish('HOLO') }} /
+              {{ getTotalVariantCountByFinish('HOLO') }}
+            </div>
+          </div>
         </div>
       </div>
-    </li>
-  </ul>
+    </aside>
 
+    <ul class="card-grid">
+      <li *ngFor="let c of getFilteredCards()" class="card">
+        <img
+          *ngIf="c.imageSmallUrl"
+          [src]="c.imageSmallUrl"
+          [alt]="c.name"
+          class="card-image"
+        >
+        <div class="card-header">
+          {{ c.cardNumber }} — {{ c.name }}
+        </div>
+      
+        <div class="rarity-badge" [ngClass]="getRarityClass(c.rarity)">
+            {{ getRarityLabel(c.rarity) }}
+        </div>
+
+        <div *ngIf="c.primaryType" class="type-chip" [ngClass]="getTypeClass(c.primaryType)">
+          {{ c.primaryType }}
+        </div>
+          
+        <div class="variant-list">
+          <div *ngFor="let v of getVisibleVariants(c)" class="variant-row">
+            <input
+              type="checkbox"
+              [checked]="isOwned(v.id)"
+              (change)="toggleOwned(v.id)"
+              />
+
+            <span>{{ displayFinish(v.finish) }}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
 
 </section>
