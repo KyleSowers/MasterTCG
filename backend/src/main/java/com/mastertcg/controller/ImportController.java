@@ -1,12 +1,16 @@
 package com.mastertcg.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.mastertcg.importer.PokemonCardImportDto;
 import com.mastertcg.importer.PokemonImportService;
@@ -17,6 +21,24 @@ public class ImportController {
 
     private final PokemonImportService importService;
 
+    private final Map<String, PokemonSetImportConfig> pokemonImports = Map.of(
+            "base1", new PokemonSetImportConfig(
+                    "data/pokemon/base1.json",
+                    UUID.fromString("11111111-1111-1111-1111-111111111111"),
+                    "Base Set"
+            ),
+            "base2", new PokemonSetImportConfig(
+                    "data/pokemon/base2.json",
+                    UUID.fromString("22222222-2222-2222-2222-222222222222"),
+                    "Jungle"
+            ),
+            "jungle", new PokemonSetImportConfig(
+                    "data/pokemon/base2.json",
+                    UUID.fromString("22222222-2222-2222-2222-222222222222"),
+                    "Jungle"
+            )
+    );
+
     public ImportController(PokemonImportService importService) {
         this.importService = importService;
     }
@@ -26,23 +48,25 @@ public class ImportController {
         return importService.loadCardsFromJson("data/pokemon/base1.json");
     }
 
-    @PostMapping("/pokemon/base1")
-    public String previewBaseImport() {
-        int imported = importService.importCards(
-                "data/pokemon/base1.json",
-                UUID.fromString("11111111-1111-1111-1111-111111111111")
-        );
+    @PostMapping("/pokemon/{setCode}")
+    public String importPokemonSet(@PathVariable String setCode) {
+        PokemonSetImportConfig config = pokemonImports.get(setCode);
 
-        return "Imported " + imported + " cards.";
+        if (config == null) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    "No Pokemon import configured for set code: " + setCode
+            );
+        }
+
+        int imported = importService.importCards(config.path(), config.setId());
+
+        return "Imported " + imported + " " + config.displayName() + " cards.";
     }
 
-    @PostMapping("/pokemon/jungle")
-    public String importJungle() {
-        int imported = importService.importCards(
-            "data/pokemon/base2.json",
-            UUID.fromString("22222222-2222-2222-2222-222222222222")
-        );
-
-    return "Imported " + imported + " Jungle cards.";
-    }
+    private record PokemonSetImportConfig(
+            String path,
+            UUID setId,
+            String displayName
+    ) {}
 }
