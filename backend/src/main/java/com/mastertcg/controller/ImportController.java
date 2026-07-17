@@ -37,6 +37,16 @@ public class ImportController {
                     "data/pokemon/base2.json",
                     UUID.fromString("22222222-2222-2222-2222-222222222222"),
                     "Jungle"
+            ),
+            "base3", new PokemonSetImportConfig(
+                    "data/pokemon/base3.json",
+                    UUID.fromString("33333333-3333-3333-3333-333333333333"),
+                    "Fossil"
+            ),
+            "fossil", new PokemonSetImportConfig(
+                    "data/pokemon/base3.json",
+                    UUID.fromString("33333333-3333-3333-3333-333333333333"),
+                    "Fossil"
             )
     );
 
