@@ -245,6 +245,10 @@ export class App implements OnInit {
     });
   }
 
+  isCardOwned(card: CardDto): boolean {
+    return this.getVisibleVariants(card).some(variant => this.isOwned(variant.id));
+  }
+
   isOwned(cardId: string): boolean {
     return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
   }

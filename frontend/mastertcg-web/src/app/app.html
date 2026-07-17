@@ -145,7 +145,10 @@
     </aside>
 
     <ul class="card-grid">
-      <li *ngFor="let c of getFilteredCards()" class="card">
+      <li *ngFor="let c of getFilteredCards()" 
+          class="card"
+          ngClass]="{'card-owned': isCardOwned(c), 'card-missing': !isCardOwned(c)}"
+          >
         <img
           *ngIf="c.imageSmallUrl"
           [src]="c.imageSmallUrl"
@@ -155,6 +158,12 @@
         <div class="card-header">
           {{ c.cardNumber }} — {{ c.name }}
         </div>
+
+        <span
+          class="owned-badge"
+          [class.owned-badge-hidden]="!isCardOwned(c)">
+          ✓ Owned
+        </span>
       
         <div class="rarity-badge" [ngClass]="getRarityClass(c.rarity)">
             {{ getRarityLabel(c.rarity) }}
