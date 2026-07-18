@@ -217,10 +217,11 @@ body {
 
 .set-dashboard {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, 260px);
+  gap: 16px;
   margin: 20px 0;
   width: 100%;
+  justify-content: start;
 }
 
 .set-era {

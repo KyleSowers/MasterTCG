@@ -69,6 +69,26 @@ public class PokemonImportCatalog {
                 "data/pokemon/gym2.json",
                 UUID.fromString("66666666-6666-6666-6666-666666666666"),
                 "Gym Challenge"
+        )),
+        Map.entry("neo1", new PokemonSetImportConfig(
+                "data/pokemon/neo1.json",
+                UUID.fromString("77777777-7777-7777-7777-777777777777"),
+                "Neo Genesis"
+        )),
+        Map.entry("neo-genesis", new PokemonSetImportConfig(
+                "data/pokemon/neo1.json",
+                UUID.fromString("77777777-7777-7777-7777-777777777777"),
+                "Neo Genesis"
+        )),
+        Map.entry("neo2", new PokemonSetImportConfig(
+                "data/pokemon/neo2.json",
+                UUID.fromString("88888888-8888-8888-8888-888888888888"),
+                "Neo Discovery"
+        )),
+        Map.entry("neo-discovery", new PokemonSetImportConfig(
+                "data/pokemon/neo2.json",
+                UUID.fromString("88888888-8888-8888-8888-888888888888"),
+                "Neo Discovery"
         ))
     );
        
