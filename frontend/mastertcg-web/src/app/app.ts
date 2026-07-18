@@ -45,6 +45,7 @@ export class App implements OnInit {
   getCardsForSet(set: SetDto): CardDto[] {
     return this.setCardsBySetId[set.id] ?? [];
   }
+  
 
   getCompletionPercentage(): number {
     const total = this.getTotalVariantCount();
@@ -230,6 +231,47 @@ export class App implements OnInit {
       url("${imageUrl}"),
       ${this.setCardBackBackground}
     `;
+  }
+
+  getSetCompletionClass(set: SetDto): string {
+    const status = this.getSetCompletionStatus(set);
+
+    switch (status) {
+      case 'COMPLETE':
+        return 'set-status-complete';
+      case 'IN_PROGRESS':
+        return 'set-status-progress';
+      case 'NOT_STARTED':
+        return 'set-status-empty';
+    }
+  }
+
+  getSetCompletionLabel(set: SetDto): string {
+    const status = this.getSetCompletionStatus(set);
+
+    switch (status) {
+      case 'COMPLETE':
+        return 'Complete';
+      case 'IN_PROGRESS':
+        return 'In Progress';
+      case 'NOT_STARTED':
+        return 'Not Started';
+    }
+  }
+
+  getSetCompletionStatus(set: SetDto): 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETE' {
+    const owned = this.getOwnedCountForSet(set);
+    const total = this.getTotalVariantCountForSet(set);
+
+    if (total === 0 || owned === 0) {
+      return 'NOT_STARTED';
+    }
+
+    if (owned === total) {
+      return 'COMPLETE';
+    }
+
+    return 'IN_PROGRESS';
   }
 
   getTotalVariantCountByRarity(rarity: string): number {

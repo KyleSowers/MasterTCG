@@ -11,9 +11,22 @@
     [style.background-image]="getSetBackgroundImage(s)"
     (click)="loadCards(s)"
   >
+  <div class="set-card-header">
     <h3>{{ s.name }}</h3>
 
-    <div class="set-era">{{ s.era }}</div>
+    <span
+      class="set-status"
+      [ngClass]="getSetCompletionClass(s)"
+    >
+      {{ getSetCompletionLabel(s) }}
+    </span>
+  </div>
+
+  <div class="set-era">{{ s.era }}</div>
+
+  <div class="set-completion-percent">
+    {{ getCompletionPercentageForSet(s) }}%
+  </div>
 
     <div class="set-progress-text">
       Owned: {{ getOwnedCountForSet(s) }} /

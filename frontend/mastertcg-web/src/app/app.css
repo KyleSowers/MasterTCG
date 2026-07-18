@@ -188,6 +188,18 @@ body {
   margin: 0 0 6px;
 }
 
+.set-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.set-card-header h3 {
+  margin: 0;
+}
+
 .set-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
@@ -201,6 +213,13 @@ body {
 .set-card-selected {
   border-color: #2563eb;
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+}
+
+.set-completion-percent {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 10px 0;
 }
 
 .set-dashboard {
@@ -236,6 +255,29 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 8px;
+}
+
+.set-status {
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.set-status-complete {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.set-status-empty {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.set-status-progress {
+  background: #dbeafe;
+  color: #1e40af;
 }
 
 .stat-card {
