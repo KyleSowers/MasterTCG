@@ -49,6 +49,26 @@ public class PokemonImportCatalog {
                 "data/pokemon/base5.json",
                 UUID.fromString("44444444-4444-4444-4444-444444444444"),
                 "Team Rocket"
+        )),
+        Map.entry("gym1", new PokemonSetImportConfig(
+                "data/pokemon/gym1.json",
+                UUID.fromString("55555555-5555-5555-5555-555555555555"),
+                "Gym Heroes"
+        )),
+        Map.entry("gym-heroes", new PokemonSetImportConfig(
+                "data/pokemon/gym1.json",
+                UUID.fromString("55555555-5555-5555-5555-555555555555"),
+                "Gym Heroes"
+        )),
+        Map.entry("gym2", new PokemonSetImportConfig(
+                "data/pokemon/gym2.json",
+                UUID.fromString("66666666-6666-6666-6666-666666666666"),
+                "Gym Challenge"
+        )),
+        Map.entry("gym-challenge", new PokemonSetImportConfig(
+                "data/pokemon/gym2.json",
+                UUID.fromString("66666666-6666-6666-6666-666666666666"),
+                "Gym Challenge"
         ))
     );
        
