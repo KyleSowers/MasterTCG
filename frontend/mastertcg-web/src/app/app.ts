@@ -390,7 +390,7 @@ export class App implements OnInit {
   ngOnInit() {
     this.api.getSets().subscribe({
       next: (data) => {
-        this.sets = data;
+        this.sets = this.sortSetsByReleaseDate(data);
         this.error = null;
         this.loading = false;
 
@@ -402,6 +402,15 @@ export class App implements OnInit {
         this.error = 'Failed to load sets';
         this.loading = false;
       }
+    });
+  }
+
+  sortSetsByReleaseDate(sets: SetDto[]): SetDto[] {
+    return [...sets].sort((a, b) => {
+      const dateA = a.releaseDate ?? '9999-12-31';
+      const dateB = b.releaseDate ?? '9999-12-31';
+
+      return dateA.localeCompare(dateB);
     });
   }
 

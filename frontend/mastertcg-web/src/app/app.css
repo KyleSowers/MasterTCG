@@ -215,19 +215,12 @@ body {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
 }
 
-.set-completion-percent {
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1;
-  margin: 10px 0;
-}
-
 .set-dashboard {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   margin: 20px 0;
-  max-width: 1200px;
+  width: 100%;
 }
 
 .set-era {
