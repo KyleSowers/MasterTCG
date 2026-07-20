@@ -89,6 +89,36 @@ public class PokemonImportCatalog {
                 "data/pokemon/neo2.json",
                 UUID.fromString("88888888-8888-8888-8888-888888888888"),
                 "Neo Discovery"
+        )),
+        Map.entry("neo3", new PokemonSetImportConfig(
+                "data/pokemon/neo3.json",
+                UUID.fromString("99999999-9999-9999-9999-999999999999"),
+                "Neo Revelation"
+        )),
+        Map.entry("neo-revelation", new PokemonSetImportConfig(
+                "data/pokemon/neo3.json",
+                UUID.fromString("99999999-9999-9999-9999-999999999999"),
+                "Neo Revelation"
+        )),
+        Map.entry("neo4", new PokemonSetImportConfig(
+                "data/pokemon/neo4.json",
+                UUID.fromString("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                "Neo Destiny"
+        )),
+        Map.entry("neo-destiny", new PokemonSetImportConfig(
+                "data/pokemon/neo4.json",
+                UUID.fromString("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                "Neo Destiny"
+        )),
+        Map.entry("base6", new PokemonSetImportConfig(
+                "data/pokemon/base6.json",
+                UUID.fromString("cccccccc-cccc-cccc-cccc-cccccccccccc"),
+                "Legendary Collection"
+        )),
+        Map.entry("legendary-collection", new PokemonSetImportConfig(
+                "data/pokemon/base6.json",
+                UUID.fromString("cccccccc-cccc-cccc-cccc-cccccccccccc"),
+                "Legendary Collection"
         ))
     );
        

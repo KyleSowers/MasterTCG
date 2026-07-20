@@ -23,6 +23,17 @@ export class App implements OnInit {
   setCardsBySetId: { [setId: string]: CardDto[] } = {};
   setCardBackBackground =
   'radial-gradient(circle at 25% 50%, rgba(255, 255, 255, 0.35) 0 8%, transparent 9%), linear-gradient(90deg, #2563eb, #facc15)';
+  trackedFinishes = [
+    'NORMAL',
+    'HOLO',
+    'REVERSE_HOLO',
+    'COSMOS_HOLO',
+    'CRACKED_ICE_HOLO',
+    'SHATTER_HOLO',
+    'MIRROR_HOLO',
+    'POKE_BALL',
+    'MASTER_BALL'
+  ];
   
   loading = true;
   error: string | null = null;
@@ -42,6 +53,12 @@ export class App implements OnInit {
     }
   }
 
+  getAvailableFinishes(): string[] {
+    return this.trackedFinishes.filter(finish =>
+      this.getTotalVariantCountByFinish(finish) > 0
+    );
+  }
+
   getCardsForSet(set: SetDto): CardDto[] {
     return this.setCardsBySetId[set.id] ?? [];
   }
@@ -54,7 +71,27 @@ export class App implements OnInit {
       return 0;
     }
 
-    return Math.round((this.getOwnedCount() / total) * 100);
+    return Math.round((this.getOwnedCount() / total) * 1000) / 10;
+  }
+
+  getCompletionPercentageByFinish(finish: string): number {
+    const total = this.getTotalVariantCountByFinish(finish);
+
+    if (total === 0) {
+      return 0;
+    }
+
+    return Math.round((this.getOwnedVariantCountByFinish(finish) / total) * 1000) / 10;
+  }
+
+  getCompletionPercentageByRarity(rarity: string): number {
+    const total = this.getTotalVariantCountByRarity(rarity);
+
+    if (total === 0) {
+      return 0;
+    }
+
+    return Math.round((this.getOwnedVariantCountByRarity(rarity) / total) * 1000) / 10;
   }
 
   getCompletionPercentageForSet(set: SetDto): number {
@@ -64,7 +101,7 @@ export class App implements OnInit {
       return 0;
     }
 
-    return Math.round((this.getOwnedCountForSet(set) / total) * 100);
+    return Math.round((this.getOwnedCountForSet(set) / total) * 1000) / 10;
   }
 
   getFilterBarPercentage(): number {
@@ -74,7 +111,7 @@ export class App implements OnInit {
       return 0;
     }
 
-    return Math.round((this.getFilteredOwnedVariantCount() / total) * 100);
+    return Math.round((this.getFilteredOwnedVariantCount() / total) * 1000) / 10;
   }
 
   getFilteredBaseVariantCount(): number {

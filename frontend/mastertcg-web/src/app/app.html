@@ -121,52 +121,114 @@
         <h3>{{ selectedSet.name }} Stats</h3>
 
         <div class="stats-grid">
+
+          <!-- Total -->
           <div class="stat-card">
-            <div class="stat-label">Total</div>
+            <div class="stat-header">
+              <div class="stat-label">Total</div>
+              <div class="stat-percent">{{ getCompletionPercentage() }}%</div>
+            </div>
+
             <div class="stat-value">
               {{ getOwnedCount() }} / {{ getTotalVariantCount() }}
             </div>
+
+            <div class="stat-mini-bar">
+              <div
+                class="stat-mini-fill"
+                [style.width.%]="getCompletionPercentage()">
+              </div>
+            </div>
           </div>
 
+          <!-- Common -->
           <div class="stat-card">
-            <div class="stat-label">Common</div>
+            <div class="stat-header">
+              <div class="stat-label">Common</div>
+              <div class="stat-percent">
+                {{ getCompletionPercentageByRarity('COMMON') }}%
+              </div>
+            </div>
+
             <div class="stat-value">
               {{ getOwnedVariantCountByRarity('COMMON') }} /
               {{ getTotalVariantCountByRarity('COMMON') }}
             </div>
+
+            <div class="stat-mini-bar">
+              <div
+                class="stat-mini-fill"
+                [style.width.%]="getCompletionPercentageByRarity('COMMON')">
+              </div>
+            </div>
           </div>
 
+          <!-- Uncommon -->
           <div class="stat-card">
-            <div class="stat-label">Uncommon</div>
+            <div class="stat-header">
+              <div class="stat-label">Uncommon</div>
+              <div class="stat-percent">
+                {{ getCompletionPercentageByRarity('UNCOMMON') }}%
+              </div>
+            </div>
+
             <div class="stat-value">
               {{ getOwnedVariantCountByRarity('UNCOMMON') }} /
               {{ getTotalVariantCountByRarity('UNCOMMON') }}
             </div>
+
+            <div class="stat-mini-bar">
+              <div
+                class="stat-mini-fill"
+                [style.width.%]="getCompletionPercentageByRarity('UNCOMMON')">
+              </div>
+            </div>
           </div>
 
+          <!-- Rare -->
           <div class="stat-card">
-            <div class="stat-label">Rare</div>
+            <div class="stat-header">
+              <div class="stat-label">Rare</div>
+              <div class="stat-percent">
+                {{ getCompletionPercentageByRarity('RARE') }}%
+              </div>
+            </div>
+
             <div class="stat-value">
               {{ getOwnedVariantCountByRarity('RARE') }} /
               {{ getTotalVariantCountByRarity('RARE') }}
             </div>
-          </div>
 
-          <div class="stat-card">
-            <div class="stat-label">Normal</div>
-            <div class="stat-value">
-              {{ getOwnedVariantCountByFinish('NORMAL') }} /
-              {{ getTotalVariantCountByFinish('NORMAL') }}
+            <div class="stat-mini-bar">
+              <div
+                class="stat-mini-fill"
+                [style.width.%]="getCompletionPercentageByRarity('RARE')">
+              </div>
             </div>
           </div>
 
-          <div class="stat-card">
-            <div class="stat-label">Holo</div>
+          <!-- Finishes: Normal, Holo, Reverse Holo, etc. -->
+          <div class="stat-card" *ngFor="let finish of getAvailableFinishes()">
+            <div class="stat-header">
+              <div class="stat-label">{{ displayFinish(finish) }}</div>
+              <div class="stat-percent">
+                {{ getCompletionPercentageByFinish(finish) }}%
+              </div>
+            </div>
+
             <div class="stat-value">
-              {{ getOwnedVariantCountByFinish('HOLO') }} /
-              {{ getTotalVariantCountByFinish('HOLO') }}
+              {{ getOwnedVariantCountByFinish(finish) }} /
+              {{ getTotalVariantCountByFinish(finish) }}
+            </div>
+
+            <div class="stat-mini-bar">
+              <div
+                class="stat-mini-fill"
+                [style.width.%]="getCompletionPercentageByFinish(finish)">
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </aside>
