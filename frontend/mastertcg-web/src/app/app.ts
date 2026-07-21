@@ -104,7 +104,11 @@ export class App implements OnInit {
     const ownedCount = this.getOwnedVariantCountForCard(card);
     const totalCount = this.getTotalVariantCountForCard(card);
 
-    if (totalCount > 0 && ownedCount === totalCount) {
+    if (totalCount === 0 || ownedCount === 0) {
+      return 'Missing';
+    }
+
+    if (ownedCount === totalCount) {
       return 'Complete';
     }
 

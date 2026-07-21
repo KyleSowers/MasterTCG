@@ -119,6 +119,16 @@ public class PokemonImportCatalog {
                 "data/pokemon/base6.json",
                 UUID.fromString("cccccccc-cccc-cccc-cccc-cccccccccccc"),
                 "Legendary Collection"
+        )),
+        Map.entry("ecard1", new PokemonSetImportConfig(
+                "data/pokemon/ecard1.json",
+                UUID.fromString("dddddddd-dddd-dddd-dddd-dddddddddddd"),
+                "Expedition Base Set"
+        )),
+        Map.entry("expedition", new PokemonSetImportConfig(
+                "data/pokemon/ecard1.json",
+                UUID.fromString("dddddddd-dddd-dddd-dddd-dddddddddddd"),
+                "Expedition Base Set"
         ))
     );
        
