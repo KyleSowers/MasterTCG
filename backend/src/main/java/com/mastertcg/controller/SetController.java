@@ -48,11 +48,7 @@ public class SetController {
             cardVariantRepository.findByCard_Set_Id(setId);
 
         return cardRepository.findBySet_IdOrderByCardNumberAsc(setId).stream()
-                .sorted((a, b) -> {
-                        int aNumber = Integer.parseInt(a.getCardNumber());
-                        int bNumber = Integer.parseInt(b.getCardNumber());
-                        return Integer.compare(aNumber, bNumber);
-                })
+                .sorted((a, b) -> compareCardNumbers(a.getCardNumber(), b.getCardNumber()))
                 .map(card -> new CardDto(
                         card.getId(),
                         card.getCardNumber(),
@@ -72,5 +68,47 @@ public class SetController {
                         // c.getFinish()
                 ))
                 .toList();
+    }
+
+    private int compareCardNumbers(String a, String b) {
+        int groupCompare = Integer.compare(getCardSortGroup(a), getCardSortGroup(b));
+
+        if (groupCompare != 0) {
+            return groupCompare;
+        }
+
+        int numberCompare = Integer.compare(getCardSortNumber(a), getCardSortNumber(b));
+
+        if (numberCompare != 0) {
+            return numberCompare;
+        }
+
+        return a.compareTo(b);
+    }
+
+    private int getCardSortGroup(String cardNumber) {
+        if (cardNumber == null) {
+            return 99;
+        }
+
+        if (cardNumber.startsWith("H")) {
+            return 0;
+        }
+
+        return 1;
+    }
+
+    private int getCardSortNumber(String cardNumber) {
+        if (cardNumber == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        String digitsOnly = cardNumber.replaceAll("[^0-9]", "");
+
+        if (digitsOnly.isBlank()) {
+            return Integer.MAX_VALUE;
+        }
+
+        return Integer.parseInt(digitsOnly);
     }
 }
