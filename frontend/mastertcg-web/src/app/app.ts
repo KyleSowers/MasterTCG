@@ -63,6 +63,53 @@ export class App implements OnInit {
     return this.setCardsBySetId[set.id] ?? [];
   }
   
+  getCardStatus(card: CardDto): 'COMPLETE' | 'PARTIAL' | 'MISSING' {
+    const ownedCount = this.getOwnedVariantCountForCard(card);
+    const totalCount = this.getTotalVariantCountForCard(card);
+
+    if (totalCount === 0 || ownedCount === 0) {
+      return 'MISSING';
+    }
+
+    if (ownedCount === totalCount) {
+      return 'COMPLETE';
+    }
+
+    return 'PARTIAL';
+  }
+
+  getCardStatusBadgeClass(card: CardDto): string {
+    switch (this.getCardStatus(card)) {
+      case 'COMPLETE':
+        return 'status-complete';
+      case 'PARTIAL':
+        return 'status-partial';
+      case 'MISSING':
+        return 'status-missing';
+    }
+  }
+
+  getCardStatusClass(card: CardDto): string {
+    switch (this.getCardStatus(card)) {
+      case 'COMPLETE':
+        return 'card-complete';
+      case 'PARTIAL':
+        return 'card-partial';
+      case 'MISSING':
+        return 'card-missing';
+    }
+  }
+
+  getCardStatusLabel(card: CardDto): string {
+    const ownedCount = this.getOwnedVariantCountForCard(card);
+    const totalCount = this.getTotalVariantCountForCard(card);
+
+    if (totalCount > 0 && ownedCount === totalCount) {
+      return 'Complete';
+    }
+
+    return `${ownedCount}/${totalCount}`;
+  }
 
   getCompletionPercentage(): number {
     const total = this.getTotalVariantCount();
@@ -226,6 +273,11 @@ export class App implements OnInit {
       }, 0);
   }
 
+  getOwnedVariantCountForCard(card: CardDto): number {
+    return card.variants.filter(variant => this.isOwned(variant.id)).length;
+  }
+
+
   getRarityClass(rarity: string): string {
     switch (rarity) {
       case 'COMMON':
@@ -323,6 +375,10 @@ export class App implements OnInit {
     }, 0);
   }
 
+  getTotalVariantCountForCard(card: CardDto): number {
+    return card.variants.length;
+  }
+
   getTotalVariantCountForSet(set: SetDto): number {
     return this.getCardsForSet(set).reduce((total, card) => {
       return total + card.variants.length;
@@ -369,10 +425,6 @@ export class App implements OnInit {
 
       return matchesFinish && matchesOwnership;
     });
-  }
-
-  isCardOwned(card: CardDto): boolean {
-    return this.getVisibleVariants(card).some(variant => this.isOwned(variant.id));
   }
 
   isOwned(cardId: string): boolean {

@@ -13,6 +13,11 @@ body {
   transition: transform 0.15s, box-shadow 0.15s ease;
 }
 
+.card-complete {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
 .card-grid {
   list-style: none;
   padding: 0;
@@ -44,12 +49,21 @@ body {
 }
 
 .card-missing {
+  border-color: #e5e7eb;
+  background: #ffffff;
   opacity: 0.9;
 }
 
-.card-owned {
-  border-color: #22c55e;
-  background: #f0fdf4;
+.card-partial {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.card-status-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
 }
 
 .collection-layout {
@@ -90,22 +104,6 @@ body {
   background: #2563eb;
   border-radius: 999px;
   transition: width 0.2s ease;
-}
-
-.owned-badge {
-  align-self: center;
-  margin-bottom: 8px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: #dcfce7;
-  color: #166534;
-  min-height: 18px;
-}
-
-.owned-badge-hidden {
-  visibility: hidden;
 }
 
 .progress-container {
@@ -347,6 +345,32 @@ body {
   margin-bottom: 8px;
 }
 
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-complete {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-missing {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.status-partial {
+  background: #fef3c7;
+  color: #92400e;
+}
+
 .type-chip {
   border-radius: 999px;
   display: inline-block;
@@ -394,13 +418,6 @@ body {
 .type-water {
   background: #dbeafe;
   color: #1e40af;
-}
-
-ul {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  padding: 0;
 }
 
 .variant-list {

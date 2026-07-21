@@ -236,7 +236,7 @@
     <ul class="card-grid">
       <li *ngFor="let c of getFilteredCards()" 
           class="card"
-          ngClass]="{'card-owned': isCardOwned(c), 'card-missing': !isCardOwned(c)}"
+          [ngClass]="getCardStatusClass(c)"
           >
         <img
           *ngIf="c.imageSmallUrl"
@@ -248,11 +248,13 @@
           {{ c.cardNumber }} — {{ c.name }}
         </div>
 
-        <span
-          class="owned-badge"
-          [class.owned-badge-hidden]="!isCardOwned(c)">
-          ✓ Owned
-        </span>
+        <div class="card-status-row">
+          <span
+            class="status-badge"
+            [ngClass]="getCardStatusBadgeClass(c)">
+            {{ getCardStatusLabel(c) }}
+          </span>
+        </div>
       
         <div class="rarity-badge" [ngClass]="getRarityClass(c.rarity)">
             {{ getRarityLabel(c.rarity) }}
