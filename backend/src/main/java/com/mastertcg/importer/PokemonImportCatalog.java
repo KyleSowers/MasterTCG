@@ -139,6 +139,16 @@ public class PokemonImportCatalog {
                 "data/pokemon/ecard2.json",
                 UUID.fromString("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
                 "Aquapolis"
+        )),
+        Map.entry("ecard3", new PokemonSetImportConfig(
+                "data/pokemon/ecard3.json",
+                UUID.fromString("ffffffff-ffff-ffff-ffff-ffffffffffff"),
+                "Skyridge"
+        )),
+        Map.entry("skyridge", new PokemonSetImportConfig(
+                "data/pokemon/ecard3.json",
+                UUID.fromString("ffffffff-ffff-ffff-ffff-ffffffffffff"),
+                "Skyridge"
         ))
     );
        
