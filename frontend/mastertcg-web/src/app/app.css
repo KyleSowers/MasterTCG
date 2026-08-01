@@ -74,6 +74,49 @@ body {
   margin-top: 20px;
 }
 
+.collection-scope-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.collection-scope-option input {
+  cursor: pointer;
+}
+
+.collection-scope-panel {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.collection-scope-title {
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+.completion-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.completion-toggle input {
+  cursor: pointer;
+}
+
 .filter-select {
   border: 1px solid #ccc;
   border-radius: 8px;

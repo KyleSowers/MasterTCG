@@ -13,12 +13,19 @@ import { FormsModule } from '@angular/forms';
 
 export class App implements OnInit {
   cards: CardDto[] = [];
+  collectionScope = {
+    includeNormal: true,
+    includeHolo: true,
+    includeReverseHolo: true,
+    includeSpecialFinishes: true
+  };
   ownedCards: OwnedCardDto[] = [];
   searchTerm = '';
   selectedFinish = 'ALL';
   selectedOwnership = 'ALL';
   selectedRarity = 'ALL';
   selectedSet: SetDto | null = null;
+  // includeReverseHolosInCompletion = true;
   sets: SetDto[] = [];
   setCardsBySetId: { [setId: string]: CardDto[] } = {};
   setCardBackBackground =
@@ -55,7 +62,12 @@ export class App implements OnInit {
 
   getAvailableFinishes(): string[] {
     return this.trackedFinishes.filter(finish =>
-      this.getTotalVariantCountByFinish(finish) > 0
+      this.cards.some(card =>
+        card.variants.some(variant =>
+          variant.finish === finish &&
+          this.isVariantInCollectionScope(card, variant)
+        )
+      )
     );
   }
 
@@ -155,6 +167,18 @@ export class App implements OnInit {
     return Math.round((this.getOwnedCountForSet(set) / total) * 1000) / 10;
   }
 
+  // getCompletionVariantsForCard(card: CardDto): CardVariantDto[] {
+  //   return card.variants.filter(variant =>
+  //     this.isVariantIncludedInCompletion(variant)
+  //   );
+  // }
+
+  getCollectionScopeVariantsForCard(card: CardDto): CardVariantDto[] {
+    return card.variants.filter(variant =>
+      this.isVariantInCollectionScope(card, variant)
+    );
+  }
+
   getFilterBarPercentage(): number {
     const total = this.getFilteredBaseVariantCount();
 
@@ -251,13 +275,17 @@ export class App implements OnInit {
 
   getOwnedCount(): number {
     return this.cards.reduce((total, card) => {
-      return total + card.variants.filter(v => this.isOwned(v.id)).length;
+      return total + this.getCollectionScopeVariantsForCard(card)
+        .filter(variant => this.isOwned(variant.id))
+        .length;
     }, 0);
   }
 
   getOwnedCountForSet(set: SetDto): number {
     return this.getCardsForSet(set).reduce((total, card) => {
-      return total + card.variants.filter(v => this.isOwned(v.id)).length;
+      return total + this.getCollectionScopeVariantsForCard(card)
+        .filter(variant => this.isOwned(variant.id))
+        .length;
     }, 0);
   }
 
@@ -273,14 +301,17 @@ export class App implements OnInit {
     return this.cards
       .filter(card => card.rarity === rarity)
       .reduce((total, card) => {
-        return total + card.variants.filter(v => this.isOwned(v.id)).length;
+        return total + this.getCollectionScopeVariantsForCard(card)
+          .filter(variant => this.isOwned(variant.id))
+          .length;
       }, 0);
   }
 
   getOwnedVariantCountForCard(card: CardDto): number {
-    return card.variants.filter(variant => this.isOwned(variant.id)).length;
+    return this.getCollectionScopeVariantsForCard(card)
+      .filter(variant => this.isOwned(variant.id))
+      .length;
   }
-
 
   getRarityClass(rarity: string): string {
     switch (rarity) {
@@ -370,7 +401,9 @@ export class App implements OnInit {
   getTotalVariantCountByRarity(rarity: string): number {
     return this.cards
       .filter(card => card.rarity === rarity)
-      .reduce((total, card) => total + card.variants.length, 0);
+      .reduce((total, card) => {
+        return total + this.getCollectionScopeVariantsForCard(card).length;
+      }, 0);
   }
 
   getTotalVariantCountByFinish(finish: string): number {
@@ -379,13 +412,13 @@ export class App implements OnInit {
     }, 0);
   }
 
-  getTotalVariantCountForCard(card: CardDto): number {
-    return card.variants.length;
+ getTotalVariantCountForCard(card: CardDto): number {
+    return this.getCollectionScopeVariantsForCard(card).length;
   }
 
   getTotalVariantCountForSet(set: SetDto): number {
     return this.getCardsForSet(set).reduce((total, card) => {
-      return total + card.variants.length;
+      return total + this.getCollectionScopeVariantsForCard(card).length;
     }, 0);
   }
 
@@ -398,7 +431,9 @@ export class App implements OnInit {
   }
 
   getTotalVariantCount(): number {
-  return this.cards.reduce((total, card) => total + card.variants.length, 0);
+    return this.cards.reduce((total, card) => {
+      return total + this.getCollectionScopeVariantsForCard(card).length;
+    }, 0);
   }
 
   getVisibleCardCount(): number {
@@ -419,20 +454,47 @@ export class App implements OnInit {
 
   getVisibleVariants(card: CardDto): CardVariantDto[] {
     return card.variants.filter(variant => {
-      const matchesFinish = 
+      const matchesScope =
+        this.isVariantInCollectionScope(card, variant);
+
+      const matchesFinish =
         this.selectedFinish === 'ALL' || variant.finish === this.selectedFinish;
 
       const matchesOwnership =
-      this.selectedOwnership === 'ALL' ||
-      (this.selectedOwnership === 'OWNED' && this.isOwned(variant.id)) ||
-      (this.selectedOwnership === 'MISSING' && !this.isOwned(variant.id));
+        this.selectedOwnership === 'ALL' ||
+        (this.selectedOwnership === 'OWNED' && this.isOwned(variant.id)) ||
+        (this.selectedOwnership === 'MISSING' && !this.isOwned(variant.id));
 
-      return matchesFinish && matchesOwnership;
+      return matchesScope && matchesFinish && matchesOwnership;
     });
   }
 
   isOwned(cardId: string): boolean {
     return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
+  }
+
+  // isVariantIncludedInCompletion(variant: CardVariantDto): boolean {
+  //   if (this.includeReverseHolosInCompletion) {
+  //     return true;
+  //   }
+
+  //   return variant.finish !== 'REVERSE_HOLO';
+  // }
+
+  isVariantInCollectionScope(card: CardDto, variant: CardVariantDto): boolean {
+    switch (variant.finish) {
+      case 'NORMAL':
+        return this.collectionScope.includeNormal;
+
+      case 'HOLO':
+        return this.collectionScope.includeHolo;
+
+      case 'REVERSE_HOLO':
+        return this.collectionScope.includeReverseHolo;
+
+      default:
+        return this.collectionScope.includeSpecialFinishes;
+    }
   }
 
   loadCards(set: SetDto) {
@@ -478,6 +540,14 @@ export class App implements OnInit {
         console.error(err);
       }
     });
+  }
+
+  onCollectionScopeChanged() {
+    const availableFinishes = this.getAvailableFinishes();
+
+    if (this.selectedFinish !== 'ALL' && !availableFinishes.includes(this.selectedFinish)) {
+      this.selectedFinish = 'ALL';
+    }
   }
 
   ngOnInit() {

@@ -80,10 +80,93 @@
 
   <select [(ngModel)]="selectedFinish" class="filter-select">
     <option value="ALL">All Finishes</option>
-    <option value="NORMAL">Normal</option>
-    <option value="HOLO">Holo</option>
-    <option value="REVERSE_HOLO">Reverse Holo</option>
+
+    <option
+      *ngFor="let finish of getAvailableFinishes()"
+      [value]="finish">
+      {{ displayFinish(finish) }}
+    </option>
   </select>
+
+  <div class="collection-scope-panel">
+    <div class="collection-scope-title">Collection Scope</div>
+
+    <label class="collection-scope-option">
+      <input
+        type="checkbox"
+        [(ngModel)]="collectionScope.includeNormal"
+        (change)="onCollectionScopeChanged()"
+      />
+      Normal
+    </label>
+
+    <label class="collection-scope-option">
+      <input
+        type="checkbox"
+        [(ngModel)]="collectionScope.includeHolo"
+        (change)="onCollectionScopeChanged()"
+      />
+      Holo
+    </label>
+
+    <label class="collection-scope-option">
+      <input
+        type="checkbox"
+        [(ngModel)]="collectionScope.includeReverseHolo"
+        (change)="onCollectionScopeChanged()"
+      />
+      Reverse Holo
+    </label>
+
+    <label class="collection-scope-option">
+      <input
+        type="checkbox"
+        [(ngModel)]="collectionScope.includeSpecialFinishes"
+        (change)="onCollectionScopeChanged()"
+      />
+      Special Finishes
+    </label>
+  </div>
+
+  <div class="collection-scope-panel">
+  <div class="collection-scope-title">Collection Scope</div>
+
+  <label class="collection-scope-option">
+    <input
+      type="checkbox"
+      [(ngModel)]="collectionScope.includeNormal"
+      (change)="onCollectionScopeChanged()"
+    />
+    Normal
+  </label>
+
+  <label class="collection-scope-option">
+    <input
+      type="checkbox"
+      [(ngModel)]="collectionScope.includeHolo"
+      (change)="onCollectionScopeChanged()"
+    />
+    Holo
+  </label>
+
+  <label class="collection-scope-option">
+    <input
+      type="checkbox"
+      [(ngModel)]="collectionScope.includeReverseHolo"
+      (change)="onCollectionScopeChanged()"
+    />
+    Reverse Holo
+  </label>
+
+  <label class="collection-scope-option">
+      <input
+        type="checkbox"
+        [(ngModel)]="collectionScope.includeSpecialFinishes"
+        (change)="onCollectionScopeChanged()"
+      />
+      Special Finishes
+    </label>
+  </div>
 
   <div class="filter-summary">
     <ng-container *ngIf="selectedOwnership === 'ALL'">
