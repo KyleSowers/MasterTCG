@@ -29,6 +29,7 @@ export class App implements OnInit {
   searchTerm = '';
   selectedFinish = 'ALL';
   selectedOwnership = 'ALL';
+  selectedProfileSetIds: string[] = [];
   selectedRarity = 'ALL';
   selectedSet: SetDto | null = null;
   // includeReverseHolosInCompletion = true;
@@ -270,7 +271,8 @@ export class App implements OnInit {
         this.selectedRarity === 'ALL' ||
         card.rarity === this.selectedRarity;
 
-      const hasVisibleVariants = this.getVisibleVariants(card).length > 0;
+      const hasVisibleVariants =
+        this.getVisibleVariants(card).length > 0;
 
       return matchesSearch && matchesRarity && hasVisibleVariants;
     });
@@ -348,6 +350,10 @@ export class App implements OnInit {
     return this.getCollectionScopeVariantsForCard(card)
       .filter(variant => this.isOwned(variant.id))
       .length;
+  }
+
+  getProfileSets(): SetDto[] {
+    return this.sets.filter(set => this.isSetInCollectionProfile(set));
   }
 
   getRarityClass(rarity: string): string {
@@ -542,6 +548,10 @@ export class App implements OnInit {
     }
   }
 
+  isSetInCollectionProfile(set: SetDto): boolean {
+    return this.selectedProfileSetIds.includes(set.id);
+  }
+
   loadCards(set: SetDto) {
     this.selectedSet = set;
 
@@ -611,6 +621,9 @@ export class App implements OnInit {
     this.api.getSets().subscribe({
       next: (data) => {
         this.sets = this.sortSetsByReleaseDate(data);
+        // this.selectedProfileSetIds = sets.map(set => set.id);
+        this.selectedProfileSetIds = this.sets.map((set: SetDto) => set.id);
+
         this.error = null;
         this.loading = false;
 
@@ -655,6 +668,25 @@ showProfileBuilderPage() {
         console.error(err);
       }
     });
+  }
+
+  toggleProfileSet(set: SetDto, event: Event): void {
+    const checked = (event.target as HTMLInputElement).checked;
+
+    if (checked) {
+      if (!this.selectedProfileSetIds.includes(set.id)) {
+        this.selectedProfileSetIds = [...this.selectedProfileSetIds, set.id];
+      }
+    } else {
+      this.selectedProfileSetIds = this.selectedProfileSetIds.filter(
+        setId => setId !== set.id
+      );
+
+      if (this.selectedSet?.id === set.id) {
+        this.selectedSet = null;
+        this.cards = [];
+      }
+    }
   }
 
 }

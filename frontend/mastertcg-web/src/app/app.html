@@ -25,7 +25,7 @@
 
   <div class="set-dashboard" *ngIf="!loading && !error">
     <div
-      *ngFor="let s of sets"
+      *ngFor="let s of getProfileSets()"
       class="set-card"
       [class.set-card-selected]="selectedSet?.id === s.id"
       [style.background-image]="getSetBackgroundImage(s)"
@@ -408,6 +408,31 @@
           (change)="onCollectionScopeChanged()"
         />
         Rare
+      </label>
+    </div>
+  </div>
+  <div class="profile-builder-card">
+    <h3>Sets</h3>
+
+    <p class="profile-note">
+      Choose which sets belong to this collection profile.
+    </p>
+
+    <div class="profile-set-list">
+      <label
+        class="profile-set-option"
+        *ngFor="let set of sets"
+      >
+        <input
+          type="checkbox"
+          [checked]="isSetInCollectionProfile(set)"
+          (change)="toggleProfileSet(set, $event)"
+        />
+
+        <span>
+          <strong>{{ set.name }}</strong>
+          <small>{{ set.era }}</small>
+        </span>
       </label>
     </div>
   </div>
