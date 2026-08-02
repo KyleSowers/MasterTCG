@@ -12,12 +12,18 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class App implements OnInit {
+  activePage: 'COLLECTION' | 'PROFILE_BUILDER' = 'COLLECTION';
   cards: CardDto[] = [];
+  collectionProfileName = 'My Collection Profile';
   collectionScope = {
     includeNormal: true,
     includeHolo: true,
     includeReverseHolo: true,
-    includeSpecialFinishes: true
+    includeSpecialFinishes: true,
+
+    includeCommon: true,
+    includeUncommon: true,
+    includeRare: true
   };
   ownedCards: OwnedCardDto[] = [];
   searchTerm = '';
@@ -60,6 +66,19 @@ export class App implements OnInit {
     }
   }
 
+  displayRarity(rarity: string): string {
+    switch (rarity) {
+      case 'COMMON':
+        return 'Common';
+      case 'UNCOMMON':
+        return 'Uncommon';
+      case 'RARE':
+        return 'Rare';
+      default:
+        return rarity;
+    }
+  }
+
   getAvailableFinishes(): string[] {
     return this.trackedFinishes.filter(finish =>
       this.cards.some(card =>
@@ -67,6 +86,17 @@ export class App implements OnInit {
           variant.finish === finish &&
           this.isVariantInCollectionScope(card, variant)
         )
+      )
+    );
+  }
+
+  getAvailableRarities(): string[] {
+    const rarityOrder = ['COMMON', 'UNCOMMON', 'RARE'];
+
+    return rarityOrder.filter(rarity =>
+      this.cards.some(card =>
+        card.rarity === rarity &&
+        this.isCardRarityInCollectionScope(card)
       )
     );
   }
@@ -194,7 +224,7 @@ export class App implements OnInit {
 
     return this.cards
       .filter(card => {
-        const matchesSearch = 
+        const matchesSearch =
           !term ||
           card.name.toLowerCase().startsWith(term) ||
           card.cardNumber.toLowerCase() === term ||
@@ -202,16 +232,23 @@ export class App implements OnInit {
           card.primaryType?.toLowerCase() === term ||
           card.artist?.toLowerCase() === term;
 
-        const matchesRarity = 
+        const matchesRarity =
           this.selectedRarity === 'ALL' ||
           card.rarity === this.selectedRarity;
 
         return matchesSearch && matchesRarity;
       })
       .reduce((total, card) => {
-        const matchingVariants = card.variants.filter(variant =>
-          this.selectedFinish === 'ALL' || variant.finish === this.selectedFinish
-        );
+        const matchingVariants = card.variants.filter(variant => {
+          const matchesScope =
+            this.isVariantInCollectionScope(card, variant);
+
+          const matchesFinish =
+            this.selectedFinish === 'ALL' ||
+            variant.finish === this.selectedFinish;
+
+          return matchesScope && matchesFinish;
+        });
 
         return total + matchingVariants.length;
       }, 0);
@@ -358,16 +395,18 @@ export class App implements OnInit {
   }
 
   getSetCompletionClass(set: SetDto): string {
-    const status = this.getSetCompletionStatus(set);
+    const owned = this.getOwnedCountForSet(set);
+    const total = this.getTotalVariantCountForSet(set);
 
-    switch (status) {
-      case 'COMPLETE':
-        return 'set-status-complete';
-      case 'IN_PROGRESS':
-        return 'set-status-progress';
-      case 'NOT_STARTED':
-        return 'set-status-empty';
+    if (total === 0 || owned === 0) {
+      return 'set-missing';
     }
+
+    if (owned === total) {
+      return 'set-complete';
+    }
+
+    return 'set-partial';
   }
 
   getSetCompletionLabel(set: SetDto): string {
@@ -396,6 +435,12 @@ export class App implements OnInit {
     }
 
     return 'IN_PROGRESS';
+  }
+
+  getTotalVariantCount(): number {
+    return this.cards.reduce((total, card) => {
+      return total + this.getCollectionScopeVariantsForCard(card).length;
+    }, 0);
   }
 
   getTotalVariantCountByRarity(rarity: string): number {
@@ -428,12 +473,6 @@ export class App implements OnInit {
     }
 
     return `type-${type.toLowerCase()}`;
-  }
-
-  getTotalVariantCount(): number {
-    return this.cards.reduce((total, card) => {
-      return total + this.getCollectionScopeVariantsForCard(card).length;
-    }, 0);
   }
 
   getVisibleCardCount(): number {
@@ -469,29 +508,35 @@ export class App implements OnInit {
     });
   }
 
+  isCardRarityInCollectionScope(card: CardDto): boolean {
+    switch (card.rarity) {
+      case 'COMMON':
+        return this.collectionScope.includeCommon;
+      case 'UNCOMMON':
+        return this.collectionScope.includeUncommon;
+      case 'RARE':
+        return this.collectionScope.includeRare;
+      default:
+        return true;
+    }
+  }
+
   isOwned(cardId: string): boolean {
     return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
   }
 
-  // isVariantIncludedInCompletion(variant: CardVariantDto): boolean {
-  //   if (this.includeReverseHolosInCompletion) {
-  //     return true;
-  //   }
-
-  //   return variant.finish !== 'REVERSE_HOLO';
-  // }
-
   isVariantInCollectionScope(card: CardDto, variant: CardVariantDto): boolean {
+    if (!this.isCardRarityInCollectionScope(card)) {
+      return false;
+    }
+
     switch (variant.finish) {
       case 'NORMAL':
         return this.collectionScope.includeNormal;
-
       case 'HOLO':
         return this.collectionScope.includeHolo;
-
       case 'REVERSE_HOLO':
         return this.collectionScope.includeReverseHolo;
-
       default:
         return this.collectionScope.includeSpecialFinishes;
     }
@@ -545,8 +590,20 @@ export class App implements OnInit {
   onCollectionScopeChanged() {
     const availableFinishes = this.getAvailableFinishes();
 
-    if (this.selectedFinish !== 'ALL' && !availableFinishes.includes(this.selectedFinish)) {
+    if (
+      this.selectedFinish !== 'ALL' &&
+      !availableFinishes.includes(this.selectedFinish)
+    ) {
       this.selectedFinish = 'ALL';
+    }
+
+    const availableRarities = this.getAvailableRarities();
+
+    if (
+      this.selectedRarity !== 'ALL' &&
+      !availableRarities.includes(this.selectedRarity)
+    ) {
+      this.selectedRarity = 'ALL';
     }
   }
 
@@ -566,6 +623,14 @@ export class App implements OnInit {
         this.loading = false;
       }
     });
+  }
+
+  showCollectionPage() {
+    this.activePage = 'COLLECTION';
+  }
+
+showProfileBuilderPage() {
+    this.activePage = 'PROFILE_BUILDER';
   }
 
   sortSetsByReleaseDate(sets: SetDto[]): SetDto[] {

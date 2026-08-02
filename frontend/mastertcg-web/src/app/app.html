@@ -1,366 +1,425 @@
 <h1>MasterTCG</h1>
 
+<nav class="app-nav">
+  <button
+    type="button"
+    class="app-nav-button"
+    [class.app-nav-button-active]="activePage === 'COLLECTION'"
+    (click)="showCollectionPage()">
+    My Collection
+  </button>
+
+  <button
+    type="button"
+    class="app-nav-button"
+    [class.app-nav-button-active]="activePage === 'PROFILE_BUILDER'"
+    (click)="showProfileBuilderPage()">
+    Collection Profile
+  </button>
+</nav>
+
 <div *ngIf="loading">Loading sets...</div>
 <div *ngIf="error">{{ error }}</div>
 
-<div class="set-dashboard" *ngIf="!loading && !error">
-  <div
-    *ngFor="let s of sets"
-    class="set-card"
-    [class.set-card-selected]="selectedSet?.id === s.id"
-    [style.background-image]="getSetBackgroundImage(s)"
-    (click)="loadCards(s)"
-  >
-  <div class="set-card-header">
-    <h3>{{ s.name }}</h3>
+<div *ngIf="activePage === 'COLLECTION'">
 
-    <span
-      class="set-status"
-      [ngClass]="getSetCompletionClass(s)"
+  <div class="set-dashboard" *ngIf="!loading && !error">
+    <div
+      *ngFor="let s of sets"
+      class="set-card"
+      [class.set-card-selected]="selectedSet?.id === s.id"
+      [style.background-image]="getSetBackgroundImage(s)"
+      (click)="loadCards(s)"
     >
-      {{ getSetCompletionLabel(s) }}
-    </span>
-  </div>
+    <div class="set-card-header">
+      <h3>{{ s.name }}</h3>
 
-  <div class="set-era">{{ s.era }}</div>
-
-  <div class="set-completion-percent">
-    {{ getCompletionPercentageForSet(s) }}%
-  </div>
-
-    <div class="set-progress-text">
-      Owned: {{ getOwnedCountForSet(s) }} /
-      {{ getTotalVariantCountForSet(s) }}
-      ({{ getCompletionPercentageForSet(s) }}%)
+      <span
+        class="set-status"
+        [ngClass]="getSetCompletionClass(s)"
+      >
+        {{ getSetCompletionLabel(s) }}
+      </span>
     </div>
 
-    <div class="set-progress-container">
+    <div class="set-era">{{ s.era }}</div>
+
+    <div class="set-completion-percent">
+      {{ getCompletionPercentageForSet(s) }}%
+    </div>
+
+      <div class="set-progress-text">
+        Owned: {{ getOwnedCountForSet(s) }} /
+        {{ getTotalVariantCountForSet(s) }}
+        <!-- ({{ getCompletionPercentageForSet(s) }}%) -->
+      </div>
+
+      <div class="set-progress-container">
+        <div
+          class="set-progress-fill"
+          [style.width.%]="getCompletionPercentageForSet(s)">
+        </div>
+      </div>
+
+      <div class="set-card-meta">
+        Catalog: Main {{ s.totalCardsMain }} | Master {{ s.totalCardsMaster }}
+      </div>
+
+      <div class="set-dard-meta">
+        Profile total: {{ getTotalVariantCountForSet(s) }}
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <section *ngIf="selectedSet">
+    <!-- <h2>{{ selectedSet.name }} Cards</h2> -->
+     <div class="active-profile-summary">
+      Viewing profile:
+      <strong>{{ collectionProfileName }}</strong>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-fill"
+        [style.width.%]="getCompletionPercentage()"
+        ></div>
+    </div>
+
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search by card name or number"
+      class="search-input"
+    />
+
+    <select [(ngModel)]="selectedRarity" class="filter-select">
+      <option value="ALL">All Rarities</option>
+      <option *ngFor="let rarity of getAvailableRarities()" [value]="rarity">
+        {{ displayRarity(rarity) }}
+      </option>
+    </select>
+
+    <select [(ngModel)]="selectedOwnership" class="filter-select">
+      <option value="ALL">All Cards</option>
+      <option value="OWNED">Owned</option>
+      <option value="MISSING">Missing</option>
+    </select>
+
+    <select [(ngModel)]="selectedFinish" class="filter-select">
+      <option value="ALL">All Finishes</option>
+
+      <option
+        *ngFor="let finish of getAvailableFinishes()"
+        [value]="finish">
+        {{ displayFinish(finish) }}
+      </option>
+    </select>
+
+    <div class="filter-summary">
+      <ng-container *ngIf="selectedOwnership === 'ALL'">
+        Showing {{ getVisibleCardCount() }} cards ·
+        Completion {{ getFilteredOwnedVariantCount() }} /
+        {{ getFilteredBaseVariantCount() }} matching variants
+      </ng-container>
+
+      <ng-container *ngIf="selectedOwnership === 'OWNED'">
+        Showing {{ getVisibleCardCount() }} cards ·
+        Owned {{ getFilteredOwnedVariantCount() }} /
+        {{ getFilteredBaseVariantCount() }} matching variants
+      </ng-container>
+
+      <ng-container *ngIf="selectedOwnership === 'MISSING'">
+        Showing {{ getVisibleCardCount() }} cards ·
+        Missing {{ getFilteredMissingVariantCount() }} /
+        {{ getFilteredBaseVariantCount() }} matching variants ·
+        Completion {{ getFilteredOwnedVariantCount() }} /
+        {{ getFilteredBaseVariantCount() }}
+      </ng-container>
+    </div>
+
+    <div class="mini-progress-container" *ngIf="selectedSet">
       <div
-        class="set-progress-fill"
-        [style.width.%]="getCompletionPercentageForSet(s)">
+        class="mini-progress-fill"
+        [style.width.%]="getFilterBarPercentage()">
       </div>
     </div>
 
-    <div class="set-card-meta">
-      Main: {{ s.totalCardsMain }} | Master: {{ s.totalCardsMaster }}
+    <div class="collection-layout">
+
+      <aside class="stats-sidebar">
+        <div class="stats-panel">
+          <h3>{{ selectedSet.name }} Stats</h3>
+
+          <div class="stats-grid">
+
+            <!-- Total -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-label">Total</div>
+                <div class="stat-percent">{{ getCompletionPercentage() }}%</div>
+              </div>
+
+              <div class="stat-value">
+                {{ getOwnedCount() }} / {{ getTotalVariantCount() }}
+              </div>
+
+              <div class="stat-mini-bar">
+                <div
+                  class="stat-mini-fill"
+                  [style.width.%]="getCompletionPercentage()">
+                </div>
+              </div>
+            </div>
+
+            <!-- Common -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-label">Common</div>
+                <div class="stat-percent">
+                  {{ getCompletionPercentageByRarity('COMMON') }}%
+                </div>
+              </div>
+
+              <div class="stat-value">
+                {{ getOwnedVariantCountByRarity('COMMON') }} /
+                {{ getTotalVariantCountByRarity('COMMON') }}
+              </div>
+
+              <div class="stat-mini-bar">
+                <div
+                  class="stat-mini-fill"
+                  [style.width.%]="getCompletionPercentageByRarity('COMMON')">
+                </div>
+              </div>
+            </div>
+
+            <!-- Uncommon -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-label">Uncommon</div>
+                <div class="stat-percent">
+                  {{ getCompletionPercentageByRarity('UNCOMMON') }}%
+                </div>
+              </div>
+
+              <div class="stat-value">
+                {{ getOwnedVariantCountByRarity('UNCOMMON') }} /
+                {{ getTotalVariantCountByRarity('UNCOMMON') }}
+              </div>
+
+              <div class="stat-mini-bar">
+                <div
+                  class="stat-mini-fill"
+                  [style.width.%]="getCompletionPercentageByRarity('UNCOMMON')">
+                </div>
+              </div>
+            </div>
+
+            <!-- Rare -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-label">Rare</div>
+                <div class="stat-percent">
+                  {{ getCompletionPercentageByRarity('RARE') }}%
+                </div>
+              </div>
+
+              <div class="stat-value">
+                {{ getOwnedVariantCountByRarity('RARE') }} /
+                {{ getTotalVariantCountByRarity('RARE') }}
+              </div>
+
+              <div class="stat-mini-bar">
+                <div
+                  class="stat-mini-fill"
+                  [style.width.%]="getCompletionPercentageByRarity('RARE')">
+                </div>
+              </div>
+            </div>
+
+            <!-- Finishes: Normal, Holo, Reverse Holo, etc. -->
+            <div class="stat-card" *ngFor="let finish of getAvailableFinishes()">
+              <div class="stat-header">
+                <div class="stat-label">{{ displayFinish(finish) }}</div>
+                <div class="stat-percent">
+                  {{ getCompletionPercentageByFinish(finish) }}%
+                </div>
+              </div>
+
+              <div class="stat-value">
+                {{ getOwnedVariantCountByFinish(finish) }} /
+                {{ getTotalVariantCountByFinish(finish) }}
+              </div>
+
+              <div class="stat-mini-bar">
+                <div
+                  class="stat-mini-fill"
+                  [style.width.%]="getCompletionPercentageByFinish(finish)">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+      <ul class="card-grid">
+        <li *ngFor="let c of getFilteredCards()" 
+            class="card"
+            [ngClass]="getCardStatusClass(c)"
+            >
+          <img
+            *ngIf="c.imageSmallUrl"
+            [src]="c.imageSmallUrl"
+            [alt]="c.name"
+            class="card-image"
+          >
+          <div class="card-header">
+            {{ c.cardNumber }} — {{ c.name }}
+          </div>
+
+          <div class="card-status-row">
+            <span
+              class="status-badge"
+              [ngClass]="getCardStatusBadgeClass(c)">
+              {{ getCardStatusLabel(c) }}
+            </span>
+          </div>
+        
+          <div class="rarity-badge" [ngClass]="getRarityClass(c.rarity)">
+              {{ getRarityLabel(c.rarity) }}
+          </div>
+
+          <div *ngIf="c.primaryType" class="type-chip" [ngClass]="getTypeClass(c.primaryType)">
+            {{ c.primaryType }}
+          </div>
+            
+          <div class="variant-list">
+            <div *ngFor="let v of getVisibleVariants(c)" class="variant-row">
+              <input
+                type="checkbox"
+                [checked]="isOwned(v.id)"
+                (change)="toggleOwned(v.id)"
+                />
+
+              <span>{{ displayFinish(v.finish) }}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
     </div>
-  </div>
+
+  </section>
 </div>
 
-<hr>
+<section
+  class="profile-builder-page"
+  *ngIf="activePage === 'PROFILE_BUILDER'">
 
-<section *ngIf="selectedSet">
-  <h2>{{ selectedSet.name }} Cards</h2>
-
-  <div class="progress-container">
-    <div class="progress-fill"
-      [style.width.%]="getCompletionPercentage()"
-      ></div>
+  <div class="profile-builder-header">
+    <h2>Collection Profile Builder</h2>
+    <p>
+      Choose what this collection profile should track. These settings control
+      which cards appear in My Collection, progress bars, stats, and missing-card views.
+    </p>
   </div>
 
-  <input
-    type="text"
-    [(ngModel)]="searchTerm"
-    placeholder="Search by card name or number"
-    class="search-input"
-  />
-
-  <select [(ngModel)]="selectedRarity" class="filter-select">
-    <option value="ALL">All rarities</option>
-    <option value="COMMON">Common</option>
-    <option value="UNCOMMON">Uncommon</option>
-    <option value="RARE">Rare</option>
-  </select>
-
-  <select [(ngModel)]="selectedOwnership" class="filter-select">
-    <option value="ALL">All Cards</option>
-    <option value="OWNED">Owned</option>
-    <option value="MISSING">Missing</option>
-  </select>
-
-  <select [(ngModel)]="selectedFinish" class="filter-select">
-    <option value="ALL">All Finishes</option>
-
-    <option
-      *ngFor="let finish of getAvailableFinishes()"
-      [value]="finish">
-      {{ displayFinish(finish) }}
-    </option>
-  </select>
-
-  <div class="collection-scope-panel">
-    <div class="collection-scope-title">Collection Scope</div>
-
-    <label class="collection-scope-option">
-      <input
-        type="checkbox"
-        [(ngModel)]="collectionScope.includeNormal"
-        (change)="onCollectionScopeChanged()"
-      />
-      Normal
+  <div class="profile-builder-card">
+    <label class="profile-field-label">
+      Profile name
     </label>
 
-    <label class="collection-scope-option">
-      <input
-        type="checkbox"
-        [(ngModel)]="collectionScope.includeHolo"
-        (change)="onCollectionScopeChanged()"
-      />
-      Holo
-    </label>
-
-    <label class="collection-scope-option">
-      <input
-        type="checkbox"
-        [(ngModel)]="collectionScope.includeReverseHolo"
-        (change)="onCollectionScopeChanged()"
-      />
-      Reverse Holo
-    </label>
-
-    <label class="collection-scope-option">
-      <input
-        type="checkbox"
-        [(ngModel)]="collectionScope.includeSpecialFinishes"
-        (change)="onCollectionScopeChanged()"
-      />
-      Special Finishes
-    </label>
-  </div>
-
-  <div class="collection-scope-panel">
-  <div class="collection-scope-title">Collection Scope</div>
-
-  <label class="collection-scope-option">
     <input
-      type="checkbox"
-      [(ngModel)]="collectionScope.includeNormal"
-      (change)="onCollectionScopeChanged()"
+      type="text"
+      class="profile-name-input"
+      [(ngModel)]="collectionProfileName"
     />
-    Normal
-  </label>
-
-  <label class="collection-scope-option">
-    <input
-      type="checkbox"
-      [(ngModel)]="collectionScope.includeHolo"
-      (change)="onCollectionScopeChanged()"
-    />
-    Holo
-  </label>
-
-  <label class="collection-scope-option">
-    <input
-      type="checkbox"
-      [(ngModel)]="collectionScope.includeReverseHolo"
-      (change)="onCollectionScopeChanged()"
-    />
-    Reverse Holo
-  </label>
-
-  <label class="collection-scope-option">
-      <input
-        type="checkbox"
-        [(ngModel)]="collectionScope.includeSpecialFinishes"
-        (change)="onCollectionScopeChanged()"
-      />
-      Special Finishes
-    </label>
   </div>
 
-  <div class="filter-summary">
-    <ng-container *ngIf="selectedOwnership === 'ALL'">
-      Showing {{ getVisibleCardCount() }} cards ·
-      Completion {{ getFilteredOwnedVariantCount() }} /
-      {{ getFilteredBaseVariantCount() }} matching variants
-    </ng-container>
+  <div class="profile-builder-card">
+    <h3>Finishes</h3>
 
-    <ng-container *ngIf="selectedOwnership === 'OWNED'">
-      Showing {{ getVisibleCardCount() }} cards ·
-      Owned {{ getFilteredOwnedVariantCount() }} /
-      {{ getFilteredBaseVariantCount() }} matching variants
-    </ng-container>
+    <div class="collection-scope-panel">
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeNormal"
+          (change)="onCollectionScopeChanged()"
+        />
+        Normal
+      </label>
 
-    <ng-container *ngIf="selectedOwnership === 'MISSING'">
-      Showing {{ getVisibleCardCount() }} cards ·
-      Missing {{ getFilteredMissingVariantCount() }} /
-      {{ getFilteredBaseVariantCount() }} matching variants ·
-      Completion {{ getFilteredOwnedVariantCount() }} /
-      {{ getFilteredBaseVariantCount() }}
-    </ng-container>
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeHolo"
+          (change)="onCollectionScopeChanged()"
+        />
+        Holo
+      </label>
+
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeReverseHolo"
+          (change)="onCollectionScopeChanged()"
+        />
+        Reverse Holo
+      </label>
+
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeSpecialFinishes"
+          (change)="onCollectionScopeChanged()"
+        />
+        Special Finishes
+      </label>
+    </div>
   </div>
+  <div class="profile-builder-card">
+    <h3>Rarities</h3>
 
-  <div class="mini-progress-container" *ngIf="selectedSet">
-    <div
-      class="mini-progress-fill"
-      [style.width.%]="getFilterBarPercentage()">
+    <div class="collection-scope-panel">
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeCommon"
+          (change)="onCollectionScopeChanged()"
+        />
+        Common
+      </label>
+
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeUncommon"
+          (change)="onCollectionScopeChanged()"
+        />
+        Uncommon
+      </label>
+
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeRare"
+          (change)="onCollectionScopeChanged()"
+        />
+        Rare
+      </label>
     </div>
   </div>
 
-  <div class="collection-layout">
+  <div class="profile-builder-card">
+    <h3>Next profile controls</h3>
 
-    <aside class="stats-sidebar">
-      <div class="stats-panel">
-        <h3>{{ selectedSet.name }} Stats</h3>
-
-        <div class="stats-grid">
-
-          <!-- Total -->
-          <div class="stat-card">
-            <div class="stat-header">
-              <div class="stat-label">Total</div>
-              <div class="stat-percent">{{ getCompletionPercentage() }}%</div>
-            </div>
-
-            <div class="stat-value">
-              {{ getOwnedCount() }} / {{ getTotalVariantCount() }}
-            </div>
-
-            <div class="stat-mini-bar">
-              <div
-                class="stat-mini-fill"
-                [style.width.%]="getCompletionPercentage()">
-              </div>
-            </div>
-          </div>
-
-          <!-- Common -->
-          <div class="stat-card">
-            <div class="stat-header">
-              <div class="stat-label">Common</div>
-              <div class="stat-percent">
-                {{ getCompletionPercentageByRarity('COMMON') }}%
-              </div>
-            </div>
-
-            <div class="stat-value">
-              {{ getOwnedVariantCountByRarity('COMMON') }} /
-              {{ getTotalVariantCountByRarity('COMMON') }}
-            </div>
-
-            <div class="stat-mini-bar">
-              <div
-                class="stat-mini-fill"
-                [style.width.%]="getCompletionPercentageByRarity('COMMON')">
-              </div>
-            </div>
-          </div>
-
-          <!-- Uncommon -->
-          <div class="stat-card">
-            <div class="stat-header">
-              <div class="stat-label">Uncommon</div>
-              <div class="stat-percent">
-                {{ getCompletionPercentageByRarity('UNCOMMON') }}%
-              </div>
-            </div>
-
-            <div class="stat-value">
-              {{ getOwnedVariantCountByRarity('UNCOMMON') }} /
-              {{ getTotalVariantCountByRarity('UNCOMMON') }}
-            </div>
-
-            <div class="stat-mini-bar">
-              <div
-                class="stat-mini-fill"
-                [style.width.%]="getCompletionPercentageByRarity('UNCOMMON')">
-              </div>
-            </div>
-          </div>
-
-          <!-- Rare -->
-          <div class="stat-card">
-            <div class="stat-header">
-              <div class="stat-label">Rare</div>
-              <div class="stat-percent">
-                {{ getCompletionPercentageByRarity('RARE') }}%
-              </div>
-            </div>
-
-            <div class="stat-value">
-              {{ getOwnedVariantCountByRarity('RARE') }} /
-              {{ getTotalVariantCountByRarity('RARE') }}
-            </div>
-
-            <div class="stat-mini-bar">
-              <div
-                class="stat-mini-fill"
-                [style.width.%]="getCompletionPercentageByRarity('RARE')">
-              </div>
-            </div>
-          </div>
-
-          <!-- Finishes: Normal, Holo, Reverse Holo, etc. -->
-          <div class="stat-card" *ngFor="let finish of getAvailableFinishes()">
-            <div class="stat-header">
-              <div class="stat-label">{{ displayFinish(finish) }}</div>
-              <div class="stat-percent">
-                {{ getCompletionPercentageByFinish(finish) }}%
-              </div>
-            </div>
-
-            <div class="stat-value">
-              {{ getOwnedVariantCountByFinish(finish) }} /
-              {{ getTotalVariantCountByFinish(finish) }}
-            </div>
-
-            <div class="stat-mini-bar">
-              <div
-                class="stat-mini-fill"
-                [style.width.%]="getCompletionPercentageByFinish(finish)">
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </aside>
-
-    <ul class="card-grid">
-      <li *ngFor="let c of getFilteredCards()" 
-          class="card"
-          [ngClass]="getCardStatusClass(c)"
-          >
-        <img
-          *ngIf="c.imageSmallUrl"
-          [src]="c.imageSmallUrl"
-          [alt]="c.name"
-          class="card-image"
-        >
-        <div class="card-header">
-          {{ c.cardNumber }} — {{ c.name }}
-        </div>
-
-        <div class="card-status-row">
-          <span
-            class="status-badge"
-            [ngClass]="getCardStatusBadgeClass(c)">
-            {{ getCardStatusLabel(c) }}
-          </span>
-        </div>
-      
-        <div class="rarity-badge" [ngClass]="getRarityClass(c.rarity)">
-            {{ getRarityLabel(c.rarity) }}
-        </div>
-
-        <div *ngIf="c.primaryType" class="type-chip" [ngClass]="getTypeClass(c.primaryType)">
-          {{ c.primaryType }}
-        </div>
-          
-        <div class="variant-list">
-          <div *ngFor="let v of getVisibleVariants(c)" class="variant-row">
-            <input
-              type="checkbox"
-              [checked]="isOwned(v.id)"
-              (change)="toggleOwned(v.id)"
-              />
-
-            <span>{{ displayFinish(v.finish) }}</span>
-          </div>
-        </div>
-      </li>
-    </ul>
-
+    <p class="profile-note">
+      Next we will add rarity, era, set, Pokémon name, and type rules here.
+      The My Collection page will stay clean and only display cards that match
+      this saved profile.
+    </p>
   </div>
 
 </section>

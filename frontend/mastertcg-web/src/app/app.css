@@ -2,6 +2,34 @@ body {
     font-family: Arial, Arial, Helvetica, sans-serif;
 }
 
+.active-profile-summary {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin: -6px 0 14px;
+}
+
+.app-nav {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0 20px;
+}
+
+.app-nav-button {
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 14px;
+}
+
+.app-nav-button-active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
 .card {
   background: #fafafa;
   border: 1px solid #ddd;
@@ -147,6 +175,60 @@ body {
   background: #2563eb;
   border-radius: 999px;
   transition: width 0.2s ease;
+}
+
+.profile-builder-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.profile-builder-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.profile-builder-header {
+  margin-bottom: 18px;
+}
+
+.profile-builder-header h2 {
+  margin-bottom: 6px;
+}
+
+.profile-builder-header p {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.profile-builder-page {
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+.profile-field-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.profile-name-input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  max-width: 420px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.profile-note {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .progress-container {
