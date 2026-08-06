@@ -380,33 +380,38 @@ getFilteredBaseVariantCount(): number {
   }
 
 getFilteredOwnedVariantCount(): number {
-    const term = this.searchTerm.trim().toLowerCase();
+  const term = this.searchTerm.trim().toLowerCase();
 
-    return this.cards
-      .filter(card => {
-        const matchesSearch =
-          !term ||
-          card.name.toLowerCase().startsWith(term) ||
-          card.cardNumber.toLowerCase() === term ||
-          card.rarity.toLowerCase() === term ||
-          card.primaryType?.toLowerCase() === term ||
-          card.artist?.toLowerCase() === term;
+  return this.cards
+    .filter(card => {
+      const matchesSearch =
+        !term ||
+        card.name.toLowerCase().startsWith(term) ||
+        card.cardNumber.toLowerCase() === term ||
+        card.rarity.toLowerCase() === term ||
+        card.primaryType?.toLowerCase() === term ||
+        card.artist?.toLowerCase() === term;
 
-        const matchesRarity =
-          this.selectedRarity === 'ALL' ||
-          card.rarity === this.selectedRarity;
+      const matchesRarity =
+        this.selectedRarity === 'ALL' ||
+        card.rarity === this.selectedRarity;
 
-        return matchesSearch && matchesRarity;
-      })
-      .reduce((total, card) => {
-        return total + card.variants.filter(variant => {
-          const matchesFinish =
-            this.selectedFinish === 'ALL' ||
-            variant.finish === this.selectedFinish;
+      return matchesSearch && matchesRarity;
+    })
+    .reduce((total, card) => {
+      const matchingOwnedVariants = card.variants.filter(variant => {
+        const matchesScope =
+          this.isVariantInCollectionScope(card, variant);
 
-          return matchesFinish && this.isOwned(variant.id);
-        }).length;
-      }, 0);
+        const matchesFinish =
+          this.selectedFinish === 'ALL' ||
+          variant.finish === this.selectedFinish;
+
+        return matchesScope && matchesFinish && this.isOwned(variant.id);
+      });
+
+      return total + matchingOwnedVariants.length;
+    }, 0);
   }
 
 getFilteredMissingVariantCount(): number {
@@ -666,6 +671,59 @@ toggleProfileSet(set: SetDto, event: Event): void {
       }
     }
   }
+
+getAvailableEras(): string[] {
+  return Array.from(new Set(this.sets.map(set => set.era)));
+}
+
+getSetsForEra(era: string): SetDto[] {
+  return this.sets.filter(set => set.era === era);
+}
+
+isEraFullySelected(era: string): boolean {
+  const eraSets = this.getSetsForEra(era);
+
+  return eraSets.length > 0 && eraSets.every(set =>
+    this.isSetInCollectionProfile(set)
+  );
+}
+
+isEraPartiallySelected(era: string): boolean {
+  const eraSets = this.getSetsForEra(era);
+
+  const selectedCount = eraSets.filter(set =>
+    this.isSetInCollectionProfile(set)
+  ).length;
+
+  return selectedCount > 0 && selectedCount < eraSets.length;
+}
+
+toggleProfileEra(era: string, event: Event): void {
+  const checked = (event.target as HTMLInputElement).checked;
+  const eraSets = this.getSetsForEra(era);
+  const eraSetIds = eraSets.map(set => set.id);
+
+  if (checked) {
+    const combinedSetIds = new Set([
+      ...this.selectedProfileSetIds,
+      ...eraSetIds
+    ]);
+
+    this.selectedProfileSetIds = Array.from(combinedSetIds);
+  } else {
+    this.selectedProfileSetIds = this.selectedProfileSetIds.filter(
+      setId => !eraSetIds.includes(setId)
+    );
+
+    if (
+      this.selectedSet &&
+      eraSetIds.includes(this.selectedSet.id)
+    ) {
+      this.selectedSet = null;
+      this.cards = [];
+    }
+  }
+}
 
   // ---------------------------------------------------------------------------
   // COLLECTION SCOPE HELPERS

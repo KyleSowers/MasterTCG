@@ -669,10 +669,56 @@ body {
   font-size: 0.78rem;
 }
 
+.profile-era-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.profile-era-group {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.profile-era-option {
+  align-items: center;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+}
+
+.profile-era-option input {
+  cursor: pointer;
+}
+
+.profile-era-option span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-era-option strong {
+  font-size: 0.95rem;
+}
+
+.profile-era-option small {
+  color: #6b7280;
+  font-size: 0.78rem;
+}
+
+.profile-set-list-nested {
+  padding: 10px;
+}
+
 
 
 /* =============================================
-  COLLECTION PAGE - LATOUT
+  COLLECTION PAGE - LAYOUT
   ============================================= */
 
 @media (max-width: 900px) {

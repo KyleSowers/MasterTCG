@@ -65,7 +65,7 @@
         Catalog: Main {{ s.totalCardsMain }} | Master {{ s.totalCardsMaster }}
       </div>
 
-      <div class="set-dard-meta">
+      <div class="set-card-meta">
         Profile total: {{ getTotalVariantCountForSet(s) }}
       </div>
     </div>
@@ -412,39 +412,54 @@
     </div>
   </div>
   <div class="profile-builder-card">
-    <h3>Sets</h3>
+  <h3>Sets by Era</h3>
 
-    <p class="profile-note">
-      Choose which sets belong to this collection profile.
-    </p>
+  <p class="profile-note">
+    Choose entire eras or select individual sets inside each era.
+  </p>
 
-    <div class="profile-set-list">
-      <label
-        class="profile-set-option"
-        *ngFor="let set of sets"
-      >
+  <div class="profile-era-list">
+    <div
+      class="profile-era-group"
+      *ngFor="let era of getAvailableEras()"
+    >
+      <label class="profile-era-option">
         <input
           type="checkbox"
-          [checked]="isSetInCollectionProfile(set)"
-          (change)="toggleProfileSet(set, $event)"
+          [checked]="isEraFullySelected(era)"
+          (change)="toggleProfileEra(era, $event)"
         />
 
         <span>
-          <strong>{{ set.name }}</strong>
-          <small>{{ set.era }}</small>
+          <strong>{{ era }}</strong>
+          <small>
+            {{ getSetsForEra(era).length }} sets
+            <ng-container *ngIf="isEraPartiallySelected(era)">
+              · partially selected
+            </ng-container>
+          </small>
         </span>
       </label>
+
+      <div class="profile-set-list profile-set-list-nested">
+        <label
+          class="profile-set-option"
+          *ngFor="let set of getSetsForEra(era)"
+        >
+          <input
+            type="checkbox"
+            [checked]="isSetInCollectionProfile(set)"
+            (change)="toggleProfileSet(set, $event)"
+          />
+
+          <span>
+            <strong>{{ set.name }}</strong>
+            <small>{{ set.era }}</small>
+          </span>
+        </label>
+      </div>
     </div>
   </div>
-
-  <div class="profile-builder-card">
-    <h3>Next profile controls</h3>
-
-    <p class="profile-note">
-      Next we will add rarity, era, set, Pokémon name, and type rules here.
-      The My Collection page will stay clean and only display cards that match
-      this saved profile.
-    </p>
-  </div>
+</div>
 
 </section>
