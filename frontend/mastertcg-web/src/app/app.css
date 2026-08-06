@@ -1,12 +1,16 @@
+/* =============================================
+  GLOBAL PAGE STYLES
+  ============================================= */
+
 body {
     font-family: Arial, Arial, Helvetica, sans-serif;
 }
 
-.active-profile-summary {
-  color: #4b5563;
-  font-size: 0.95rem;
-  margin: -6px 0 14px;
-}
+
+
+/* =============================================
+  PRIMARY NAVIGATION
+  ============================================= */
 
 .app-nav {
   display: flex;
@@ -30,105 +34,163 @@ body {
   color: #ffffff;
 }
 
-.card {
-  background: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding: 14px;
-  transition: transform 0.15s, box-shadow 0.15s ease;
-}
 
-.card-complete {
-  border-color: #22c55e;
-  background: #f0fdf4;
-}
 
-.card-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* =============================================
+  COLLECTION PAGE - SET DASHBOARD
+  ============================================= */
+
+.set-dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, 260px);
   gap: 16px;
+  margin: 20px 0;
   width: 100%;
+  justify-content: start;
 }
 
-.card-header {
-  font-weight: 700;
-  margin-bottom: 8px;
-  text-align: center;
+.set-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: cover, auto 90%, cover;
+  background-position: center, right 12px center, center;
 }
 
-.card:hover {
-  transform: translate(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.0);
+.set-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-.card-image {
-  border-radius: 6px;
-  display: block;
-  height: auto;
-  margin: 0 auto 10px;
-  max-width: 140px;
-  width: 100%;
+.set-card-selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
 }
 
-.card-missing {
-  border-color: #e5e7eb;
-  background: #ffffff;
-  opacity: 0.9;
+.set-card h3 {
+  margin: 0 0 6px;
 }
 
-.card-partial {
-  border-color: #f59e0b;
-  background: #fffbeb;
-}
-
-.card-status-row {
+.set-card-header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 6px;
 }
 
-.collection-layout {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
-  margin-top: 20px;
+.set-card-header h3 {
+  margin: 0;
 }
 
-.collection-scope-option {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.set-era {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+.set-progress-text {
   font-size: 0.9rem;
   font-weight: 600;
+  margin-bottom: 8px;
 }
 
-.collection-scope-option input {
-  cursor: pointer;
+.set-progress-container {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.collection-scope-panel {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  margin: 0 0 16px;
-  padding: 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  background: #fafafa;
+.set-progress-fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 999px;
+  transition: width 0.2s ease;
 }
 
-.collection-scope-title {
-  font-weight: 800;
-  margin-right: 6px;
+.set-card-meta {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.set-status {
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.set-status-complete {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.set-status-empty {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.set-status-progress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+
+/* =============================================
+  COLLECTION PAGE - ACTIVE PROFILE AND MAINPROGRESS
+  ============================================= */
+
+.active-profile-summary {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin: -6px 0 14px;
+}
+
+.progress-container {
+  background: #e5e5e5;
+  border-radius: 999px;
+  height: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progress-fill {
+  background: #28a745;
+  border-radius: 999px;
+  height: 100%;
+}
+
+
+
+/* =============================================
+  COLLECTION PAGE - SEARCH, FILTERS, AND FLTERED PROGRESS
+  ============================================= */
+
+.search-input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  max-width: 420px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.filter-select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 0 0 16px 8px;
+  padding: 10px 12px;
 }
 
 .completion-toggle {
@@ -143,14 +205,6 @@ body {
 
 .completion-toggle input {
   cursor: pointer;
-}
-
-.filter-select {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  margin: 0 0 16px 8px;
-  padding: 10px 12px;
 }
 
 .filter-summary {
@@ -177,252 +231,49 @@ body {
   transition: width 0.2s ease;
 }
 
-.profile-builder-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #fafafa;
-  padding: 16px;
-  margin-bottom: 16px;
+
+
+/* =============================================
+  COLLECTION PAGE - TWO COLUMN LAYOUT
+  ============================================= */
+
+.collection-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 20px;
 }
 
-.profile-builder-card h3 {
+
+
+/* =============================================
+  COLLECTION PAGE - STATISTICS SIDEBAR
+  ============================================= */
+
+.stats-sidebar {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+
+.stats-panel {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 900px;
+}
+
+.stats-panel h3 {
   margin-top: 0;
   margin-bottom: 12px;
 }
 
-.profile-builder-header {
-  margin-bottom: 18px;
-}
-
-.profile-builder-header h2 {
-  margin-bottom: 6px;
-}
-
-.profile-builder-header p {
-  color: #4b5563;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.profile-builder-page {
-  max-width: 900px;
-  margin-top: 20px;
-}
-
-.profile-field-label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.profile-name-input {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  max-width: 420px;
-  padding: 10px 12px;
-  width: 100%;
-}
-
-.profile-note {
-  color: #4b5563;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.profile-set-list {
+.stats-grid {
   display: grid;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.profile-set-option {
-  align-items: center;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  gap: 10px;
-  padding: 10px 12px;
-}
-
-.profile-set-option small {
-  color: #6b7280;
-  font-size: 0.78rem;
-}
-
-.profile-set-option span {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.progress-container {
-  background: #e5e5e5;
-  border-radius: 999px;
-  height: 14px;
-  margin-bottom: 16px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.progress-fill {
-  background: #28a745;
-  border-radius: 999px;
-  height: 100%;
-}
-
-.rarity-badge {
-  align-self: flex-start;
-  /* background: #eeeeee; */
-  border-radius: 999px;
-  /* color: #333; */
-  display: inline-block;
-  font-size: 0.8em;
-  font-weight: 600;
-  margin-bottom: 8px;
-  padding: 3px 10px;
-}
-
-.rarity-common {
-  /* background: #e9ecef; */
-  background: #f1f3f5;
-  /* color: #343a40; */
-  color: #495057;
-}
-
-.rarity-default {
-  background: #eeeeee;
-  color: #333;
-}
-
-.rarity-rare {
-  /* background: #fff0c2;/ */
-  background: #fef3c7;
-  /* color: #7a5700; */
-  color: #92400e;
-}
-
-.rarity-uncommon {
-  /* background: #dff3e4; */
-  background: #dbeafe;
-  /* color: #1f6b36; */
-  color: #1d4ed8;
-}
-
-.search-input {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  margin-bottom: 16px;
-  max-width: 420px;
-  padding: 10px 12px;
-  width: 100%;
-}
-
-.set-card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 16px;
-  background-color: #fafafa;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: cover, auto 90%, cover;
-  background-position: center, right 12px center, center;
-}
-
-.set-card h3 {
-  margin: 0 0 6px;
-}
-
-.set-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.set-card-header h3 {
-  margin: 0;
-}
-
-.set-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-}
-
-.set-card-meta {
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-.set-card-selected {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
-}
-
-.set-dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 260px);
-  gap: 16px;
-  margin: 20px 0;
-  width: 100%;
-  justify-content: start;
-}
-
-.set-era {
-  font-size: 0.9rem;
-  opacity: 0.75;
-  margin-bottom: 10px;
-}
-
-.set-progress-container {
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 999px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.set-progress-fill {
-  height: 100%;
-  background: #2563eb;
-  border-radius: 999px;
-  transition: width 0.2s ease;
-}
-
-.set-progress-text {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.set-status {
-  padding: 3px 8px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.set-status-complete {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.set-status-empty {
-  background: #f3f4f6;
-  color: #4b5563;
-}
-
-.set-status-progress {
-  background: #dbeafe;
-  color: #1e40af;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .stat-card {
@@ -430,12 +281,6 @@ body {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   background: #fafafa;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
 }
 
 .stat-header {
@@ -453,6 +298,18 @@ body {
   font-weight: 600;
 }
 
+.stat-percent {
+  font-size: 0.85rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.stat-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
 .stat-mini-bar {
   height: 6px;
   background: #e5e7eb;
@@ -467,35 +324,74 @@ body {
   transition: width 0.2s ease;
 }
 
-.stats-panel {
-  margin: 20px 0;
-  padding: 16px;
+
+
+/* =============================================
+  COLLECTION PAGE - CARD GRID AND CARD STATES
+  ============================================= */
+
+.card-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.card {
+  background: #fafafa;
   border: 1px solid #ddd;
   border-radius: 10px;
-  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 14px;
+  transition: transform 0.15s, box-shadow 0.15s ease;
 }
 
-.stats-panel h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
+.card:hover {
+  transform: translate(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.0);
 }
 
-.stat-percent {
-  font-size: 0.85rem;
-  font-weight: 800;
-  white-space: nowrap;
+.card-complete {
+  border-color: #22c55e;
+  background: #f0fdf4;
 }
 
-.stats-sidebar {
-  position: sticky;
-  top: 20px;
-  align-self: start;
+.card-missing {
+  border-color: #e5e7eb;
+  background: #ffffff;
+  opacity: 0.9;
 }
 
-.stat-value {
-  font-size: 1.05rem;
+.card-partial {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.card-image {
+  border-radius: 6px;
+  display: block;
+  height: auto;
+  margin: 0 auto 10px;
+  max-width: 140px;
+  width: 100%;
+}
+
+.card-header {
   font-weight: 700;
   margin-bottom: 8px;
+  text-align: center;
+}
+
+.card-status-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
 }
 
 .status-badge {
@@ -524,6 +420,56 @@ body {
   color: #92400e;
 }
 
+
+
+/* =============================================
+  COLLECTION PAGE - CARD GRARITY BADGES
+  ============================================= */
+
+.rarity-badge {
+  align-self: flex-start;
+  /* background: #eeeeee; */
+  border-radius: 999px;
+  /* color: #333; */
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+}
+
+.rarity-common {
+  /* background: #e9ecef; */
+  background: #f1f3f5;
+  /* color: #343a40; */
+  color: #495057;
+}
+
+.rarity-uncommon {
+  /* background: #dff3e4; */
+  background: #dbeafe;
+  /* color: #1f6b36; */
+  color: #1d4ed8;
+}
+
+.rarity-rare {
+  /* background: #fff0c2;/ */
+  background: #fef3c7;
+  /* color: #7a5700; */
+  color: #92400e;
+}
+
+.rarity-default {
+  background: #eeeeee;
+  color: #333;
+}
+
+
+
+/* =============================================
+  COLLECTION PAGE - CARD TYPE CHIPS
+  ============================================= */
+
 .type-chip {
   border-radius: 999px;
   display: inline-block;
@@ -535,11 +481,6 @@ body {
 
 .type-colorless {
   background: #f3f4f6;
-  color: #374151;
-}
-
-.type-default {
-  background: #e5e7eb;
   color: #374151;
 }
 
@@ -573,6 +514,15 @@ body {
   color: #1e40af;
 }
 
+.type-default {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* =============================================
+  COLLECTION PAGE - CARD VARIANTS
+  ============================================= */
+
 .variant-list {
   margin-top: 10px;
 }
@@ -583,6 +533,147 @@ body {
   gap: 8px;
   margin-top: 6px;
 }
+
+
+
+/* =============================================
+  COLLECTION PAGE - PAGE STRUCTURE
+  ============================================= */
+
+.profile-builder-page {
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+.profile-builder-header {
+  margin-bottom: 18px;
+}
+
+.profile-builder-header h2 {
+  margin-bottom: 6px;
+}
+
+.profile-builder-header p {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.profile-builder-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.profile-builder-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+
+
+/* =============================================
+  COLLECTION PAGE - PAGE NAME
+  ============================================= */
+
+.profile-field-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.profile-name-input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  max-width: 420px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+
+
+/* =============================================
+  COLLECTION PAGE - FINISH AND RARITY OPTIONS
+  ============================================= */
+
+.collection-scope-panel {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.collection-scope-title {
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+.collection-scope-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.collection-scope-option input {
+  cursor: pointer;
+}
+
+
+
+/* =============================================
+  COLLECTION PAGE - SET OPTIONS AND NOTES
+  ============================================= */
+
+.profile-note {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.profile-set-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.profile-set-option {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.profile-set-option span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-set-option small {
+  color: #6b7280;
+  font-size: 0.78rem;
+}
+
+
+
+/* =============================================
+  COLLECTION PAGE - LATOUT
+  ============================================= */
 
 @media (max-width: 900px) {
   .collection-layout {
