@@ -189,6 +189,74 @@ public class PokemonImportService {
             return variantsCreated;
         }
 
+        // ---------------------------------------------------------------------------
+        // REVERSE HOLO VARIANT REPORTING HELPERS
+        // ---------------------------------------------------------------------------
+        // These methods do not create or modify card data.
+        // They only count existing reverse-holo variants so import endpoints can report:
+        // 1. how many reverse-holo variants were created during the current run
+        // 2. how many reverse-holo variants now exist in the database after the run
+        // ---------------------------------------------------------------------------
+
+        @Transactional(readOnly = true)
+        public int countReverseHoloVariantsForAllCards(UUID setId) {
+            int reverseHoloCount = 0;
+
+            List<CardEntity> cards = cardRepository.findBySet_IdOrderByCardNumberAsc(setId);
+
+            for (CardEntity card : cards) {
+                boolean exists = cardVariantRepository
+                        .findByCard_IdAndFinish(card.getId(), CardFinish.REVERSE_HOLO)
+                        .isPresent();
+
+                if (exists) {
+                    reverseHoloCount++;
+                }
+            }
+
+            return reverseHoloCount;
+        }
+
+        @Transactional(readOnly = true)
+            public int countReverseHoloVariantsForNumberRange(
+                    UUID setId,
+                    int firstCardNumber,
+                    int lastCardNumber
+            ) {
+                int reverseHoloCount = 0;
+
+                List<CardEntity> cards = cardRepository.findBySet_IdOrderByCardNumberAsc(setId);
+
+                for (CardEntity card : cards) {
+                    Integer numericCardNumber = getNumericCardNumber(card.getCardNumber());
+
+                    if (numericCardNumber == null) {
+                        continue;
+                    }
+
+                    if (numericCardNumber < firstCardNumber || numericCardNumber > lastCardNumber) {
+                        continue;
+                    }
+
+                    boolean exists = cardVariantRepository
+                            .findByCard_IdAndFinish(card.getId(), CardFinish.REVERSE_HOLO)
+                            .isPresent();
+
+                    if (exists) {
+                        reverseHoloCount++;
+                    }
+                }
+
+                return reverseHoloCount;
+            }
+
+        // ---------------------------------------------------------------------------
+        // CARD NUMBER PARSING HELPERS
+        // ---------------------------------------------------------------------------
+        // Some Pokémon card numbers are strings like "106/105".
+        // Reverse-holo rules only need the leading numeric card number.
+        // ---------------------------------------------------------------------------
+
         private Integer getNumericCardNumber(String cardNumber) {
             if (cardNumber == null || cardNumber.isBlank()) {
                 return null;

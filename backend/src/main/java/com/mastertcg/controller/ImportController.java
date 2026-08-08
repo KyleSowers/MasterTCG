@@ -22,6 +22,49 @@ import com.mastertcg.importer.PokemonSetImportConfig;
 @RequestMapping("/import")
 public class ImportController {
 
+    // ---------------------------------------------------------------------------
+    // SPECIAL SET IDS
+    // ---------------------------------------------------------------------------
+    // These sets need reverse-holo catalog completion after their normal JSON
+    // card imports run.
+    // ---------------------------------------------------------------------------
+
+    private static final UUID LEGENDARY_COLLECTION_SET_ID =
+            UUID.fromString("cccccccc-cccc-cccc-cccc-cccccccccccc");
+
+    private static final UUID EXPEDITION_SET_ID =
+            UUID.fromString("dddddddd-dddd-dddd-dddd-dddddddddddd");
+
+    private static final UUID AQUAPOLIS_SET_ID =
+            UUID.fromString("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee");
+
+    private static final UUID SKYRIDGE_SET_ID =
+            UUID.fromString("ffffffff-ffff-ffff-ffff-ffffffffffff");
+
+
+    // ---------------------------------------------------------------------------
+    // REVERSE HOLO CATALOG RULES
+    // ---------------------------------------------------------------------------
+    // These ranges define which cards should have reverse-holo variants.
+    // The expected totals are used in the import response so developers can verify
+    // the catalog after a fresh DB setup or repeated import run.
+    // ---------------------------------------------------------------------------
+
+    private static final int LEGENDARY_REVERSE_HOLO_EXPECTED_TOTAL = 110;
+
+    private static final int EXPEDITION_REVERSE_HOLO_FIRST_CARD = 1;
+    private static final int EXPEDITION_REVERSE_HOLO_LAST_CARD = 159;
+    private static final int EXPEDITION_REVERSE_HOLO_EXPECTED_TOTAL = 159;
+
+    private static final int AQUAPOLIS_REVERSE_HOLO_FIRST_CARD = 1;
+    private static final int AQUAPOLIS_REVERSE_HOLO_LAST_CARD = 147;
+    private static final int AQUAPOLIS_REVERSE_HOLO_EXPECTED_TOTAL = 147;
+
+    private static final int SKYRIDGE_REVERSE_HOLO_FIRST_CARD = 1;
+    private static final int SKYRIDGE_REVERSE_HOLO_LAST_CARD = 150;
+    private static final int SKYRIDGE_REVERSE_HOLO_EXPECTED_TOTAL = 150;
+
+
     private final PokemonImportService importService;
     private final PokemonImportCatalog importCatalog;
 
@@ -89,42 +132,107 @@ public class ImportController {
                 result.append(importPokemonSet("ecard2")).append("\n");
                 result.append(importPokemonSet("ecard3")).append("\n");
 
-                int legendaryReverseHolos = importService.ensureReverseHoloVariantsForAllCards(
-                        UUID.fromString("cccccccc-cccc-cccc-cccc-cccccccccccc")
+                // ---------------------------------------------------------------------------
+                // REVERSE HOLO VARIANT CREATION
+                // ---------------------------------------------------------------------------
+                // These calls complete reverse-holo variants after the base card imports.
+                // They are safe to rerun because the service checks whether each variant
+                // already exists before creating it.
+                // ---------------------------------------------------------------------------
+
+                int legendaryReverseHolosCreated = importService.ensureReverseHoloVariantsForAllCards(
+                        LEGENDARY_COLLECTION_SET_ID
                 );
 
-                int expeditionReverseHolos = importService.ensureReverseHoloVariantsForNumberRange(
-                        UUID.fromString("dddddddd-dddd-dddd-dddd-dddddddddddd"),
-                        1,
-                        159
+                int expeditionReverseHolosCreated = importService.ensureReverseHoloVariantsForNumberRange(
+                        EXPEDITION_SET_ID,
+                        EXPEDITION_REVERSE_HOLO_FIRST_CARD,
+                        EXPEDITION_REVERSE_HOLO_LAST_CARD
                 );
 
-                int aquapolisReverseHolos = importService.ensureReverseHoloVariantsForNumberRange(
-                        UUID.fromString("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
-                        1,
-                        147
+                int aquapolisReverseHolosCreated = importService.ensureReverseHoloVariantsForNumberRange(
+                        AQUAPOLIS_SET_ID,
+                        AQUAPOLIS_REVERSE_HOLO_FIRST_CARD,
+                        AQUAPOLIS_REVERSE_HOLO_LAST_CARD
                 );
 
-                int skyridgeReverseHolos = importService.ensureReverseHoloVariantsForNumberRange(
-                        UUID.fromString("ffffffff-ffff-ffff-ffff-ffffffffffff"),
-                        1,
-                        150
+                int skyridgeReverseHolosCreated = importService.ensureReverseHoloVariantsForNumberRange(
+                        SKYRIDGE_SET_ID,
+                        SKYRIDGE_REVERSE_HOLO_FIRST_CARD,
+                        SKYRIDGE_REVERSE_HOLO_LAST_CARD
                 );
 
-                result.append("Legendary Collection reverse holos created: ")
-                        .append(legendaryReverseHolos)
+
+                // ---------------------------------------------------------------------------
+                // REVERSE HOLO VARIANT REPORTING
+                // ---------------------------------------------------------------------------
+                // Count the final database state after creation. This helps developers tell
+                // the difference between:
+                // - created this run: 0 because the data already existed
+                // - total now: too low because catalog data is missing
+                // ---------------------------------------------------------------------------
+
+                int legendaryReverseHoloTotal = importService.countReverseHoloVariantsForAllCards(
+                        LEGENDARY_COLLECTION_SET_ID
+                );
+
+                int expeditionReverseHoloTotal = importService.countReverseHoloVariantsForNumberRange(
+                        EXPEDITION_SET_ID,
+                        EXPEDITION_REVERSE_HOLO_FIRST_CARD,
+                        EXPEDITION_REVERSE_HOLO_LAST_CARD
+                );
+
+                int aquapolisReverseHoloTotal = importService.countReverseHoloVariantsForNumberRange(
+                        AQUAPOLIS_SET_ID,
+                        AQUAPOLIS_REVERSE_HOLO_FIRST_CARD,
+                        AQUAPOLIS_REVERSE_HOLO_LAST_CARD
+                );
+
+                int skyridgeReverseHoloTotal = importService.countReverseHoloVariantsForNumberRange(
+                        SKYRIDGE_SET_ID,
+                        SKYRIDGE_REVERSE_HOLO_FIRST_CARD,
+                        SKYRIDGE_REVERSE_HOLO_LAST_CARD
+                );
+
+
+                // ---------------------------------------------------------------------------
+                // IMPORT SUMMARY RESPONSE
+                // ---------------------------------------------------------------------------
+                // Report both values:
+                // - created this run
+                // - total now in database
+                // ---------------------------------------------------------------------------
+
+                result.append("Legendary Collection reverse holos: created this run ")
+                        .append(legendaryReverseHolosCreated)
+                        .append(", total now ")
+                        .append(legendaryReverseHoloTotal)
+                        .append(" / expected ")
+                        .append(LEGENDARY_REVERSE_HOLO_EXPECTED_TOTAL)
                         .append("\n");
 
-                result.append("Expedition reverse holos created: ")
-                        .append(expeditionReverseHolos)
+                result.append("Expedition reverse holos: created this run ")
+                        .append(expeditionReverseHolosCreated)
+                        .append(", total now ")
+                        .append(expeditionReverseHoloTotal)
+                        .append(" / expected ")
+                        .append(EXPEDITION_REVERSE_HOLO_EXPECTED_TOTAL)
                         .append("\n");
 
-                result.append("Aquapolis reverse holos created: ")
-                        .append(aquapolisReverseHolos)
+                result.append("Aquapolis reverse holos: created this run ")
+                        .append(aquapolisReverseHolosCreated)
+                        .append(", total now ")
+                        .append(aquapolisReverseHoloTotal)
+                        .append(" / expected ")
+                        .append(AQUAPOLIS_REVERSE_HOLO_EXPECTED_TOTAL)
                         .append("\n");
 
-                result.append("Skyridge reverse holos created: ")
-                        .append(skyridgeReverseHolos)
+                result.append("Skyridge reverse holos: created this run ")
+                        .append(skyridgeReverseHolosCreated)
+                        .append(", total now ")
+                        .append(skyridgeReverseHoloTotal)
+                        .append(" / expected ")
+                        .append(SKYRIDGE_REVERSE_HOLO_EXPECTED_TOTAL)
                         .append("\n");
 
                 return result.toString();
