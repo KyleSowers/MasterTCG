@@ -115,5 +115,92 @@ public class PokemonImportService {
                 variantsSkipped
         );
     }
+
+
+    // ---------------------------------------------------------------------------
+// REVERSE HOLO VARIANT REPAIR / CATALOG COMPLETION HELPERS
+// ---------------------------------------------------------------------------
+
+    @Transactional
+        public int ensureReverseHoloVariantsForAllCards(UUID setId) {
+            int variantsCreated = 0;
+
+            List<CardEntity> cards = cardRepository.findBySet_IdOrderByCardNumberAsc(setId);
+
+            for (CardEntity card : cards) {
+                boolean alreadyExists = cardVariantRepository
+                        .findByCard_IdAndFinish(card.getId(), CardFinish.REVERSE_HOLO)
+                        .isPresent();
+
+                if (alreadyExists) {
+                    continue;
+                }
+
+                CardVariantEntity reverseHoloVariant = new CardVariantEntity();
+                reverseHoloVariant.setId(UUID.randomUUID());
+                reverseHoloVariant.setCard(card);
+                reverseHoloVariant.setFinish(CardFinish.REVERSE_HOLO);
+
+                cardVariantRepository.save(reverseHoloVariant);
+                variantsCreated++;
+            }
+
+            return variantsCreated;
+        }
+
+    @Transactional
+        public int ensureReverseHoloVariantsForNumberRange(
+                UUID setId,
+                int firstCardNumber,
+                int lastCardNumber
+        ) {
+            int variantsCreated = 0;
+
+            List<CardEntity> cards = cardRepository.findBySet_IdOrderByCardNumberAsc(setId);
+
+            for (CardEntity card : cards) {
+                Integer numericCardNumber = getNumericCardNumber(card.getCardNumber());
+
+                if (numericCardNumber == null) {
+                    continue;
+                }
+
+                if (numericCardNumber < firstCardNumber || numericCardNumber > lastCardNumber) {
+                    continue;
+                }
+
+                boolean alreadyExists = cardVariantRepository
+                        .findByCard_IdAndFinish(card.getId(), CardFinish.REVERSE_HOLO)
+                        .isPresent();
+
+                if (alreadyExists) {
+                    continue;
+                }
+
+                CardVariantEntity reverseHoloVariant = new CardVariantEntity();
+                reverseHoloVariant.setId(UUID.randomUUID());
+                reverseHoloVariant.setCard(card);
+                reverseHoloVariant.setFinish(CardFinish.REVERSE_HOLO);
+
+                cardVariantRepository.save(reverseHoloVariant);
+                variantsCreated++;
+            }
+
+            return variantsCreated;
+        }
+
+        private Integer getNumericCardNumber(String cardNumber) {
+            if (cardNumber == null || cardNumber.isBlank()) {
+                return null;
+            }
+
+            String digitsOnly = cardNumber.replaceAll("[^0-9]", "");
+
+            if (digitsOnly.isBlank()) {
+                return null;
+            }
+
+            return Integer.parseInt(digitsOnly);
+        }
     
 }

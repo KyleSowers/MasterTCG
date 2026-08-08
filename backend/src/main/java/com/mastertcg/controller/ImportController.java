@@ -1,6 +1,7 @@
 package com.mastertcg.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -64,4 +65,68 @@ public class ImportController {
             int variantsCreated,
             int variantsSkipped
         ) {}
+
+        // ---------------------------------------------------------------------------
+        // FULL CATALOG IMPORT
+        // ---------------------------------------------------------------------------
+
+        @PostMapping("/pokemon/all")
+                public String importAllPokemonSets() {
+                StringBuilder result = new StringBuilder();
+
+                result.append(importPokemonSet("base1")).append("\n");
+                result.append(importPokemonSet("base2")).append("\n");
+                result.append(importPokemonSet("base3")).append("\n");
+                result.append(importPokemonSet("base5")).append("\n");
+                result.append(importPokemonSet("gym1")).append("\n");
+                result.append(importPokemonSet("gym2")).append("\n");
+                result.append(importPokemonSet("neo1")).append("\n");
+                result.append(importPokemonSet("neo2")).append("\n");
+                result.append(importPokemonSet("neo3")).append("\n");
+                result.append(importPokemonSet("neo4")).append("\n");
+                result.append(importPokemonSet("base6")).append("\n");
+                result.append(importPokemonSet("ecard1")).append("\n");
+                result.append(importPokemonSet("ecard2")).append("\n");
+                result.append(importPokemonSet("ecard3")).append("\n");
+
+                int legendaryReverseHolos = importService.ensureReverseHoloVariantsForAllCards(
+                        UUID.fromString("cccccccc-cccc-cccc-cccc-cccccccccccc")
+                );
+
+                int expeditionReverseHolos = importService.ensureReverseHoloVariantsForNumberRange(
+                        UUID.fromString("dddddddd-dddd-dddd-dddd-dddddddddddd"),
+                        1,
+                        159
+                );
+
+                int aquapolisReverseHolos = importService.ensureReverseHoloVariantsForNumberRange(
+                        UUID.fromString("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
+                        1,
+                        147
+                );
+
+                int skyridgeReverseHolos = importService.ensureReverseHoloVariantsForNumberRange(
+                        UUID.fromString("ffffffff-ffff-ffff-ffff-ffffffffffff"),
+                        1,
+                        150
+                );
+
+                result.append("Legendary Collection reverse holos created: ")
+                        .append(legendaryReverseHolos)
+                        .append("\n");
+
+                result.append("Expedition reverse holos created: ")
+                        .append(expeditionReverseHolos)
+                        .append("\n");
+
+                result.append("Aquapolis reverse holos created: ")
+                        .append(aquapolisReverseHolos)
+                        .append("\n");
+
+                result.append("Skyridge reverse holos created: ")
+                        .append(skyridgeReverseHolos)
+                        .append("\n");
+
+                return result.toString();
+                }
 }

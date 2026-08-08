@@ -350,6 +350,24 @@
   </div>
 
   <div class="profile-builder-card">
+    <h3>Collection Style</h3>
+
+    <p class="profile-note">
+      Choose a starting point for this profile. You can still customize the rules below.
+    </p>
+
+    <select
+      class="profile-style-select"
+      [ngModel]="collectionStyle"
+      (ngModelChange)="onCollectionStyleChanged($event)"
+    >
+      <option value="MAIN_SET">Main Set</option>
+      <option value="MASTER_SET">Master Set</option>
+      <option value="CUSTOM">Custom</option>
+    </select>
+  </div>
+
+  <div class="profile-builder-card">
     <h3>Finishes</h3>
 
     <div class="collection-scope-panel">

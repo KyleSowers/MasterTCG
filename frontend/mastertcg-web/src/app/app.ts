@@ -15,6 +15,7 @@ export class App implements OnInit {
   activePage: 'COLLECTION' | 'PROFILE_BUILDER' = 'COLLECTION';
   cards: CardDto[] = [];
   collectionProfileName = 'My Collection Profile';
+  collectionStyle: 'MAIN_SET' | 'MASTER_SET' | 'CUSTOM' = 'CUSTOM';
   collectionScope = {
     includeNormal: true,
     includeHolo: true,
@@ -637,7 +638,57 @@ toggleOwned(cardId: string) {
   // ---------------------------------------------------------------------------
   // COLLECTION PROFILE BUILDER
   // ---------------------------------------------------------------------------
-onCollectionScopeChanged() {
+
+onCollectionStyleChanged(style: 'MAIN_SET' | 'MASTER_SET' | 'CUSTOM'): void {
+  this.collectionStyle = style;
+
+  switch (style) {
+    case 'MAIN_SET':
+      this.applyMainSetStyle();
+      break;
+    case 'MASTER_SET':
+      this.applyMasterSetStyle();
+      break;
+    case 'CUSTOM':
+      break;
+  }
+
+  this.onCollectionScopeChanged(false);
+}
+
+applyMainSetStyle(): void {
+    this.collectionScope.includeNormal = true;
+    this.collectionScope.includeHolo = true;
+    this.collectionScope.includeReverseHolo = false;
+    this.collectionScope.includeSpecialFinishes = false;
+
+    this.collectionScope.includeCommon = true;
+    this.collectionScope.includeUncommon = true;
+    this.collectionScope.includeRare = true;
+
+    this.collectionScope.includeMainCards = true;
+    this.collectionScope.includeSecretCards = false;
+  }
+
+applyMasterSetStyle(): void {
+    this.collectionScope.includeNormal = true;
+    this.collectionScope.includeHolo = true;
+    this.collectionScope.includeReverseHolo = true;
+    this.collectionScope.includeSpecialFinishes = true;
+
+    this.collectionScope.includeCommon = true;
+    this.collectionScope.includeUncommon = true;
+    this.collectionScope.includeRare = true;
+
+    this.collectionScope.includeMainCards = true;
+    this.collectionScope.includeSecretCards = true;
+  }
+
+onCollectionScopeChanged(markCustom = true) {
+    if (markCustom) {
+      this.collectionStyle = 'CUSTOM';
+    }
+
     const availableFinishes = this.getAvailableFinishes();
 
     if (

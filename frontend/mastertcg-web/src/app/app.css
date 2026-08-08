@@ -594,6 +594,16 @@ body {
   width: 100%;
 }
 
+.profile-style-select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 12px;
+  max-width: 260px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
 
 
 /* =============================================
