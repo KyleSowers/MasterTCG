@@ -784,6 +784,85 @@ toggleProfileEra(era: string, event: Event): void {
   }
 }
 
+// -----------------------------------------------------------------------------
+// COLLECTION PROFILE SUMMARY HELPERS
+// -----------------------------------------------------------------------------
+// These methods convert the current profile settings into readable labels.
+// They are used by the Collection Profile page so collectors can quickly
+// understand what their active profile is tracking.
+// -----------------------------------------------------------------------------
+
+getCollectionStyleLabel(): string {
+  switch (this.collectionStyle) {
+    case 'MAIN_SET':
+      return 'Main Set';
+    case 'MASTER_SET':
+      return 'Master Set';
+    case 'CUSTOM':
+      return 'Custom';
+    default:
+      return 'Custom';
+  }
+}
+
+getSelectedProfileSetCount(): number {
+  return this.selectedProfileSetIds.length;
+}
+
+getIncludedFinishLabels(): string[] {
+  const finishes: string[] = [];
+
+  if (this.collectionScope.includeNormal) {
+    finishes.push('Normal');
+  }
+
+  if (this.collectionScope.includeHolo) {
+    finishes.push('Holo');
+  }
+
+  if (this.collectionScope.includeReverseHolo) {
+    finishes.push('Reverse Holo');
+  }
+
+  if (this.collectionScope.includeSpecialFinishes) {
+    finishes.push('Special Finishes');
+  }
+
+  return finishes;
+}
+
+getIncludedRarityLabels(): string[] {
+  const rarities: string[] = [];
+
+  if (this.collectionScope.includeCommon) {
+    rarities.push('Common');
+  }
+
+  if (this.collectionScope.includeUncommon) {
+    rarities.push('Uncommon');
+  }
+
+  if (this.collectionScope.includeRare) {
+    rarities.push('Rare');
+  }
+
+  return rarities;
+}
+
+getCatalogScopeLabels(): string[] {
+  const catalogScope: string[] = [];
+
+  if (this.collectionScope.includeMainCards) {
+    catalogScope.push('Main Set Cards');
+  }
+
+  if (this.collectionScope.includeSecretCards) {
+    catalogScope.push('Secret Cards');
+  }
+
+  return catalogScope;
+}
+
   // ---------------------------------------------------------------------------
   // COLLECTION SCOPE HELPERS
   // ---------------------------------------------------------------------------

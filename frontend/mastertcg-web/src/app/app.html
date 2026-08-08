@@ -337,186 +337,232 @@
     </p>
   </div>
 
-  <div class="profile-builder-card">
-    <label class="profile-field-label">
-      Profile name
-    </label>
+  <div class="profile-builder-layout">
+    <div class="profile-builder-main">
 
-    <input
-      type="text"
-      class="profile-name-input"
-      [(ngModel)]="collectionProfileName"
-    />
-  </div>
-
-  <div class="profile-builder-card">
-    <h3>Collection Style</h3>
-
-    <p class="profile-note">
-      Choose a starting point for this profile. You can still customize the rules below.
-    </p>
-
-    <select
-      class="profile-style-select"
-      [ngModel]="collectionStyle"
-      (ngModelChange)="onCollectionStyleChanged($event)"
-    >
-      <option value="MAIN_SET">Main Set</option>
-      <option value="MASTER_SET">Master Set</option>
-      <option value="CUSTOM">Custom</option>
-    </select>
-  </div>
-
-  <div class="profile-builder-card">
-    <h3>Finishes</h3>
-
-    <div class="collection-scope-panel">
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeNormal"
-          (change)="onCollectionScopeChanged()"
-        />
-        Normal
-      </label>
-
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeHolo"
-          (change)="onCollectionScopeChanged()"
-        />
-        Holo
-      </label>
-
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeReverseHolo"
-          (change)="onCollectionScopeChanged()"
-        />
-        Reverse Holo
-      </label>
-
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeSpecialFinishes"
-          (change)="onCollectionScopeChanged()"
-        />
-        Special Finishes
-      </label>
-    </div>
-  </div>
-  <div class="profile-builder-card">
-    <h3>Rarities</h3>
-
-    <div class="collection-scope-panel">
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeCommon"
-          (change)="onCollectionScopeChanged()"
-        />
-        Common
-      </label>
-
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeUncommon"
-          (change)="onCollectionScopeChanged()"
-        />
-        Uncommon
-      </label>
-
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeRare"
-          (change)="onCollectionScopeChanged()"
-        />
-        Rare
-      </label>
-    </div>
-  </div>
-  <div class="profile-builder-card">
-    <h3>Catalog Scope</h3>
-
-    <p class="profile-note">
-      Choose whether this profile tracks only the main set checklist, secret cards,
-      or both.
-    </p>
-
-    <div class="collection-scope-panel">
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeMainCards"
-          (change)="onCollectionScopeChanged()"
-        />
-        Main set cards
-      </label>
-
-      <label class="collection-scope-option">
-        <input
-          type="checkbox"
-          [(ngModel)]="collectionScope.includeSecretCards"
-          (change)="onCollectionScopeChanged()"
-        />
-        Secret cards
-      </label>
-    </div>
-  </div>
-  <div class="profile-builder-card">
-  <h3>Sets by Era</h3>
-
-  <p class="profile-note">
-    Choose entire eras or select individual sets inside each era.
-  </p>
-
-  <div class="profile-era-list">
-    <div
-      class="profile-era-group"
-      *ngFor="let era of getAvailableEras()"
-    >
-      <label class="profile-era-option">
-        <input
-          type="checkbox"
-          [checked]="isEraFullySelected(era)"
-          (change)="toggleProfileEra(era, $event)"
-        />
-
-        <span>
-          <strong>{{ era }}</strong>
-          <small>
-            {{ getSetsForEra(era).length }} sets
-            <ng-container *ngIf="isEraPartiallySelected(era)">
-              · partially selected
-            </ng-container>
-          </small>
-        </span>
-      </label>
-
-      <div class="profile-set-list profile-set-list-nested">
-        <label
-          class="profile-set-option"
-          *ngFor="let set of getSetsForEra(era)"
-        >
-          <input
-            type="checkbox"
-            [checked]="isSetInCollectionProfile(set)"
-            (change)="toggleProfileSet(set, $event)"
-          />
-
-          <span>
-            <strong>{{ set.name }}</strong>
-            <small>{{ set.era }}</small>
-          </span>
+      <div class="profile-builder-card">
+        <label class="profile-field-label">
+          Profile name
         </label>
+
+        <input
+          type="text"
+          class="profile-name-input"
+          [(ngModel)]="collectionProfileName"
+        />
       </div>
+
+      <div class="profile-builder-card">
+        <h3>Collection Style</h3>
+
+        <p class="profile-note">
+          Choose a starting point for this profile. You can still customize the rules below.
+        </p>
+
+        <select
+          class="profile-style-select"
+          [ngModel]="collectionStyle"
+          (ngModelChange)="onCollectionStyleChanged($event)"
+        >
+          <option value="MAIN_SET">Main Set</option>
+          <option value="MASTER_SET">Master Set</option>
+          <option value="CUSTOM">Custom</option>
+        </select>
+      </div>
+
+      <div class="profile-builder-card">
+        <h3>Finishes</h3>
+
+        <div class="collection-scope-panel">
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeNormal"
+              (change)="onCollectionScopeChanged()"
+            />
+            Normal
+          </label>
+
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeHolo"
+              (change)="onCollectionScopeChanged()"
+            />
+            Holo
+          </label>
+
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeReverseHolo"
+              (change)="onCollectionScopeChanged()"
+            />
+            Reverse Holo
+          </label>
+
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeSpecialFinishes"
+              (change)="onCollectionScopeChanged()"
+            />
+            Special Finishes
+          </label>
+        </div>
+      </div>
+
+      <div class="profile-builder-card">
+        <h3>Rarities</h3>
+
+        <div class="collection-scope-panel">
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeCommon"
+              (change)="onCollectionScopeChanged()"
+            />
+            Common
+          </label>
+
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeUncommon"
+              (change)="onCollectionScopeChanged()"
+            />
+            Uncommon
+          </label>
+
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeRare"
+              (change)="onCollectionScopeChanged()"
+            />
+            Rare
+          </label>
+        </div>
+      </div>
+
+      <div class="profile-builder-card">
+        <h3>Catalog Scope</h3>
+
+        <p class="profile-note">
+          Choose whether this profile tracks only the main set checklist, secret cards,
+          or both.
+        </p>
+
+        <div class="collection-scope-panel">
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeMainCards"
+              (change)="onCollectionScopeChanged()"
+            />
+            Main set cards
+          </label>
+
+          <label class="collection-scope-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="collectionScope.includeSecretCards"
+              (change)="onCollectionScopeChanged()"
+            />
+            Secret cards
+          </label>
+        </div>
+      </div>
+
+      <div class="profile-builder-card">
+        <h3>Sets by Era</h3>
+
+        <p class="profile-note">
+          Choose entire eras or select individual sets inside each era.
+        </p>
+
+        <div class="profile-era-list">
+          <div
+            class="profile-era-group"
+            *ngFor="let era of getAvailableEras()"
+          >
+            <label class="profile-era-option">
+              <input
+                type="checkbox"
+                [checked]="isEraFullySelected(era)"
+                (change)="toggleProfileEra(era, $event)"
+              />
+
+              <span>
+                <strong>{{ era }}</strong>
+                <small>
+                  {{ getSetsForEra(era).length }} sets
+                  <ng-container *ngIf="isEraPartiallySelected(era)">
+                    · partially selected
+                  </ng-container>
+                </small>
+              </span>
+            </label>
+
+            <div class="profile-set-list profile-set-list-nested">
+              <label
+                class="profile-set-option"
+                *ngFor="let set of getSetsForEra(era)"
+              >
+                <input
+                  type="checkbox"
+                  [checked]="isSetInCollectionProfile(set)"
+                  (change)="toggleProfileSet(set, $event)"
+                />
+
+                <span>
+                  <strong>{{ set.name }}</strong>
+                  <small>{{ set.era }}</small>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <aside class="profile-summary-sidebar">
+      <div class="profile-builder-card profile-summary-card">
+        <h3>Profile Summary</h3>
+
+        <p class="profile-note">
+          Review what this collection profile currently tracks.
+        </p>
+
+        <div class="profile-summary-grid">
+          <div class="profile-summary-item">
+            <span>Style</span>
+            <strong>{{ getCollectionStyleLabel() }}</strong>
+          </div>
+
+          <div class="profile-summary-item">
+            <span>Selected Sets</span>
+            <strong>{{ getSelectedProfileSetCount() }}</strong>
+          </div>
+
+          <div class="profile-summary-item">
+            <span>Finishes</span>
+            <strong>{{ getIncludedFinishLabels().join(', ') || 'None selected' }}</strong>
+          </div>
+
+          <div class="profile-summary-item">
+            <span>Rarities</span>
+            <strong>{{ getIncludedRarityLabels().join(', ') || 'None selected' }}</strong>
+          </div>
+
+          <div class="profile-summary-item">
+            <span>Catalog Scope</span>
+            <strong>{{ getCatalogScopeLabels().join(', ') || 'None selected' }}</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
   </div>
-</div>
 
 </section>

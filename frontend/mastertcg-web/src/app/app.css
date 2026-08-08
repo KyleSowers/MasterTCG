@@ -541,8 +541,9 @@ body {
   ============================================= */
 
 .profile-builder-page {
-  max-width: 900px;
   margin-top: 20px;
+  max-width: none;
+  width: 100%;
 }
 
 .profile-builder-header {
@@ -570,6 +571,27 @@ body {
 .profile-builder-card h3 {
   margin-top: 0;
   margin-bottom: 12px;
+}
+
+.profile-builder-layout {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.profile-builder-main {
+  min-width: 0;
+}
+
+.profile-summary-sidebar {
+  position: sticky;
+  top: 20px;
+}
+
+.profile-summary-sidebar .profile-summary-card {
+  margin-bottom: 0;
 }
 
 
@@ -602,6 +624,41 @@ body {
   max-width: 260px;
   padding: 10px 12px;
   width: 100%;
+}
+
+
+
+/* =============================================
+  COLLECTION PAGE - PROFILE SUMMARY
+  ============================================= */
+
+.profile-summary-card {
+  background: #f8fafc;
+  border-left: 4px solid #2563eb;
+}
+
+.profile-summary-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.profile-summary-item {
+  background: #f7f7f7;
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+}
+
+.profile-summary-item span {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.profile-summary-item strong {
+  color: #222;
+  font-size: 0.95rem;
 }
 
 
@@ -737,6 +794,18 @@ body {
   }
 
   .stats-sidebar {
+    position: static;
+  }
+
+ .profile-builder-layout {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+  width: 100%;
+}
+
+  .profile-summary-sidebar {
     position: static;
   }
 }
