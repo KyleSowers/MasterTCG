@@ -80,6 +80,17 @@
       <strong>{{ collectionProfileName }}</strong>
     </div>
 
+    <!-- <div style="border: 1px solid red; padding: 10px; margin: 10px 0;">
+  <strong>Debug</strong><br>
+  Selected set: {{ selectedSet?.name || 'none' }}<br>
+  Raw cards loaded: {{ cards.length }}<br>
+  Filtered cards: {{ getFilteredCards().length }}<br>
+  Visible variants: {{ getVisibleVariantCount() }}<br>
+  Selected rarity: {{ selectedRarity }}<br>
+  Selected finish: {{ selectedFinish }}<br>
+  Selected ownership: {{ selectedOwnership }}
+</div> -->
+
     <div class="progress-container">
       <div class="progress-fill"
         [style.width.%]="getCompletionPercentage()"
@@ -408,6 +419,34 @@
           (change)="onCollectionScopeChanged()"
         />
         Rare
+      </label>
+    </div>
+  </div>
+  <div class="profile-builder-card">
+    <h3>Catalog Scope</h3>
+
+    <p class="profile-note">
+      Choose whether this profile tracks only the main set checklist, secret cards,
+      or both.
+    </p>
+
+    <div class="collection-scope-panel">
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeMainCards"
+          (change)="onCollectionScopeChanged()"
+        />
+        Main set cards
+      </label>
+
+      <label class="collection-scope-option">
+        <input
+          type="checkbox"
+          [(ngModel)]="collectionScope.includeSecretCards"
+          (change)="onCollectionScopeChanged()"
+        />
+        Secret cards
       </label>
     </div>
   </div>

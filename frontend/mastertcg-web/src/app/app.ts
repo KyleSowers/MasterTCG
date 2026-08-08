@@ -23,7 +23,10 @@ export class App implements OnInit {
 
     includeCommon: true,
     includeUncommon: true,
-    includeRare: true
+    includeRare: true,
+
+    includeMainCards: true,
+    includeSecretCards: true
   };
   ownedCards: OwnedCardDto[] = [];
   searchTerm = '';
@@ -196,7 +199,7 @@ getSetCompletionClass(set: SetDto): string {
 
 getOwnedCountForSet(set: SetDto): number {
     return this.getCardsForSet(set).reduce((total, card) => {
-      return total + this.getCollectionScopeVariantsForCard(card)
+      return total + this.getCollectionScopeVariantsForCard(card, set)
         .filter(variant => this.isOwned(variant.id))
         .length;
     }, 0);
@@ -204,7 +207,7 @@ getOwnedCountForSet(set: SetDto): number {
 
 getTotalVariantCountForSet(set: SetDto): number {
     return this.getCardsForSet(set).reduce((total, card) => {
-      return total + this.getCollectionScopeVariantsForCard(card).length;
+      return total + this.getCollectionScopeVariantsForCard(card, set).length;
     }, 0);
   }
 
@@ -490,15 +493,20 @@ getCompletionPercentageByRarity(rarity: string): number {
 
 getOwnedVariantCountByFinish(finish: string): number {
     return this.cards.reduce((total, card) => {
-      return total + card.variants.filter(v =>
-        v.finish === finish && this.isOwned(v.id)
-      ).length;
-    }, 0)
+      return total + this.getCollectionScopeVariantsForCard(card)
+        .filter(variant =>
+          variant.finish === finish &&
+          this.isOwned(variant.id)
+        )
+        .length;
+    }, 0);
   }
 
 getTotalVariantCountByFinish(finish: string): number {
     return this.cards.reduce((total, card) => {
-      return total + card.variants.filter(v => v.finish === finish).length;
+      return total + this.getCollectionScopeVariantsForCard(card)
+        .filter(variant => variant.finish === finish)
+        .length;
     }, 0);
   }
 
@@ -728,9 +736,51 @@ toggleProfileEra(era: string, event: Event): void {
   // ---------------------------------------------------------------------------
   // COLLECTION SCOPE HELPERS
   // ---------------------------------------------------------------------------
-getCollectionScopeVariantsForCard(card: CardDto): CardVariantDto[] {
+
+getNumericCardNumber(cardNumber: string): number | null {
+    const match = cardNumber.match(/\d+/);
+
+    if (!match) {
+      return null;
+    }
+
+    return Number(match[0]);
+  }
+
+isSecretCardForSet(card: CardDto, set: SetDto | null = this.selectedSet): boolean {
+    if (!set?.totalCardsMain) {
+      return false;
+    }
+
+    const numericCardNumber = this.getNumericCardNumber(card.cardNumber);
+
+    if (numericCardNumber === null) {
+      return false;
+    }
+
+    return numericCardNumber > set.totalCardsMain;
+  }
+
+isCardCatalogInCollectionScope(card: CardDto, set: SetDto | null = this.selectedSet): boolean {
+    const isSecret = this.isSecretCardForSet(card, set);
+
+    if (isSecret) {
+      return this.collectionScope.includeSecretCards;
+    }
+
+    return this.collectionScope.includeMainCards;
+  }
+
+// isCardCatalogInCollectionScope(card: CardDto, set: SetDto | null = this.selectedSet): boolean {
+//   return true;
+// }
+
+getCollectionScopeVariantsForCard(
+    card: CardDto,
+    set: SetDto | null = this.selectedSet
+  ): CardVariantDto[] {
     return card.variants.filter(variant =>
-      this.isVariantInCollectionScope(card, variant)
+      this.isVariantInCollectionScope(card, variant, set)
     );
   }
 
@@ -747,7 +797,15 @@ isCardRarityInCollectionScope(card: CardDto): boolean {
     }
   }
 
-isVariantInCollectionScope(card: CardDto, variant: CardVariantDto): boolean {
+isVariantInCollectionScope(
+    card: CardDto,
+    variant: CardVariantDto,
+    set: SetDto | null = this.selectedSet
+  ): boolean {
+    if (!this.isCardCatalogInCollectionScope(card, set)) {
+      return false;
+    }
+
     if (!this.isCardRarityInCollectionScope(card)) {
       return false;
     }
@@ -764,11 +822,6 @@ isVariantInCollectionScope(card: CardDto, variant: CardVariantDto): boolean {
     }
   }
 
-  // getCompletionVariantsForCard(card: CardDto): CardVariantDto[] {
-  //   return card.variants.filter(variant =>
-  //     this.isVariantIncludedInCompletion(variant)
-  //   );
-  // }
 
   // ---------------------------------------------------------------------------
   // OWNERSHIP HELPERS
