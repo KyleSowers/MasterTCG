@@ -52,6 +52,7 @@ export class App implements OnInit {
     'POKE_BALL',
     'MASTER_BALL'
   ];
+  private readonly collectionProfileStorageKey = 'mastertcg.collectionProfile.v1';
   
   loading = true;
   error: string | null = null;
@@ -66,7 +67,12 @@ ngOnInit() {
       next: (data) => {
         this.sets = this.sortSetsByReleaseDate(data);
         // this.selectedProfileSetIds = sets.map(set => set.id);
-        this.selectedProfileSetIds = this.sets.map((set: SetDto) => set.id);
+        const savedProfileLoaded = this.loadCollectionProfileLocally();
+
+        if (!savedProfileLoaded || this.selectedProfileSetIds.length === 0) {
+          this.selectedProfileSetIds = this.sets.map(set => set.id);
+          this.saveCollectionProfileLocally();
+        }
 
         this.error = null;
         this.loading = false;
@@ -654,6 +660,7 @@ onCollectionStyleChanged(style: 'MAIN_SET' | 'MASTER_SET' | 'CUSTOM'): void {
   }
 
   this.onCollectionScopeChanged(false);
+  this.saveCollectionProfileLocally();
 }
 
 applyMainSetStyle(): void {
@@ -687,6 +694,7 @@ applyMasterSetStyle(): void {
 onCollectionScopeChanged(markCustom = true) {
     if (markCustom) {
       this.collectionStyle = 'CUSTOM';
+      this.saveCollectionProfileLocally();
     }
 
     const availableFinishes = this.getAvailableFinishes();
@@ -706,6 +714,8 @@ onCollectionScopeChanged(markCustom = true) {
     ) {
       this.selectedRarity = 'ALL';
     }
+
+    this.saveCollectionProfileLocally();
   }
 
 isSetInCollectionProfile(set: SetDto): boolean {
@@ -729,6 +739,7 @@ toggleProfileSet(set: SetDto, event: Event): void {
         this.cards = [];
       }
     }
+    this.saveCollectionProfileLocally();
   }
 
 getAvailableEras(): string[] {
@@ -782,6 +793,66 @@ toggleProfileEra(era: string, event: Event): void {
       this.cards = [];
     }
   }
+  this.saveCollectionProfileLocally();
+}
+
+// -----------------------------------------------------------------------------
+// LOCAL COLLECTION PROFILE STORAGE
+// -----------------------------------------------------------------------------
+// Temporarily saves the active collection profile in the browser.
+// This keeps profile settings after refresh until backend user profiles exist.
+// -----------------------------------------------------------------------------
+
+saveCollectionProfileLocally(): void {
+  const profile = {
+    collectionProfileName: this.collectionProfileName,
+    collectionStyle: this.collectionStyle,
+    collectionScope: this.collectionScope,
+    selectedProfileSetIds: this.selectedProfileSetIds
+  };
+
+  localStorage.setItem(
+    this.collectionProfileStorageKey,
+    JSON.stringify(profile)
+  );
+}
+
+loadCollectionProfileLocally(): boolean {
+  const savedProfile = localStorage.getItem(this.collectionProfileStorageKey);
+
+  if (!savedProfile) {
+    return false;
+  }
+
+  try {
+    const parsedProfile = JSON.parse(savedProfile);
+
+    this.collectionProfileName =
+      parsedProfile.collectionProfileName || this.collectionProfileName;
+
+    this.collectionStyle =
+      parsedProfile.collectionStyle || this.collectionStyle;
+
+    this.collectionScope = {
+      ...this.collectionScope,
+      ...parsedProfile.collectionScope
+    };
+
+    this.selectedProfileSetIds = Array.isArray(parsedProfile.selectedProfileSetIds)
+      ? parsedProfile.selectedProfileSetIds
+      : [];
+
+    return true;
+  } catch (error) {
+    console.error('Failed to load saved collection profile', error);
+    localStorage.removeItem(this.collectionProfileStorageKey);
+    return false;
+  }
+}
+
+onCollectionProfileNameChanged(profileName: string): void {
+  this.collectionProfileName = profileName;
+  this.saveCollectionProfileLocally();
 }
 
 // -----------------------------------------------------------------------------
