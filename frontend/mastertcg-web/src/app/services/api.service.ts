@@ -33,6 +33,32 @@ export interface OwnedCardDto {
   ownedCount: number;
 }
 
+export interface CollectionProfileRequest {
+  name: string;
+  collectionStyle: 'MAIN_SET' | 'MASTER_SET' | 'CUSTOM';
+
+  includeNormal: boolean;
+  includeHolo: boolean;
+  includeReverseHolo: boolean;
+  includeSpecialFinishes: boolean;
+
+  includeCommon: boolean;
+  includeUncommon: boolean;
+  includeRare: boolean;
+
+  includeMainCards: boolean;
+  includeSecretCards: boolean;
+
+  selectedSetIds: string[];
+}
+
+export interface CollectionProfileResponse extends CollectionProfileRequest {
+  id: string;
+  userId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 @Injectable({ providedIn: 'root'})
 export class ApiService {
   private baseUrl = "http://localhost:8080";
@@ -57,4 +83,18 @@ export class ApiService {
     {}
   );
   }
+
+  getDemoCollectionProfile() {
+    return this.http.get<CollectionProfileResponse | null>(
+      `${this.baseUrl}/profiles/demo`
+    );
+  }
+
+  saveDemoCollectionProfile(profile: CollectionProfileRequest) {
+    return this.http.post<CollectionProfileResponse>(
+      `${this.baseUrl}/profiles/demo`,
+      profile
+    );
+  }
+  
 }

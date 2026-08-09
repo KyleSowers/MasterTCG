@@ -562,6 +562,20 @@
             <strong>{{ getCatalogScopeLabels().join(', ') || 'None selected' }}</strong>
           </div>
         </div>
+        <div class="profile-save-actions">
+          <button
+            type="button"
+            class="profile-save-button"
+            [disabled]="backendProfileSaving"
+            (click)="saveCollectionProfileToBackend()"
+          >
+            {{ backendProfileSaving ? 'Saving...' : 'Save Profile' }}
+          </button>
+
+          <p class="profile-save-message" *ngIf="backendProfileMessage">
+            {{ backendProfileMessage }}
+          </p>
+        </div>
       </div>
     </aside>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, SetDto, CardDto, OwnedCardDto, CardVariantDto } from './services/api.service';
+import { ApiService, SetDto, CardDto, OwnedCardDto, CardVariantDto, CollectionProfileRequest,
+  CollectionProfileResponse } from './services/api.service';
 import {CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -13,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 
 export class App implements OnInit {
   activePage: 'COLLECTION' | 'PROFILE_BUILDER' = 'COLLECTION';
+  backendProfileLoading = false;
+  backendProfileSaving = false;
+  backendProfileMessage = '';
   cards: CardDto[] = [];
   collectionProfileName = 'My Collection Profile';
   collectionStyle: 'MAIN_SET' | 'MASTER_SET' | 'CUSTOM' = 'CUSTOM';
@@ -67,12 +71,7 @@ ngOnInit() {
       next: (data) => {
         this.sets = this.sortSetsByReleaseDate(data);
         // this.selectedProfileSetIds = sets.map(set => set.id);
-        const savedProfileLoaded = this.loadCollectionProfileLocally();
-
-        if (!savedProfileLoaded || this.selectedProfileSetIds.length === 0) {
-          this.selectedProfileSetIds = this.sets.map(set => set.id);
-          this.saveCollectionProfileLocally();
-        }
+        this.loadCollectionProfileFromBackendOrLocal();
 
         this.error = null;
         this.loading = false;
@@ -853,6 +852,119 @@ loadCollectionProfileLocally(): boolean {
 onCollectionProfileNameChanged(profileName: string): void {
   this.collectionProfileName = profileName;
   this.saveCollectionProfileLocally();
+}
+
+// -----------------------------------------------------------------------------
+// BACKEND COLLECTION PROFILE SYNC
+// -----------------------------------------------------------------------------
+// Loads and saves the active collection profile through the backend demo profile
+// endpoints. This is temporary until real user accounts exist.
+// -----------------------------------------------------------------------------
+
+loadCollectionProfileFromBackendOrLocal(): void {
+  this.backendProfileLoading = true;
+  this.backendProfileMessage = 'Loading saved profile...';
+
+  this.api.getDemoCollectionProfile().subscribe({
+    next: (profile) => {
+      if (profile) {
+        this.applyBackendCollectionProfile(profile);
+        this.saveCollectionProfileLocally();
+        this.backendProfileMessage = 'Loaded profile from backend.';
+      } else {
+        this.loadLocalOrDefaultCollectionProfile();
+        this.backendProfileMessage = 'Using local profile.';
+      }
+
+      this.backendProfileLoading = false;
+    },
+    error: (err) => {
+      console.error('Failed to load backend collection profile', err);
+
+      this.loadLocalOrDefaultCollectionProfile();
+      this.backendProfileMessage = 'Backend unavailable. Using local profile.';
+      this.backendProfileLoading = false;
+    }
+  });
+}
+
+saveCollectionProfileToBackend(): void {
+  this.backendProfileSaving = true;
+  this.backendProfileMessage = 'Saving profile...';
+
+  const profileRequest = this.buildCollectionProfileRequest();
+
+  this.api.saveDemoCollectionProfile(profileRequest).subscribe({
+    next: (savedProfile) => {
+      this.applyBackendCollectionProfile(savedProfile);
+      this.saveCollectionProfileLocally();
+
+      this.backendProfileMessage = 'Profile saved to backend.';
+      this.backendProfileSaving = false;
+    },
+    error: (err) => {
+      console.error('Failed to save backend collection profile', err);
+
+      this.backendProfileMessage = 'Could not save to backend. Local save still active.';
+      this.backendProfileSaving = false;
+    }
+  });
+}
+
+private loadLocalOrDefaultCollectionProfile(): void {
+  const savedProfileLoaded = this.loadCollectionProfileLocally();
+
+  if (!savedProfileLoaded || this.selectedProfileSetIds.length === 0) {
+    this.selectedProfileSetIds = this.sets.map(set => set.id);
+    this.saveCollectionProfileLocally();
+  }
+}
+
+private buildCollectionProfileRequest(): CollectionProfileRequest {
+  return {
+    name: this.collectionProfileName,
+    collectionStyle: this.collectionStyle,
+
+    includeNormal: this.collectionScope.includeNormal,
+    includeHolo: this.collectionScope.includeHolo,
+    includeReverseHolo: this.collectionScope.includeReverseHolo,
+    includeSpecialFinishes: this.collectionScope.includeSpecialFinishes,
+
+    includeCommon: this.collectionScope.includeCommon,
+    includeUncommon: this.collectionScope.includeUncommon,
+    includeRare: this.collectionScope.includeRare,
+
+    includeMainCards: this.collectionScope.includeMainCards,
+    includeSecretCards: this.collectionScope.includeSecretCards,
+
+    selectedSetIds: this.selectedProfileSetIds
+  };
+}
+
+private applyBackendCollectionProfile(profile: CollectionProfileResponse): void {
+  this.collectionProfileName = profile.name || this.collectionProfileName;
+
+  this.collectionStyle = profile.collectionStyle as 'MAIN_SET' | 'MASTER_SET' | 'CUSTOM';
+
+  this.collectionScope = {
+    ...this.collectionScope,
+
+    includeNormal: profile.includeNormal,
+    includeHolo: profile.includeHolo,
+    includeReverseHolo: profile.includeReverseHolo,
+    includeSpecialFinishes: profile.includeSpecialFinishes,
+
+    includeCommon: profile.includeCommon,
+    includeUncommon: profile.includeUncommon,
+    includeRare: profile.includeRare,
+
+    includeMainCards: profile.includeMainCards,
+    includeSecretCards: profile.includeSecretCards
+  };
+
+  this.selectedProfileSetIds = Array.isArray(profile.selectedSetIds)
+    ? profile.selectedSetIds
+    : [];
 }
 
 // -----------------------------------------------------------------------------
