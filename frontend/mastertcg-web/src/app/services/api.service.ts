@@ -59,6 +59,31 @@ export interface CollectionProfileResponse extends CollectionProfileRequest {
   updatedAt: string;
 }
 
+export interface InventoryVaultItemRequest {
+  cardVariantId: string;
+  quantity: number;
+}
+
+export interface InventoryVaultItemResponse {
+  id: string;
+  userId: string;
+
+  cardVariantId: string;
+  cardId: string;
+  setId: string;
+
+  cardNumber: string;
+  cardName: string;
+  finish: string;
+  rarity: string;
+  imageSmallUrl: string;
+
+  quantity: number;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
 @Injectable({ providedIn: 'root'})
 export class ApiService {
   private baseUrl = "http://localhost:8080";
@@ -94,6 +119,19 @@ export class ApiService {
     return this.http.post<CollectionProfileResponse>(
       `${this.baseUrl}/profiles/demo`,
       profile
+    );
+  }
+
+  getDemoInventoryVaultItems() {
+    return this.http.get<InventoryVaultItemResponse[]>(
+      `${this.baseUrl}/inventory/demo`
+    );
+  }
+
+  setDemoInventoryVaultItemQuantity(request: InventoryVaultItemRequest) {
+    return this.http.post<InventoryVaultItemResponse | null>(
+      `${this.baseUrl}/inventory/demo/items`,
+      request
     );
   }
   

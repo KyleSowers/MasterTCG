@@ -816,29 +816,190 @@ body {
 }
 
 
-
 /* =============================================
-  COLLECTION PAGE - LAYOUT
+  INVENTORY VAULT PAGE
+  ============================================= */
+
+.inventory-vault-page {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.inventory-vault-header {
+  margin-bottom: 18px;
+}
+
+.inventory-vault-header h2 {
+  margin-bottom: 6px;
+}
+
+.inventory-vault-header p {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.inventory-vault-message {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  color: #1e40af;
+  margin: 12px 0;
+  padding: 10px 12px;
+}
+
+.inventory-vault-controls {
+  margin: 16px 0;
+}
+
+.inventory-set-dashboard {
+  margin-bottom: 24px;
+}
+
+.inventory-card-section {
+  margin-top: 24px;
+}
+
+.inventory-card-list {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.inventory-card-row {
+  align-items: flex-start;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  gap: 14px;
+  opacity: 0.82;
+  padding: 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.inventory-card-row-active {
+  background: #eff6ff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+  opacity: 1;
+}
+
+.inventory-card-image {
+  border-radius: 6px;
+  flex: 0 0 auto;
+  max-width: 72px;
+  width: 72px;
+}
+
+.inventory-card-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.inventory-card-title {
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.inventory-card-meta {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.inventory-variant-list {
+  display: grid;
+  gap: 8px;
+}
+
+.inventory-variant-row {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px;
+}
+
+.inventory-variant-row-active {
+  border-color: #2563eb;
+  background: #dbeafe;
+}
+
+.inventory-variant-row label {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.inventory-quantity-controls {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.inventory-quantity-controls button {
+  background: #ffffff;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 900;
+  height: 32px;
+  width: 32px;
+}
+
+.inventory-quantity-controls strong {
+  min-width: 24px;
+  text-align: center;
+}
+
+
+  /* =============================================
+  MEDIA
   ============================================= */
 
 @media (max-width: 900px) {
-  .collection-layout {
-    grid-template-columns: 1fr;
-  }
-
   .stats-sidebar {
-    position: static;
-  }
+      position: static;
+    }
 
- .profile-builder-layout {
-  align-items: start;
-  display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
-  width: 100%;
-}
+  .profile-builder-layout {
+    align-items: start;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+    width: 100%;
+  }
 
   .profile-summary-sidebar {
     position: static;
   }
+
+  .collection-layout {
+    grid-template-columns: 1fr;
+  }
+
+    .inventory-card-row {
+    flex-direction: column;
+  }
+
+  .inventory-card-image {
+    max-width: 110px;
+    width: 110px;
+  }
+
+  .inventory-variant-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
+

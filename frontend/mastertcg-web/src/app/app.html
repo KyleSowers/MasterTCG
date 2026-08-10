@@ -16,6 +16,14 @@
     (click)="showProfileBuilderPage()">
     Collection Profile
   </button>
+
+  <button
+    type="button"
+    class="app-nav-button"
+    [class.app-nav-button-active]="activePage === 'INVENTORY_VAULT'"
+    (click)="showInventoryVaultPage()">
+    Inventory Vault
+  </button>
 </nav>
 
 <div *ngIf="loading">Loading sets...</div>
@@ -324,6 +332,139 @@
 
   </section>
 </div>
+
+<section
+  class="inventory-vault-page"
+  *ngIf="activePage === 'INVENTORY_VAULT'">
+
+  <div class="inventory-vault-header">
+    <h2>Inventory Vault</h2>
+
+    <p>
+      Track extra, duplicate, damaged, or loose cards outside your active
+      collection binder/profile.
+    </p>
+  </div>
+
+  <div *ngIf="inventoryVaultLoading">
+    Loading Inventory Vault...
+  </div>
+
+  <div class="inventory-vault-message" *ngIf="inventoryVaultMessage">
+    {{ inventoryVaultMessage }}
+  </div>
+
+  <div class="inventory-vault-controls">
+    <label class="profile-field-label">
+      Choose era
+    </label>
+
+    <select
+      class="filter-select"
+      [(ngModel)]="selectedInventoryEra"
+      (ngModelChange)="onInventoryEraChanged()"
+    >
+      <option value="ALL">All Eras</option>
+      <option *ngFor="let era of getInventoryEras()" [value]="era">
+        {{ era }}
+      </option>
+    </select>
+  </div>
+
+  <div class="set-dashboard inventory-set-dashboard">
+    <div
+      *ngFor="let s of getInventorySetsForSelectedEra()"
+      class="set-card"
+      [class.set-card-selected]="selectedInventorySet?.id === s.id"
+      [style.background-image]="getSetBackgroundImage(s)"
+      (click)="loadInventoryCards(s)"
+    >
+      <div class="set-card-header">
+        <h3>{{ s.name }}</h3>
+      </div>
+
+      <div class="set-era">{{ s.era }}</div>
+
+      <div class="set-card-meta">
+        Main {{ s.totalCardsMain }} | Master {{ s.totalCardsMaster }}
+      </div>
+    </div>
+  </div>
+
+  <section *ngIf="selectedInventorySet" class="inventory-card-section">
+    <h3>{{ selectedInventorySet.name }} Vault Inventory</h3>
+
+    <p class="profile-note">
+      Gray means no extra copies in the Vault. Blue means one or more extra
+      copies are stored outside the collection binder.
+    </p>
+
+    <ul class="inventory-card-list">
+      <li
+        *ngFor="let c of inventoryCards"
+        class="inventory-card-row"
+        [class.inventory-card-row-active]="isCardInInventory(c)"
+      >
+        <img
+          *ngIf="c.imageSmallUrl"
+          [src]="c.imageSmallUrl"
+          [alt]="c.name"
+          class="inventory-card-image"
+        >
+
+        <div class="inventory-card-details">
+          <div class="inventory-card-title">
+            {{ c.cardNumber }} — {{ c.name }}
+          </div>
+
+          <div class="inventory-card-meta">
+            {{ getRarityLabel(c.rarity) }}
+            <span *ngIf="c.primaryType"> · {{ c.primaryType }}</span>
+          </div>
+
+          <div class="inventory-variant-list">
+            <div
+              *ngFor="let v of c.variants"
+              class="inventory-variant-row"
+              [class.inventory-variant-row-active]="isVariantInInventory(v.id)"
+            >
+              <label>
+                <input
+                  type="checkbox"
+                  [checked]="isVariantInInventory(v.id)"
+                  (change)="setInventoryQuantity(v.id, $any($event.target).checked ? 1 : 0)"
+                />
+
+                {{ displayFinish(v.finish) }}
+              </label>
+
+              <div
+                class="inventory-quantity-controls"
+                *ngIf="isVariantInInventory(v.id)"
+              >
+                <button
+                  type="button"
+                  (click)="decreaseInventoryQuantity(v.id)"
+                >
+                  -
+                </button>
+
+                <strong>{{ getInventoryQuantityForVariant(v.id) }}</strong>
+
+                <button
+                  type="button"
+                  (click)="increaseInventoryQuantity(v.id)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
 
 <section
   class="profile-builder-page"

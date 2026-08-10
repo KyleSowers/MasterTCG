@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService, SetDto, CardDto, OwnedCardDto, CardVariantDto, CollectionProfileRequest,
-  CollectionProfileResponse } from './services/api.service';
+  CollectionProfileResponse, InventoryVaultItemRequest,
+InventoryVaultItemResponse } from './services/api.service';
 import {CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class App implements OnInit {
-  activePage: 'COLLECTION' | 'PROFILE_BUILDER' = 'COLLECTION';
+  activePage: 'COLLECTION' | 'PROFILE_BUILDER' | 'INVENTORY_VAULT' = 'COLLECTION';
   backendProfileLoading = false;
   backendProfileSaving = false;
   backendProfileMessage = '';
@@ -57,6 +58,12 @@ export class App implements OnInit {
     'MASTER_BALL'
   ];
   private readonly collectionProfileStorageKey = 'mastertcg.collectionProfile.v1';
+  inventoryVaultItems: InventoryVaultItemResponse[] = [];
+  inventoryVaultLoading = false;
+  inventoryVaultMessage = '';
+  selectedInventoryEra = 'ALL';
+  selectedInventorySet: SetDto | null = null;
+  inventoryCards: CardDto[] = [];
   
   loading = true;
   error: string | null = null;
@@ -129,6 +136,11 @@ showCollectionPage() {
 
 showProfileBuilderPage() {
     this.activePage = 'PROFILE_BUILDER';
+  }
+
+  showInventoryVaultPage(): void {
+    this.activePage = 'INVENTORY_VAULT';
+    this.loadInventoryVaultItems();
   }
 
   // ---------------------------------------------------------------------------
@@ -1143,4 +1155,134 @@ isOwned(cardId: string): boolean {
     return this.ownedCards.some(oc => oc.cardId === cardId && oc.ownedCount > 0);
   }
 
+  // -----------------------------------------------------------------------------
+  // INVENTORY VAULT HELPERS
+  // -----------------------------------------------------------------------------
+  // Inventory Vault tracks extra/loose cards outside the collection binder.
+  // It does not change My Collection completion.
+  // -----------------------------------------------------------------------------
+
+  loadInventoryVaultItems(): void {
+    this.inventoryVaultLoading = true;
+    this.inventoryVaultMessage = 'Loading Inventory Vault...';
+
+    this.api.getDemoInventoryVaultItems().subscribe({
+      next: (items) => {
+        this.inventoryVaultItems = items;
+        this.inventoryVaultLoading = false;
+        this.inventoryVaultMessage = '';
+      },
+      error: (err) => {
+        console.error('Failed to load Inventory Vault', err);
+        this.inventoryVaultLoading = false;
+        this.inventoryVaultMessage = 'Could not load Inventory Vault.';
+      }
+    });
+  }
+
+  getInventoryQuantityForVariant(variantId: string): number {
+    const item = this.inventoryVaultItems.find(
+      inventoryItem => inventoryItem.cardVariantId === variantId
+    );
+
+    return item?.quantity ?? 0;
+  }
+
+  setInventoryQuantity(variantId: string, quantity: number): void {
+    const request: InventoryVaultItemRequest = {
+      cardVariantId: variantId,
+      quantity
+    };
+
+    this.api.setDemoInventoryVaultItemQuantity(request).subscribe({
+      next: (savedItem) => {
+        if (!savedItem) {
+          this.inventoryVaultItems = this.inventoryVaultItems.filter(
+            inventoryItem => inventoryItem.cardVariantId !== variantId
+          );
+          return;
+        }
+
+        const existingIndex = this.inventoryVaultItems.findIndex(
+          inventoryItem => inventoryItem.cardVariantId === savedItem.cardVariantId
+        );
+
+        if (existingIndex >= 0) {
+          this.inventoryVaultItems[existingIndex] = savedItem;
+        } else {
+          this.inventoryVaultItems = [...this.inventoryVaultItems, savedItem];
+        }
+      },
+      error: (err) => {
+        console.error('Failed to update Inventory Vault item', err);
+        this.inventoryVaultMessage = 'Could not update Inventory Vault item.';
+      }
+    });
+  }
+
+  addVariantToInventory(variantId: string): void {
+    this.setInventoryQuantity(variantId, 1);
+  }
+
+  increaseInventoryQuantity(variantId: string): void {
+    const currentQuantity = this.getInventoryQuantityForVariant(variantId);
+    this.setInventoryQuantity(variantId, currentQuantity + 1);
+  }
+
+  decreaseInventoryQuantity(variantId: string): void {
+    const currentQuantity = this.getInventoryQuantityForVariant(variantId);
+    this.setInventoryQuantity(variantId, Math.max(0, currentQuantity - 1));
+  }
+
+  isVariantInInventory(variantId: string): boolean {
+    return this.getInventoryQuantityForVariant(variantId) > 0;
+  }
+
+  getInventoryEras(): string[] {
+    return Array.from(new Set(this.sets.map(set => set.era)));
+  }
+
+  getInventorySetsForSelectedEra(): SetDto[] {
+    if (this.selectedInventoryEra === 'ALL') {
+      return this.sets;
+    }
+
+    return this.sets.filter(set => set.era === this.selectedInventoryEra);
+  }
+
+  onInventoryEraChanged(): void {
+    this.selectedInventorySet = null;
+    this.inventoryCards = [];
+  }
+
+  loadInventoryCards(set: SetDto): void {
+    this.selectedInventorySet = set;
+
+    const cachedCards = this.setCardsBySetId[set.id];
+
+    if (cachedCards && cachedCards.length > 0) {
+      this.inventoryCards = cachedCards;
+      return;
+    }
+
+    this.api.getCards(set.id).subscribe({
+      next: (data) => {
+        this.inventoryCards = data;
+        this.setCardsBySetId[set.id] = data;
+      },
+      error: (err) => {
+        console.error(err);
+        this.inventoryVaultMessage = 'Could not load cards for this set.';
+      }
+    });
+  }
+
+  isCardInInventory(card: CardDto): boolean {
+    return card.variants.some(variant =>
+      this.isVariantInInventory(variant.id)
+    );
+  }
+
 }
+
+
