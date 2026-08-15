@@ -1283,6 +1283,41 @@ isOwned(cardId: string): boolean {
     );
   }
 
+  getInventoryVaultUniqueCount(): number {
+    return this.inventoryVaultItems.length;
+  }
+
+  getInventoryVaultTotalQuantity(): number {
+    return this.inventoryVaultItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+  }
+
+  getSortedInventoryVaultItems(): InventoryVaultItemResponse[] {
+    return [...this.inventoryVaultItems].sort((a, b) => {
+      const setCompare = a.setId.localeCompare(b.setId);
+
+      if (setCompare !== 0) {
+        return setCompare;
+      }
+
+      return a.cardNumber.localeCompare(b.cardNumber, undefined, {
+        numeric: true
+      });
+    });
+  }
+
+  getInventoryVaultItemsForSelectedSet(): InventoryVaultItemResponse[] {
+    if (!this.selectedInventorySet) {
+      return this.getSortedInventoryVaultItems();
+    }
+
+    return this.getSortedInventoryVaultItems().filter(
+      item => item.setId === this.selectedInventorySet?.id
+    );
+  }
+
 }
 
 

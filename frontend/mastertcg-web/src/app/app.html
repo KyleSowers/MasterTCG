@@ -337,6 +337,25 @@
   class="inventory-vault-page"
   *ngIf="activePage === 'INVENTORY_VAULT'">
 
+  <div class="inventory-vault-summary-panel">
+    <div class="inventory-vault-summary-card">
+      <span>Unique Vault Cards</span>
+      <strong>{{ getInventoryVaultUniqueCount() }}</strong>
+    </div>
+
+    <div class="inventory-vault-summary-card">
+      <span>Total Extra Quantity</span>
+      <strong>{{ getInventoryVaultTotalQuantity() }}</strong>
+    </div>
+
+    <div class="inventory-vault-summary-card">
+      <span>Current Set View</span>
+      <strong>
+        {{ selectedInventorySet ? getInventoryVaultItemsForSelectedSet().length : getInventoryVaultUniqueCount() }}
+      </strong>
+    </div>
+  </div>
+
   <div class="inventory-vault-header">
     <h2>Inventory Vault</h2>
 
@@ -390,6 +409,37 @@
       </div>
     </div>
   </div>
+
+  <section class="inventory-vault-review-panel" *ngIf="inventoryVaultItems.length > 0">
+    <h3>Vault Review</h3>
+
+    <p class="profile-note">
+      These are extra cards currently saved in the Vault outside the collection binder.
+    </p>
+
+    <div class="inventory-review-list">
+      <div
+        class="inventory-review-row"
+        *ngFor="let item of getInventoryVaultItemsForSelectedSet()"
+      >
+        <img
+          *ngIf="item.imageSmallUrl"
+          [src]="item.imageSmallUrl"
+          [alt]="item.cardName"
+          class="inventory-review-image"
+        >
+
+        <div class="inventory-review-details">
+          <strong>{{ item.cardNumber }} — {{ item.cardName }}</strong>
+          <span>{{ displayFinish(item.finish) }} · {{ getRarityLabel(item.rarity) }}</span>
+        </div>
+
+        <div class="inventory-review-quantity">
+          Qty {{ item.quantity }}
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section *ngIf="selectedInventorySet" class="inventory-card-section">
     <h3>{{ selectedInventorySet.name }} Vault Inventory</h3>
