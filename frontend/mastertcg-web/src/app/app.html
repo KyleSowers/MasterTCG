@@ -449,9 +449,35 @@
       copies are stored outside the collection binder.
     </p>
 
+    <div class="inventory-filter-panel">
+      <input
+        type="text"
+        class="search-input"
+        [(ngModel)]="inventorySearchTerm"
+        placeholder="Search by card name or number"
+      />
+
+      <select class="filter-select" [(ngModel)]="selectedInventoryStatus">
+        <option value="ALL">All Vault Statuses</option>
+        <option value="IN_VAULT">In Vault</option>
+        <option value="NOT_IN_VAULT">Not in Vault</option>
+      </select>
+
+      <select class="filter-select" [(ngModel)]="selectedInventoryFinish">
+        <option value="ALL">All Finishes</option>
+        <option *ngFor="let finish of getAvailableInventoryFinishes()" [value]="finish">
+          {{ displayFinish(finish) }}
+        </option>
+      </select>
+    </div>
+
+    <div class="filter-summary">
+      Showing {{ getFilteredInventoryCardCount() }} cards
+    </div>
+
     <ul class="inventory-card-list">
       <li
-        *ngFor="let c of inventoryCards"
+        *ngFor="let c of getFilteredInventoryCards()"
         class="inventory-card-row"
         [class.inventory-card-row-active]="isCardInInventory(c)"
       >
@@ -474,7 +500,7 @@
 
           <div class="inventory-variant-list">
             <div
-              *ngFor="let v of c.variants"
+              *ngFor="let v of getVisibleInventoryVariants(c)"
               class="inventory-variant-row"
               [class.inventory-variant-row-active]="isVariantInInventory(v.id)"
             >

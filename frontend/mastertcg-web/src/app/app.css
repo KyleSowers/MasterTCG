@@ -1046,6 +1046,22 @@ body {
   white-space: nowrap;
 }
 
+.inventory-filter-panel {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 8px;
+}
+
+.inventory-filter-panel .search-input {
+  margin-bottom: 0;
+}
+
+.inventory-filter-panel .filter-select {
+  margin: 0;
+}
+
 
   /* =============================================
   MEDIA
@@ -1097,6 +1113,18 @@ body {
   .inventory-review-quantity {
     grid-column: 1 / -1;
     justify-self: start;
+  }
+
+    .inventory-filter-panel {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .inventory-filter-panel .search-input,
+  .inventory-filter-panel .filter-select {
+    margin: 0;
+    max-width: none;
+    width: 100%;
   }
 }
 

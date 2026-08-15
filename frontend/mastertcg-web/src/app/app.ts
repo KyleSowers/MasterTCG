@@ -64,6 +64,9 @@ export class App implements OnInit {
   selectedInventoryEra = 'ALL';
   selectedInventorySet: SetDto | null = null;
   inventoryCards: CardDto[] = [];
+  inventorySearchTerm = '';
+  selectedInventoryFinish = 'ALL';
+  selectedInventoryStatus = 'ALL';
   
   loading = true;
   error: string | null = null;
@@ -1257,6 +1260,9 @@ isOwned(cardId: string): boolean {
 
   loadInventoryCards(set: SetDto): void {
     this.selectedInventorySet = set;
+    this.inventorySearchTerm = '';
+    this.selectedInventoryFinish = 'ALL';
+    this.selectedInventoryStatus = 'ALL';
 
     const cachedCards = this.setCardsBySetId[set.id];
 
@@ -1316,6 +1322,67 @@ isOwned(cardId: string): boolean {
     return this.getSortedInventoryVaultItems().filter(
       item => item.setId === this.selectedInventorySet?.id
     );
+  }
+
+  getAvailableInventoryFinishes(): string[] {
+    const finishes = new Set<string>();
+
+    this.inventoryCards.forEach(card => {
+      card.variants.forEach(variant => {
+        finishes.add(variant.finish);
+      });
+    });
+
+    return Array.from(finishes).sort();
+  }
+
+  getFilteredInventoryCards(): CardDto[] {
+    const search = this.inventorySearchTerm.trim().toLowerCase();
+
+    return this.inventoryCards.filter(card => {
+      const matchesSearch =
+        !search ||
+        card.name.toLowerCase().includes(search) ||
+        card.cardNumber.toLowerCase().includes(search);
+
+      const matchingVariants = card.variants.filter(variant => {
+        const matchesFinish =
+          this.selectedInventoryFinish === 'ALL' ||
+          variant.finish === this.selectedInventoryFinish;
+
+        const quantity = this.getInventoryQuantityForVariant(variant.id);
+
+        const matchesStatus =
+          this.selectedInventoryStatus === 'ALL' ||
+          (this.selectedInventoryStatus === 'IN_VAULT' && quantity > 0) ||
+          (this.selectedInventoryStatus === 'NOT_IN_VAULT' && quantity === 0);
+
+        return matchesFinish && matchesStatus;
+      });
+
+      return matchesSearch && matchingVariants.length > 0;
+    });
+  }
+
+  getVisibleInventoryVariants(card: CardDto) {
+    return card.variants.filter(variant => {
+      const matchesFinish =
+        this.selectedInventoryFinish === 'ALL' ||
+        variant.finish === this.selectedInventoryFinish;
+
+      const quantity = this.getInventoryQuantityForVariant(variant.id);
+
+      const matchesStatus =
+        this.selectedInventoryStatus === 'ALL' ||
+        (this.selectedInventoryStatus === 'IN_VAULT' && quantity > 0) ||
+        (this.selectedInventoryStatus === 'NOT_IN_VAULT' && quantity === 0);
+
+      return matchesFinish && matchesStatus;
+    });
+  }
+
+  getFilteredInventoryCardCount(): number {
+    return this.getFilteredInventoryCards().length;
   }
 
 }
