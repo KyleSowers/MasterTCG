@@ -365,37 +365,6 @@
     </button>
   </div>
 
-  <section class="printable-inventory-vault">
-    <h1>MasterTCG Inventory Vault</h1>
-
-    <section
-      class="print-set-section"
-      *ngFor="let group of getPrintableInventoryVaultGroups()"
-    >
-      <h2>{{ group.setName }}</h2>
-
-      <table class="printable-vault-table">
-        <thead>
-          <tr>
-            <th>Card #</th>
-            <th>Card Name</th>
-            <th>Finish</th>
-            <th>Qty</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr *ngFor="let item of group.items">
-            <td>{{ item.cardNumber }}</td>
-            <td>{{ item.cardName }}</td>
-            <td>{{ displayFinish(item.finish) }}</td>
-            <td>{{ item.quantity }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </section>
-
   <div class="inventory-vault-header">
     <h2>Inventory Vault</h2>
 

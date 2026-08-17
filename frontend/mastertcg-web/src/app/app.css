@@ -1108,6 +1108,10 @@ body {
     width: 100%;
   }
 
+   .inventory-vault-print-actions {
+    margin: 12px 0 18px;
+  }
+
 
   /* =============================================
   PRINTABLE INVENTORY VAULT
@@ -1115,10 +1119,6 @@ body {
 
   .printable-inventory-vault {
     display: none;
-  }
-
-  .inventory-vault-print-actions {
-    margin: 12px 0 18px;
   }
 
   @media print {
@@ -1148,25 +1148,50 @@ body {
     .printable-inventory-vault h1 {
       border-bottom: 2px solid #111827;
       font-size: 18px;
-      margin: 0 0 14px;
+      margin: 0 0 12px;
       padding-bottom: 6px;
     }
 
+    .print-stats {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 14px;
+    }
+
+    .print-stats div {
+      border: 1px solid #111827;
+      padding: 6px 8px;
+    }
+
+    .print-stats span {
+      display: block;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .print-stats strong {
+      display: block;
+      font-size: 15px;
+      margin-top: 2px;
+    }
+
     .print-set-section {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
     }
 
     .print-set-section h2 {
       background: #f3f4f6;
       border: 1px solid #111827;
-      font-size: 14px;
+      font-size: 13px;
       margin: 0;
-      padding: 6px 8px;
+      padding: 5px 7px;
     }
 
     .printable-vault-table {
       border-collapse: collapse;
-      margin-bottom: 10px;
       width: 100%;
     }
 

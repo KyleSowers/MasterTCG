@@ -1400,11 +1400,200 @@ isOwned(cardId: string): boolean {
   }
 
   printInventoryVault(): void {
-    window.print();
+    const printWindow = window.open('', '_blank', 'width=900,height=700');
+
+    if (!printWindow) {
+      return;
+    }
+
+    const groups = this.getPrintableInventoryVaultGroups();
+
+    const setSections = groups.map(group => {
+      const rows = group.items.map(item => `
+        <tr>
+          <td>${this.escapePrintValue(item.cardNumber)}</td>
+          <td>${this.escapePrintValue(item.cardName)}</td>
+          <td>${this.escapePrintValue(this.displayFinish(item.finish))}</td>
+          <td>${item.quantity}</td>
+        </tr>
+      `).join('');
+
+      return `
+        <section class="set-section">
+          <h2>${this.escapePrintValue(group.setName)}</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Card #</th>
+                <th>Card Name</th>
+                <th>Finish</th>
+                <th>Qty</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${rows}
+            </tbody>
+          </table>
+        </section>
+      `;
+    }).join('');
+
+    printWindow.document.open();
+
+    printWindow.document.write(`
+      <!doctype html>
+      <html>
+        <head>
+          <title>MasterTCG Inventory Vault</title>
+
+          <style>
+            body {
+              color: #111827;
+              font-family: Arial, sans-serif;
+              margin: 0.5in;
+            }
+
+            h1 {
+              border-bottom: 2px solid #111827;
+              font-size: 20px;
+              margin: 0 0 12px;
+              padding-bottom: 6px;
+            }
+
+            .print-stats {
+              display: grid;
+              gap: 8px;
+              grid-template-columns: repeat(3, 1fr);
+              margin-bottom: 16px;
+            }
+
+            .print-stats div {
+              border: 1px solid #111827;
+              padding: 6px 8px;
+            }
+
+            .print-stats span {
+              display: block;
+              font-size: 9px;
+              font-weight: 800;
+              text-transform: uppercase;
+            }
+
+            .print-stats strong {
+              display: block;
+              font-size: 16px;
+              margin-top: 2px;
+            }
+
+            .set-section {
+              margin-bottom: 18px;
+              page-break-inside: avoid;
+            }
+
+            h2 {
+              background: #f3f4f6;
+              border: 1px solid #111827;
+              font-size: 14px;
+              margin: 0;
+              padding: 6px 8px;
+            }
+
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            thead {
+              display: table-header-group;
+            }
+
+            th,
+            td {
+              border: 1px solid #111827;
+              font-size: 10px;
+              line-height: 1.2;
+              padding: 4px 6px;
+              text-align: left;
+            }
+
+            th {
+              font-weight: 800;
+            }
+
+            th:first-child,
+            td:first-child {
+              width: 60px;
+            }
+
+            th:nth-child(3),
+            td:nth-child(3) {
+              width: 110px;
+            }
+
+            th:last-child,
+            td:last-child {
+              text-align: center;
+              width: 40px;
+            }
+
+            @page {
+              margin: 0.5in;
+            }
+          </style>
+        </head>
+
+        <body>
+          <h1>MasterTCG Inventory Vault</h1>
+
+          <div class="print-stats">
+            <div>
+              <span>Unique Vault Cards</span>
+              <strong>${this.getInventoryVaultUniqueCount()}</strong>
+            </div>
+
+            <div>
+              <span>Total Extra Quantity</span>
+              <strong>${this.getInventoryVaultTotalQuantity()}</strong>
+            </div>
+
+            <div>
+              <span>Sets With Inventory</span>
+              <strong>${this.getPrintableInventoryVaultSetCount()}</strong>
+            </div>
+          </div>
+
+          ${setSections || '<p>No inventory items in Vault.</p>'}
+        </body>
+      </html>
+    `);
+
+    printWindow.document.close();
+
+    printWindow.focus();
+
+    setTimeout(() => {
+      printWindow.print();
+      printWindow.close();
+    }, 250);
+  }
+
+  private escapePrintValue(value: unknown): string {
+    return String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
   }
 
   getSetNameById(setId: string): string {
     return this.sets.find(set => set.id === setId)?.name ?? 'Unknown Set';
+  }
+
+  getPrintableInventoryVaultSetCount(): number {
+    return this.getPrintableInventoryVaultGroups().length;
   }
 
   getPrintableInventoryVaultGroups(): {
