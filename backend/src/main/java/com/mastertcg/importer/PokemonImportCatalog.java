@@ -35,6 +35,21 @@ public class PokemonImportCatalog {
                 UUID.fromString("33333333-3333-3333-3333-333333333333"),
                 "Fossil"
         )),
+                Map.entry("base4", new PokemonSetImportConfig(
+                "data/pokemon/base4.json",
+                UUID.fromString("12121212-1212-1212-1212-121212121212"),
+                "Base Set 2"
+        )),
+        Map.entry("base-set-2", new PokemonSetImportConfig(
+                "data/pokemon/base4.json",
+                UUID.fromString("12121212-1212-1212-1212-121212121212"),
+                "Base Set 2"
+        )),
+        Map.entry("base2-set", new PokemonSetImportConfig(
+                "data/pokemon/base4.json",
+                UUID.fromString("12121212-1212-1212-1212-121212121212"),
+                "Base Set 2"
+        )),
         Map.entry("base5", new PokemonSetImportConfig(
                 "data/pokemon/base5.json",
                 UUID.fromString("44444444-4444-4444-4444-444444444444"),

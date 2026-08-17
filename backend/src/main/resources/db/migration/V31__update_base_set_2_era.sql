@@ -1,0 +1,3 @@
+UPDATE sets
+SET era = 'Classic Era'
+WHERE id = '12121212-1212-1212-1212-121212121212';

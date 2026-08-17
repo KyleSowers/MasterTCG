@@ -120,6 +120,7 @@ public class ImportController {
                 result.append(importPokemonSet("base1")).append("\n");
                 result.append(importPokemonSet("base2")).append("\n");
                 result.append(importPokemonSet("base3")).append("\n");
+                result.append(importPokemonSet("base4")).append("\n");
                 result.append(importPokemonSet("base5")).append("\n");
                 result.append(importPokemonSet("gym1")).append("\n");
                 result.append(importPokemonSet("gym2")).append("\n");

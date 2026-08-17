@@ -79,7 +79,7 @@ export class App implements OnInit {
 ngOnInit() {
     this.api.getSets().subscribe({
       next: (data) => {
-        this.sets = this.sortSetsByReleaseDate(data);
+        this.sets = this.sortSetsByReleaseOrder(data);
         // this.selectedProfileSetIds = sets.map(set => set.id);
         this.loadCollectionProfileFromBackendOrLocal();
 
@@ -737,24 +737,52 @@ isSetInCollectionProfile(set: SetDto): boolean {
   }
 
 toggleProfileSet(set: SetDto, event: Event): void {
-    const checked = (event.target as HTMLInputElement).checked;
+  const checked = (event.target as HTMLInputElement).checked;
 
-    if (checked) {
-      if (!this.selectedProfileSetIds.includes(set.id)) {
-        this.selectedProfileSetIds = [...this.selectedProfileSetIds, set.id];
-      }
-    } else {
-      this.selectedProfileSetIds = this.selectedProfileSetIds.filter(
-        setId => setId !== set.id
-      );
-
-      if (this.selectedSet?.id === set.id) {
-        this.selectedSet = null;
-        this.cards = [];
-      }
+  if (checked) {
+    if (!this.selectedProfileSetIds.includes(set.id)) {
+      this.selectedProfileSetIds = [...this.selectedProfileSetIds, set.id];
     }
-    this.saveCollectionProfileLocally();
+  } else {
+    this.selectedProfileSetIds = this.selectedProfileSetIds.filter(
+      setId => setId !== set.id
+    );
+
+    if (this.selectedSet?.id === set.id) {
+      this.selectedSet = null;
+      this.cards = [];
+    }
   }
+  this.saveCollectionProfileLocally();
+}
+
+getSetReleaseOrder(setId: string): number {
+  const releaseOrder: Record<string, number> = {
+    '11111111-1111-1111-1111-111111111111': 1,  // Base Set
+    '22222222-2222-2222-2222-222222222222': 2,  // Jungle
+    '33333333-3333-3333-3333-333333333333': 3,  // Fossil
+    '12121212-1212-1212-1212-121212121212': 4,  // Base Set 2
+    '44444444-4444-4444-4444-444444444444': 5,  // Team Rocket
+    '55555555-5555-5555-5555-555555555555': 6,  // Gym Heroes
+    '66666666-6666-6666-6666-666666666666': 7,  // Gym Challenge
+    '77777777-7777-7777-7777-777777777777': 8,  // Neo Genesis
+    '88888888-8888-8888-8888-888888888888': 9,  // Neo Discovery
+    '99999999-9999-9999-9999-999999999999': 10, // Neo Revelation
+    'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb': 11, // Neo Destiny
+    'cccccccc-cccc-cccc-cccc-cccccccccccc': 12, // Legendary Collection
+    'dddddddd-dddd-dddd-dddd-dddddddddddd': 13, // Expedition
+    'eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee': 14, // Aquapolis
+    'ffffffff-ffff-ffff-ffff-ffffffffffff': 15  // Skyridge
+  };
+
+  return releaseOrder[setId] ?? 999;
+}
+
+sortSetsByReleaseOrder(sets: SetDto[]): SetDto[] {
+  return [...sets].sort(
+    (a, b) => this.getSetReleaseOrder(a.id) - this.getSetReleaseOrder(b.id)
+  );
+}
 
 getAvailableEras(): string[] {
   return Array.from(new Set(this.sets.map(set => set.era)));
