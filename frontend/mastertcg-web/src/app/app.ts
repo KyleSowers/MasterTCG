@@ -1385,6 +1385,14 @@ isOwned(cardId: string): boolean {
     return this.getFilteredInventoryCards().length;
   }
 
+  getPrintableInventoryVaultItems(): InventoryVaultItemResponse[] {
+    return this.getSortedInventoryVaultItems();
+  }
+
+  printInventoryVault(): void {
+    window.print();
+  }
+
 }
 
 

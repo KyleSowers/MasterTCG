@@ -355,6 +355,46 @@
       </strong>
     </div>
   </div>
+  <div class="inventory-vault-print-actions">
+    <button
+      type="button"
+      class="profile-save-button"
+      (click)="printInventoryVault()"
+    >
+      Print Vault
+    </button>
+  </div>
+
+  <section class="printable-inventory-vault">
+    <h1>MasterTCG Inventory Vault</h1>
+
+    <div class="printable-vault-summary">
+      <p><strong>Unique Vault Cards:</strong> {{ getInventoryVaultUniqueCount() }}</p>
+      <p><strong>Total Extra Quantity:</strong> {{ getInventoryVaultTotalQuantity() }}</p>
+    </div>
+
+    <table class="printable-vault-table">
+      <thead>
+        <tr>
+          <th>Card #</th>
+          <th>Name</th>
+          <th>Finish</th>
+          <th>Rarity</th>
+          <th>Qty</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of getPrintableInventoryVaultItems()">
+          <td>{{ item.cardNumber }}</td>
+          <td>{{ item.cardName }}</td>
+          <td>{{ displayFinish(item.finish) }}</td>
+          <td>{{ getRarityLabel(item.rarity) }}</td>
+          <td>{{ item.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
   <div class="inventory-vault-header">
     <h2>Inventory Vault</h2>

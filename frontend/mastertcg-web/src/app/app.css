@@ -1096,7 +1096,7 @@ body {
     justify-self: start;
   }
 
-    .inventory-filter-panel {
+  .inventory-filter-panel {
     align-items: stretch;
     flex-direction: column;
   }
@@ -1106,6 +1106,69 @@ body {
     margin: 0;
     max-width: none;
     width: 100%;
+  }
+
+  .inventory-vault-print-actions {
+  margin: 12px 0 18px;
+  }
+
+  .printable-inventory-vault {
+    display: none;
+  }
+
+
+  /* =============================================
+  PRINTABLE INVENTORY VAULT
+  ============================================= */
+
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+
+    .printable-inventory-vault,
+    .printable-inventory-vault * {
+      visibility: visible;
+    }
+
+    .printable-inventory-vault {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 24px;
+    }
+
+    .printable-inventory-vault h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .printable-vault-summary {
+      margin-bottom: 18px;
+    }
+
+    .printable-vault-summary p {
+      margin: 4px 0;
+    }
+
+    .printable-vault-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .printable-vault-table th,
+    .printable-vault-table td {
+      border: 1px solid #111827;
+      font-size: 12px;
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    .printable-vault-table th {
+      font-weight: 800;
+    }
   }
 }
 
