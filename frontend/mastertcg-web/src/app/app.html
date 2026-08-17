@@ -422,13 +422,6 @@
         class="inventory-review-row"
         *ngFor="let item of getInventoryVaultItemsForSelectedSet()"
       >
-        <img
-          *ngIf="item.imageSmallUrl"
-          [src]="item.imageSmallUrl"
-          [alt]="item.cardName"
-          class="inventory-review-image"
-        >
-
         <div class="inventory-review-details">
           <strong>{{ item.cardNumber }} — {{ item.cardName }}</strong>
           <span>{{ displayFinish(item.finish) }} · {{ getRarityLabel(item.rarity) }}</span>
@@ -481,13 +474,6 @@
         class="inventory-card-row"
         [class.inventory-card-row-active]="isCardInInventory(c)"
       >
-        <img
-          *ngIf="c.imageSmallUrl"
-          [src]="c.imageSmallUrl"
-          [alt]="c.name"
-          class="inventory-card-image"
-        >
-
         <div class="inventory-card-details">
           <div class="inventory-card-title">
             {{ c.cardNumber }} — {{ c.name }}

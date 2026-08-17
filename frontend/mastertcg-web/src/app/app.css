@@ -869,12 +869,10 @@ body {
 }
 
 .inventory-card-row {
-  align-items: flex-start;
   background: #f8fafc;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  display: flex;
-  gap: 14px;
+  display: block;
   opacity: 0.82;
   padding: 12px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
@@ -885,13 +883,6 @@ body {
   border-color: #2563eb;
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
   opacity: 1;
-}
-
-.inventory-card-image {
-  border-radius: 6px;
-  flex: 0 0 auto;
-  max-width: 72px;
-  width: 72px;
 }
 
 .inventory-card-details {
@@ -1016,13 +1007,8 @@ body {
   border-radius: 10px;
   display: grid;
   gap: 12px;
-  grid-template-columns: 48px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   padding: 10px;
-}
-
-.inventory-review-image {
-  border-radius: 5px;
-  width: 48px;
 }
 
 .inventory-review-details {
@@ -1092,11 +1078,6 @@ body {
     flex-direction: column;
   }
 
-  .inventory-card-image {
-    max-width: 110px;
-    width: 110px;
-  }
-
   .inventory-variant-row {
     align-items: flex-start;
     flex-direction: column;
@@ -1107,7 +1088,7 @@ body {
   }
 
   .inventory-review-row {
-    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .inventory-review-quantity {
