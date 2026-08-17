@@ -1302,15 +1302,25 @@ isOwned(cardId: string): boolean {
 
   getSortedInventoryVaultItems(): InventoryVaultItemResponse[] {
     return [...this.inventoryVaultItems].sort((a, b) => {
-      const setCompare = a.setId.localeCompare(b.setId);
+      const setCompare = this.getSetNameById(a.setId).localeCompare(
+        this.getSetNameById(b.setId)
+      );
 
       if (setCompare !== 0) {
         return setCompare;
       }
 
-      return a.cardNumber.localeCompare(b.cardNumber, undefined, {
-        numeric: true
-      });
+      const cardNumberCompare = a.cardNumber.localeCompare(
+        b.cardNumber,
+        undefined,
+        { numeric: true }
+      );
+
+      if (cardNumberCompare !== 0) {
+        return cardNumberCompare;
+      }
+
+      return a.finish.localeCompare(b.finish);
     });
   }
 
@@ -1391,6 +1401,43 @@ isOwned(cardId: string): boolean {
 
   printInventoryVault(): void {
     window.print();
+  }
+
+  getSetNameById(setId: string): string {
+    return this.sets.find(set => set.id === setId)?.name ?? 'Unknown Set';
+  }
+
+  getPrintableInventoryVaultGroups(): {
+    setId: string;
+    setName: string;
+    items: InventoryVaultItemResponse[];
+  }[] {
+    const groupedItems = new Map<
+      string,
+      {
+        setId: string;
+        setName: string;
+        items: InventoryVaultItemResponse[];
+      }
+    >();
+
+    this.getSortedInventoryVaultItems().forEach(item => {
+      const setName = this.getSetNameById(item.setId);
+
+      if (!groupedItems.has(item.setId)) {
+        groupedItems.set(item.setId, {
+          setId: item.setId,
+          setName,
+          items: []
+        });
+      }
+
+      groupedItems.get(item.setId)?.items.push(item);
+    });
+
+  return Array.from(groupedItems.values()).sort((a, b) =>
+      a.setName.localeCompare(b.setName)
+    );
   }
 
 }

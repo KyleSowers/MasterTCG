@@ -1108,20 +1108,24 @@ body {
     width: 100%;
   }
 
-  .inventory-vault-print-actions {
-  margin: 12px 0 18px;
-  }
-
-  .printable-inventory-vault {
-    display: none;
-  }
-
 
   /* =============================================
   PRINTABLE INVENTORY VAULT
   ============================================= */
 
+  .printable-inventory-vault {
+    display: none;
+  }
+
+  .inventory-vault-print-actions {
+    margin: 12px 0 18px;
+  }
+
   @media print {
+    body {
+      background: #ffffff;
+    }
+
     body * {
       visibility: hidden;
     }
@@ -1132,42 +1136,75 @@ body {
     }
 
     .printable-inventory-vault {
+      background: #ffffff;
       display: block;
-      position: absolute;
       left: 0;
+      padding: 0;
+      position: absolute;
       top: 0;
       width: 100%;
-      padding: 24px;
     }
 
     .printable-inventory-vault h1 {
-      font-size: 24px;
-      margin-bottom: 16px;
+      border-bottom: 2px solid #111827;
+      font-size: 18px;
+      margin: 0 0 14px;
+      padding-bottom: 6px;
     }
 
-    .printable-vault-summary {
+    .print-set-section {
       margin-bottom: 18px;
     }
 
-    .printable-vault-summary p {
-      margin: 4px 0;
+    .print-set-section h2 {
+      background: #f3f4f6;
+      border: 1px solid #111827;
+      font-size: 14px;
+      margin: 0;
+      padding: 6px 8px;
     }
 
     .printable-vault-table {
       border-collapse: collapse;
+      margin-bottom: 10px;
       width: 100%;
+    }
+
+    .printable-vault-table thead {
+      display: table-header-group;
     }
 
     .printable-vault-table th,
     .printable-vault-table td {
       border: 1px solid #111827;
-      font-size: 12px;
-      padding: 6px 8px;
+      font-size: 10px;
+      line-height: 1.2;
+      padding: 4px 6px;
       text-align: left;
     }
 
     .printable-vault-table th {
       font-weight: 800;
+    }
+
+    .printable-vault-table th:first-child,
+    .printable-vault-table td:first-child {
+      width: 60px;
+    }
+
+    .printable-vault-table th:nth-child(3),
+    .printable-vault-table td:nth-child(3) {
+      width: 110px;
+    }
+
+    .printable-vault-table th:last-child,
+    .printable-vault-table td:last-child {
+      text-align: center;
+      width: 40px;
+    }
+
+    @page {
+      margin: 0.5in;
     }
   }
 }
