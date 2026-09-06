@@ -9,6 +9,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -29,6 +31,19 @@ public class InventoryVaultItemEntity {
 
     @Column(nullable = false)
     private int quantity;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "card_condition", nullable = false)
+    private InventoryCardCondition cardCondition = InventoryCardCondition.UNKNOWN;
+
+    @Column(name = "available_for_trade", nullable = false)
+    private boolean availableForTrade = false;
+
+    @Column(name = "available_for_sale", nullable = false)
+    private boolean availableForSale = false;
+
+    @Column(name = "notes")
+    private String notes;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -95,4 +110,38 @@ public class InventoryVaultItemEntity {
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
+
+        public InventoryCardCondition getCardCondition() {
+        return cardCondition;
+    }
+
+    public void setCardCondition(InventoryCardCondition cardCondition) {
+        this.cardCondition = cardCondition;
+    }
+
+    public boolean isAvailableForTrade() {
+        return availableForTrade;
+    }
+
+    public void setAvailableForTrade(boolean availableForTrade) {
+        this.availableForTrade = availableForTrade;
+    }
+
+    public boolean isAvailableForSale() {
+        return availableForSale;
+    }
+
+    public void setAvailableForSale(boolean availableForSale) {
+        this.availableForSale = availableForSale;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+
 }

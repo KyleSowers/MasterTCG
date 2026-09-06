@@ -67,6 +67,14 @@ export class App implements OnInit {
   inventorySearchTerm = '';
   selectedInventoryFinish = 'ALL';
   selectedInventoryStatus = 'ALL';
+  selectedInventoryCard: CardDto | null = null;
+  selectedInventoryVariant: CardVariantDto | null = null;
+
+  inventoryDetailQuantity = 1;
+  inventoryDetailCondition = 'NEAR_MINT';
+  inventoryDetailAvailableForTrade = false;
+  inventoryDetailAvailableForSale = false;
+  inventoryDetailNotes = '';
   
   loading = true;
   error: string | null = null;
@@ -1655,6 +1663,212 @@ isOwned(cardId: string): boolean {
   return Array.from(groupedItems.values()).sort((a, b) =>
       a.setName.localeCompare(b.setName)
     );
+  }
+
+  getInventoryVaultItemForVariant(variantId: string): InventoryVaultItemResponse | undefined {
+    return this.inventoryVaultItems.find(
+      item => item.cardVariantId === variantId
+    );
+  }
+
+  getInventoryConditionOptions(): string[] {
+    return [
+     'MINT',
+     'NEAR_MINT',
+     'LIGHTLY_PLAYED',
+     'MODERATELY_PLAYED',
+     'HEAVILY_PLAYED',
+     'DAMAGED'
+    ];
+  }
+
+  displayInventoryCondition(condition: string): string {
+    switch (condition) {
+      case 'MINT':
+        return 'Mint';
+      case 'NEAR_MINT':
+        return 'Near Mint';
+      case 'LIGHTLY_PLAYED':
+        return 'Lightly Played';
+      case 'MODERATELY_PLAYED':
+        return 'Moderately Played';
+      case 'HEAVILY_PLAYED':
+        return 'Heavily Played';
+      case 'DAMAGED':
+        return 'Damaged';
+      default:
+        return 'Near Mint';
+    }
+  }
+
+  displayInventoryConditionShort(condition: string): string {
+    switch (condition) {
+      case 'MINT':
+        return 'M';
+      case 'NEAR_MINT':
+        return 'NM';
+      case 'LIGHTLY_PLAYED':
+        return 'LP';
+      case 'MODERATELY_PLAYED':
+        return 'MP';
+      case 'HEAVILY_PLAYED':
+        return 'HP';
+      case 'DAMAGED':
+        return 'D';
+      default:
+        return 'NM';
+    }
+  }
+
+  updateInventoryVaultItemDetails(
+    variantId: string,
+    updates: Partial<InventoryVaultItemRequest>
+  ): void {
+    const existingItem = this.getInventoryVaultItemForVariant(variantId);
+
+    if (!existingItem) {
+      return;
+    }
+
+    const request: InventoryVaultItemRequest = {
+      cardVariantId: variantId,
+      quantity: existingItem.quantity,
+      cardCondition: updates.cardCondition ?? existingItem.cardCondition,
+      availableForTrade: updates.availableForTrade ?? existingItem.availableForTrade,
+      availableForSale: updates.availableForSale ?? existingItem.availableForSale,
+      notes: updates.notes ?? existingItem.notes
+    };
+
+    this.api.setDemoInventoryVaultItemQuantity(request).subscribe({
+      next: (savedItem) => {
+        if (!savedItem) {
+          return;
+        }
+
+        const existingIndex = this.inventoryVaultItems.findIndex(
+          item => item.cardVariantId === variantId
+        );
+
+        if (existingIndex >= 0) {
+          this.inventoryVaultItems[existingIndex] = savedItem;
+        }
+      },
+      error: (err) => {
+        console.error(err);
+        this.inventoryVaultMessage = 'Failed to update Vault item details.';
+      }
+    });
+  }
+
+  openInventoryItemDetails(card: CardDto, variant: CardVariantDto): void {
+    const existingItem = this.getInventoryVaultItemForVariant(variant.id);
+
+    this.selectedInventoryCard = card;
+    this.selectedInventoryVariant = variant;
+
+    this.inventoryDetailQuantity = existingItem?.quantity ?? 1;
+    this.inventoryDetailCondition = existingItem?.cardCondition ?? 'NEAR_MINT';
+    this.inventoryDetailAvailableForTrade = existingItem?.availableForTrade ?? false;
+    this.inventoryDetailAvailableForSale = existingItem?.availableForSale ?? false;
+    this.inventoryDetailNotes = existingItem?.notes ?? '';
+  }
+
+  closeInventoryItemDetails(): void {
+    this.selectedInventoryCard = null;
+    this.selectedInventoryVariant = null;
+
+    this.inventoryDetailQuantity = 1;
+    this.inventoryDetailCondition = 'NEAR_MINT';
+    this.inventoryDetailAvailableForTrade = false;
+    this.inventoryDetailAvailableForSale = false;
+    this.inventoryDetailNotes = '';
+  }
+
+  saveInventoryItemDetails(): void {
+    if (!this.selectedInventoryVariant) {
+      return;
+    }
+
+    const quantity = Math.max(0, Number(this.inventoryDetailQuantity) || 0);
+
+    const request: InventoryVaultItemRequest = {
+      cardVariantId: this.selectedInventoryVariant.id,
+      quantity,
+      cardCondition: this.inventoryDetailCondition,
+      availableForTrade: this.inventoryDetailAvailableForTrade,
+      availableForSale: this.inventoryDetailAvailableForSale,
+      notes: this.inventoryDetailNotes
+    };
+
+    this.api.setDemoInventoryVaultItemQuantity(request).subscribe({
+      next: (savedItem) => {
+        const variantId = this.selectedInventoryVariant?.id;
+
+        if (!variantId) {
+          return;
+        }
+
+        this.inventoryVaultItems = this.inventoryVaultItems.filter(
+          item => item.cardVariantId !== variantId
+        );
+
+        if (savedItem) {
+          this.inventoryVaultItems = [...this.inventoryVaultItems, savedItem];
+        }
+
+        this.closeInventoryItemDetails();
+      },
+      error: (err) => {
+        console.error(err);
+        this.inventoryVaultMessage = 'Failed to save Vault item details.';
+      }
+    });
+  }
+
+  increaseInventoryDetailQuantity(): void {
+    this.inventoryDetailQuantity += 1;
+  }
+
+  decreaseInventoryDetailQuantity(): void {
+    this.inventoryDetailQuantity = Math.max(0, this.inventoryDetailQuantity - 1);
+  }
+
+  getInventoryVariantDetailText(variantId: string): string {
+    const item = this.getInventoryVaultItemForVariant(variantId);
+
+    if (!item) {
+      return '';
+    }
+
+    const details: string[] = [];
+
+    if (item.cardCondition) {
+      details.push(this.displayInventoryConditionShort(item.cardCondition));
+    }
+
+    if (item.availableForTrade) {
+      details.push('Trade');
+    }
+
+    if (item.availableForSale) {
+      details.push('Sale');
+    }
+
+    if (item.notes) {
+      const trimmedNotes = item.notes.trim();
+      const notePreview =
+        trimmedNotes.length > 40
+          ? `${trimmedNotes.slice(0, 40)}...`
+          : trimmedNotes;
+
+      details.push(`Notes: ${notePreview}`);
+    }
+
+    return details.join(' · ');
+  }
+
+  hasInventoryVariantDetails(variantId: string): boolean {
+    return this.getInventoryVariantDetailText(variantId).length > 0;
   }
 
 }

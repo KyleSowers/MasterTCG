@@ -62,6 +62,10 @@ export interface CollectionProfileResponse extends CollectionProfileRequest {
 export interface InventoryVaultItemRequest {
   cardVariantId: string;
   quantity: number;
+  cardCondition?: string;
+  availableForTrade?: boolean;
+  availableForSale?: boolean;
+  notes?: string | null;
 }
 
 export interface InventoryVaultItemResponse {
@@ -79,6 +83,11 @@ export interface InventoryVaultItemResponse {
   imageSmallUrl: string;
 
   quantity: number;
+
+  cardCondition: string;
+  availableForTrade: boolean;
+  availableForSale: boolean;
+  notes: string | null;
 
   createdAt: string;
   updatedAt: string;

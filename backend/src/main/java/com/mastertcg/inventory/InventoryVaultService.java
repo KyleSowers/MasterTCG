@@ -21,9 +21,6 @@ public class InventoryVaultService {
     // ---------------------------------------------------------------------------
     // TEMPORARY DEMO USER
     // ---------------------------------------------------------------------------
-    // This placeholder user ID lets us build Vault functionality before real
-    // accounts exist. Later, this should be replaced by authenticated user data.
-    // ---------------------------------------------------------------------------
 
     private static final UUID DEMO_USER_ID =
             UUID.fromString("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
@@ -85,6 +82,23 @@ public class InventoryVaultService {
 
         vaultItem.setQuantity(request.quantity());
 
+        if (request.cardCondition() != null) {
+            vaultItem.setCardCondition(request.cardCondition());
+        }
+
+        if (request.availableForTrade() != null) {
+            vaultItem.setAvailableForTrade(request.availableForTrade());
+        }
+
+        if (request.availableForSale() != null) {
+            vaultItem.setAvailableForSale(request.availableForSale());
+        }
+
+        if (request.notes() != null) {
+            String trimmedNotes = request.notes().trim();
+            vaultItem.setNotes(trimmedNotes.isEmpty() ? null : trimmedNotes);
+        }
+
         InventoryVaultItemEntity savedItem = inventoryVaultItemRepository.save(vaultItem);
 
         return Optional.of(toResponse(savedItem));
@@ -93,8 +107,6 @@ public class InventoryVaultService {
 
     // ---------------------------------------------------------------------------
     // MAPPING HELPERS
-    // ---------------------------------------------------------------------------
-    // Converts database entities into frontend-friendly Vault responses.
     // ---------------------------------------------------------------------------
 
     private InventoryVaultItemResponse toResponse(InventoryVaultItemEntity vaultItem) {
@@ -116,6 +128,10 @@ public class InventoryVaultService {
                 card.getImageSmallUrl(),
 
                 vaultItem.getQuantity(),
+                vaultItem.getCardCondition(),
+                vaultItem.isAvailableForTrade(),
+                vaultItem.isAvailableForSale(),
+                vaultItem.getNotes(),
 
                 vaultItem.getCreatedAt(),
                 vaultItem.getUpdatedAt()

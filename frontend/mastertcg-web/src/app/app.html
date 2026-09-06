@@ -477,64 +477,165 @@
       Showing {{ getFilteredInventoryCardCount() }} cards
     </div>
 
-    <ul class="inventory-card-list">
+    <ul class="inventory-card-list inventory-compact-list">
       <li
         *ngFor="let c of getFilteredInventoryCards()"
-        class="inventory-card-row"
-        [class.inventory-card-row-active]="isCardInInventory(c)"
+        class="inventory-compact-card"
+        [class.inventory-compact-card-active]="isCardInInventory(c)"
       >
-        <div class="inventory-card-details">
-          <div class="inventory-card-title">
-            {{ c.cardNumber }} — {{ c.name }}
+        <div class="inventory-compact-main-row">
+          <div class="inventory-compact-card-info">
+            <strong>{{ c.cardNumber }} — {{ c.name }}</strong>
+
+            <span>
+              {{ getRarityLabel(c.rarity) }}
+              <ng-container *ngIf="c.primaryType"> · {{ c.primaryType }}</ng-container>
+
+              <ng-container *ngFor="let v of getVisibleInventoryVariants(c)">
+                <small
+                  class="inventory-compact-detail-chip inline-detail-chip"
+                  *ngIf="hasInventoryVariantDetails(v.id)"
+                >
+                  {{ displayFinish(v.finish) }}:
+                  {{ getInventoryVariantDetailText(v.id) }}
+                </small>
+              </ng-container>
+            </span>
           </div>
 
-          <div class="inventory-card-meta">
-            {{ getRarityLabel(c.rarity) }}
-            <span *ngIf="c.primaryType"> · {{ c.primaryType }}</span>
-          </div>
-
-          <div class="inventory-variant-list">
-            <div
+          <div class="inventory-compact-variants">
+            <button
+              type="button"
+              class="inventory-compact-variant-button"
+              [class.inventory-compact-variant-active]="isVariantInInventory(v.id)"
               *ngFor="let v of getVisibleInventoryVariants(c)"
-              class="inventory-variant-row"
-              [class.inventory-variant-row-active]="isVariantInInventory(v.id)"
+              (click)="openInventoryItemDetails(c, v)"
             >
-              <label>
-                <input
-                  type="checkbox"
-                  [checked]="isVariantInInventory(v.id)"
-                  (change)="setInventoryQuantity(v.id, $any($event.target).checked ? 1 : 0)"
-                />
+              <span>{{ displayFinish(v.finish) }}</span>
 
-                {{ displayFinish(v.finish) }}
-              </label>
+              <strong *ngIf="isVariantInInventory(v.id)">
+                Qty {{ getInventoryQuantityForVariant(v.id) }}
+              </strong>
 
-              <div
-                class="inventory-quantity-controls"
-                *ngIf="isVariantInInventory(v.id)"
-              >
-                <button
-                  type="button"
-                  (click)="decreaseInventoryQuantity(v.id)"
-                >
-                  -
-                </button>
+              <em *ngIf="isVariantInInventory(v.id)">
+                Update
+              </em>
 
-                <strong>{{ getInventoryQuantityForVariant(v.id) }}</strong>
-
-                <button
-                  type="button"
-                  (click)="increaseInventoryQuantity(v.id)"
-                >
-                  +
-                </button>
-              </div>
-            </div>
+              <em *ngIf="!isVariantInInventory(v.id)">
+                Add
+              </em>
+            </button>
           </div>
         </div>
       </li>
     </ul>
   </section>
+
+  <div
+    class="inventory-modal-backdrop"
+    *ngIf="selectedInventoryCard && selectedInventoryVariant"
+  >
+    <div class="inventory-modal">
+      <div class="inventory-modal-header">
+        <div>
+          <h3>
+            {{ selectedInventoryCard.cardNumber }} — {{ selectedInventoryCard.name }}
+          </h3>
+
+          <p>
+            {{ displayFinish(selectedInventoryVariant.finish) }}
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="inventory-modal-close"
+          (click)="closeInventoryItemDetails()"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="inventory-modal-body">
+        <label class="inventory-modal-field">
+          Quantity
+
+          <div class="inventory-modal-quantity">
+            <button type="button" (click)="decreaseInventoryDetailQuantity()">-</button>
+
+            <input
+              type="number"
+              min="0"
+              [(ngModel)]="inventoryDetailQuantity"
+            />
+
+            <button type="button" (click)="increaseInventoryDetailQuantity()">+</button>
+          </div>
+        </label>
+
+        <label class="inventory-modal-field">
+          Condition
+
+          <select
+            class="filter-select"
+            [(ngModel)]="inventoryDetailCondition"
+          >
+            <option
+              *ngFor="let condition of getInventoryConditionOptions()"
+              [value]="condition"
+            >
+              {{ displayInventoryCondition(condition) }}
+            </option>
+          </select>
+        </label>
+
+        <label class="inventory-modal-checkbox">
+          <input
+            type="checkbox"
+            [(ngModel)]="inventoryDetailAvailableForTrade"
+          >
+          Available for trade
+        </label>
+
+        <label class="inventory-modal-checkbox">
+          <input
+            type="checkbox"
+            [(ngModel)]="inventoryDetailAvailableForSale"
+          >
+          Available for sale
+        </label>
+
+        <label class="inventory-modal-field">
+          Notes
+
+          <textarea
+            [(ngModel)]="inventoryDetailNotes"
+            placeholder="Optional notes, damage, centering, trade details..."
+          ></textarea>
+        </label>
+      </div>
+
+      <div class="inventory-modal-actions">
+        <button
+          type="button"
+          class="secondary-button"
+          (click)="closeInventoryItemDetails()"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          class="profile-save-button"
+          (click)="saveInventoryItemDetails()"
+        >
+          Finish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
 </section>
 
 <section
