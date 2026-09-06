@@ -511,7 +511,6 @@
               *ngFor="let v of getVisibleInventoryVariants(c)"
               (click)="openInventoryItemDetails(c, v)"
             >
-              <span>{{ displayFinish(v.finish) }}</span>
 
               <strong *ngIf="isVariantInInventory(v.id)">
                 Qty {{ getInventoryQuantityForVariant(v.id) }}
@@ -606,11 +605,11 @@
         </label>
 
         <label class="inventory-modal-field">
-          Notes
+          Details
 
           <textarea
             [(ngModel)]="inventoryDetailNotes"
-            placeholder="Optional notes, damage, centering, trade details..."
+            placeholder="Optional details, damage, centering, trade info..."
           ></textarea>
         </label>
       </div>

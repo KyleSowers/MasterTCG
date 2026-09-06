@@ -1861,7 +1861,7 @@ isOwned(cardId: string): boolean {
           ? `${trimmedNotes.slice(0, 40)}...`
           : trimmedNotes;
 
-      details.push(`Notes: ${notePreview}`);
+      details.push(`Details: ${notePreview}`);
     }
 
     return details.join(' · ');
