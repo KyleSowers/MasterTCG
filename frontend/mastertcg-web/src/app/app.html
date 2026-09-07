@@ -585,11 +585,13 @@
             <span>Details</span>
           </div>
 
-          <div
-            class="inventory-review-table-row"
-            *ngFor="let card of getInventoryReviewCardsForSet(set)"
-          >
-            <ng-container *ngFor="let variant of getInventoryReviewVariantsForCard(card)">
+          <ng-container *ngFor="let card of getInventoryReviewCardsForSet(set)">
+            <div
+              class="inventory-review-table-row"
+              *ngFor="let variant of getInventoryReviewVariantsForCard(card)"
+              [class.inventory-review-table-row-active]="isVariantInInventory(variant.id)"
+              (click)="openInventoryItemDetails(card, variant)"
+            >
               <span>
                 {{ card.cardNumber }} — {{ card.name }}
               </span>
@@ -622,8 +624,8 @@
               <span>
                 {{ getInventoryVaultItemForVariant(variant.id)?.notes || '—' }}
               </span>
-            </ng-container>
-          </div>
+             </div>
+          </ng-container>
         </div>
       </section>
     </section>

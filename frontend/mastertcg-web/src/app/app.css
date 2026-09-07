@@ -1411,7 +1411,16 @@ body {
 .inventory-review-table-row {
   border-top: 1px solid #e5e7eb;
   color: #374151;
+  cursor: pointer;
   font-size: 0.85rem;
+}
+
+.inventory-review-table-row:hover {
+  background: #f8fafc;
+}
+
+.inventory-review-table-row-active {
+  background: #eff6ff;
 }
 
 .inventory-review-table-row span:first-child {

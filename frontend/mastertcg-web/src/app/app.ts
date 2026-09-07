@@ -1763,6 +1763,8 @@ isOwned(cardId: string): boolean {
   }
 
   openInventoryItemDetails(card: CardDto, variant: CardVariantDto): void {
+    this.inventoryVaultMessage = '';
+
     const existingItem = this.getInventoryVaultItemForVariant(variant.id);
 
     this.selectedInventoryCard = card;
