@@ -1973,6 +1973,65 @@ isOwned(cardId: string): boolean {
     );
   }
 
+  getInventoryReviewVisibleSets(): SetDto[] {
+    return this.sets.filter(set =>
+      this.isInventoryReviewSetAllowed(set) &&
+      this.getInventoryReviewCardsForSet(set).length > 0
+    );
+  }
+
+  getInventoryReviewMatchingCardCount(): number {
+    let count = 0;
+
+    this.getInventoryReviewVisibleSets().forEach(set => {
+      count += this.getInventoryReviewCardsForSet(set).length;
+    });
+
+    return count;
+  }
+
+  getInventoryReviewMatchingVariantCount(): number {
+    let count = 0;
+
+    this.getInventoryReviewVisibleSets().forEach(set => {
+      this.getInventoryReviewCardsForSet(set).forEach(card => {
+        count += this.getInventoryReviewVariantsForCard(card).length;
+      });
+    });
+
+    return count;
+  }
+
+  getInventoryReviewTotalQuantity(): number {
+    let total = 0;
+
+    this.getInventoryReviewVisibleSets().forEach(set => {
+      this.getInventoryReviewCardsForSet(set).forEach(card => {
+        this.getInventoryReviewVariantsForCard(card).forEach(variant => {
+          total += this.getInventoryQuantityForVariant(variant.id);
+        });
+      });
+    });
+
+    return total;
+  }
+
+  getInventoryReviewMissingVariantCount(): number {
+    let count = 0;
+
+    this.getInventoryReviewVisibleSets().forEach(set => {
+      this.getInventoryReviewCardsForSet(set).forEach(card => {
+        this.getInventoryReviewVariantsForCard(card).forEach(variant => {
+          if (this.getInventoryQuantityForVariant(variant.id) === 0) {
+            count += 1;
+          }
+        });
+      });
+    });
+
+    return count;
+  }
+
 }
 
 

@@ -613,6 +613,28 @@
       </div>
     </div>
 
+    <div class="inventory-review-summary-grid">
+      <div class="inventory-vault-summary-card">
+        <span>Matching Cards</span>
+        <strong>{{ getInventoryReviewMatchingCardCount() }}</strong>
+      </div>
+
+      <div class="inventory-vault-summary-card">
+        <span>Matching Variants</span>
+        <strong>{{ getInventoryReviewMatchingVariantCount() }}</strong>
+      </div>
+
+      <div class="inventory-vault-summary-card">
+        <span>Total Quantity</span>
+        <strong>{{ getInventoryReviewTotalQuantity() }}</strong>
+      </div>
+
+      <div class="inventory-vault-summary-card">
+        <span>Missing Variants</span>
+        <strong>{{ getInventoryReviewMissingVariantCount() }}</strong>
+      </div>
+    </div>
+
     <p class="profile-note" *ngIf="getInventoryReviewEras().length === 0">
       No cards match this review view yet.
     </p>

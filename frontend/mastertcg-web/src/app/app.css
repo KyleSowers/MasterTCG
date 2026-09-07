@@ -1499,6 +1499,13 @@ body {
   padding: 0 5px;
 }
 
+.inventory-review-summary-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  margin: 12px 0 16px;
+}
+
 
   /* =============================================
   MEDIA
@@ -1598,6 +1605,10 @@ body {
     .inventory-review-filter-grid {
     grid-template-columns: 1fr;
     width: 100%;
+  }
+
+    .inventory-review-summary-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
 }
