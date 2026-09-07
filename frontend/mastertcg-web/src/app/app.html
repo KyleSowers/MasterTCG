@@ -677,11 +677,15 @@
               </span>
 
               <span>
-                {{ getInventoryQuantityForVariant(variant.id) }}
+                <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id)">
+                  {{ getInventoryQuantityForVariant(variant.id) }}
+                </ng-container>
               </span>
 
               <span>
-                {{ displayInventoryConditionShort(getInventoryVaultItemForVariant(variant.id)?.cardCondition || 'NEAR_MINT') }}
+                <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id) as vaultItem">
+                  {{ displayInventoryConditionShort(vaultItem.cardCondition) }}
+                </ng-container>
               </span>
 
               <span>
@@ -689,16 +693,13 @@
                   <span *ngIf="vaultItem.availableForTrade">Trade</span>
                   <span *ngIf="vaultItem.availableForTrade && vaultItem.availableForSale"> / </span>
                   <span *ngIf="vaultItem.availableForSale">Sale</span>
-                  <span *ngIf="!vaultItem.availableForTrade && !vaultItem.availableForSale">—</span>
-                </ng-container>
-
-                <ng-container *ngIf="!getInventoryVaultItemForVariant(variant.id)">
-                  —
                 </ng-container>
               </span>
 
               <span>
-                {{ getInventoryVaultItemForVariant(variant.id)?.notes || '—' }}
+                <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id) as vaultItem">
+                  {{ vaultItem.notes || '' }}
+                </ng-container>
               </span>
              </div>
           </ng-container>
