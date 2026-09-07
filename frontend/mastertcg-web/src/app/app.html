@@ -543,19 +543,59 @@
         </p>
       </div>
 
-      <div class="inventory-review-filter">
+      <div class="inventory-review-filter inventory-review-filter-grid">
         <label class="profile-field-label">
           Review view
+
+          <select
+            class="filter-select"
+            [(ngModel)]="inventoryReviewFilter"
+          >
+            <option value="IN_VAULT">In Vault</option>
+            <option value="MISSING">Missing</option>
+            <option value="ALL">All</option>
+          </select>
         </label>
 
-        <select
-          class="filter-select"
-          [(ngModel)]="inventoryReviewFilter"
-        >
-          <option value="IN_VAULT">In Vault</option>
-          <option value="MISSING">Missing</option>
-          <option value="ALL">All</option>
-        </select>
+        <label class="profile-field-label">
+          Era
+
+          <select
+            class="filter-select"
+            [(ngModel)]="selectedInventoryReviewEra"
+            (ngModelChange)="onInventoryReviewEraChanged()"
+          >
+            <option value="ALL">All Eras</option>
+            <option *ngFor="let era of getInventoryReviewEraOptions()" [value]="era">
+              {{ era }}
+            </option>
+          </select>
+        </label>
+
+        <label class="profile-field-label">
+          Set
+
+          <select
+            class="filter-select"
+            [(ngModel)]="selectedInventoryReviewSetId"
+          >
+            <option value="ALL">All Sets</option>
+            <option *ngFor="let set of getInventoryReviewSetOptions()" [value]="set.id">
+              {{ set.name }}
+            </option>
+          </select>
+        </label>
+
+        <label class="profile-field-label">
+          Search
+
+          <input
+            type="text"
+            class="search-input"
+            [(ngModel)]="inventoryReviewSearchTerm"
+            placeholder="Search card name or number"
+          />
+        </label>
       </div>
     </div>
 

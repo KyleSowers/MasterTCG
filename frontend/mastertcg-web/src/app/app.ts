@@ -72,6 +72,9 @@ export class App implements OnInit {
 
   inventoryVaultMode: 'MANAGE' | 'REVIEW' = 'MANAGE';
   inventoryReviewFilter: 'IN_VAULT' | 'MISSING' | 'ALL' = 'IN_VAULT';
+  inventoryReviewSearchTerm = '';
+  selectedInventoryReviewEra = 'ALL';
+  selectedInventoryReviewSetId = 'ALL';
   inventoryDetailQuantity = 1;
   inventoryDetailCondition = 'NEAR_MINT';
   inventoryDetailAvailableForTrade = false;
@@ -1905,7 +1908,12 @@ isOwned(cardId: string): boolean {
   }
 
   getInventoryReviewCardsForSet(set: SetDto): CardDto[] {
+    if (!this.isInventoryReviewSetAllowed(set)) {
+      return [];
+    }
+
     return this.getCardsForSet(set).filter(card =>
+      this.isInventoryReviewCardSearchMatch(card) &&
       this.getInventoryReviewVariantsForCard(card).length > 0
     );
   }
@@ -1919,6 +1927,49 @@ isOwned(cardId: string): boolean {
   getInventoryReviewEras(): string[] {
     return this.getAvailableEras().filter(era =>
       this.getInventoryReviewSetsForEra(era).length > 0
+    );
+  }
+
+  onInventoryReviewEraChanged(): void {
+    this.selectedInventoryReviewSetId = 'ALL';
+  }
+
+  getInventoryReviewEraOptions(): string[] {
+    return this.getAvailableEras();
+  }
+
+  getInventoryReviewSetOptions(): SetDto[] {
+    let reviewSets = this.sets;
+
+    if (this.selectedInventoryReviewEra !== 'ALL') {
+      reviewSets = reviewSets.filter(set => set.era === this.selectedInventoryReviewEra);
+    }
+
+    return this.sortSetsByReleaseOrder(reviewSets);
+  }
+
+  isInventoryReviewSetAllowed(set: SetDto): boolean {
+    if (this.selectedInventoryReviewEra !== 'ALL' && set.era !== this.selectedInventoryReviewEra) {
+      return false;
+    }
+
+    if (this.selectedInventoryReviewSetId !== 'ALL' && set.id !== this.selectedInventoryReviewSetId) {
+      return false;
+    }
+
+    return true;
+  }
+
+  isInventoryReviewCardSearchMatch(card: CardDto): boolean {
+    const search = this.inventoryReviewSearchTerm.trim().toLowerCase();
+
+    if (!search) {
+      return true;
+    }
+
+    return (
+      card.name.toLowerCase().includes(search) ||
+      card.cardNumber.toLowerCase().includes(search)
     );
   }
 

@@ -1428,6 +1428,24 @@ body {
   font-weight: 700;
 }
 
+.inventory-review-filter-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  min-width: min(100%, 780px);
+}
+
+.inventory-review-filter-grid .profile-field-label {
+  display: grid;
+  gap: 6px;
+}
+
+.inventory-review-filter-grid .search-input,
+.inventory-review-filter-grid .filter-select {
+  margin: 0;
+  width: 100%;
+}
+
 
   /* =============================================
   MEDIA
@@ -1522,6 +1540,11 @@ body {
   .inventory-review-table-row {
     gap: 3px;
     grid-template-columns: 1fr;
+  }
+
+    .inventory-review-filter-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 
 }
