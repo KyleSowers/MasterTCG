@@ -1334,6 +1334,91 @@ body {
   padding: 9px 14px;
 }
 
+.inventory-vault-mode-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.inventory-review-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.inventory-review-filter {
+  color: #374151;
+  display: grid;
+  font-size: 0.85rem;
+  font-weight: 800;
+  gap: 6px;
+  min-width: 190px;
+}
+
+.inventory-review-filter .filter-select {
+  margin: 0;
+}
+
+.inventory-review-era-section {
+  border-top: 2px solid #e5e7eb;
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.inventory-review-era-title {
+  color: #111827;
+  margin: 0 0 10px;
+}
+
+.inventory-review-set-section {
+  margin-bottom: 18px;
+}
+
+.inventory-review-set-section h4 {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px 8px 0 0;
+  margin: 0;
+  padding: 8px 10px;
+}
+
+.inventory-review-table {
+  border: 1px solid #e5e7eb;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.inventory-review-table-header,
+.inventory-review-table-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(180px, 1fr) 120px 60px 90px 100px minmax(160px, 1fr);
+  padding: 7px 10px;
+}
+
+.inventory-review-table-header {
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.inventory-review-table-row {
+  border-top: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 0.85rem;
+}
+
+.inventory-review-table-row span:first-child {
+  color: #111827;
+  font-weight: 700;
+}
+
 
   /* =============================================
   MEDIA
@@ -1411,6 +1496,23 @@ body {
 
   .inventory-compact-variants {
     justify-content: flex-start;
+  }
+
+    .inventory-review-header {
+    flex-direction: column;
+  }
+
+  .inventory-review-filter {
+    width: 100%;
+  }
+
+  .inventory-review-table-header {
+    display: none;
+  }
+
+  .inventory-review-table-row {
+    gap: 3px;
+    grid-template-columns: 1fr;
   }
 
 }
