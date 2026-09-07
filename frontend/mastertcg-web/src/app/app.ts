@@ -70,6 +70,8 @@ export class App implements OnInit {
   selectedInventoryCard: CardDto | null = null;
   selectedInventoryVariant: CardVariantDto | null = null;
 
+  inventoryVaultMode: 'MANAGE' | 'REVIEW' = 'MANAGE';
+  inventoryReviewFilter: 'IN_VAULT' | 'MISSING' | 'ALL' = 'IN_VAULT';
   inventoryDetailQuantity = 1;
   inventoryDetailCondition = 'NEAR_MINT';
   inventoryDetailAvailableForTrade = false;
@@ -1869,6 +1871,53 @@ isOwned(cardId: string): boolean {
 
   hasInventoryVariantDetails(variantId: string): boolean {
     return this.getInventoryVariantDetailText(variantId).length > 0;
+  }
+
+  showInventoryManageMode(): void {
+    this.inventoryVaultMode = 'MANAGE';
+  }
+
+  showInventoryReviewMode(): void {
+    this.inventoryVaultMode = 'REVIEW';
+    this.loadInventoryVaultItems();
+  }
+
+  isCardVariantInInventoryReviewScope(variantId: string): boolean {
+    const quantity = this.getInventoryQuantityForVariant(variantId);
+
+    switch (this.inventoryReviewFilter) {
+      case 'IN_VAULT':
+        return quantity > 0;
+      case 'MISSING':
+        return quantity === 0;
+      case 'ALL':
+      default:
+        return true;
+    }
+  }
+
+  getInventoryReviewVariantsForCard(card: CardDto): CardVariantDto[] {
+    return card.variants.filter(variant =>
+      this.isCardVariantInInventoryReviewScope(variant.id)
+    );
+  }
+
+  getInventoryReviewCardsForSet(set: SetDto): CardDto[] {
+    return this.getCardsForSet(set).filter(card =>
+      this.getInventoryReviewVariantsForCard(card).length > 0
+    );
+  }
+
+  getInventoryReviewSetsForEra(era: string): SetDto[] {
+    return this.getSetsForEra(era).filter(set =>
+      this.getInventoryReviewCardsForSet(set).length > 0
+    );
+  }
+
+  getInventoryReviewEras(): string[] {
+    return this.getAvailableEras().filter(era =>
+      this.getInventoryReviewSetsForEra(era).length > 0
+    );
   }
 
 }

@@ -374,6 +374,26 @@
     </p>
   </div>
 
+  <div class="inventory-vault-mode-switch">
+    <button
+      type="button"
+      class="app-nav-button"
+      [class.app-nav-button-active]="inventoryVaultMode === 'MANAGE'"
+      (click)="showInventoryManageMode()"
+    >
+      Manage Vault
+    </button>
+
+    <button
+      type="button"
+      class="app-nav-button"
+      [class.app-nav-button-active]="inventoryVaultMode === 'REVIEW'"
+      (click)="showInventoryReviewMode()"
+    >
+      Vault Review
+    </button>
+  </div>
+
   <div *ngIf="inventoryVaultLoading">
     Loading Inventory Vault...
   </div>
@@ -382,152 +402,231 @@
     {{ inventoryVaultMessage }}
   </div>
 
-  <div class="inventory-vault-controls">
-    <label class="profile-field-label">
-      Choose era
-    </label>
+  <div *ngIf="inventoryVaultMode === 'MANAGE'">
 
-    <select
-      class="filter-select"
-      [(ngModel)]="selectedInventoryEra"
-      (ngModelChange)="onInventoryEraChanged()"
-    >
-      <option value="ALL">All Eras</option>
-      <option *ngFor="let era of getInventoryEras()" [value]="era">
-        {{ era }}
-      </option>
-    </select>
-  </div>
+    <div class="inventory-vault-controls">
+      <label class="profile-field-label">
+        Choose era
+      </label>
 
-  <div class="set-dashboard inventory-set-dashboard">
-    <div
-      *ngFor="let s of getInventorySetsForSelectedEra()"
-      class="set-card"
-      [class.set-card-selected]="selectedInventorySet?.id === s.id"
-      [style.background-image]="getSetBackgroundImage(s)"
-      (click)="loadInventoryCards(s)"
-    >
-      <div class="set-card-header">
-        <h3>{{ s.name }}</h3>
-      </div>
-
-      <div class="set-era">{{ s.era }}</div>
-
-      <div class="set-card-meta">
-        Main {{ s.totalCardsMain }} | Master {{ s.totalCardsMaster }}
-      </div>
-    </div>
-  </div>
-
-  <section class="inventory-vault-review-panel" *ngIf="inventoryVaultItems.length > 0">
-    <h3>Vault Review</h3>
-
-    <p class="profile-note">
-      These are extra cards currently saved in the Vault outside the collection binder.
-    </p>
-
-    <div class="inventory-review-list">
-      <div
-        class="inventory-review-row"
-        *ngFor="let item of getInventoryVaultItemsForSelectedSet()"
+      <select
+        class="filter-select"
+        [(ngModel)]="selectedInventoryEra"
+        (ngModelChange)="onInventoryEraChanged()"
       >
-        <div class="inventory-review-details">
-          <strong>{{ item.cardNumber }} — {{ item.cardName }}</strong>
-          <span>{{ displayFinish(item.finish) }} · {{ getRarityLabel(item.rarity) }}</span>
-        </div>
-
-        <div class="inventory-review-quantity">
-          Qty {{ item.quantity }}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section *ngIf="selectedInventorySet" class="inventory-card-section">
-    <h3>{{ selectedInventorySet.name }} Vault Inventory</h3>
-
-    <p class="profile-note">
-      Gray means no extra copies in the Vault. Blue means one or more extra
-      copies are stored outside the collection binder.
-    </p>
-
-    <div class="inventory-filter-panel">
-      <input
-        type="text"
-        class="search-input"
-        [(ngModel)]="inventorySearchTerm"
-        placeholder="Search by card name or number"
-      />
-
-      <select class="filter-select" [(ngModel)]="selectedInventoryStatus">
-        <option value="ALL">All Vault Statuses</option>
-        <option value="IN_VAULT">In Vault</option>
-        <option value="NOT_IN_VAULT">Not in Vault</option>
-      </select>
-
-      <select class="filter-select" [(ngModel)]="selectedInventoryFinish">
-        <option value="ALL">All Finishes</option>
-        <option *ngFor="let finish of getAvailableInventoryFinishes()" [value]="finish">
-          {{ displayFinish(finish) }}
+        <option value="ALL">All Eras</option>
+        <option *ngFor="let era of getInventoryEras()" [value]="era">
+          {{ era }}
         </option>
       </select>
     </div>
 
-    <div class="filter-summary">
-      Showing {{ getFilteredInventoryCardCount() }} cards
+    <div class="set-dashboard inventory-set-dashboard">
+      <div
+        *ngFor="let s of getInventorySetsForSelectedEra()"
+        class="set-card"
+        [class.set-card-selected]="selectedInventorySet?.id === s.id"
+        [style.background-image]="getSetBackgroundImage(s)"
+        (click)="loadInventoryCards(s)"
+      >
+        <div class="set-card-header">
+          <h3>{{ s.name }}</h3>
+        </div>
+
+        <div class="set-era">{{ s.era }}</div>
+
+        <div class="set-card-meta">
+          Main {{ s.totalCardsMain }} | Master {{ s.totalCardsMaster }}
+        </div>
+      </div>
     </div>
 
-    <ul class="inventory-card-list inventory-compact-list">
-      <li
-        *ngFor="let c of getFilteredInventoryCards()"
-        class="inventory-compact-card"
-        [class.inventory-compact-card-active]="isCardInInventory(c)"
+    <section *ngIf="selectedInventorySet" class="inventory-card-section">
+      <h3>{{ selectedInventorySet.name }} Vault Inventory</h3>
+
+      <p class="profile-note">
+        Gray means no extra copies in the Vault. Blue means one or more extra
+        copies are stored outside the collection binder.
+      </p>
+
+      <div class="inventory-filter-panel">
+        <input
+          type="text"
+          class="search-input"
+          [(ngModel)]="inventorySearchTerm"
+          placeholder="Search by card name or number"
+        />
+
+        <select class="filter-select" [(ngModel)]="selectedInventoryStatus">
+          <option value="ALL">All Vault Statuses</option>
+          <option value="IN_VAULT">In Vault</option>
+          <option value="NOT_IN_VAULT">Not in Vault</option>
+        </select>
+
+        <select class="filter-select" [(ngModel)]="selectedInventoryFinish">
+          <option value="ALL">All Finishes</option>
+          <option *ngFor="let finish of getAvailableInventoryFinishes()" [value]="finish">
+            {{ displayFinish(finish) }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filter-summary">
+        Showing {{ getFilteredInventoryCardCount() }} cards
+      </div>
+
+      <ul class="inventory-card-list inventory-compact-list">
+        <li
+          *ngFor="let c of getFilteredInventoryCards()"
+          class="inventory-compact-card"
+          [class.inventory-compact-card-active]="isCardInInventory(c)"
+        >
+          <div class="inventory-compact-main-row">
+            <div class="inventory-compact-card-info">
+              <strong>{{ c.cardNumber }} — {{ c.name }}</strong>
+
+              <span>
+                {{ getRarityLabel(c.rarity) }}
+                <ng-container *ngIf="c.primaryType"> · {{ c.primaryType }}</ng-container>
+
+                <ng-container *ngFor="let v of getVisibleInventoryVariants(c)">
+                  <small
+                    class="inventory-compact-detail-chip inline-detail-chip"
+                    *ngIf="hasInventoryVariantDetails(v.id)"
+                  >
+                    {{ displayFinish(v.finish) }}:
+                    {{ getInventoryVariantDetailText(v.id) }}
+                  </small>
+                </ng-container>
+              </span>
+            </div>
+
+            <div class="inventory-compact-variants">
+              <button
+                type="button"
+                class="inventory-compact-variant-button"
+                [class.inventory-compact-variant-active]="isVariantInInventory(v.id)"
+                *ngFor="let v of getVisibleInventoryVariants(c)"
+                (click)="openInventoryItemDetails(c, v)"
+              >
+
+                <strong *ngIf="isVariantInInventory(v.id)">
+                  Qty {{ getInventoryQuantityForVariant(v.id) }}
+                </strong>
+
+                <em *ngIf="isVariantInInventory(v.id)">
+                  Update
+                </em>
+
+                <em *ngIf="!isVariantInInventory(v.id)">
+                  Add
+                </em>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <section
+    class="inventory-vault-review-panel"
+    *ngIf="inventoryVaultMode === 'REVIEW'"
+  >
+    <div class="inventory-review-header">
+      <div>
+        <h3>Vault Review</h3>
+
+        <p class="profile-note">
+          Review inventory by era and set. Switch between cards in the Vault,
+          missing from the Vault, or all cards.
+        </p>
+      </div>
+
+      <div class="inventory-review-filter">
+        <label class="profile-field-label">
+          Review view
+        </label>
+
+        <select
+          class="filter-select"
+          [(ngModel)]="inventoryReviewFilter"
+        >
+          <option value="IN_VAULT">In Vault</option>
+          <option value="MISSING">Missing</option>
+          <option value="ALL">All</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="profile-note" *ngIf="getInventoryReviewEras().length === 0">
+      No cards match this review view yet.
+    </p>
+
+    <section
+      class="inventory-review-era-section"
+      *ngFor="let era of getInventoryReviewEras()"
+    >
+      <h3 class="inventory-review-era-title">{{ era }}</h3>
+
+      <section
+        class="inventory-review-set-section"
+        *ngFor="let set of getInventoryReviewSetsForEra(era)"
       >
-        <div class="inventory-compact-main-row">
-          <div class="inventory-compact-card-info">
-            <strong>{{ c.cardNumber }} — {{ c.name }}</strong>
+        <h4>{{ set.name }}</h4>
 
-            <span>
-              {{ getRarityLabel(c.rarity) }}
-              <ng-container *ngIf="c.primaryType"> · {{ c.primaryType }}</ng-container>
-
-              <ng-container *ngFor="let v of getVisibleInventoryVariants(c)">
-                <small
-                  class="inventory-compact-detail-chip inline-detail-chip"
-                  *ngIf="hasInventoryVariantDetails(v.id)"
-                >
-                  {{ displayFinish(v.finish) }}:
-                  {{ getInventoryVariantDetailText(v.id) }}
-                </small>
-              </ng-container>
-            </span>
+        <div class="inventory-review-table">
+          <div class="inventory-review-table-header">
+            <span>Card</span>
+            <span>Finish</span>
+            <span>Qty</span>
+            <span>Condition</span>
+            <span>Status</span>
+            <span>Details</span>
           </div>
 
-          <div class="inventory-compact-variants">
-            <button
-              type="button"
-              class="inventory-compact-variant-button"
-              [class.inventory-compact-variant-active]="isVariantInInventory(v.id)"
-              *ngFor="let v of getVisibleInventoryVariants(c)"
-              (click)="openInventoryItemDetails(c, v)"
-            >
+          <div
+            class="inventory-review-table-row"
+            *ngFor="let card of getInventoryReviewCardsForSet(set)"
+          >
+            <ng-container *ngFor="let variant of getInventoryReviewVariantsForCard(card)">
+              <span>
+                {{ card.cardNumber }} — {{ card.name }}
+              </span>
 
-              <strong *ngIf="isVariantInInventory(v.id)">
-                Qty {{ getInventoryQuantityForVariant(v.id) }}
-              </strong>
+              <span>
+                {{ displayFinish(variant.finish) }}
+              </span>
 
-              <em *ngIf="isVariantInInventory(v.id)">
-                Update
-              </em>
+              <span>
+                {{ getInventoryQuantityForVariant(variant.id) }}
+              </span>
 
-              <em *ngIf="!isVariantInInventory(v.id)">
-                Add
-              </em>
-            </button>
+              <span>
+                {{ displayInventoryConditionShort(getInventoryVaultItemForVariant(variant.id)?.cardCondition || 'NEAR_MINT') }}
+              </span>
+
+              <span>
+                <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id) as vaultItem">
+                  <span *ngIf="vaultItem.availableForTrade">Trade</span>
+                  <span *ngIf="vaultItem.availableForTrade && vaultItem.availableForSale"> / </span>
+                  <span *ngIf="vaultItem.availableForSale">Sale</span>
+                  <span *ngIf="!vaultItem.availableForTrade && !vaultItem.availableForSale">—</span>
+                </ng-container>
+
+                <ng-container *ngIf="!getInventoryVaultItemForVariant(variant.id)">
+                  —
+                </ng-container>
+              </span>
+
+              <span>
+                {{ getInventoryVaultItemForVariant(variant.id)?.notes || '—' }}
+              </span>
+            </ng-container>
           </div>
         </div>
-      </li>
-    </ul>
+      </section>
+    </section>
   </section>
 
   <div
