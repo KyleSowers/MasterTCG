@@ -502,26 +502,40 @@
             </div>
 
             <div class="inventory-compact-variants">
-              <button
-                type="button"
-                class="inventory-compact-variant-button"
-                [class.inventory-compact-variant-active]="isVariantInInventory(v.id)"
+              <div
+                class="inventory-quick-control"
+                [class.inventory-quick-control-active]="isVariantInInventory(v.id)"
                 *ngFor="let v of getVisibleInventoryVariants(c)"
-                (click)="openInventoryItemDetails(c, v)"
               >
-
-                <strong *ngIf="isVariantInInventory(v.id)">
+                <span class="inventory-quick-qty">
                   Qty {{ getInventoryQuantityForVariant(v.id) }}
-                </strong>
+                </span>
 
-                <em *ngIf="isVariantInInventory(v.id)">
-                  Update
-                </em>
+                <button
+                  type="button"
+                  class="inventory-quick-button"
+                  (click)="decreaseInventoryQuantity(v.id)"
+                  [disabled]="getInventoryQuantityForVariant(v.id) === 0"
+                >
+                  -
+                </button>
 
-                <em *ngIf="!isVariantInInventory(v.id)">
-                  Add
-                </em>
-              </button>
+                <button
+                  type="button"
+                  class="inventory-quick-button"
+                  (click)="increaseInventoryQuantity(v.id)"
+                >
+                  +
+                </button>
+
+                <button
+                  type="button"
+                  class="inventory-quick-details-button"
+                  (click)="openInventoryItemDetails(c, v)"
+                >
+                  Details
+                </button>
+              </div>
             </div>
           </div>
         </li>

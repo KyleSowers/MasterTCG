@@ -1446,6 +1446,59 @@ body {
   width: 100%;
 }
 
+.inventory-quick-control {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 6px;
+  padding: 4px 6px;
+  white-space: nowrap;
+}
+
+.inventory-quick-control-active {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
+
+.inventory-quick-qty {
+  color: #374151;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0 4px;
+}
+
+.inventory-quick-button {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.85rem;
+  font-weight: 900;
+  height: 24px;
+  justify-content: center;
+  line-height: 1;
+  width: 24px;
+}
+
+.inventory-quick-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.inventory-quick-details-button {
+  background: transparent;
+  border: 0;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 0 5px;
+}
+
 
   /* =============================================
   MEDIA
