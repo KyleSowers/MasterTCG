@@ -1400,6 +1400,12 @@ body {
   padding: 7px 10px;
 }
 
+.inventory-review-table-header-missing,
+.inventory-review-table-row-missing {
+  grid-template-columns: minmax(220px, 420px) 140px;
+  justify-content: start;
+}
+
 .inventory-review-table-header {
   background: #eff6ff;
   color: #1e40af;

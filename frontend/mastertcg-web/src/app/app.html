@@ -652,13 +652,16 @@
         <h4>{{ set.name }}</h4>
 
         <div class="inventory-review-table">
-          <div class="inventory-review-table-header">
+          <div
+            class="inventory-review-table-header"
+            [class.inventory-review-table-header-missing]="inventoryReviewFilter === 'MISSING'"
+          >
             <span>Card</span>
             <span>Finish</span>
-            <span>Qty</span>
-            <span>Condition</span>
-            <span>Status</span>
-            <span>Details</span>
+            <span *ngIf="inventoryReviewFilter !== 'MISSING'">Qty</span>
+            <span *ngIf="inventoryReviewFilter !== 'MISSING'">Condition</span>
+            <span *ngIf="inventoryReviewFilter !== 'MISSING'">Status</span>
+            <span *ngIf="inventoryReviewFilter !== 'MISSING'">Details</span>
           </div>
 
           <ng-container *ngFor="let card of getInventoryReviewCardsForSet(set)">
@@ -666,6 +669,7 @@
               class="inventory-review-table-row"
               *ngFor="let variant of getInventoryReviewVariantsForCard(card)"
               [class.inventory-review-table-row-active]="isVariantInInventory(variant.id)"
+              [class.inventory-review-table-row-missing]="inventoryReviewFilter === 'MISSING'"
               (click)="openInventoryItemDetails(card, variant)"
             >
               <span>
@@ -676,19 +680,19 @@
                 {{ displayFinish(variant.finish) }}
               </span>
 
-              <span>
+              <span *ngIf="inventoryReviewFilter !== 'MISSING'">
                 <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id)">
                   {{ getInventoryQuantityForVariant(variant.id) }}
                 </ng-container>
               </span>
 
-              <span>
+              <span *ngIf="inventoryReviewFilter !== 'MISSING'">
                 <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id) as vaultItem">
                   {{ displayInventoryConditionShort(vaultItem.cardCondition) }}
                 </ng-container>
               </span>
 
-              <span>
+              <span *ngIf="inventoryReviewFilter !== 'MISSING'">
                 <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id) as vaultItem">
                   <span *ngIf="vaultItem.availableForTrade">Trade</span>
                   <span *ngIf="vaultItem.availableForTrade && vaultItem.availableForSale"> / </span>
@@ -696,7 +700,7 @@
                 </ng-container>
               </span>
 
-              <span>
+              <span *ngIf="inventoryReviewFilter !== 'MISSING'">
                 <ng-container *ngIf="getInventoryVaultItemForVariant(variant.id) as vaultItem">
                   {{ vaultItem.notes || '' }}
                 </ng-container>
