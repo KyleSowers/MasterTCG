@@ -12,6 +12,15 @@
   <button
     type="button"
     class="app-nav-button"
+    [class.app-nav-button-active]="activePage === 'COLLECTION_REVIEW'"
+    (click)="showCollectionReviewPage()"
+  >
+    Collection Review
+  </button>
+
+  <button
+    type="button"
+    class="app-nav-button"
     [class.app-nav-button-active]="activePage === 'PROFILE_BUILDER'"
     (click)="showProfileBuilderPage()">
     Collection Profile
@@ -332,6 +341,133 @@
 
   </section>
 </div>
+
+<section
+  class="collection-review-page"
+  *ngIf="activePage === 'COLLECTION_REVIEW'"
+>
+  <div class="inventory-vault-header">
+    <h2>Collection Review</h2>
+
+    <p>
+      Review the cards that belong to your active collection profile. This is
+      separate from Inventory Vault.
+    </p>
+  </div>
+
+  <div class="inventory-review-header">
+    <div>
+      <h3>Binder/Profile Checklist</h3>
+
+      <p class="profile-note">
+        Review owned, missing, or all cards based on your selected Collection
+        Profile scope.
+      </p>
+    </div>
+
+    <div class="inventory-review-filter inventory-review-filter-grid">
+      <label class="profile-field-label">
+        Review view
+
+        <select
+          class="filter-select"
+          [(ngModel)]="collectionReviewFilter"
+        >
+          <option value="OWNED">Owned</option>
+          <option value="MISSING">Missing</option>
+          <option value="ALL">All</option>
+        </select>
+      </label>
+
+      <label class="profile-field-label">
+        Era
+
+        <select
+          class="filter-select"
+          [(ngModel)]="selectedCollectionReviewEra"
+          (ngModelChange)="onCollectionReviewEraChanged()"
+        >
+          <option value="ALL">All Eras</option>
+          <option *ngFor="let era of getCollectionReviewEraOptions()" [value]="era">
+            {{ era }}
+          </option>
+        </select>
+      </label>
+
+      <label class="profile-field-label">
+        Set
+
+        <select
+          class="filter-select"
+          [(ngModel)]="selectedCollectionReviewSetId"
+        >
+          <option value="ALL">All Sets</option>
+          <option *ngFor="let set of getCollectionReviewSetOptions()" [value]="set.id">
+            {{ set.name }}
+          </option>
+        </select>
+      </label>
+
+      <label class="profile-field-label">
+        Search
+
+        <input
+          type="text"
+          class="search-input"
+          [(ngModel)]="collectionReviewSearchTerm"
+          placeholder="Search card name or number"
+        />
+      </label>
+    </div>
+  </div>
+
+  <p class="profile-note" *ngIf="getCollectionReviewEras().length === 0">
+    No cards match this Collection Review view.
+  </p>
+
+  <section
+    class="inventory-review-era-section"
+    *ngFor="let era of getCollectionReviewEras()"
+  >
+    <h3 class="inventory-review-era-title">{{ era }}</h3>
+
+    <section
+      class="inventory-review-set-section"
+      *ngFor="let set of getCollectionReviewSetsForEra(era)"
+    >
+      <h4>{{ set.name }}</h4>
+
+      <div class="inventory-review-table">
+        <div class="inventory-review-table-header collection-review-table-header">
+          <span>Card</span>
+          <span>Finish</span>
+          <span>Status</span>
+        </div>
+
+        <ng-container *ngFor="let card of getCollectionReviewCardsForSet(set)">
+          <div
+            class="inventory-review-table-row collection-review-table-row"
+            *ngFor="let variant of getCollectionReviewVariantsForCard(card, set)"
+            [class.inventory-review-table-row-active]="isOwned(variant.id)"
+            (click)="toggleOwned(variant.id)"
+          >
+            <span>
+              {{ card.cardNumber }} — {{ card.name }}
+            </span>
+
+            <span>
+              {{ displayFinish(variant.finish) }}
+            </span>
+
+            <span>
+              {{ isOwned(variant.id) ? 'Owned' : 'Missing' }}
+            </span>
+          </div>
+        </ng-container>
+      </div>
+    </section>
+  </section>
+</section>
 
 <section
   class="inventory-vault-page"

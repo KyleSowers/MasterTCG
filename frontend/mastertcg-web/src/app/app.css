@@ -1334,6 +1334,20 @@ body {
   padding: 9px 14px;
 }
 
+.collection-review-table-header,
+.collection-review-table-row {
+  grid-template-columns: minmax(220px, 420px) 140px 100px;
+  justify-content: start;
+}
+
+.collection-review-table-row {
+  cursor: pointer;
+}
+
+.collection-review-table-row:hover {
+  background: #f8fafc;
+}
+
 .inventory-vault-mode-switch {
   display: flex;
   flex-wrap: wrap;
@@ -1615,6 +1629,15 @@ body {
 
     .inventory-review-summary-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+    .collection-review-table-header {
+    display: none;
+  }
+
+  .collection-review-table-row {
+    gap: 3px;
+    grid-template-columns: 1fr;
   }
 
 }

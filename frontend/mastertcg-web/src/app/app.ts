@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class App implements OnInit {
-  activePage: 'COLLECTION' | 'PROFILE_BUILDER' | 'INVENTORY_VAULT' = 'COLLECTION';
+  activePage: 'COLLECTION' | 'COLLECTION_REVIEW' | 'PROFILE_BUILDER' | 'INVENTORY_VAULT' = 'COLLECTION';
   backendProfileLoading = false;
   backendProfileSaving = false;
   backendProfileMessage = '';
@@ -41,6 +41,10 @@ export class App implements OnInit {
   selectedProfileSetIds: string[] = [];
   selectedRarity = 'ALL';
   selectedSet: SetDto | null = null;
+  collectionReviewFilter: 'OWNED' | 'MISSING' | 'ALL' = 'MISSING';
+  collectionReviewSearchTerm = '';
+  selectedCollectionReviewEra = 'ALL';
+  selectedCollectionReviewSetId = 'ALL';
   // includeReverseHolosInCompletion = true;
   sets: SetDto[] = [];
   setCardsBySetId: { [setId: string]: CardDto[] } = {};
@@ -148,6 +152,10 @@ sortSetsByReleaseDate(sets: SetDto[]): SetDto[] {
   // ---------------------------------------------------------------------------
 showCollectionPage() {
     this.activePage = 'COLLECTION';
+  }
+
+  showCollectionReviewPage(): void {
+    this.activePage = 'COLLECTION_REVIEW';
   }
 
 showProfileBuilderPage() {
@@ -1191,6 +1199,99 @@ isVariantInCollectionScope(
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // Collection Review Helpers
+  // ---------------------------------------------------------------------------
+
+  onCollectionReviewEraChanged(): void {
+    this.selectedCollectionReviewSetId = 'ALL';
+  }
+
+  getCollectionReviewEraOptions(): string[] {
+    return this.getAvailableEras();
+  }
+
+  getCollectionReviewSetOptions(): SetDto[] {
+    let reviewSets = this.getProfileSets();
+
+    if (this.selectedCollectionReviewEra !== 'ALL') {
+      reviewSets = reviewSets.filter(set => set.era === this.selectedCollectionReviewEra);
+    }
+
+    return this.sortSetsByReleaseOrder(reviewSets);
+  }
+
+  isCollectionReviewSetAllowed(set: SetDto): boolean {
+    if (this.selectedCollectionReviewEra !== 'ALL' && set.era !== this.selectedCollectionReviewEra) {
+      return false;
+    }
+
+    if (this.selectedCollectionReviewSetId !== 'ALL' && set.id !== this.selectedCollectionReviewSetId) {
+      return false;
+    }
+
+    return true;
+  }
+
+  isCollectionReviewCardSearchMatch(card: CardDto): boolean {
+    const search = this.collectionReviewSearchTerm.trim().toLowerCase();
+
+    if (!search) {
+      return true;
+    }
+
+    return (
+      card.name.toLowerCase().includes(search) ||
+      card.cardNumber.toLowerCase().includes(search)
+    );
+  }
+
+  isCollectionReviewVariantAllowed(card: CardDto, variant: CardVariantDto, set: SetDto): boolean {
+    if (!this.isVariantInCollectionScope(card, variant, set)) {
+      return false;
+    }
+
+    const owned = this.isOwned(variant.id);
+
+    switch (this.collectionReviewFilter) {
+      case 'OWNED':
+        return owned;
+      case 'MISSING':
+        return !owned;
+      case 'ALL':
+      default:
+        return true;
+    }
+  }
+
+  getCollectionReviewVariantsForCard(card: CardDto, set: SetDto): CardVariantDto[] {
+    return card.variants.filter(variant =>
+      this.isCollectionReviewVariantAllowed(card, variant, set)
+    );
+  }
+
+  getCollectionReviewCardsForSet(set: SetDto): CardDto[] {
+    if (!this.isCollectionReviewSetAllowed(set)) {
+      return [];
+    }
+
+    return this.getCardsForSet(set).filter(card =>
+      this.isCollectionReviewCardSearchMatch(card) &&
+      this.getCollectionReviewVariantsForCard(card, set).length > 0
+    );
+  }
+
+  getCollectionReviewSetsForEra(era: string): SetDto[] {
+    return this.getProfileSets()
+      .filter(set => set.era === era)
+      .filter(set => this.getCollectionReviewCardsForSet(set).length > 0);
+  }
+
+  getCollectionReviewEras(): string[] {
+    return this.getAvailableEras().filter(era =>
+      this.getCollectionReviewSetsForEra(era).length > 0
+    );
+  }
 
   // ---------------------------------------------------------------------------
   // OWNERSHIP HELPERS
