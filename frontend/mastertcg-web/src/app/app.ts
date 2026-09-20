@@ -695,6 +695,7 @@ onCollectionStyleChanged(style: 'MAIN_SET' | 'MASTER_SET' | 'CUSTOM'): void {
       break;
   }
 
+  this.resetCollectionNavigation();
   this.onCollectionScopeChanged(false);
   this.saveCollectionProfileLocally();
 }
@@ -714,49 +715,51 @@ applyMainSetStyle(): void {
   }
 
 applyMasterSetStyle(): void {
-    this.collectionScope.includeNormal = true;
-    this.collectionScope.includeHolo = true;
-    this.collectionScope.includeReverseHolo = true;
-    this.collectionScope.includeSpecialFinishes = true;
+  this.collectionScope.includeNormal = true;
+  this.collectionScope.includeHolo = true;
+  this.collectionScope.includeReverseHolo = true;
+  this.collectionScope.includeSpecialFinishes = true;
 
-    this.collectionScope.includeCommon = true;
-    this.collectionScope.includeUncommon = true;
-    this.collectionScope.includeRare = true;
+  this.collectionScope.includeCommon = true;
+  this.collectionScope.includeUncommon = true;
+  this.collectionScope.includeRare = true;
 
-    this.collectionScope.includeMainCards = true;
-    this.collectionScope.includeSecretCards = true;
-  }
+  this.collectionScope.includeMainCards = true;
+  this.collectionScope.includeSecretCards = true;
+}
 
 onCollectionScopeChanged(markCustom = true) {
-    if (markCustom) {
-      this.collectionStyle = 'CUSTOM';
-      this.saveCollectionProfileLocally();
-    }
+  this.resetCollectionNavigation();
 
-    const availableFinishes = this.getAvailableFinishes();
-
-    if (
-      this.selectedFinish !== 'ALL' &&
-      !availableFinishes.includes(this.selectedFinish)
-    ) {
-      this.selectedFinish = 'ALL';
-    }
-
-    const availableRarities = this.getAvailableRarities();
-
-    if (
-      this.selectedRarity !== 'ALL' &&
-      !availableRarities.includes(this.selectedRarity)
-    ) {
-      this.selectedRarity = 'ALL';
-    }
-
+  if (markCustom) {
+    this.collectionStyle = 'CUSTOM';
     this.saveCollectionProfileLocally();
   }
 
-isSetInCollectionProfile(set: SetDto): boolean {
-    return this.selectedProfileSetIds.includes(set.id);
+  const availableFinishes = this.getAvailableFinishes();
+
+  if (
+    this.selectedFinish !== 'ALL' &&
+    !availableFinishes.includes(this.selectedFinish)
+  ) {
+    this.selectedFinish = 'ALL';
   }
+
+  const availableRarities = this.getAvailableRarities();
+
+  if (
+    this.selectedRarity !== 'ALL' &&
+    !availableRarities.includes(this.selectedRarity)
+  ) {
+    this.selectedRarity = 'ALL';
+  }
+
+  this.saveCollectionProfileLocally();
+}
+
+isSetInCollectionProfile(set: SetDto): boolean {
+  return this.selectedProfileSetIds.includes(set.id);
+}
 
 toggleProfileSet(set: SetDto, event: Event): void {
   const checked = (event.target as HTMLInputElement).checked;
@@ -775,6 +778,7 @@ toggleProfileSet(set: SetDto, event: Event): void {
       this.cards = [];
     }
   }
+  this.resetCollectionNavigation();
   this.saveCollectionProfileLocally();
 }
 
@@ -857,6 +861,7 @@ toggleProfileEra(era: string, event: Event): void {
       this.cards = [];
     }
   }
+  this.resetCollectionNavigation();
   this.saveCollectionProfileLocally();
 }
 
@@ -2132,6 +2137,17 @@ isOwned(cardId: string): boolean {
     });
 
     return count;
+  }
+
+ 
+  // -----------------------------------------------------------------------------
+  // My Collection Era Navigtion Helpers 
+  // -----------------------------------------------------------------------------
+
+  resetCollectionNavigation(): void {
+    this.selectedCollectionEra = null;
+    this.selectedSet = null;
+    this.cards = [];
   }
 
   getProfileEras(): string[] {
