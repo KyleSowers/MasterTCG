@@ -43,6 +43,7 @@ export class App implements OnInit {
   selectedSet: SetDto | null = null;
   collectionReviewFilter: 'OWNED' | 'MISSING' | 'ALL' = 'MISSING';
   collectionReviewSearchTerm = '';
+  selectedCollectionEra: string | null = null;
   selectedCollectionReviewEra = 'ALL';
   selectedCollectionReviewSetId = 'ALL';
   // includeReverseHolosInCompletion = true;
@@ -2131,6 +2132,48 @@ isOwned(cardId: string): boolean {
     });
 
     return count;
+  }
+
+  getProfileEras(): string[] {
+    return Array.from(
+      new Set(this.getProfileSets().map(set => set.era))
+    );
+  }
+
+  shouldShowCollectionEraCards(): boolean {
+    return this.getProfileEras().length > 1 && this.selectedCollectionEra === null;
+  }
+
+  selectCollectionEra(era: string): void {
+    this.selectedCollectionEra = era;
+    this.selectedSet = null;
+    this.cards = [];
+  }
+
+  backToCollectionEras(): void {
+    this.selectedCollectionEra = null;
+    this.selectedSet = null;
+    this.cards = [];
+  }
+
+  getCollectionSetsForCurrentView(): SetDto[] {
+    const profileSets = this.getProfileSets();
+
+    if (this.getProfileEras().length <= 1) {
+      return this.sortSetsByReleaseOrder(profileSets);
+    }
+
+    if (!this.selectedCollectionEra) {
+      return [];
+    }
+
+    return this.sortSetsByReleaseOrder(
+      profileSets.filter(set => set.era === this.selectedCollectionEra)
+    );
+  }
+
+  getCollectionEraSetCount(era: string): number {
+    return this.getProfileSets().filter(set => set.era === era).length;
   }
 
 }

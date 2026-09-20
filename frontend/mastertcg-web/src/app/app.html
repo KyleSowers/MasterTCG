@@ -40,9 +40,48 @@
 
 <div *ngIf="activePage === 'COLLECTION'">
 
-  <div class="set-dashboard" *ngIf="!loading && !error">
+  <div
+    class="collection-era-back-row"
+    *ngIf="getProfileEras().length > 1 && selectedCollectionEra"
+  >
+    <button
+      type="button"
+      class="secondary-button"
+      (click)="backToCollectionEras()"
+    >
+      ← Back to Eras
+    </button>
+
+    <strong>{{ selectedCollectionEra }}</strong>
+  </div>
+
+  <div
+    class="set-dashboard"
+    *ngIf="shouldShowCollectionEraCards()"
+  >
     <div
-      *ngFor="let s of getProfileSets()"
+      *ngFor="let era of getProfileEras()"
+      class="set-card"
+      (click)="selectCollectionEra(era)"
+    >
+      <div class="set-card-header">
+        <h3>{{ era }}</h3>
+      </div>
+
+      <div class="set-era">
+        Collection Era
+      </div>
+
+      <div class="set-card-meta">
+        {{ getCollectionEraSetCount(era) }} sets selected
+      </div>
+    </div>
+  </div>
+
+  <div class="set-dashboard" *ngIf="!loading && !error 
+    && !shouldShowCollectionEraCards()">
+    <div
+      *ngFor="let s of getCollectionSetsForCurrentView()"
       class="set-card"
       [class.set-card-selected]="selectedSet?.id === s.id"
       [style.background-image]="getSetBackgroundImage(s)"
